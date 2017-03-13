@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://swwind.github.io/2017/03/12/线段树入门详解/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
 <meta property="og:description" content="简介线段树其实就是一个超级简单的数据结构。就是把一个序列搞出若干个区间，在询问和修改时改一下区间就行了。比方说某节点表示[1, n]的区间，那么该节点的左子树就表示[1, (n+1)/2]的区间，右子树就表示[(n+1)/2+1, n]的区间。然后每个节点维护一下该区间内的目标对象（sum、max等）就行了，这样可以在n2的时间内建树，在log(n)的时间内完成查询操作。注意到线段树是颗二叉树，所">
-<meta property="og:updated_time" content="2017-03-13T10:28:04.940Z">
+<meta property="og:updated_time" content="2017-03-13T11:56:35.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线段树入门详解">
 <meta name="twitter:description" content="简介线段树其实就是一个超级简单的数据结构。就是把一个序列搞出若干个区间，在询问和修改时改一下区间就行了。比方说某节点表示[1, n]的区间，那么该节点的左子树就表示[1, (n+1)/2]的区间，右子树就表示[(n+1)/2+1, n]的区间。然后每个节点维护一下该区间内的目标对象（sum、max等）就行了，这样可以在n2的时间内建树，在log(n)的时间内完成查询操作。注意到线段树是颗二叉树，所">
@@ -98,7 +98,7 @@
 		
 		</div>
 		
-		<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>线段树其实就是一个超级简单的数据结构。<br>就是把一个序列搞出若干个区间，在询问和修改时改一下区间就行了。<br>比方说某节点表示[1, n]的区间，那么该节点的左子树就表示[1, (n+1)/2]的区间，右子树就表示[(n+1)/2+1, n]的区间。<br>然后每个节点维护一下该区间内的目标对象（sum、max等）就行了，<br>这样可以在n<pr>2</pr>的时间内建树，在log(n)的时间内完成查询操作。<br>注意到线段树是颗二叉树，所以每个节点的左儿子可以表示为x*2(位运算简化为x&lt;&lt;1)，右儿子为x*2+1(x&lt;&lt;1|1)<br>注意在查询的时候如果要修改的刚好就是该节点的区间，<br>那么可以为这个节点打一个flag（俗称Lazy标记），而不必把他下面的节点全部更新（不然是O（n）的了）。</p>
+		<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>线段树其实就是一个超级简单的数据结构。<br>就是把一个序列搞出若干个区间，在询问和修改时改一下区间就行了。<br>比方说某节点表示[1, n]的区间，那么该节点的左子树就表示[1, (n+1)/2]的区间，右子树就表示[(n+1)/2+1, n]的区间。<br>然后每个节点维护一下该区间内的目标对象（sum、max等）就行了，<br>这样可以在n<sup>2</sup>的时间内建树，在log(n)的时间内完成查询操作。<br>注意到线段树是颗二叉树，所以每个节点的左儿子可以表示为x*2(位运算简化为x&lt;&lt;1)，右儿子为x*2+1(x&lt;&lt;1|1)<br>注意在查询的时候如果要修改的刚好就是该节点的区间，<br>那么可以为这个节点打一个flag（俗称Lazy标记），而不必把他下面的节点全部更新（不然是O（n）的了）。</p>
 <h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>下面就是模板了，但是希望大家先不看模板打一遍，再与模板校对并优化<br>先是每个节点的结构体：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> l, r, sum, mx, lazy; <span class="comment">// l, r: 左右边界，sum、mx: 最大值 lazy只是个标记</span></div><div class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>]; <span class="comment">// 节点要开长度的四倍大小</span></div></pre></td></tr></table></figure>
 <p>建树：</p>
