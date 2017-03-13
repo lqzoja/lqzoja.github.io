@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Self introduction | SW_Wind&#39;s blog</title>
+    <title>BZOJ 1756: Vijos1083 小白逛公园 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊我的qq是2670529647，可以加我qq互赞相互交流哈">
+    <meta name="description" content="又是一道水题题意是要你求区间最大子段和，支持单点修改所以维护一下每一个节点 左起最大和 和 右起最大和 以及 区间最大子段和 即可AC代码:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566/******">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Self introduction">
-<meta property="og:url" content="http://swwind.github.io/2017/03/10/Self-introduction/index.html">
+<meta property="og:title" content="BZOJ 1756: Vijos1083 小白逛公园">
+<meta property="og:url" content="http://swwind.github.io/2017/03/13/BZOJ-1756-Vijos1083-小白逛公园/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊我的qq是2670529647，可以加我qq互赞相互交流哈">
-<meta property="og:updated_time" content="2017-03-11T06:18:42.534Z">
+<meta property="og:description" content="又是一道水题题意是要你求区间最大子段和，支持单点修改所以维护一下每一个节点 左起最大和 和 右起最大和 以及 区间最大子段和 即可AC代码:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566/******">
+<meta property="og:updated_time" content="2017-03-13T08:06:10.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Self introduction">
-<meta name="twitter:description" content="大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊我的qq是2670529647，可以加我qq互赞相互交流哈">
+<meta name="twitter:title" content="BZOJ 1756: Vijos1083 小白逛公园">
+<meta name="twitter:description" content="又是一道水题题意是要你求区间最大子段和，支持单点修改所以维护一下每一个节点 左起最大和 和 右起最大和 以及 区间最大子段和 即可AC代码:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566/******">
 
     
     
@@ -78,14 +78,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/10/Self-introduction/" title="Self introduction" itemprop="url">Self introduction</a>
+      <a href="/2017/03/13/BZOJ-1756-Vijos1083-小白逛公园/" title="BZOJ 1756: Vijos1083 小白逛公园" itemprop="url">BZOJ 1756: Vijos1083 小白逛公园</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-10T07:37:13.000Z" itemprop="datePublished"> 发表于 2017-03-10</time>
+    <time datetime="2017-03-13T01:33:53.000Z" itemprop="datePublished"> 发表于 2017-03-13</time>
     
   </p>
 </header>
@@ -98,12 +98,17 @@
 		
 		</div>
 		
-		<p>大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊<br>我的qq是<code>2670529647</code>，可以加我qq<del>互赞</del>相互交流哈</p>
+		<p>又是一道水题<br>题意是要你求区间最大子段和，支持单点修改<br>所以维护一下每一个节点 左起最大和 和 右起最大和 以及 区间最大子段和 即可<br>AC代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">    Problem: 1756</div><div class="line">    User: SHENZHEBEI //我没权限号，用同学的号刷的</div><div class="line">    Language: C++</div><div class="line">    Result: Accepted</div><div class="line">    Time:2636 ms</div><div class="line">    Memory:48172 kb</div><div class="line">****************************************************************/</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 500050</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">    <span class="keyword">int</span> mx, ls, rs, lmx, rmx, sum;</div><div class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>]; <span class="comment">//数组要开四倍大小</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="comment">//跟新节点x</span></div><div class="line">    tr[x].sum = tr[x&lt;&lt;<span class="number">1</span>].sum+tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum;</div><div class="line">    tr[x].lmx = max(tr[x&lt;&lt;<span class="number">1</span>].lmx, tr[x&lt;&lt;<span class="number">1</span>].sum+tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].lmx);</div><div class="line">    tr[x].rmx = max(tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].rmx, tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum+tr[x&lt;&lt;<span class="number">1</span>].rmx);</div><div class="line">    tr[x].mx = max(max(tr[x&lt;&lt;<span class="number">1</span>].mx, tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].mx), tr[x&lt;&lt;<span class="number">1</span>].rmx+tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].lmx);</div><div class="line">&#125;</div><div class="line"><span class="function">node <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(tr[x].ls == l &amp;&amp; tr[x].rs == r) <span class="keyword">return</span> tr[x];</div><div class="line">    <span class="keyword">int</span> mid = tr[x].ls + tr[x].rs &gt;&gt; <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">    <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">    node ls = ask(x&lt;&lt;<span class="number">1</span>, l, mid), rs = ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r), ans;</div><div class="line">    ans.mx = max(max(ls.mx, rs.mx), ls.rmx+rs.lmx);</div><div class="line">    ans.rmx = max(rs.rmx, rs.sum+ls.rmx);</div><div class="line">    ans.lmx = max(ls.lmx, ls.sum+rs.lmx);</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(tr[x].ls==l&amp;&amp;tr[x].rs==tr[x].ls)&#123;</div><div class="line">        tr[x].sum=tr[x].lmx=tr[x].rmx=tr[x].mx=v;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid = tr[x].ls + tr[x].rs &gt;&gt; <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(l &lt;= mid) add(x&lt;&lt;<span class="number">1</span>, l, v);</div><div class="line">    <span class="keyword">else</span> add(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, v);</div><div class="line">    push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">    tr[x].ls = l, tr[x].rs = r;</div><div class="line">    <span class="keyword">if</span>(l == r)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tr[x].mx);</div><div class="line">        tr[x].lmx=tr[x].rmx=tr[x].sum=tr[x].mx;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">    build(x&lt;&lt;<span class="number">1</span>, l, mid);</div><div class="line">    build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">    push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n, m, op, l, r;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">    build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">    <span class="keyword">while</span>(m--)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;op, &amp;l, &amp;r);</div><div class="line">        <span class="keyword">if</span>(op == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ask(<span class="number">1</span>, min(l, r), max(l, r)).mx); <span class="comment">//这里有陷阱,mdzz RE了无数次</span></div><div class="line">        <span class="keyword">else</span> add(<span class="number">1</span>, l, r);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/线段树/">线段树</a>
+  </div>
 
 </div>
 
@@ -111,7 +116,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/10/Self-introduction/" data-title="Self introduction | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/03/13/BZOJ-1756-Vijos1083-小白逛公园/" data-title="BZOJ 1756: Vijos1083 小白逛公园 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -124,14 +129,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/10/BZOJ1000-A-B-problem/" title="[BZOJ1000]A+B problem">
-  <strong>上一篇：</strong><br/>
-  <span>
-  [BZOJ1000]A+B problem</span>
+
+<div class="next">
+<a href="/2017/03/12/线段树入门详解/"  title="线段树入门详解">
+ <strong>下一篇：</strong><br/> 
+ <span>线段树入门详解
+</span>
 </a>
 </div>
-
 
 </nav>
 
