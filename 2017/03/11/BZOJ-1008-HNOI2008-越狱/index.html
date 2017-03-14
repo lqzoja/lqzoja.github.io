@@ -11,17 +11,32 @@
     
 
     
-    <meta name="description" content="这题还是有点简单的哎其实就是求下面这个公式啦所以就是裸的快速幂了AC代码：123456789101112131415161718192021222324252627/**************************************************************    Problem: 1008    User: SW_Wind    Language: C++">
+    <meta name="description" content="题面监狱有连续编号为1…N的N个房间，每个房间关押一个犯人，有M种宗教，每个犯人可能信仰其中一种。如果相邻房间的犯人的宗教相同，就可能发生越狱，求有多少种状态可能发生越狱
+Input输入两个整数M，N.1&amp;lt;=M&amp;lt;=10^8,1&amp;lt;=N&amp;lt;=10^12
+Output可能越狱的状态数，模100003取余
+Simple Input2 3
+Simple Output6
+题解这题还是有点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BZOJ 1008: [HNOI2008]越狱">
 <meta property="og:url" content="http://swwind.github.io/2017/03/11/BZOJ-1008-HNOI2008-越狱/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="这题还是有点简单的哎其实就是求下面这个公式啦所以就是裸的快速幂了AC代码：123456789101112131415161718192021222324252627/**************************************************************    Problem: 1008    User: SW_Wind    Language: C++">
+<meta property="og:description" content="题面监狱有连续编号为1…N的N个房间，每个房间关押一个犯人，有M种宗教，每个犯人可能信仰其中一种。如果相邻房间的犯人的宗教相同，就可能发生越狱，求有多少种状态可能发生越狱
+Input输入两个整数M，N.1&amp;lt;=M&amp;lt;=10^8,1&amp;lt;=N&amp;lt;=10^12
+Output可能越狱的状态数，模100003取余
+Simple Input2 3
+Simple Output6
+题解这题还是有点">
 <meta property="og:image" content="http://swwind.github.io/img/mathtex.gif">
-<meta property="og:updated_time" content="2017-03-13T10:50:41.330Z">
+<meta property="og:updated_time" content="2017-03-14T10:15:19.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ 1008: [HNOI2008]越狱">
-<meta name="twitter:description" content="这题还是有点简单的哎其实就是求下面这个公式啦所以就是裸的快速幂了AC代码：123456789101112131415161718192021222324252627/**************************************************************    Problem: 1008    User: SW_Wind    Language: C++">
+<meta name="twitter:description" content="题面监狱有连续编号为1…N的N个房间，每个房间关押一个犯人，有M种宗教，每个犯人可能信仰其中一种。如果相邻房间的犯人的宗教相同，就可能发生越狱，求有多少种状态可能发生越狱
+Input输入两个整数M，N.1&amp;lt;=M&amp;lt;=10^8,1&amp;lt;=N&amp;lt;=10^12
+Output可能越狱的状态数，模100003取余
+Simple Input2 3
+Simple Output6
+题解这题还是有点">
 <meta name="twitter:image" content="http://swwind.github.io/img/mathtex.gif">
 
     
@@ -96,11 +111,17 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<p>这题还是有点简单的哎<br>其实就是求下面这个公式啦<br><img src="/img/mathtex.gif"><br>所以就是裸的快速幂了<br>AC代码：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">    Problem: 1008</div><div class="line">    User: SW_Wind</div><div class="line">    Language: C++</div><div class="line">    Result: Accepted</div><div class="line">    Time:0 ms</div><div class="line">    Memory:1288 kb</div><div class="line">****************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 100003</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll m, n;</div><div class="line"><span class="function">ll <span class="title">sqr</span><span class="params">(ll a)</span></span>&#123; <span class="comment">//求平方</span></div><div class="line">	<span class="keyword">return</span> a*a%MOD;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">mi</span><span class="params">(ll a, ll b)</span></span>&#123; <span class="comment">//这个就是快速幂啦！求a的b次方</span></div><div class="line">	<span class="keyword">if</span>(!b) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(b&amp;<span class="number">1</span>) <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>))*a%MOD;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; <span class="comment">//简洁的主函数</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;m, &amp;n);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, (mi(m, n)-m*mi(m<span class="number">-1</span>, n<span class="number">-1</span>)%MOD+MOD)%MOD);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>监狱有连续编号为1…N的N个房间，每个房间关押一个犯人，有M种宗教，每个犯人可能信仰其中一种。如果相邻房间的犯人的宗教相同，就可能发生越狱，求有多少种状态可能发生越狱</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入两个整数M，N.1&lt;=M&lt;=10^8,1&lt;=N&lt;=10^12</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>可能越狱的状态数，模100003取余</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>2 3</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>6</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这题还是有点简单的哎<br>其实就是求<img src="/img/mathtex.gif"><br>所以就是裸的快速幂了</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">    Problem: 1008</div><div class="line">    User: SW_Wind</div><div class="line">    Language: C++</div><div class="line">    Result: Accepted</div><div class="line">    Time:0 ms</div><div class="line">    Memory:1288 kb</div><div class="line">****************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 100003</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll m, n;</div><div class="line"><span class="function">ll <span class="title">sqr</span><span class="params">(ll a)</span></span>&#123; <span class="comment">//求平方</span></div><div class="line">	<span class="keyword">return</span> a*a%MOD;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">mi</span><span class="params">(ll a, ll b)</span></span>&#123; <span class="comment">//这个就是快速幂啦！求a的b次方</span></div><div class="line">	<span class="keyword">if</span>(!b) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(b&amp;<span class="number">1</span>) <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>))*a%MOD;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; <span class="comment">//简洁的主函数</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;m, &amp;n);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, (mi(m, n)-m*mi(m<span class="number">-1</span>, n<span class="number">-1</span>)%MOD+MOD)%MOD);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -162,7 +183,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
