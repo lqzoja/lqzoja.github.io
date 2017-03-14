@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Self introduction | SW_Wind&#39;s blog</title>
+    <title>51nod 1277 字符串中的最大值 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊我的qq是2670529647，可以加我qq互赞相互交流哈">
+    <meta name="description" content="题面一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。例如：S = “abababa” 所有的前缀如下:
+“a”, 长度与出现次数的乘积 1 * 4 = 4,“ab”,长度与出现次数的乘积 2 * 3 = 6,“aba”, 长度与出现次数的乘积 3 * 3 = 9,“a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Self introduction">
-<meta property="og:url" content="http://swwind.github.io/2017/03/10/Self-introduction/index.html">
+<meta property="og:title" content="51nod 1277 字符串中的最大值">
+<meta property="og:url" content="http://swwind.github.io/2017/03/14/51nod-1277-字符串中的最大值/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊我的qq是2670529647，可以加我qq互赞相互交流哈">
-<meta property="og:updated_time" content="2017-03-11T06:18:42.534Z">
+<meta property="og:description" content="题面一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。例如：S = “abababa” 所有的前缀如下:
+“a”, 长度与出现次数的乘积 1 * 4 = 4,“ab”,长度与出现次数的乘积 2 * 3 = 6,“aba”, 长度与出现次数的乘积 3 * 3 = 9,“a">
+<meta property="og:updated_time" content="2017-03-14T09:24:49.949Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Self introduction">
-<meta name="twitter:description" content="大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊我的qq是2670529647，可以加我qq互赞相互交流哈">
+<meta name="twitter:title" content="51nod 1277 字符串中的最大值">
+<meta name="twitter:description" content="题面一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。例如：S = “abababa” 所有的前缀如下:
+“a”, 长度与出现次数的乘积 1 * 4 = 4,“ab”,长度与出现次数的乘积 2 * 3 = 6,“aba”, 长度与出现次数的乘积 3 * 3 = 9,“a">
 
     
     
@@ -78,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/10/Self-introduction/" title="Self introduction" itemprop="url">Self introduction</a>
+      <a href="/2017/03/14/51nod-1277-字符串中的最大值/" title="51nod 1277 字符串中的最大值" itemprop="url">51nod 1277 字符串中的最大值</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-10T07:37:13.000Z" itemprop="datePublished"> 发表于 2017-03-10</time>
+    <time datetime="2017-03-14T02:18:22.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
     
   </p>
 </header>
@@ -94,16 +97,26 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解法"><span class="toc-number">4.</span> <span class="toc-text">解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<p>大家好，我是SW_Wind，这是我的博客，是不是很好看（chou）啊<br>我的qq是<code>2670529647</code>，可以加我qq<del>互赞</del>相互交流哈</p>
-  
+		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。<br>给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。<br>例如：S = “abababa” 所有的前缀如下:</p>
+<p>“a”, 长度与出现次数的乘积 1 * 4 = 4,<br>“ab”,长度与出现次数的乘积 2 * 3 = 6,<br>“aba”, 长度与出现次数的乘积 3 * 3 = 9,<br>“abab”, 长度与出现次数的乘积 4 * 2 = 8,<br>“ababa”, 长度与出现次数的乘积 5 * 2 = 10,<br>“ababab”, 长度与出现次数的乘积 6 * 1 = 6,<br>“abababa”, 长度与出现次数的乘积 7 * 1 = 7.</p>
+<p>其中”ababa”出现了2次，二者的乘积为10，是所有前缀中最大的。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>abababa</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>10</p>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>先线性求2-n的next数组（表示字符串[1, i]的最长非自身border的长度）<br>然后乘起来取max就行了<br>传说这玩意叫KMP</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100050</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> B[N];</div><div class="line">ll nxt[N], cnt[N], ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123; <span class="comment">// 线性求next</span></div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; B[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(B[i] == B[j+<span class="number">1</span>]) j++; nxt[i] = j; cnt[j]++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)&#123; <span class="comment">// 求值</span></div><div class="line">		ans = max(ans, (ll)i*cnt[i]+i);</div><div class="line">		cnt[nxt[i]] += cnt[i];</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/KMP/">KMP</a>
+  </div>
 
 </div>
 
@@ -111,7 +124,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/10/Self-introduction/" data-title="Self introduction | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/03/14/51nod-1277-字符串中的最大值/" data-title="51nod 1277 字符串中的最大值 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -125,19 +138,27 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/03/10/BZOJ1000-A-B-problem/" title="[BZOJ1000]A+B problem">
+ <a href="/2017/03/14/BZOJ-3670-Noi2014-动物园/" title="BZOJ 3670: [Noi2014]动物园">
   <strong>上一篇：</strong><br/>
   <span>
-  [BZOJ1000]A+B problem</span>
+  BZOJ 3670: [Noi2014]动物园</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2017/03/13/BZOJ-1756-Vijos1083-小白逛公园/"  title="BZOJ 1756: Vijos1083 小白逛公园">
+ <strong>下一篇：</strong><br/> 
+ <span>BZOJ 1756: Vijos1083 小白逛公园
+</span>
+</a>
+</div>
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/10/Self-introduction/" data-title="Self introduction" data-url="http://swwind.github.io/2017/03/10/Self-introduction/"></div>
+	<div class="ds-thread" data-thread-key="2017/03/14/51nod-1277-字符串中的最大值/" data-title="51nod 1277 字符串中的最大值" data-url="http://swwind.github.io/2017/03/14/51nod-1277-字符串中的最大值/"></div>
 </section>
 
 
@@ -147,7 +168,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解法"><span class="toc-number">4.</span> <span class="toc-text">解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
