@@ -4,35 +4,35 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>codevs 1204 寻找子串位置 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 1954: Pku3764 The xor-longest Path | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面给出字符串a和字符串b，保证b是a的一个子串，请你输出b在a中第一次出现的位置。
-Simple Inputabcd bc
-Simple Output2
-题解范围才100…暴力都能过吧= =标算是KMP匹配，和暴力一样的0ms
-代码123456789101112131415161718#include &amp;lt;bits/stdc++.h&amp;gt;#define ll long longusing">
+    <meta name="description" content="题面给定一棵n个点的带权树，求树上最长的异或和路径。
+Input41 2 32 3 42 4 6
+Output7
+题解可以注意到 a -&amp;gt; b 的异或和 = a -&amp;gt; root 的异或和 ^ b -&amp;gt; root 的异或和。所以用 Trie 保存所有点到根节点的异或和，再枚举每一个异或和，在Trie上尽量找与他每一位都相反的就行了（如果存在）。
+代码1234567891011121">
 <meta property="og:type" content="article">
-<meta property="og:title" content="codevs 1204 寻找子串位置">
-<meta property="og:url" content="http://swwind.github.io/2017/03/14/codevs-1204-寻找子串位置/index.html">
+<meta property="og:title" content="BZOJ 1954: Pku3764 The xor-longest Path">
+<meta property="og:url" content="http://swwind.github.io/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面给出字符串a和字符串b，保证b是a的一个子串，请你输出b在a中第一次出现的位置。
-Simple Inputabcd bc
-Simple Output2
-题解范围才100…暴力都能过吧= =标算是KMP匹配，和暴力一样的0ms
-代码123456789101112131415161718#include &amp;lt;bits/stdc++.h&amp;gt;#define ll long longusing">
-<meta property="og:updated_time" content="2017-03-14T10:50:07.919Z">
+<meta property="og:description" content="题面给定一棵n个点的带权树，求树上最长的异或和路径。
+Input41 2 32 3 42 4 6
+Output7
+题解可以注意到 a -&amp;gt; b 的异或和 = a -&amp;gt; root 的异或和 ^ b -&amp;gt; root 的异或和。所以用 Trie 保存所有点到根节点的异或和，再枚举每一个异或和，在Trie上尽量找与他每一位都相反的就行了（如果存在）。
+代码1234567891011121">
+<meta property="og:updated_time" content="2017-03-16T05:16:48.390Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codevs 1204 寻找子串位置">
-<meta name="twitter:description" content="题面给出字符串a和字符串b，保证b是a的一个子串，请你输出b在a中第一次出现的位置。
-Simple Inputabcd bc
-Simple Output2
-题解范围才100…暴力都能过吧= =标算是KMP匹配，和暴力一样的0ms
-代码123456789101112131415161718#include &amp;lt;bits/stdc++.h&amp;gt;#define ll long longusing">
+<meta name="twitter:title" content="BZOJ 1954: Pku3764 The xor-longest Path">
+<meta name="twitter:description" content="题面给定一棵n个点的带权树，求树上最长的异或和路径。
+Input41 2 32 3 42 4 6
+Output7
+题解可以注意到 a -&amp;gt; b 的异或和 = a -&amp;gt; root 的异或和 ^ b -&amp;gt; root 的异或和。所以用 Trie 保存所有点到根节点的异或和，再枚举每一个异或和，在Trie上尽量找与他每一位都相反的就行了（如果存在）。
+代码1234567891011121">
 
     
     
@@ -90,14 +90,14 @@ Simple Output2
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/14/codevs-1204-寻找子串位置/" title="codevs 1204 寻找子串位置" itemprop="url">codevs 1204 寻找子串位置</a>
+      <a href="/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/" title="BZOJ 1954: Pku3764 The xor-longest Path" itemprop="url">BZOJ 1954: Pku3764 The xor-longest Path</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-14T06:29:25.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
+    <time datetime="2017-03-16T05:07:44.000Z" itemprop="datePublished"> 发表于 2017-03-16</time>
     
   </p>
 </header>
@@ -106,15 +106,15 @@ Simple Output2
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给出字符串a和字符串b，保证b是a的一个子串，请你输出b在a中第一次出现的位置。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>abcd bc</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>2</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>范围才100…暴力都能过吧= =<br>标算是KMP匹配，和暴力一样的0ms</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> A[<span class="number">120</span>], B[<span class="number">120</span>];</div><div class="line"><span class="keyword">int</span> nxt[<span class="number">120</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s%s"</span>, A+<span class="number">1</span>, B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(A+<span class="number">1</span>), m = <span class="built_in">strlen</span>(B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; B[j+<span class="number">1</span>]!=B[i]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(B[j+<span class="number">1</span>] == B[i]) j++; nxt[i] = j;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; A[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(A[i] == B[j+<span class="number">1</span>]) j++;</div><div class="line">		<span class="keyword">if</span>(j == m) <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i-m+<span class="number">1</span>)&amp;<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给定一棵n个点的带权树，求树上最长的异或和路径。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>4<br>1 2 3<br>2 3 4<br>2 4 6</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>7</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>可以注意到 a -&gt; b 的异或和 = a -&gt; root 的异或和 ^ b -&gt; root 的异或和。所以用 Trie 保存所有点到根节点的异或和，再枚举每一个异或和，在Trie上尽量找与他每一位都相反的就行了（如果存在）。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> to, next, v;</div><div class="line">&#125;e[N&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> head[N], cnt, val[N], bin[<span class="number">31</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;</div><div class="line">	e[++cnt].to = y; e[cnt].next = head[x]; head[x] = cnt; e[cnt].v = z;</div><div class="line">	e[++cnt].to = x; e[cnt].next = head[y]; head[y] = cnt; e[cnt].v = z;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = head[x]; i; i = e[i].next)&#123;</div><div class="line">		<span class="keyword">if</span>(e[i].to == fa) <span class="keyword">continue</span>;</div><div class="line">		val[e[i].to] = e[i].v ^ val[x];</div><div class="line">		dfs(e[i].to, x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> ch[N*<span class="number">30</span>][<span class="number">2</span>], sz;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ins</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> rt = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">30</span>, k = (x&amp;bin[<span class="number">30</span>])&gt;<span class="number">0</span>; i &gt;= <span class="number">0</span>; k = (x&amp;bin[--i])&gt;<span class="number">0</span>)</div><div class="line">		<span class="keyword">if</span>(!ch[rt][k]) rt = ch[rt][k] = ++sz;</div><div class="line">		<span class="keyword">else</span> rt = ch[rt][k];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> rt = <span class="number">0</span>, sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">30</span>, k = (x&amp;bin[<span class="number">30</span>])&gt;<span class="number">0</span>; i &gt;= <span class="number">0</span>; k = (x&amp;bin[--i])&gt;<span class="number">0</span>)</div><div class="line">		<span class="keyword">if</span>(ch[rt][!k]) rt = ch[rt][!k], sum += bin[i];</div><div class="line">		<span class="keyword">else</span> rt = ch[rt][k];</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n, x, y, z;</div><div class="line">	bin[<span class="number">0</span>] = <span class="number">1</span>; <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">30</span>; i++) bin[i] = bin[i<span class="number">-1</span>]&lt;&lt;<span class="number">1</span>;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z);</div><div class="line">		add(x, y, z);</div><div class="line">	&#125;</div><div class="line">	dfs(<span class="number">1</span>, <span class="number">0</span>); <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) ins(val[i]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) ans = max(ans, ask(val[i]));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -122,7 +122,7 @@ Simple Output2
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/KMP/">KMP</a>
+  <span></span> <a href="/tags/Trie/">Trie</a>
   </div>
 
 </div>
@@ -131,7 +131,7 @@ Simple Output2
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/14/codevs-1204-寻找子串位置/" data-title="codevs 1204 寻找子串位置 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/" data-title="BZOJ 1954: Pku3764 The xor-longest Path | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,18 +145,18 @@ Simple Output2
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/03/14/51nod-1526分配笔名/" title="51nod 1526分配笔名">
+ <a href="/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/" title="BZOJ 1022: [SHOI2008]小约翰的游戏John">
   <strong>上一篇：</strong><br/>
   <span>
-  51nod 1526分配笔名</span>
+  BZOJ 1022: [SHOI2008]小约翰的游戏John</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/03/14/BZOJ-1355-Baltic2009-Radio-Transmission/"  title="BZOJ 1355: [Baltic2009]Radio Transmission">
+<a href="/2017/03/16/hdu-2222-Keywords-Search/"  title="hdu 2222 Keywords Search">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 1355: [Baltic2009]Radio Transmission
+ <span>hdu 2222 Keywords Search
 </span>
 </a>
 </div>
@@ -165,7 +165,7 @@ Simple Output2
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/14/codevs-1204-寻找子串位置/" data-title="codevs 1204 寻找子串位置" data-url="http://swwind.github.io/2017/03/14/codevs-1204-寻找子串位置/"></div>
+	<div class="ds-thread" data-thread-key="2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/" data-title="BZOJ 1954: Pku3764 The xor-longest Path" data-url="http://swwind.github.io/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/"></div>
 </section>
 
 
@@ -175,7 +175,7 @@ Simple Output2
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
