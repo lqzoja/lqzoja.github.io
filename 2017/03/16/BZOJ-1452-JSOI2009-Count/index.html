@@ -4,35 +4,38 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>3.15摸你赛 前缀？ | SW_Wind&#39;s blog</title>
+    <title>BZOJ 1452: [JSOI2009]Count | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
-Simple Input3
-Simple Output4
-Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
-题解dpf[i]">
+    <meta name="description" content="题面一个 n*m 的方格，初始时每个格子有一个整数权值。接下来有 2 种操作：
+
+改变一个格子的权值；
+求一个子矩阵中某种特定权值出现的个数。
+
+Input第一行有两个数 N，M。接下来 N 行，每行 M 个数，第 i+1 行第 j 个数表示格子(i, j)的初始权值。接下来输入一个整数 Q。之后 Q 行，每行描述一个操作。操作1：“1 x y c”（不含双引号）。表示将格子(x, y)飞权值改成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.15摸你赛 前缀？">
-<meta property="og:url" content="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀？/index.html">
+<meta property="og:title" content="BZOJ 1452: [JSOI2009]Count">
+<meta property="og:url" content="http://swwind.github.io/2017/03/16/BZOJ-1452-JSOI2009-Count/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
-Simple Input3
-Simple Output4
-Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
-题解dpf[i]">
-<meta property="og:updated_time" content="2017-03-15T04:54:53.897Z">
+<meta property="og:description" content="题面一个 n*m 的方格，初始时每个格子有一个整数权值。接下来有 2 种操作：
+
+改变一个格子的权值；
+求一个子矩阵中某种特定权值出现的个数。
+
+Input第一行有两个数 N，M。接下来 N 行，每行 M 个数，第 i+1 行第 j 个数表示格子(i, j)的初始权值。接下来输入一个整数 Q。之后 Q 行，每行描述一个操作。操作1：“1 x y c”（不含双引号）。表示将格子(x, y)飞权值改成">
+<meta property="og:updated_time" content="2017-03-16T12:35:19.060Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3.15摸你赛 前缀？">
-<meta name="twitter:description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
-Simple Input3
-Simple Output4
-Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
-题解dpf[i]">
+<meta name="twitter:title" content="BZOJ 1452: [JSOI2009]Count">
+<meta name="twitter:description" content="题面一个 n*m 的方格，初始时每个格子有一个整数权值。接下来有 2 种操作：
+
+改变一个格子的权值；
+求一个子矩阵中某种特定权值出现的个数。
+
+Input第一行有两个数 N，M。接下来 N 行，每行 M 个数，第 i+1 行第 j 个数表示格子(i, j)的初始权值。接下来输入一个整数 Q。之后 Q 行，每行描述一个操作。操作1：“1 x y c”（不含双引号）。表示将格子(x, y)飞权值改成">
 
     
     
@@ -90,14 +93,14 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/15/3-15摸你赛-前缀？/" title="3.15摸你赛 前缀？" itemprop="url">3.15摸你赛 前缀？</a>
+      <a href="/2017/03/16/BZOJ-1452-JSOI2009-Count/" title="BZOJ 1452: [JSOI2009]Count" itemprop="url">BZOJ 1452: [JSOI2009]Count</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-15T04:43:03.000Z" itemprop="datePublished"> 发表于 2017-03-15</time>
+    <time datetime="2017-03-16T12:19:49.000Z" itemprop="datePublished"> 发表于 2017-03-16</time>
     
   </p>
 </header>
@@ -106,16 +109,20 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Explanation"><span class="toc-number">4.</span> <span class="toc-text">Sample Explanation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>题面太长，大意是要你求一个n(1&lt;=n&lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>3</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>4</p>
-<h2 id="Sample-Explanation"><a href="#Sample-Explanation" class="headerlink" title="Sample Explanation"></a>Sample Explanation</h2><p>这 4 个字符串分别为“221”、“212”、“210”、“222”。</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>dp<br>f[i][j]表示现在有i个2，j个1<br>用滚动数组递推求解</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> File(s) \</span></div><div class="line">	freopen(s<span class="meta-string">".in"</span>, <span class="meta-string">"r"</span>, stdin), \</div><div class="line">	freopen(s<span class="meta-string">".out"</span>, <span class="meta-string">"w"</span>, stdout)</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> f[<span class="number">2</span>][<span class="number">405</span>][<span class="number">405</span>], n;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	File(<span class="string">"a"</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); <span class="keyword">int</span> k = n&amp;<span class="number">1</span>; f[!k][<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 第一位只能取2</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">2</span>; x &lt;= n; k ^= <span class="number">1</span>, x++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= x; i++)</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j&lt;=x; j++)&#123;</div><div class="line">				f[k][i][j] = <span class="number">0</span>;</div><div class="line">				(f[k][i][j] += f[!k][i<span class="number">-1</span>][j]) %= mod; <span class="comment">// 这一位取2</span></div><div class="line">				<span class="keyword">if</span>(j) (f[k][i][j] += f[!k][i][j<span class="number">-1</span>]) %= mod; <span class="comment">// 这一位取1</span></div><div class="line">				<span class="keyword">if</span>(x-i-j &lt;= j) (f[k][i][j] += f[!k][i][j]) %= mod; <span class="comment">// 这一位取0</span></div><div class="line">			&#125;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j &lt;= n; j++)</div><div class="line">			(ans += f[!k][i][j]) %= mod; <span class="comment">// 统计答案</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>一个 n*m 的方格，初始时每个格子有一个整数权值。接下来有 2 种操作：</p>
+<ul>
+<li>改变一个格子的权值；</li>
+<li>求一个子矩阵中某种特定权值出现的个数。</li>
+</ul>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行有两个数 N，M。<br>接下来 N 行，每行 M 个数，第 i+1 行第 j 个数表示格子(i, j)的初始权值。<br>接下来输入一个整数 Q。<br>之后 Q 行，每行描述一个操作。<br>操作1：“1 x y c”（不含双引号）。表示将格子(x, y)飞权值改成 c(1 ≤ x ≤ n, 1 ≤ y ≤ m, 1 ≤ c ≤ 100)。<br>操作2：“2 x1 x2 y1 y2 c”（不含双引号，x1 ≤ x2, y1 ≤ y2）。表示询问所有满足格子颜色为c，且 x1 ≤ x ≤ x2, y1 ≤ y ≤ y2 的格子(x, y)的个数。</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对于每个操作2，按照在输入中出现的顺序，一次输出一行一个整数表示所求得的个数。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>3 3<br>1 2 3<br>3 2 1<br>2 1 3<br>3<br>2 1 2 1 2 1<br>1 2 3 2<br>2 2 3 2 3 2</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>二位树状数组。。。<br>也就多了一层for循环的事情。。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> t[<span class="number">105</span>][<span class="number">305</span>][<span class="number">305</span>], n, m, mp[<span class="number">305</span>][<span class="number">305</span>], q;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> val)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=n;i+=i&amp;-i)<span class="keyword">for</span>(<span class="keyword">int</span> j=y;j&lt;=m;j+=j&amp;-j)t[c][i][j]+=val;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> c, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i;i-=i&amp;-i)<span class="keyword">for</span>(<span class="keyword">int</span> j=y;j;j-=j&amp;-j)ans+=t[c][i][j];</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;mp[i][j]);</div><div class="line">			add(mp[i][j], i, j, <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</div><div class="line">	<span class="keyword">while</span>(q--)&#123;</div><div class="line">		<span class="keyword">int</span> op, x1, x2, y1, y2, c;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;op);</div><div class="line">		<span class="keyword">if</span>(op == <span class="number">1</span>)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x1, &amp;y1, &amp;c);</div><div class="line">			add(mp[x1][y1], x1, y1, <span class="number">-1</span>);</div><div class="line">			mp[x1][y1] = c;</div><div class="line">			add(c, x1, y1, <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d%d"</span>, &amp;x1, &amp;x2, &amp;y1, &amp;y2, &amp;c);</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, get(c, x2, y2) + get(c, x1<span class="number">-1</span>, y1<span class="number">-1</span>)</div><div class="line">				- get(c, x1<span class="number">-1</span>, y2) - get(c, x2, y1<span class="number">-1</span>));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -123,7 +130,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/dp/">dp</a>
+  <span></span> <a href="/tags/树状数组/">树状数组</a>
   </div>
 
 </div>
@@ -132,7 +139,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀？/" data-title="3.15摸你赛 前缀？ | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/03/16/BZOJ-1452-JSOI2009-Count/" data-title="BZOJ 1452: [JSOI2009]Count | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +152,11 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/15/3-15摸你赛-前缀！/" title="3.15摸你赛 前缀！">
-  <strong>上一篇：</strong><br/>
-  <span>
-  3.15摸你赛 前缀！</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/14/51nod-1526分配笔名/"  title="51nod 1526分配笔名">
+<a href="/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/"  title="BZOJ 1022: [SHOI2008]小约翰的游戏John">
  <strong>下一篇：</strong><br/> 
- <span>51nod 1526分配笔名
+ <span>BZOJ 1022: [SHOI2008]小约翰的游戏John
 </span>
 </a>
 </div>
@@ -166,7 +165,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/15/3-15摸你赛-前缀？/" data-title="3.15摸你赛 前缀？" data-url="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀？/"></div>
+	<div class="ds-thread" data-thread-key="2017/03/16/BZOJ-1452-JSOI2009-Count/" data-title="BZOJ 1452: [JSOI2009]Count" data-url="http://swwind.github.io/2017/03/16/BZOJ-1452-JSOI2009-Count/"></div>
 </section>
 
 
@@ -176,7 +175,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Explanation"><span class="toc-number">4.</span> <span class="toc-text">Sample Explanation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
