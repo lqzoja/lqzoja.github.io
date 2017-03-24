@@ -4,35 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>3.15摸你赛 前缀？ | SW_Wind&#39;s blog</title>
+    <title>教程: 用Sublime Text 3编译和运行C++程序 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
-Simple Input3
-Simple Output4
-Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
-题解dpf[i]">
+    <meta name="description" content="前言咳咳，如果你dev用惯了，看他不爽，想换个IDE，那么推荐用Sublime Text这款软件。由于服务器在国外，所以下载很慢（挂VPN好像更慢），所以提供一个百度网盘链接。链接挂了跟我说。
+安装编译器由于软件不自带编译器，所以请先下载好对应操作系统位数的编译器。安装完成后请打开安装的目录，复制 安装目录/mingwXX/bin/的路径，然后在桌面上右键”计算机”（”此电脑”或者”我的电脑”）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.15摸你赛 前缀？">
-<meta property="og:url" content="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀？/index.html">
+<meta property="og:title" content="教程: 用Sublime Text 3编译和运行C++程序">
+<meta property="og:url" content="http://swwind.github.io/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
-Simple Input3
-Simple Output4
-Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
-题解dpf[i]">
-<meta property="og:updated_time" content="2017-03-16T13:06:08.952Z">
+<meta property="og:description" content="前言咳咳，如果你dev用惯了，看他不爽，想换个IDE，那么推荐用Sublime Text这款软件。由于服务器在国外，所以下载很慢（挂VPN好像更慢），所以提供一个百度网盘链接。链接挂了跟我说。
+安装编译器由于软件不自带编译器，所以请先下载好对应操作系统位数的编译器。安装完成后请打开安装的目录，复制 安装目录/mingwXX/bin/的路径，然后在桌面上右键”计算机”（”此电脑”或者”我的电脑”）">
+<meta property="og:updated_time" content="2017-03-24T07:39:43.609Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3.15摸你赛 前缀？">
-<meta name="twitter:description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
-Simple Input3
-Simple Output4
-Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
-题解dpf[i]">
+<meta name="twitter:title" content="教程: 用Sublime Text 3编译和运行C++程序">
+<meta name="twitter:description" content="前言咳咳，如果你dev用惯了，看他不爽，想换个IDE，那么推荐用Sublime Text这款软件。由于服务器在国外，所以下载很慢（挂VPN好像更慢），所以提供一个百度网盘链接。链接挂了跟我说。
+安装编译器由于软件不自带编译器，所以请先下载好对应操作系统位数的编译器。安装完成后请打开安装的目录，复制 安装目录/mingwXX/bin/的路径，然后在桌面上右键”计算机”（”此电脑”或者”我的电脑”）">
 
     
     
@@ -90,14 +81,14 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/15/3-15摸你赛-前缀？/" title="3.15摸你赛 前缀？" itemprop="url">3.15摸你赛 前缀？</a>
+      <a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" title="教程: 用Sublime Text 3编译和运行C++程序" itemprop="url">教程: 用Sublime Text 3编译和运行C++程序</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-15T04:43:03.000Z" itemprop="datePublished"> 发表于 2017-03-15</time>
+    <time datetime="2017-03-24T06:58:03.000Z" itemprop="datePublished"> 发表于 2017-03-24</time>
     
   </p>
 </header>
@@ -106,16 +97,17 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Explanation"><span class="toc-number">4.</span> <span class="toc-text">Sample Explanation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装编译器"><span class="toc-number">2.</span> <span class="toc-text">安装编译器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加Build-System"><span class="toc-number">3.</span> <span class="toc-text">添加Build System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用说明"><span class="toc-number">4.</span> <span class="toc-text">使用说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>题面太长，大意是要你求一个n(1&lt;=n&lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>3</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>4</p>
-<h2 id="Sample-Explanation"><a href="#Sample-Explanation" class="headerlink" title="Sample Explanation"></a>Sample Explanation</h2><p>这 4 个字符串分别为“221”、“212”、“210”、“222”。</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>dp<br>f[i][j]表示现在有i个2，j个1<br>用滚动数组递推求解</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> File(s) \</span></div><div class="line">    freopen(s<span class="meta-string">".in"</span>, <span class="meta-string">"r"</span>, stdin), \</div><div class="line">    freopen(s<span class="meta-string">".out"</span>, <span class="meta-string">"w"</span>, stdout)</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> f[<span class="number">2</span>][<span class="number">405</span>][<span class="number">405</span>], n;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    File(<span class="string">"a"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); <span class="keyword">int</span> k = n&amp;<span class="number">1</span>; f[!k][<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 第一位只能取2</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">2</span>; x &lt;= n; k ^= <span class="number">1</span>, x++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= x; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j&lt;=x; j++)&#123;</div><div class="line">                f[k][i][j] = <span class="number">0</span>;</div><div class="line">                (f[k][i][j] += f[!k][i<span class="number">-1</span>][j]) %= mod; <span class="comment">// 这一位取2</span></div><div class="line">                <span class="keyword">if</span>(j) (f[k][i][j] += f[!k][i][j<span class="number">-1</span>]) %= mod; <span class="comment">// 这一位取1</span></div><div class="line">                <span class="keyword">if</span>(x-i-j &lt;= j) (f[k][i][j] += f[!k][i][j]) %= mod; <span class="comment">// 这一位取0</span></div><div class="line">            &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j &lt;= n; j++)</div><div class="line">            (ans += f[!k][i][j]) %= mod; <span class="comment">// 统计答案</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>咳咳，如果你dev用惯了，看他不爽，想换个IDE，那么推荐用Sublime Text这款软件。由于服务器在国外，所以下载很慢<del>（挂VPN好像更慢）</del>，所以提供一个<a href="https://pan.baidu.com/s/1o7TGvk2" target="_blank" rel="external">百度网盘链接</a>。链接挂了跟我说。</p>
+<h2 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h2><p>由于软件不自带编译器，所以请先下载好对应操作系统位数的编译器。安装完成后请打开安装的目录，复制 安装目录/mingwXX/bin/的路径，然后在桌面上右键”计算机”（”此电脑”或者”我的电脑”） -&gt; 点击属性 -&gt; 高级系统设置 -&gt; 高级 -&gt; 环境变量 -&gt; 在下面一个框框中找到Path变量，双击打开编辑，然后如果你的系统是win7及以下，请在变量值的末尾加一个英文的分号（如果原来有就不用了），然后把路径复制进去再加一个英文分号就行了。如果你是win8 or win10，UI界面已经做好了，直接新建一个路径就行了，这里不再赘述，然后一路确定点回去，打开cmd，输入g++看看有没有配置完成。</p>
+<h2 id="添加Build-System"><a href="#添加Build-System" class="headerlink" title="添加Build System"></a>添加Build System</h2><p>打开Sublime Text，点击Tools -&gt; Build System -&gt; New Build System…，再把下面的东西复制进去<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"cmd"</span>: [<span class="string">"g++"</span>, <span class="string">"$&#123;file&#125;"</span>, <span class="string">"-o"</span>, <span class="string">"$&#123;file_path&#125;/$&#123;file_base_name&#125;"</span>],</div><div class="line">    <span class="attr">"file_regex"</span>: <span class="string">"^(..[^:]*):([0-9]+):?([0-9]+)?:?(.*)$"</span>,</div><div class="line">    <span class="attr">"working_dir"</span>: <span class="string">"$&#123;file_path&#125;"</span>,</div><div class="line">    <span class="attr">"encoding"</span>: <span class="string">"cp936"</span>,</div><div class="line">    <span class="attr">"selector"</span>: <span class="string">"source.c"</span>,</div><div class="line">    <span class="attr">"variants"</span>:</div><div class="line">    [</div><div class="line">        &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Run"</span>,</div><div class="line">        <span class="attr">"cmd"</span>: [<span class="string">"cmd"</span>,<span class="string">"/C"</span>,<span class="string">"start"</span>,<span class="string">"cmd"</span>,<span class="string">"/c"</span>,<span class="string">"$&#123;file_path&#125;/$&#123;file_base_name&#125;.exe &amp;pause"</span>]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接着保存为CPP.sublime-build，再点击Tools -&gt; Build System -&gt; CPP就完成啦。</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>Ctrl+Shift+B打开菜单，选择CPP是编译，选择CPP-RUN是运行（自带pause）<br>Ctrl+B重复上一操作</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>百度有毒</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -123,7 +115,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/dp/">dp</a>
+  <span></span> <a href="/tags/教程/">教程</a>
   </div>
 
 </div>
@@ -132,7 +124,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀？/" data-title="3.15摸你赛 前缀？ | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" data-title="教程: 用Sublime Text 3编译和运行C++程序 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +137,11 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/15/3-15摸你赛-前缀！/" title="3.15摸你赛 前缀！">
-  <strong>上一篇：</strong><br/>
-  <span>
-  3.15摸你赛 前缀！</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/14/51nod-1526分配笔名/"  title="51nod 1526分配笔名">
+<a href="/2017/03/24/BZOJ-1854-Scoi2010-游戏/"  title="BZOJ 1854: [Scoi2010]游戏">
  <strong>下一篇：</strong><br/> 
- <span>51nod 1526分配笔名
+ <span>BZOJ 1854: [Scoi2010]游戏
 </span>
 </a>
 </div>
@@ -166,7 +150,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/15/3-15摸你赛-前缀？/" data-title="3.15摸你赛 前缀？" data-url="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀？/"></div>
+	<div class="ds-thread" data-thread-key="2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" data-title="教程: 用Sublime Text 3编译和运行C++程序" data-url="http://swwind.github.io/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/"></div>
 </section>
 
 
@@ -176,7 +160,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Explanation"><span class="toc-number">4.</span> <span class="toc-text">Sample Explanation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">5.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">6.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装编译器"><span class="toc-number">2.</span> <span class="toc-text">安装编译器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#添加Build-System"><span class="toc-number">3.</span> <span class="toc-text">添加Build System</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用说明"><span class="toc-number">4.</span> <span class="toc-text">使用说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
  
   </div>
 
