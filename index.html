@@ -76,6 +76,69 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" title="BZOJ 1037: [ZJOI2008]生日聚会Party" itemprop="url">BZOJ 1037: [ZJOI2008]生日聚会Party</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-27T13:27:10.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>今天是hidadz小朋友的生日，她邀请了许多朋友来参加她的生日party。 hidadz带着朋友们来到花园中，打算坐成一排玩游戏。为了游戏不至于无聊，就座的方案应满足如下条件：对于任意连续的一段，男孩与女孩的数目之差不超过k。很快，小朋友便找到了一种方案坐了下来开始游戏。hidadz的好朋友Susie发现，这样的就座方案其实是很多的，所以大家很快就找到了一种，那么到底有多少种呢？热爱数学的hidadz和她的朋友们开始思考这个问题…… 假设参加party的人中共有n个男孩与m个女孩，你是否能解答Susie和hidadz的疑问呢？由于这个数目可能很多，他们只想知道这个数目除以12345678的余数。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>仅包含一行共3个整数，分别为男孩数目n，女孩数目m，常数k。</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>应包含一行，为题中要求的答案。</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>1 2 1</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>1</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>dp: f[i][j][x][y]表示搜到第i个人，前面共有j个男的，男的比女的多x或女的比男的多y个的方案数<br>转移还是很好写的2333</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 12345678</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m, k;</div><div class="line"><span class="keyword">int</span> f[<span class="number">320</span>][<span class="number">155</span>][<span class="number">22</span>][<span class="number">22</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;k);</div><div class="line">    f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+m; ++i) <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; ++j)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt;= k; ++x) <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>; y &lt;= k; ++y)</div><div class="line">    <span class="keyword">if</span>(f[i][j][x][y])&#123;</div><div class="line">        <span class="keyword">if</span>(x &lt; k &amp;&amp; j &lt; n)</div><div class="line">            (f[i+<span class="number">1</span>][j+<span class="number">1</span>][x+<span class="number">1</span>][max(y<span class="number">-1</span>, <span class="number">0</span>)] += f[i][j][x][y]) %= zyy;</div><div class="line">        <span class="keyword">if</span>(y &lt; k &amp;&amp; i-j &lt; m)</div><div class="line">            (f[i+<span class="number">1</span>][j][max(x<span class="number">-1</span>, <span class="number">0</span>)][y+<span class="number">1</span>] += f[i][j][x][y]) %= zyy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt;= k; ++x)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>; y &lt;= k; ++y)</div><div class="line">        (ans += f[n+m][i][x][y]) %= zyy;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/dp/">dp</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" title="教程: 用Sublime Text 3编译和运行C++程序" itemprop="url">教程: 用Sublime Text 3编译和运行C++程序</a>
   </h1>
   <p class="article-author">By
@@ -626,69 +689,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/14/51nod-1526分配笔名/" title="51nod 1526分配笔名" itemprop="url">51nod 1526分配笔名</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-14T11:51:28.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>单组测试数据。<br>第一行有一个整数n (1≤n≤100000)，表示班级中同学的数目。<br>接下来n行，表示每一个同学的真名，每一个名字是非空串，且由小写字母组成。<br>名字可能重复。<br>最后n行是老师已经安排好的笔名。每一个笔名是一个非空串，且由小写字母组成。<br>笔名可能重复。<br>输入的字符总数目不超过 800000。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出最大的匹配质量。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5<br>gennady<br>galya<br>boris<br>bill<br>toshik<br>bilbo<br>torin<br>gendalf<br>smaug<br>galadriel</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>11</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>裸的Trie…<br>把每个真名在Trie上所经过的路径的标记全部+1，读入笔名的时候搜下去，如果有标记就 标记-1, ans++<br><del>怎么证我不知道，反正A了</del></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> key[<span class="number">800020</span>];</div><div class="line"><span class="keyword">int</span> n, ch[<span class="number">800020</span>][<span class="number">26</span>], val[<span class="number">800020</span>], cnt, ans, l;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</div><div class="line">        gets(key+<span class="number">1</span>);</div><div class="line">        l = <span class="built_in">strlen</span>(key+<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>, rt = <span class="number">0</span>; j &lt;= l; ++j)&#123;</div><div class="line">            <span class="keyword">if</span>(!ch[rt][key[j]-<span class="string">'a'</span>])</div><div class="line">                ch[rt][key[j]-<span class="string">'a'</span>] = ++cnt;</div><div class="line">            rt = ch[rt][key[j]-<span class="string">'a'</span>];</div><div class="line">            ++val[rt];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</div><div class="line">        gets(key+<span class="number">1</span>);</div><div class="line">        l = <span class="built_in">strlen</span>(key+<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>, rt = <span class="number">0</span>; j &lt;= l; ++j)&#123;</div><div class="line">            <span class="keyword">if</span>(!ch[rt][key[j]-<span class="string">'a'</span>]) <span class="keyword">break</span>;</div><div class="line">            rt = ch[rt][key[j]-<span class="string">'a'</span>];</div><div class="line">            <span class="keyword">if</span>(val[rt]) ++ans, --val[rt];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Trie/">Trie</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/14/51nod-1526分配笔名/#comments" class="ds-thread-count comments-count-link" data-thread-key="2017/03/14/51nod-1526分配笔名/" data-count-type="comments">&nbsp;</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -720,15 +720,11 @@
 			
 		
 			
+				<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/dp/" title="dp">dp<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/数论/" title="数论">数论<sup>1</sup></a></li>
 			
 		
 			
@@ -736,11 +732,15 @@
 			
 		
 			
+				<li><a href="/tags/数论/" title="数论">数论<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
 			
 		
 			
@@ -748,7 +748,7 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 		</ul>
