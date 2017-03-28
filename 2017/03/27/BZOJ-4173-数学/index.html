@@ -4,23 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 1037: [ZJOI2008]生日聚会Party | SW_Wind&#39;s blog</title>
+    <title>BZOJ 4173: 数学 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面今天是hidadz小朋友的生日，她邀请了许多朋友来参加她的生日party。 hidadz带着朋友们来到花园中，打算坐成一排玩游戏。为了游戏不至于无聊，就座的方案应满足如下条件：对于任意连续的一段，男孩与女孩的数目之差不超过k。很快，小朋友便找到了一种方案坐了下来开始游戏。hidadz的好朋友Susie发现，这样的就座方案其实是很多的，所以大家很快就找到了一种，那么到底有多少种呢？热爱数学的hi">
+    <meta name="description" content="题面设S(n, m)为满足m mod k + n mod k &amp;gt;= k的所有整数k组成的集合，例如S(7, 9) = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 16}，PRIME最近又了解了一下各种函数于是在上面捣鼓起了欧拉函数φ，他的目标是求出φ(n)*φ(m)*∑k∈S(n, m)φ(k) mod 998244353。
+Simple Input5 6
+Si">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 1037: [ZJOI2008]生日聚会Party">
-<meta property="og:url" content="http://swwind.github.io/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/index.html">
+<meta property="og:title" content="BZOJ 4173: 数学">
+<meta property="og:url" content="http://swwind.github.io/2017/03/27/BZOJ-4173-数学/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面今天是hidadz小朋友的生日，她邀请了许多朋友来参加她的生日party。 hidadz带着朋友们来到花园中，打算坐成一排玩游戏。为了游戏不至于无聊，就座的方案应满足如下条件：对于任意连续的一段，男孩与女孩的数目之差不超过k。很快，小朋友便找到了一种方案坐了下来开始游戏。hidadz的好朋友Susie发现，这样的就座方案其实是很多的，所以大家很快就找到了一种，那么到底有多少种呢？热爱数学的hi">
-<meta property="og:updated_time" content="2017-03-27T13:34:20.135Z">
+<meta property="og:description" content="题面设S(n, m)为满足m mod k + n mod k &amp;gt;= k的所有整数k组成的集合，例如S(7, 9) = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 16}，PRIME最近又了解了一下各种函数于是在上面捣鼓起了欧拉函数φ，他的目标是求出φ(n)*φ(m)*∑k∈S(n, m)φ(k) mod 998244353。
+Simple Input5 6
+Si">
+<meta property="og:updated_time" content="2017-03-27T03:16:32.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 1037: [ZJOI2008]生日聚会Party">
-<meta name="twitter:description" content="题面今天是hidadz小朋友的生日，她邀请了许多朋友来参加她的生日party。 hidadz带着朋友们来到花园中，打算坐成一排玩游戏。为了游戏不至于无聊，就座的方案应满足如下条件：对于任意连续的一段，男孩与女孩的数目之差不超过k。很快，小朋友便找到了一种方案坐了下来开始游戏。hidadz的好朋友Susie发现，这样的就座方案其实是很多的，所以大家很快就找到了一种，那么到底有多少种呢？热爱数学的hi">
+<meta name="twitter:title" content="BZOJ 4173: 数学">
+<meta name="twitter:description" content="题面设S(n, m)为满足m mod k + n mod k &amp;gt;= k的所有整数k组成的集合，例如S(7, 9) = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 16}，PRIME最近又了解了一下各种函数于是在上面捣鼓起了欧拉函数φ，他的目标是求出φ(n)*φ(m)*∑k∈S(n, m)φ(k) mod 998244353。
+Simple Input5 6
+Si">
 
     
     
@@ -78,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" title="BZOJ 1037: [ZJOI2008]生日聚会Party" itemprop="url">BZOJ 1037: [ZJOI2008]生日聚会Party</a>
+      <a href="/2017/03/27/BZOJ-4173-数学/" title="BZOJ 4173: 数学" itemprop="url">BZOJ 4173: 数学</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-27T13:27:10.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
+    <time datetime="2017-03-27T03:00:52.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
     
   </p>
 </header>
@@ -94,17 +100,15 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>今天是hidadz小朋友的生日，她邀请了许多朋友来参加她的生日party。 hidadz带着朋友们来到花园中，打算坐成一排玩游戏。为了游戏不至于无聊，就座的方案应满足如下条件：对于任意连续的一段，男孩与女孩的数目之差不超过k。很快，小朋友便找到了一种方案坐了下来开始游戏。hidadz的好朋友Susie发现，这样的就座方案其实是很多的，所以大家很快就找到了一种，那么到底有多少种呢？热爱数学的hidadz和她的朋友们开始思考这个问题…… 假设参加party的人中共有n个男孩与m个女孩，你是否能解答Susie和hidadz的疑问呢？由于这个数目可能很多，他们只想知道这个数目除以12345678的余数。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>仅包含一行共3个整数，分别为男孩数目n，女孩数目m，常数k。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>应包含一行，为题中要求的答案。</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>1 2 1</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>1</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>dp: f[i][j][x][y]表示搜到第i个人，前面共有j个男的，男的比女的多x或女的比男的多y个的方案数<br>转移还是很好写的2333</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 12345678</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m, k;</div><div class="line"><span class="keyword">int</span> f[<span class="number">320</span>][<span class="number">155</span>][<span class="number">22</span>][<span class="number">22</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;k);</div><div class="line">    f[<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n+m; ++i) <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= n; ++j)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt;= k; ++x) <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>; y &lt;= k; ++y)</div><div class="line">    <span class="keyword">if</span>(f[i][j][x][y])&#123;</div><div class="line">        <span class="keyword">if</span>(x &lt; k &amp;&amp; j &lt; n)</div><div class="line">            (f[i+<span class="number">1</span>][j+<span class="number">1</span>][x+<span class="number">1</span>][max(y<span class="number">-1</span>, <span class="number">0</span>)] += f[i][j][x][y]) %= zyy;</div><div class="line">        <span class="keyword">if</span>(y &lt; k &amp;&amp; i-j &lt; m)</div><div class="line">            (f[i+<span class="number">1</span>][j][max(x<span class="number">-1</span>, <span class="number">0</span>)][y+<span class="number">1</span>] += f[i][j][x][y]) %= zyy;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt;= k; ++x)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>; y &lt;= k; ++y)</div><div class="line">        (ans += f[n+m][i][x][y]) %= zyy;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>设S(n, m)为满足m mod k + n mod k &gt;= k的所有整数k组成的集合，例如S(7, 9) = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 16}，PRIME最近又了解了一下各种函数于是在上面捣鼓起了欧拉函数φ，他的目标是求出φ(n)*φ(m)*∑<sub>k∈S(n, m)</sub>φ(k) mod 998244353。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5 6</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>240</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><a href="http://blog.csdn.net/popoqqq/article/details/46820313" target="_blank" rel="external">orz PoPoQQQ神犇</a><br>知道要你求φ(n)*φ(m)*n*m就简单了2333</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 998244353</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll x)</span></span>&#123; <span class="comment">// 求单个欧拉函数</span></div><div class="line">	ll temp = x;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">2</span>; i*i &lt;= x; ++i)</div><div class="line">		<span class="keyword">if</span>(!(x%i))&#123;</div><div class="line">			temp/=i; temp*=i<span class="number">-1</span>;</div><div class="line">			<span class="keyword">while</span>(!(x%i)) x /= i;</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">if</span>(x != <span class="number">1</span>)&#123;temp/=x; temp*=x<span class="number">-1</span>;&#125;</div><div class="line">	<span class="keyword">return</span> temp;</div><div class="line">&#125;</div><div class="line">ll n, m;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, phi(n)%zyy*(phi(m)%zyy)%zyy*(n%zyy)%zyy*(m%zyy)%zyy);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -112,7 +116,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/dp/">dp</a>
+  <span></span> <a href="/tags/数论/">数论</a>
   </div>
 
 </div>
@@ -121,7 +125,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" data-title="BZOJ 1037: [ZJOI2008]生日聚会Party | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/03/27/BZOJ-4173-数学/" data-title="BZOJ 4173: 数学 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -135,18 +139,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/03/28/BZOJ-1656-Usaco2006-Jan-The-Grove-树木/" title="BZOJ 1656: [Usaco2006 Jan] The Grove 树木">
+ <a href="/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" title="BZOJ 1037: [ZJOI2008]生日聚会Party">
   <strong>上一篇：</strong><br/>
   <span>
-  BZOJ 1656: [Usaco2006 Jan] The Grove 树木</span>
+  BZOJ 1037: [ZJOI2008]生日聚会Party</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/03/27/BZOJ-4173-数学/"  title="BZOJ 4173: 数学">
+<a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/"  title="教程: 用Sublime Text 3编译和运行C++程序">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 4173: 数学
+ <span>教程: 用Sublime Text 3编译和运行C++程序
 </span>
 </a>
 </div>
@@ -155,7 +159,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" data-title="BZOJ 1037: [ZJOI2008]生日聚会Party" data-url="http://swwind.github.io/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/"></div>
+	<div class="ds-thread" data-thread-key="2017/03/27/BZOJ-4173-数学/" data-title="BZOJ 4173: 数学" data-url="http://swwind.github.io/2017/03/27/BZOJ-4173-数学/"></div>
 </section>
 
 
@@ -165,7 +169,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
