@@ -153,10 +153,12 @@
 </nav>
 
 	
-<section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/03/10/BZOJ1000-A-B-problem/" data-title="[BZOJ1000]A+B problem" data-url="http://swwind.github.io/2017/03/10/BZOJ1000-A-B-problem/"></div>
-</section>
 
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -191,7 +193,7 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
 			
 		
 			
@@ -199,7 +201,7 @@
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -207,11 +209,7 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 			
@@ -219,7 +217,7 @@
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
 			
 		
 			
@@ -231,7 +229,7 @@
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
@@ -240,6 +238,10 @@
 		
 			
 				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -486,18 +488,26 @@ $(document).ready(function(){
 
 
 
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"swwind"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
 
+<script type="text/javascript">
+
+var disqus_shortname = 'SW_Wind';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
 
 
 
