@@ -76,6 +76,65 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/29/用Java编的小游戏———SW（持续更新）/" title="用Java编的小游戏———SW（持续更新）" itemprop="url">用Java编的小游戏———SW（持续更新）</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-29T10:23:48.000Z" itemprop="datePublished"> 发表于 2017-03-29</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>这就是一个坑啊。。。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>其实这个就是个渣渣作品，要就自己拿去吧</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Java/">Java</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/29/用Java编的小游戏———SW（持续更新）/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/29/BZOJ-3041-水叮当的舞步/" title="BZOJ 3041: 水叮当的舞步" itemprop="url">BZOJ 3041: 水叮当的舞步</a>
   </h1>
   <p class="article-author">By
@@ -633,69 +692,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/17/BZOJ-3038-上帝造题的七分钟2/" title="BZOJ 3038: 上帝造题的七分钟2" itemprop="url">BZOJ 3038: 上帝造题的七分钟2</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-17T02:09:39.000Z" itemprop="datePublished"> 发表于 2017-03-17</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>XLk觉得《上帝造题的七分钟》不太过瘾，于是有了第二部。<br>“第一分钟，X说，要有数列，于是便给定了一个正整数数列。<br>第二分钟，L说，要能修改，于是便有了对一段数中每个数都开平方(下取整)的操作。<br>第三分钟，k说，要能查询，于是便有了求一段数的和的操作。<br>第四分钟，彩虹喵说，要是noip难度，于是便有了数据范围。<br>第五分钟，诗人说，要有韵律，于是便有了时间限制和内存限制。<br>第六分钟，和雪说，要省点事，于是便有了保证运算过程中及最终结果均不超过64位有符号整数类型的表示范围的限制。<br>第七分钟，这道题终于造完了，然而，造题的神牛们再也不想写这道题的程序了。”<br>——《上帝造题的七分钟·第二部》<br>所以这个神圣的任务就交给你了。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n，代表数列中数的个数。<br>第二行n个正整数，表示初始状态下数列中的数。<br>第三行一个整数m，表示有m次操作。<br>接下来m行每行三个整数k,l,r，k=0表示给[l,r]中的每个数开平方(下取整)，k=1表示询问[l,r]中各个数的和。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对于询问操作，每行输出一个回答。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>10<br>1 2 3 4 5 6 7 8 9 10<br>5<br>0 1 10<br>1 1 10<br>1 1 5<br>0 5 8<br>1 4 8</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>19<br>7<br>6</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>线段树开根，还是很水的<br>其实如果一个数是0或1，那么开不开根就没有区别<br>所以操作时如果一个区间的和为0或1，直接return就好了</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100050</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m, x, y, z;</div><div class="line"><span class="keyword">int</span> ls[N&lt;&lt;<span class="number">2</span>], rs[N&lt;&lt;<span class="number">2</span>], lazy[N&lt;&lt;<span class="number">2</span>];</div><div class="line">ll a[N&lt;&lt;<span class="number">2</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">    a[x] = a[x&lt;&lt;<span class="number">1</span>] + a[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</div><div class="line">    lazy[x] = lazy[x&lt;&lt;<span class="number">1</span>] &amp; lazy[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">    ls[x] = l, rs[x] = r;</div><div class="line">    <span class="keyword">if</span>(l == r)&#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;a[x]);</div><div class="line">        <span class="keyword">if</span>(a[x] == <span class="number">1</span> || a[x] == <span class="number">0</span>) lazy[x] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">    build(x&lt;&lt;<span class="number">1</span>, l, mid);</div><div class="line">    build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">    push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(ls[x] == l &amp;&amp; rs[x] == r) <span class="keyword">return</span> a[x];</div><div class="line">    <span class="keyword">int</span> mid = ls[x] + rs[x] &gt;&gt; <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, mid) + ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sqrt</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(lazy[x]) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">if</span>(ls[x] == rs[x])&#123;</div><div class="line">        a[x] = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>(a[x]);</div><div class="line">        <span class="keyword">if</span>(a[x] == <span class="number">1</span> || a[x] == <span class="number">0</span>) lazy[x] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid = ls[x] + rs[x] &gt;&gt; <span class="number">1</span>;</div><div class="line">    <span class="keyword">if</span>(r &lt;= mid) Sqrt(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) Sqrt(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">    <span class="keyword">else</span> Sqrt(x&lt;&lt;<span class="number">1</span>, l, mid), Sqrt(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">    push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</div><div class="line">    <span class="keyword">while</span>(m-- &amp;&amp; <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z) != EOF)&#123;</div><div class="line">        <span class="keyword">if</span>(y &gt; z) swap(y, z);</div><div class="line">        <span class="keyword">if</span>(x == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ask(<span class="number">1</span>, y, z));</div><div class="line">        <span class="keyword">else</span> Sqrt(<span class="number">1</span>, y, z);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/线段树/">线段树</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/17/BZOJ-3038-上帝造题的七分钟2/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -727,6 +723,10 @@
 			
 		
 			
+				<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
@@ -735,7 +735,7 @@
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>1</sup></a></li>
 			
 		
 			
@@ -743,19 +743,11 @@
 			
 		
 			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
@@ -771,11 +763,19 @@
 			
 		
 			
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -830,13 +830,13 @@
         
           <li>
             
-            	<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="dalao">zyy</a>
+            	<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="orzdalao">zyy</a>
             
           </li>
         
           <li>
             
-            	<a href="https://littleredstar.github.io/" target="_blank" title="gay">ljz</a>
+            	<a href="https://littleredstar.github.io/" target="_blank" title="真·GAY">ljz</a>
             
           </li>
         
