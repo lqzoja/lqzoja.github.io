@@ -76,6 +76,67 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/27/BZOJ-4173-数学/" title="BZOJ 4173: 数学" itemprop="url">BZOJ 4173: 数学</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-27T03:00:52.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>设S(n, m)为满足m mod k + n mod k &gt;= k的所有整数k组成的集合，例如S(7, 9) = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 16}，PRIME最近又了解了一下各种函数于是在上面捣鼓起了欧拉函数φ，他的目标是求出φ(n)*φ(m)*∑<sub>k∈S(n, m)</sub>φ(k) mod 998244353。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5 6</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>240</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><a href="http://blog.csdn.net/popoqqq/article/details/46820313" target="_blank" rel="external">orz PoPoQQQ神犇</a><br>知道要你求φ(n)*φ(m)*n*m就简单了2333</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 998244353</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll x)</span></span>&#123; <span class="comment">// 求单个欧拉函数</span></div><div class="line">	ll temp = x;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">2</span>; i*i &lt;= x; ++i)</div><div class="line">		<span class="keyword">if</span>(!(x%i))&#123;</div><div class="line">			temp/=i; temp*=i<span class="number">-1</span>;</div><div class="line">			<span class="keyword">while</span>(!(x%i)) x /= i;</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">if</span>(x != <span class="number">1</span>)&#123;temp/=x; temp*=x<span class="number">-1</span>;&#125;</div><div class="line">	<span class="keyword">return</span> temp;</div><div class="line">&#125;</div><div class="line">ll n, m;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, phi(n)%zyy*(phi(m)%zyy)%zyy*(n%zyy)%zyy*(m%zyy)%zyy);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/数论/">数论</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/27/BZOJ-4173-数学/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" title="教程: 用Sublime Text 3编译和运行C++程序" itemprop="url">教程: 用Sublime Text 3编译和运行C++程序</a>
   </h1>
   <p class="article-author">By
@@ -626,69 +687,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/14/51nod-1526分配笔名/" title="51nod 1526分配笔名" itemprop="url">51nod 1526分配笔名</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-14T11:51:28.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>单组测试数据。<br>第一行有一个整数n (1≤n≤100000)，表示班级中同学的数目。<br>接下来n行，表示每一个同学的真名，每一个名字是非空串，且由小写字母组成。<br>名字可能重复。<br>最后n行是老师已经安排好的笔名。每一个笔名是一个非空串，且由小写字母组成。<br>笔名可能重复。<br>输入的字符总数目不超过 800000。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出最大的匹配质量。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5<br>gennady<br>galya<br>boris<br>bill<br>toshik<br>bilbo<br>torin<br>gendalf<br>smaug<br>galadriel</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>11</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>裸的Trie…<br>把每个真名在Trie上所经过的路径的标记全部+1，读入笔名的时候搜下去，如果有标记就 标记-1, ans++<br><del>怎么证我不知道，反正A了</del></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> key[<span class="number">800020</span>];</div><div class="line"><span class="keyword">int</span> n, ch[<span class="number">800020</span>][<span class="number">26</span>], val[<span class="number">800020</span>], cnt, ans, l;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</div><div class="line">        gets(key+<span class="number">1</span>);</div><div class="line">        l = <span class="built_in">strlen</span>(key+<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>, rt = <span class="number">0</span>; j &lt;= l; ++j)&#123;</div><div class="line">            <span class="keyword">if</span>(!ch[rt][key[j]-<span class="string">'a'</span>])</div><div class="line">                ch[rt][key[j]-<span class="string">'a'</span>] = ++cnt;</div><div class="line">            rt = ch[rt][key[j]-<span class="string">'a'</span>];</div><div class="line">            ++val[rt];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</div><div class="line">        gets(key+<span class="number">1</span>);</div><div class="line">        l = <span class="built_in">strlen</span>(key+<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>, rt = <span class="number">0</span>; j &lt;= l; ++j)&#123;</div><div class="line">            <span class="keyword">if</span>(!ch[rt][key[j]-<span class="string">'a'</span>]) <span class="keyword">break</span>;</div><div class="line">            rt = ch[rt][key[j]-<span class="string">'a'</span>];</div><div class="line">            <span class="keyword">if</span>(val[rt]) ++ans, --val[rt];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Trie/">Trie</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/14/51nod-1526分配笔名/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -716,15 +714,15 @@
 			
 		
 			
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/线段树/" title="线段树">线段树<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/dp/" title="dp">dp<sup>2</sup></a></li>
 			
 		
 			
@@ -736,7 +734,7 @@
 			
 		
 			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>1</sup></a></li>
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 			
@@ -744,11 +742,7 @@
 			
 		
 			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>1</sup></a></li>
 			
 		
 			
@@ -756,7 +750,7 @@
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
 			
 		
 			
@@ -765,6 +759,10 @@
 		
 			
 				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 			

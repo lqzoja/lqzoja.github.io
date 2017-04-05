@@ -4,23 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 1925: [Sdoi2010]地精部落 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
+    <meta name="description" content="题面传说很久以前，大地上居住着一种神秘的生物：地精。 地精喜欢住在连绵不绝的山脉中。具体地说，一座长度为 N 的山脉 H可分 为从左到右的 N 段，每段有一个独一无二的高度 Hi，其中Hi是1到N 之间的正 整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边 缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。 类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 3632: 外太空旅行">
-<meta property="og:url" content="http://swwind.github.io/2017/03/28/BZOJ-3632-外太空旅行/index.html">
+<meta property="og:title" content="BZOJ 1925: [Sdoi2010]地精部落">
+<meta property="og:url" content="http://swwind.github.io/2017/04/05/BZOJ-1925-Sdoi2010-地精部落/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
-<meta property="og:updated_time" content="2017-03-28T09:29:24.348Z">
+<meta property="og:description" content="题面传说很久以前，大地上居住着一种神秘的生物：地精。 地精喜欢住在连绵不绝的山脉中。具体地说，一座长度为 N 的山脉 H可分 为从左到右的 N 段，每段有一个独一无二的高度 Hi，其中Hi是1到N 之间的正 整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边 缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。 类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是">
+<meta property="og:image" content="http://www.lydsy.com/JudgeOnline/images/1925.jpg">
+<meta property="og:updated_time" content="2017-04-05T11:37:01.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 3632: 外太空旅行">
-<meta name="twitter:description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
+<meta name="twitter:title" content="BZOJ 1925: [Sdoi2010]地精部落">
+<meta name="twitter:description" content="题面传说很久以前，大地上居住着一种神秘的生物：地精。 地精喜欢住在连绵不绝的山脉中。具体地说，一座长度为 N 的山脉 H可分 为从左到右的 N 段，每段有一个独一无二的高度 Hi，其中Hi是1到N 之间的正 整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边 缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。 类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是">
+<meta name="twitter:image" content="http://www.lydsy.com/JudgeOnline/images/1925.jpg">
 
     
     
@@ -78,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/28/BZOJ-3632-外太空旅行/" title="BZOJ 3632: 外太空旅行" itemprop="url">BZOJ 3632: 外太空旅行</a>
+      <a href="/2017/04/05/BZOJ-1925-Sdoi2010-地精部落/" title="BZOJ 1925: [Sdoi2010]地精部落" itemprop="url">BZOJ 1925: [Sdoi2010]地精部落</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-28T05:59:43.000Z" itemprop="datePublished"> 发表于 2017-03-28</time>
+    <time datetime="2017-04-05T11:26:17.000Z" itemprop="datePublished"> 发表于 2017-04-05</time>
     
   </p>
 </header>
@@ -94,17 +96,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。<br>可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可能小A和小B是朋友，小B和小C是朋友，但是小A和小C两人势如水火。<br>任意两个人之间要不就是敌人，要不就是朋友。<br>因为在太空船上发生人员斗殴事件是很恶劣也很危险的，因此选出来参加旅行活动的同学必须互相之间都是朋友。你的任务就是确定最多可以选多少人参加旅行。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n(1&lt;=n&lt;=50)。所有的同学按照1~n编号。<br>接下来若干行，每行两个用空格隔开的整数a, b(1&lt;=a,b&lt;=n)，表示a和b是朋友。<br>注意：如果一个数对(x,y)（或者(y,x)）没有在文件中出现，那么编号为x和y的两个同学就是敌人。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>仅仅一个数，即最多可以选多少人参加活动。</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>4<br>1 2<br>2 3<br>3 1<br>1 4</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>传说有一种随机的算法叫蒙特卡罗、、<br>就是随机一下查找顺序，然后找一下再统计一下就行了</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, x, y, mp[<span class="number">60</span>][<span class="number">60</span>], vis[<span class="number">60</span>], a[<span class="number">60</span>];</div><div class="line"><span class="keyword">int</span> sum, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); srand(<span class="number">2333</span>);</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y) != EOF &amp;&amp; x &amp;&amp; y)</div><div class="line">        mp[x][y] = mp[y][x] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) a[i] = i;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">10000</span>; ++k, ans = <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">            swap(a[i], a[rand()%i+<span class="number">1</span>]); <span class="comment">// 随机一下查找的顺序</span></div><div class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">            <span class="keyword">if</span>(!vis[i])&#123;</div><div class="line">                ++ans;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= n; ++j)</div><div class="line">                    <span class="keyword">if</span>(!mp[a[i]][a[j]])</div><div class="line">                        vis[j] = <span class="number">1</span>; <span class="comment">// 把所有统计紧答案的人的敌人都筛去</span></div><div class="line">            &#125;</div><div class="line">        sum = max(sum, ans);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>传说很久以前，大地上居住着一种神秘的生物：地精。 地精喜欢住在连绵不绝的山脉中。具体地说，一座长度为 N 的山脉 H可分 为从左到右的 N 段，每段有一个独一无二的高度 Hi，其中Hi是1到N 之间的正 整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边 缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。 类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是一个山谷。 地精们有一个共同的爱好——饮酒，酒馆可以设立在山谷之中。地精的酒馆 不论白天黑夜总是人声鼎沸，地精美酒的香味可以飘到方圆数里的地方。 地精还是一种非常警觉的生物，他们在每座山峰上都可以设立瞭望台，并轮 流担当瞭望工作，以确保在第一时间得知外敌的入侵。 地精们希望这N 段山脉每段都可以修建瞭望台或酒馆的其中之一，只有满足 这个条件的整座山脉才可能有地精居住。 现在你希望知道，长度为N 的可能有地精居住的山脉有多少种。两座山脉A 和B不同当且仅当存在一个 i，使得 Ai≠Bi。由于这个数目可能很大，你只对它 除以P的余数感兴趣。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>仅含一行，两个正整数 N, P。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>仅含一行，一个非负整数，表示你所求的答案对P取余 之后的结果。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4 7</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>3</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p><img src="http://www.lydsy.com/JudgeOnline/images/1925.jpg"><br>对于 20%的数据，满足 N≤10；<br>对于 40%的数据，满足 N≤18；<br>对于 70%的数据，满足 N≤550；<br>对于 100%的数据，满足 3≤N≤4200，P≤109。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>dp吼吼吼<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">滚动数组吼吼吼</div></pre></td></tr></table></figure></p>
+<p>Accepted吼吼吼~~~</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, p, f[<span class="number">2</span>][<span class="number">5000</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;p);</div><div class="line">	f[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, k=<span class="number">0</span>; i &lt;= n; i++,k^=<span class="number">1</span>)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</div><div class="line">			f[k][j] = (f[k][j<span class="number">-1</span>]+f[!k][i-j])%p;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, (f[n&amp;<span class="number">1</span>][n]&lt;&lt;<span class="number">1</span>)%p);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -112,7 +116,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/蒙特卡罗/">蒙特卡罗</a>
+  <span></span> <a href="/tags/dp/">dp</a>
   </div>
 
 </div>
@@ -121,7 +125,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/28/BZOJ-3632-外太空旅行/" data-title="BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/04/05/BZOJ-1925-Sdoi2010-地精部落/" data-title="BZOJ 1925: [Sdoi2010]地精部落 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -134,19 +138,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/28/BZOJ-2824-AHOI2012-铁盘整理/" title="BZOJ 2824: [AHOI2012]铁盘整理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 2824: [AHOI2012]铁盘整理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/28/MI作品鉴赏/"  title="MI作品鉴赏">
+<a href="/2017/04/01/51nod-1714-B君的游戏/"  title="51nod 1714 B君的游戏">
  <strong>下一篇：</strong><br/> 
- <span>MI作品鉴赏
+ <span>51nod 1714 B君的游戏
 </span>
 </a>
 </div>
@@ -167,7 +163,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
