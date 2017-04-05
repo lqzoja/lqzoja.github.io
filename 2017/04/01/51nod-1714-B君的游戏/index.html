@@ -19,7 +19,7 @@ Input第一行一个整数n (1 &amp;lt;= n">
 <meta property="og:site_name" content="SW_Wind's blog">
 <meta property="og:description" content="题面B君和L君要玩一个游戏。刚开始有n个正整数ai。双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字x1,x2…x7。要求对于xi，满足0&amp;lt;=xi&amp;lt;x且x&amp;amp;xi=xi。注意0不能被选取，所以这个游戏一定会结束，而谁无法操作谁就失败。B君根据自己的经验，认为先手胜率高一点，所以B君是先手。B君想知道自己是否必胜。
 Input第一行一个整数n (1 &amp;lt;= n">
-<meta property="og:updated_time" content="2017-04-01T06:46:44.297Z">
+<meta property="og:updated_time" content="2017-04-05T11:52:22.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="51nod 1714 B君的游戏">
 <meta name="twitter:description" content="题面B君和L君要玩一个游戏。刚开始有n个正整数ai。双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字x1,x2…x7。要求对于xi，满足0&amp;lt;=xi&amp;lt;x且x&amp;amp;xi=xi。注意0不能被选取，所以这个游戏一定会结束，而谁无法操作谁就失败。B君根据自己的经验，认为先手胜率高一点，所以B君是先手。B君想知道自己是否必胜。
@@ -107,7 +107,7 @@ Input第一行一个整数n (1 &amp;lt;= n">
 <h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>4<br>1<br>2<br>3<br>4</p>
 <h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>B</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>考虑到二进制上1的个数相同的数在这个游戏中本质上其实是相同的。统计数组b[k]表示二进制上有k个1的数字个数。当所有的b[k]均为偶数的时候，就是先手必败的局面。先手一次最多可以把八个奇数改为八个偶数，如果先手面对的局面有九个或者九的倍数个奇数，那么先手必败，否则后手必败。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, b[<span class="number">70</span>], tot, ans;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> x;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++, tot = <span class="number">0</span>)&#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; x;</div><div class="line">		<span class="keyword">for</span>(;x;x-=x&amp;-x)++tot;</div><div class="line">		++b[tot];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">70</span>; i++)ans+=b[i]&amp;<span class="number">1</span>;</div><div class="line">	<span class="built_in">puts</span>(ans%<span class="number">9</span>?<span class="string">"B"</span>:<span class="string">"L"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, b[<span class="number">70</span>], tot, ans;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> x;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++, tot = <span class="number">0</span>)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; x;</div><div class="line">        <span class="keyword">for</span>(;x;x-=x&amp;-x)++tot;</div><div class="line">        ++b[tot];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">70</span>; i++)ans+=b[i]&amp;<span class="number">1</span>;</div><div class="line">    <span class="built_in">puts</span>(ans%<span class="number">9</span>?<span class="string">"B"</span>:<span class="string">"L"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -217,7 +217,7 @@ Input第一行一个整数n (1 &amp;lt;= n">
 			
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
 			
 		
 			
@@ -241,11 +241,11 @@ Input第一行一个整数n (1 &amp;lt;= n">
 			
 		
 			
-				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
