@@ -4,23 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 4766: 文艺计算姬 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
+    <meta name="description" content="题面“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标号完全二分图K_{n,m}，计算姬能快速算出其生成树个数。小W不知道计算姬算的对不对，你能帮助他吗？
+Input仅一行三">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 3632: 外太空旅行">
-<meta property="og:url" content="http://swwind.github.io/2017/03/28/BZOJ-3632-外太空旅行/index.html">
+<meta property="og:title" content="BZOJ 4766: 文艺计算姬">
+<meta property="og:url" content="http://swwind.github.io/2017/04/10/BZOJ-4766-文艺计算姬/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
-<meta property="og:updated_time" content="2017-03-28T09:29:24.348Z">
+<meta property="og:description" content="题面“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标号完全二分图K_{n,m}，计算姬能快速算出其生成树个数。小W不知道计算姬算的对不对，你能帮助他吗？
+Input仅一行三">
+<meta property="og:updated_time" content="2017-04-10T10:28:52.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 3632: 外太空旅行">
-<meta name="twitter:description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
+<meta name="twitter:title" content="BZOJ 4766: 文艺计算姬">
+<meta name="twitter:description" content="题面“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标号完全二分图K_{n,m}，计算姬能快速算出其生成树个数。小W不知道计算姬算的对不对，你能帮助他吗？
+Input仅一行三">
 
     
     
@@ -78,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/28/BZOJ-3632-外太空旅行/" title="BZOJ 3632: 外太空旅行" itemprop="url">BZOJ 3632: 外太空旅行</a>
+      <a href="/2017/04/10/BZOJ-4766-文艺计算姬/" title="BZOJ 4766: 文艺计算姬" itemprop="url">BZOJ 4766: 文艺计算姬</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-28T05:59:43.000Z" itemprop="datePublished"> 发表于 2017-03-28</time>
+    <time datetime="2017-04-10T02:29:36.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
     
   </p>
 </header>
@@ -94,17 +97,17 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。<br>可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可能小A和小B是朋友，小B和小C是朋友，但是小A和小C两人势如水火。<br>任意两个人之间要不就是敌人，要不就是朋友。<br>因为在太空船上发生人员斗殴事件是很恶劣也很危险的，因此选出来参加旅行活动的同学必须互相之间都是朋友。你的任务就是确定最多可以选多少人参加旅行。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n(1&lt;=n&lt;=50)。所有的同学按照1~n编号。<br>接下来若干行，每行两个用空格隔开的整数a, b(1&lt;=a,b&lt;=n)，表示a和b是朋友。<br>注意：如果一个数对(x,y)（或者(y,x)）没有在文件中出现，那么编号为x和y的两个同学就是敌人。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>仅仅一个数，即最多可以选多少人参加活动。</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>4<br>1 2<br>2 3<br>3 1<br>1 4</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>传说有一种随机的算法叫蒙特卡罗、、<br>就是随机一下查找顺序，然后找一下再统计一下就行了</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, x, y, mp[<span class="number">60</span>][<span class="number">60</span>], vis[<span class="number">60</span>], a[<span class="number">60</span>];</div><div class="line"><span class="keyword">int</span> sum, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); srand(<span class="number">2333</span>);</div><div class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y) != EOF &amp;&amp; x &amp;&amp; y)</div><div class="line">        mp[x][y] = mp[y][x] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) a[i] = i;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">10000</span>; ++k, ans = <span class="number">0</span>)&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">            swap(a[i], a[rand()%i+<span class="number">1</span>]); <span class="comment">// 随机一下查找的顺序</span></div><div class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">            <span class="keyword">if</span>(!vis[i])&#123;</div><div class="line">                ++ans;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= n; ++j)</div><div class="line">                    <span class="keyword">if</span>(!mp[a[i]][a[j]])</div><div class="line">                        vis[j] = <span class="number">1</span>; <span class="comment">// 把所有统计紧答案的人的敌人都筛去</span></div><div class="line">            &#125;</div><div class="line">        sum = max(sum, ans);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标号完全二分图K_{n,m}，计算姬能快速算出其生成树个数。小W不知道计算姬算的对不对，你能帮助他吗？</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>仅一行三个整数n,m,p，表示给出的完全二分图K_{n,m}<br>1 &lt;= n,m,p &lt;= 10^18</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>仅一行一个整数，表示完全二分图K_{n,m}的生成树个数，答案需要模p。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 3 7</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>5</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><a href="http://www.cnblogs.com/neighthorn/p/6568410.html" target="_blank" rel="external">orz NeighThorn</a><br>答案其实就是m^(n-1)*n^(m-1)…<br>此外还要用到<strong>快速乘</strong>。？？一个长得和快速幂有点像的东西，可以防止乘法溢出。。<br>为毛他不开long long也能过得去啊(ノ=Д=)ノ┻━┻</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll n, m, p;</div><div class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll x, ll y)</span></span>&#123;</div><div class="line">    ll ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(y)&#123;</div><div class="line">        <span class="keyword">if</span>(y&amp;<span class="number">1</span>) ans = (ans+x)%p;</div><div class="line">        x = (x&lt;&lt;<span class="number">1</span>)%p; y &gt;&gt;= <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll x, ll y)</span></span>&#123;</div><div class="line">    ll ans = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(y)&#123;</div><div class="line">        <span class="keyword">if</span>(y&amp;<span class="number">1</span>) ans = mul(ans, x);</div><div class="line">        x = mul(x, x); y &gt;&gt;= <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; p;</div><div class="line">    <span class="built_in">cout</span> &lt;&lt; mul(f(n, m<span class="number">-1</span>), f(m, n<span class="number">-1</span>)) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -112,7 +115,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/蒙特卡罗/">蒙特卡罗</a>
+  <span></span> <a href="/tags/图论/">图论</a>
   </div>
 
 </div>
@@ -121,7 +124,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/28/BZOJ-3632-外太空旅行/" data-title="BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/04/10/BZOJ-4766-文艺计算姬/" data-title="BZOJ 4766: 文艺计算姬 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -134,19 +137,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/28/BZOJ-2824-AHOI2012-铁盘整理/" title="BZOJ 2824: [AHOI2012]铁盘整理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 2824: [AHOI2012]铁盘整理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/28/MI作品鉴赏/"  title="MI作品鉴赏">
+<a href="/2017/04/10/BZOJ-2002-Hnoi2010-Bounce-弹飞绵羊/"  title="BZOJ 2002: [Hnoi2010]Bounce 弹飞绵羊">
  <strong>下一篇：</strong><br/> 
- <span>MI作品鉴赏
+ <span>BZOJ 2002: [Hnoi2010]Bounce 弹飞绵羊
 </span>
 </a>
 </div>
@@ -167,7 +162,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
