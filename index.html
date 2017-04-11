@@ -76,6 +76,132 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/04/11/BZOJ-2693-jzptab-BZOJ-2154-Crash的数字表格/" title="BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格" itemprop="url">BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-11T05:58:37.000Z" itemprop="datePublished"> 发表于 2017-04-11</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>都是要你求<br>$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j)$$</p>
+<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>4 5</p>
+<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>122</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>不会做+看题解+公式恐惧症、、、<br>下面是某爬虫网站抄来的，也不知道作者是谁、、先orz一波</p>
+<p>下面均设n&lt;=m<br>$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j) = \sum_{i=1}^{n} \sum_{j=1}^{m} \frac{ij}{(i,j)}$$<br>然后我们要想枚举$d=(i,j)$，那么就要确定$ij$怎么取，显然我们只需要先除去$i$和$j$的$d$，也就是$(i/d,j/d)=1$就行了，那么设<br>$$F(x, y) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1]$$<br>那么原式变成<br>$$\sum_{d=1}^{n} \frac{d^2 F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor)}{d} = \sum_{d=1}^{n} d F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor)$$<br>考虑求$F(x,y)$<br>$$<br>\begin{align}<br>F(x, y) &amp; = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1] \\<br>&amp; = \sum_{i=1}^{x} \sum_{j=1}^{y} ij \sum_{d|(i,j)} \mu (d) \\<br>&amp; = \sum_{d=1}^{x} \mu (d) \sum_{d|i}^{x} i \sum_{d|j}^{y} j \\<br>&amp; = \sum_{d=1}^{x} \mu (d) d^2 \sum_{i=1}^{\lfloor \frac{x}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{y}{d} \rfloor} 1 \\<br>&amp; = \sum_{d=1}^{x} \mu (d) d^2 \frac{\lfloor \frac{x}{d} \rfloor (\lfloor \frac{x}{d} \rfloor +1)}{2} \frac{\lfloor \frac{y}{d} \rfloor (\lfloor \frac{y}{d} \rfloor +1)}{2} \\<br>\end{align}<br>$$<br>带回原式得<br>$$<br>\begin{align}<br>&amp; \sum_{d=1}^{n} d F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor) \\<br>= &amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{\lfloor \frac{n}{d} \rfloor}{i} \rfloor (\lfloor \frac{\lfloor \frac{n}{d} \rfloor}{i} \rfloor +1)}{2} \frac{\lfloor \frac{\lfloor \frac{m}{d} \rfloor}{i} \rfloor (\lfloor \frac{\lfloor \frac{m}{d} \rfloor}{i} \rfloor +1)}{2} \\<br>= &amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{n}{di} \rfloor (\lfloor \frac{n}{di} \rfloor +1)}{2} \frac{\lfloor \frac{m}{di} \rfloor (\lfloor \frac{m}{di} \rfloor +1)}{2} \\<br>\end{align}<br>$$<br>现在已经可以$O(\sqrt n \sqrt n) = O(n)$单次查询了，可以完成那道数字表格了<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 20101009</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll mu[N], pri[N], s[N], cnt;</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll ans, x, y;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">    ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">    <span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(ll a)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(a&gt;<span class="number">9</span>)write(a/<span class="number">10</span>);</div><div class="line">    <span class="built_in">putchar</span>(a%<span class="number">10</span>+<span class="string">'0'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> (a*(a+<span class="number">1</span>)/<span class="number">2</span>)%zyy*(b*(b+<span class="number">1</span>)/<span class="number">2</span>%zyy)%zyy;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">    ll ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= min(a, b); i = last+<span class="number">1</span>)&#123;</div><div class="line">        last = min(a/(a/i), b/(b/i));</div><div class="line">        ans = (ans+(s[last]-s[i<span class="number">-1</span>])*sum(a/i, b/i)%zyy)%zyy;</div><div class="line">        <span class="comment">// printf("ans  = %d\n", ans);</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</div><div class="line">    mu[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">2</span>; i &lt;= min(x, y); i++)&#123;</div><div class="line">        <span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>;</div><div class="line">        <span class="keyword">for</span>(ll j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i*pri[j] &lt;= min(x, y); j++)&#123;</div><div class="line">            mark[pri[j]*i] = <span class="number">1</span>, mu[pri[j]*i] = -mu[i];</div><div class="line">            <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[pri[j]*i] = <span class="number">0</span>; <span class="keyword">break</span>;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= min(x, y); i++)</div><div class="line">        s[i] = (s[i<span class="number">-1</span>]+i*i*mu[i]%zyy)%zyy;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= min(x, y); i = last+<span class="number">1</span>)&#123;</div><div class="line">        last = min(x/(x/i), y/(y/i));</div><div class="line">        ans = (ans+(i+last)*(last-i+<span class="number">1</span>)/<span class="number">2</span>%zyy*f(x/i, y/i)%zyy)%zyy;</div><div class="line">        <span class="comment">// printf("ans2 = %d\n", ans);</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">cout</span>&lt;&lt;(ans+zyy)%zyy&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但是交到第一题还是TLE，我们继续化简<br>令$T = di$，则$i|T,d = T/i$，换掉指标，得<br>$$<br>\begin{align}<br>&amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{n}{di} \rfloor (\lfloor \frac{n}{di} \rfloor +1)}{2} \frac{\lfloor \frac{m}{di} \rfloor (\lfloor \frac{m}{di} \rfloor +1)}{2} \\<br>= &amp;<br>\sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} \sum_{i|T} \frac{T}{i} \mu (i) i^2 \\<br>= &amp; \sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} T \sum_{i|T} \mu (i) i \\<br>\end{align}<br>$$<br>设$g(T)=T \sum_{i|T} \mu (i) i$，我们再设$f(T)=\sum_{i|T} \mu (i) i$那么$g(T)=Tf(T)$，考虑求$f(T)$<br>在线性筛中，外层为$k$，内层为$p_y$，所以求$f(kp_y)=\sum_{i|T} \mu(i) i$</p>
+<p>当$p_y|k$时<br>当$i$取的数的因子中不包含新加入的$p_y$时，答案就是$f(k)$<br>当$i$取包含新加入的因子$p_y$时，由于此时$p_y$指数已经&gt;=2，所以$\mu (i)=0$，因此贡献为0<br>综上，当$p_y|k$时，答案为$f(k)$</p>
+<p>当$p_y∤k$时<br>当$i$取的数的因子中不包含新加入的$p_y$时，同上，答案是$f(k)$<br>当$i$取的数的因子包含新加入的$p_y$时，由于指数为1，所以我们考虑$i=ap_y$，原式变为<br>$$\begin{align}<br>&amp; \sum_{i|T} \mu(i) i \\<br>= &amp; \sum_{ap_y|kp_y} \mu (ap_y) ap_y \\<br>= &amp; p_y \sum_{a|k} \mu (a) \mu(p_y) a \\<br>= &amp; -p_y \sum_{a|k} \mu(a) a \\<br>= &amp; -p_y f(k) \\<br>\end{align}$$<br>综上，当$p_y∤k$时，答案为$(1−p_y)f(k)$<br>然后线性筛随便搞搞即可，最后答案就是<br>$$\sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} g(T)$$<br>$$F(x,y)= \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1] = \sum_{i=1}^{x} \sum_{j=1}^{y} ij \sum_{d|(i,j)} \mu (d)$$</p>
+<p>接着第一题也可以做了（小心被卡常数！<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 100000009</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> mu[N], pri[N], cnt;</div><div class="line">ll s[N];</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll x, y;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">    ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">    <span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> (a*(a+<span class="number">1</span>)/<span class="number">2</span>%zyy)*(b*(b+<span class="number">1</span>)/<span class="number">2</span>%zyy)%zyy;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">    ll ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= a; i = last+<span class="number">1</span>)&#123;</div><div class="line">        last = min(a/(a/i), b/(b/i));</div><div class="line">        ans = (ans+(s[last]-s[i<span class="number">-1</span>]+zyy)%zyy*sum(a/i, b/i)%zyy)%zyy;</div><div class="line">        <span class="comment">// printf("ans  = %d\n", ans);</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    mu[<span class="number">1</span>] = s[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>,s[i]=<span class="number">1</span>-i;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i*pri[j] &lt; N; j++)&#123;</div><div class="line">            mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[pri[j]*i] = <span class="number">0</span>; s[i*pri[j]]=s[i]; <span class="keyword">break</span>;&#125;</div><div class="line">            s[i*pri[j]] = (s[i]*s[pri[j]])%zyy; mu[pri[j]*i] = -mu[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">        s[i] = (s[i<span class="number">-1</span>]+i*s[i]%zyy)%zyy;</div><div class="line">    <span class="keyword">int</span> T = read();</div><div class="line">    <span class="keyword">while</span>(T--)&#123;</div><div class="line">        x = read(); y = read();</div><div class="line">        <span class="keyword">if</span>(x &gt; y) swap(x, y);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, (f(x, y)+zyy)%zyy);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>做完感觉人已经完全傻掉了<br>调了半个小时才知道BZOJ和cin cout有仇<br><img src="https://swwind.github.io/img/haipa.png"></p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/数论/">数论</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/04/11/BZOJ-2693-jzptab-BZOJ-2154-Crash的数字表格/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/10/如何卡掉BZOJ/" title="如何卡掉BZOJ" itemprop="url">如何卡掉BZOJ</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-10T12:38:54.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p><strong>请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关</strong></p>
+<h1 id="Linux下卡掉编译器"><a href="#Linux下卡掉编译器" class="headerlink" title="Linux下卡掉编译器"></a>Linux下卡掉编译器</h1><p>只需要写一句话<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;/dev/random&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。</p>
+<h1 id="Windows下卡掉编译器"><a href="#Windows下卡掉编译器" class="headerlink" title="Windows下卡掉编译器"></a>Windows下卡掉编译器</h1><p>也只要一句话<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;com1&gt;</span></span></div></pre></td></tr></table></figure></p>
+<p>然后就愉快的爆蛋了</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>我也不知道，自己谷歌</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p><del>抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当<br>适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</del><br>别作死卡OJ评测机，好好活着，不好吗？</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/04/10/如何卡掉BZOJ/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/04/10/BZOJ-4766-文艺计算姬/" title="BZOJ 4766: 文艺计算姬" itemprop="url">BZOJ 4766: 文艺计算姬</a>
   </h1>
   <p class="article-author">By
@@ -583,143 +709,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/01/洛谷P2734-游戏-A-Game/" title="洛谷P2734 游戏 A Game" itemprop="url">洛谷P2734 游戏 A Game</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-01T03:06:34.000Z" itemprop="datePublished"> 发表于 2017-04-01</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有如下一个双人游戏:N(2 &lt;= N &lt;= 100)个正整数的序列放在一个游戏平台上，游戏由玩家1开始，两人轮流从序列的任意一端取一个数，取数后该数字被去掉并累加到本玩家的得分中，当数取尽时，游戏结束。以最终得分多者为胜。<br>现在要你编一个执行最优策略的程序，最优策略就是使玩家在与最好的对手对弈时，能得到的在当前情况下最大的可能的总分的策略。你的程序要始终为第二位玩家执行最优策略。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><ul>
-<li>第一行: 正整数N, 表示序列中正整数的个数。</li>
-<li>第二行至末尾: 用空格分隔的N个正整数（大小为1-200）。</li>
-</ul>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>只有一行，用空格分隔的两个整数: 依次为玩家一和玩家二最终的得分。</p>
-<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>6<br>4 7 2 9 5 2</p>
-<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>18 11</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><del>博弈论</del>（废话）<br>用f[i][j]表示区间[i,j]中的数全部取完时先手的得分，s[i][j]表示区间[i,j]内所有数的和。</p>
-<p align="center"><strong>f[i][j]=max(s[i][j]-f[i+1][j],s[i][j]-f[i][j-1])</strong></p>
-
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a[<span class="number">250</span>], s[<span class="number">250</span>][<span class="number">250</span>], n, f[<span class="number">250</span>][<span class="number">250</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, a+i);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n; j++)</div><div class="line">            s[i][j] = s[i][j<span class="number">-1</span>]+a[j];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</div><div class="line">            f[i][j] = max(s[i][j]-f[i+<span class="number">1</span>][j], s[i][j]-f[i][j<span class="number">-1</span>]);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d"</span>, f[<span class="number">1</span>][n], s[<span class="number">1</span>][n]-f[<span class="number">1</span>][n]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/博弈论/">博弈论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/04/01/洛谷P2734-游戏-A-Game/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/29/用Java编的小游戏———SW（持续更新）/" title="用Java编的小游戏——SW（持续更新）" itemprop="url">用Java编的小游戏——SW（持续更新）</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-29T10:23:48.000Z" itemprop="datePublished"> 发表于 2017-03-29</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>这就是一个坑啊。。。</p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>其实这个就是个渣渣作品，要就自己拿去吧<br>我东西都放在<a href="http://oierbbs.com/forum.php?mod=viewthread&tid=233" target="_blank" rel="external">oierbbs</a>上</p>
-<blockquote>
-<p>以下内容都是17w13a的版本</p>
-</blockquote>
-<h1 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h1><p>博客里放不下，所以自己去oierbbs上看去。</p>
-<h1 id="玩法说明"><a href="#玩法说明" class="headerlink" title="玩法说明"></a>玩法说明</h1><p>PVP/跑酷<br>碰到刺就会死，掉到最下面也会死<br>每条命三格血，被子弹打到一次掉1血<br>血没了就死了（<del>废话</del><br>材质像普通石头方块，但最上面是绿色的是重生点方块，当玩家踩在上面时就会重设重生点</p>
-<h1 id="操作说明"><a href="#操作说明" class="headerlink" title="操作说明"></a>操作说明</h1><p>P1: WASD移动，SPACE攻击<br>P2: 方向键移动，数字键 1 攻击</p>
-<h1 id="文件结构说明"><a href="#文件结构说明" class="headerlink" title="文件结构说明"></a>文件结构说明</h1><p>/img - 保存贴图和地图文件（.map）<br>　　stone0-13.png - 各个方块对应的贴图<br>　　sky.png - 背景图片（可自行修改，585*585像素）</p>
-<h1 id="地图编辑器"><a href="#地图编辑器" class="headerlink" title="地图编辑器"></a>地图编辑器</h1><p>按o打开，左键能使方块ID+1，右键使方块ID-1。<br>非空气方块和刺方块都是可以站人的</p>
-<h1 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h1><p>最开始调颜色的时候可以修改透明度。。甚至还能改个全透明的皮肤。。<br>自带的PVP地图强行被作者贴上了logo。。</p>
-<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><p>以后更新的时候再写吧。。</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Java/">Java</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/29/用Java编的小游戏———SW（持续更新）/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -759,11 +748,11 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>2</sup></a></li>
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -771,7 +760,7 @@
 			
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 			
@@ -783,15 +772,15 @@
 			
 		
 			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
 			
 		
 			
@@ -803,11 +792,11 @@
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
