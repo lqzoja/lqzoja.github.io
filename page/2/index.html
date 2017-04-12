@@ -34,6 +34,11 @@
     <script type="text/javascript" async
       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <style type="text/css">
+      ::selection {
+        background:#7F7F7F;
+      }
+    </style>
 </head>
 
   <body>
@@ -76,6 +81,133 @@
     </header>
     <div id="container">
       <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/05/BZOJ-1925-Sdoi2010-地精部落/" title="BZOJ 1925: [Sdoi2010]地精部落" itemprop="url">BZOJ 1925: [Sdoi2010]地精部落</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-05T11:26:17.000Z" itemprop="datePublished"> 发表于 2017-04-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>传说很久以前，大地上居住着一种神秘的生物：地精。 地精喜欢住在连绵不绝的山脉中。具体地说，一座长度为 N 的山脉 H可分 为从左到右的 N 段，每段有一个独一无二的高度 Hi，其中Hi是1到N 之间的正 整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边 缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。 类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是一个山谷。 地精们有一个共同的爱好——饮酒，酒馆可以设立在山谷之中。地精的酒馆 不论白天黑夜总是人声鼎沸，地精美酒的香味可以飘到方圆数里的地方。 地精还是一种非常警觉的生物，他们在每座山峰上都可以设立瞭望台，并轮 流担当瞭望工作，以确保在第一时间得知外敌的入侵。 地精们希望这N 段山脉每段都可以修建瞭望台或酒馆的其中之一，只有满足 这个条件的整座山脉才可能有地精居住。 现在你希望知道，长度为N 的可能有地精居住的山脉有多少种。两座山脉A 和B不同当且仅当存在一个 i，使得 Ai≠Bi。由于这个数目可能很大，你只对它 除以P的余数感兴趣。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>仅含一行，两个正整数 N, P。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>仅含一行，一个非负整数，表示你所求的答案对P取余 之后的结果。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4 7</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>3</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p><img src="http://www.lydsy.com/JudgeOnline/images/1925.jpg"><br>对于 20%的数据，满足 N≤10；<br>对于 40%的数据，满足 N≤18；<br>对于 70%的数据，满足 N≤550；<br>对于 100%的数据，满足 3≤N≤4200，P≤109。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>dp+滚动数组。<br>然后就愉快的AC了一道水题。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, p, f[<span class="number">2</span>][<span class="number">5000</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;p);</div><div class="line">    f[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, k=<span class="number">0</span>; i &lt;= n; i++,k^=<span class="number">1</span>)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</div><div class="line">            f[k][j] = (f[k][j<span class="number">-1</span>]+f[!k][i-j])%p;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, (f[n&amp;<span class="number">1</span>][n]&lt;&lt;<span class="number">1</span>)%p);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/dp/">dp</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/04/05/BZOJ-1925-Sdoi2010-地精部落/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/01/51nod-1714-B君的游戏/" title="51nod 1714 B君的游戏" itemprop="url">51nod 1714 B君的游戏</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-01T03:40:43.000Z" itemprop="datePublished"> 发表于 2017-04-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>B君和L君要玩一个游戏。刚开始有n个正整数ai。双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字x1,x2…x7。要求对于xi，满足0&lt;=xi&lt;x且x&amp;xi=xi。注意0不能被选取，所以这个游戏一定会结束，而谁无法操作谁就失败。B君根据自己的经验，认为先手胜率高一点，所以B君是先手。B君想知道自己是否必胜。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个整数n (1 &lt;= n &lt;= 100000)<br>以下n行n个数ai (0 &lt;= ai &lt; 2^64)</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>如果先手必胜，输出”B”，否则输出”L”。</p>
+<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>4<br>1<br>2<br>3<br>4</p>
+<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>B</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>考虑到二进制上1的个数相同的数在这个游戏中本质上其实是相同的。统计数组b[k]表示二进制上有k个1的数字个数。当所有的b[k]均为偶数的时候，就是先手必败的局面。先手一次最多可以把八个奇数改为八个偶数，如果先手面对的局面有九个或者九的倍数个奇数，那么先手必败，否则后手必败。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, b[<span class="number">70</span>], tot, ans;</div><div class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> x;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++, tot = <span class="number">0</span>)&#123;</div><div class="line">        <span class="built_in">cin</span> &gt;&gt; x;</div><div class="line">        <span class="keyword">for</span>(;x;x-=x&amp;-x)++tot;</div><div class="line">        ++b[tot];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">70</span>; i++)ans+=b[i]&amp;<span class="number">1</span>;</div><div class="line">    <span class="built_in">puts</span>(ans%<span class="number">9</span>?<span class="string">"B"</span>:<span class="string">"L"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/博弈论/">博弈论</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/04/01/51nod-1714-B君的游戏/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
    
     
@@ -595,130 +727,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/27/BZOJ-4173-数学/" title="BZOJ 4173: 数学" itemprop="url">BZOJ 4173: 数学</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-27T03:00:52.000Z" itemprop="datePublished"> 发表于 2017-03-27</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>设S(n, m)为满足m mod k + n mod k &gt;= k的所有整数k组成的集合，例如S(7, 9) = {2, 4, 5, 8, 10, 11, 12, 13, 14, 15, 16}，PRIME最近又了解了一下各种函数于是在上面捣鼓起了欧拉函数φ，他的目标是求出φ(n)*φ(m)*∑<sub>k∈S(n, m)</sub>φ(k) mod 998244353。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5 6</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>240</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p><a href="http://blog.csdn.net/popoqqq/article/details/46820313" target="_blank" rel="external">orz PoPoQQQ神犇</a><br>知道要你求φ(n)*φ(m)*n*m就简单了2333</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 998244353</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function">ll <span class="title">phi</span><span class="params">(ll x)</span></span>&#123; <span class="comment">// 求单个欧拉函数</span></div><div class="line">	ll temp = x;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">2</span>; i*i &lt;= x; ++i)</div><div class="line">		<span class="keyword">if</span>(!(x%i))&#123;</div><div class="line">			temp/=i; temp*=i<span class="number">-1</span>;</div><div class="line">			<span class="keyword">while</span>(!(x%i)) x /= i;</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">if</span>(x != <span class="number">1</span>)&#123;temp/=x; temp*=x<span class="number">-1</span>;&#125;</div><div class="line">	<span class="keyword">return</span> temp;</div><div class="line">&#125;</div><div class="line">ll n, m;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, phi(n)%zyy*(phi(m)%zyy)%zyy*(n%zyy)%zyy*(m%zyy)%zyy);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/数论/">数论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/27/BZOJ-4173-数学/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" title="教程: 用Sublime Text 3编译和运行C++程序" itemprop="url">教程: 用Sublime Text 3编译和运行C++程序</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-24T06:58:03.000Z" itemprop="datePublished"> 发表于 2017-03-24</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>咳咳，如果你dev用惯了，看他不爽，想换个IDE，那么推荐用Sublime Text这款软件。由于服务器在国外，所以下载很慢<del>（挂VPN好像更慢）</del>，所以提供一个<a href="https://pan.baidu.com/s/1o7TGvk2" target="_blank" rel="external">百度网盘链接</a>。链接挂了跟我说。</p>
-<h2 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h2><p>由于软件不自带编译器，所以请先下载好对应操作系统位数的编译器。安装完成后请打开安装的目录，复制 安装目录/mingwXX/bin/的路径，然后在桌面上右键”计算机”（”此电脑”或者”我的电脑”） -&gt; 点击属性 -&gt; 高级系统设置 -&gt; 高级 -&gt; 环境变量 -&gt; 在下面一个框框中找到Path变量，双击打开编辑，然后如果你的系统是win7及以下，请在变量值的末尾加一个英文的分号（如果原来有就不用了），然后把路径复制进去再加一个英文分号就行了。如果你是win8 or win10，UI界面已经做好了，直接新建一个路径就行了，这里不再赘述，然后一路确定点回去，打开cmd，输入g++看看有没有配置完成。</p>
-<h2 id="添加Build-System"><a href="#添加Build-System" class="headerlink" title="添加Build System"></a>添加Build System</h2><p>打开Sublime Text，点击Tools -&gt; Build System -&gt; New Build System…，再把下面的东西复制进去<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"cmd"</span>: [<span class="string">"g++"</span>, <span class="string">"$&#123;file&#125;"</span>, <span class="string">"-o"</span>, <span class="string">"$&#123;file_path&#125;/$&#123;file_base_name&#125;"</span>],</div><div class="line">    <span class="attr">"file_regex"</span>: <span class="string">"^(..[^:]*):([0-9]+):?([0-9]+)?:?(.*)$"</span>,</div><div class="line">    <span class="attr">"working_dir"</span>: <span class="string">"$&#123;file_path&#125;"</span>,</div><div class="line">    <span class="attr">"encoding"</span>: <span class="string">"cp936"</span>,</div><div class="line">    <span class="attr">"selector"</span>: <span class="string">"source.c"</span>,</div><div class="line">    <span class="attr">"variants"</span>:</div><div class="line">    [</div><div class="line">        &#123;</div><div class="line">        <span class="attr">"name"</span>: <span class="string">"Run"</span>,</div><div class="line">        <span class="attr">"cmd"</span>: [<span class="string">"cmd"</span>,<span class="string">"/C"</span>,<span class="string">"start"</span>,<span class="string">"cmd"</span>,<span class="string">"/c"</span>,<span class="string">"$&#123;file_path&#125;/$&#123;file_base_name&#125;.exe &amp;pause"</span>]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>接着保存为CPP.sublime-build，再点击Tools -&gt; Build System -&gt; CPP就完成啦。</p>
-<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>Ctrl+Shift+B打开菜单，选择CPP是编译，选择CPP-RUN是运行（自带pause）<br>Ctrl+B重复上一操作</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>百度有毒</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/教程/">教程</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next<span></span></a>
@@ -766,15 +774,15 @@
 			
 		
 			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>1</sup></a></li>
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
@@ -782,7 +790,7 @@
 			
 		
 			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
@@ -790,15 +798,11 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 			
@@ -806,15 +810,19 @@
 			
 		
 			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
 			
 		
 			

@@ -1,0 +1,612 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>BZOJ 4240: 有趣的家庭菜园 | SW_Wind&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SW_Wind">
+    
+
+    
+    <meta name="description" content="题面对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有N株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ 4240: 有趣的家庭菜园">
+<meta property="og:url" content="http://swwind.github.io/2017/04/12/BZOJ-4240-有趣的家庭菜园/index.html">
+<meta property="og:site_name" content="SW_Wind's blog">
+<meta property="og:description" content="题面对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有N株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有">
+<meta property="og:updated_time" content="2017-04-12T10:02:39.918Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BZOJ 4240: 有趣的家庭菜园">
+<meta name="twitter:description" content="题面对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有N株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style type="text/css">
+      ::selection {
+        background:#7F7F7F;
+      }
+    </style>
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SW_Wind&#39;s blog" title="SW_Wind&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SW_Wind&#39;s blog">SW_Wind&#39;s blog</a></h1>
+				<h2 class="blog-motto">Do you like Minecraft?</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:swwind.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/" title="BZOJ 4240: 有趣的家庭菜园" itemprop="url">BZOJ 4240: 有趣的家庭菜园</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-12T07:47:27.000Z" itemprop="datePublished"> 发表于 2017-04-12</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#错误的思想："><span class="toc-number">7.1.</span> <span class="toc-text">错误的思想：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正解："><span class="toc-number">7.2.</span> <span class="toc-text">正解：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有N株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。<br>为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有比它高的IOI草存在，那么这株IOI草就会在夏天之前枯萎。换句话说，为了不让任何一株IOI草枯萎，需要满足以下条件：<br>对于任意2&lt;=i&lt;=N-1，以下两个条件至少满足一个：</p>
+<ol>
+<li>对于任意1&lt;=j&lt;=i-1，hj&lt;=hi</li>
+<li>对于任意i+1&lt;=j&lt;=N，hk&lt;=hi</li>
+</ol>
+<p>IOI草是非常昂贵的，为了不让IOI草枯萎，JOI君需要调换IOI草的顺序。IOI草非常非常的高大且纤细的植物，因此JOI君每次只能交换相邻两株IOI草。也就是说，JOI君每次需要选择一个整数i(1&lt;=i&lt;=N-1)，然后交换第i株IOI草和第i+1株IOI草。随着夏天临近，IOI草枯萎的可能性越来越大，因此JOI君想知道让所有IOI草都不会枯萎的最少操作次数。<br>现在给出田地的区域数，以及每株IOI草的高度，请你求出让所有IOI草的不会枯萎的最少操作次数。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个正整数N，代表田地被分为了N个区域。<br>接下来N行，第i行(1&lt;=i&lt;=N)一个整数hi，表示第i株植物在春天时的高度</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数，表示最少需要的操作次数</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>6<br>2<br>8<br>4<br>5<br>3<br>6</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>3</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>最终的高度序列为 2 4 5 8 6 3，共需要操作三次。<br>3&lt;=N&lt;=3*10^5<br>1&lt;=hi&lt;=10^9</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>摸你赛题（全班80%只有10分。。<br>反正题面就是要你找一个让序列成为单峰的最小移动步数</p>
+<h2 id="错误的思想："><a href="#错误的思想：" class="headerlink" title="错误的思想："></a>错误的思想：</h2><p>预处理出[1-i]成为上升序列的最小移动步数和[i-n]成为下降序列的最小移动步数<br>然后枚举一下分界线统计一下就好了（然而只有10分）</p>
+<h2 id="正解："><a href="#正解：" class="headerlink" title="正解："></a>正解：</h2><p>预处理出每个点往左移的最小步数和往右移的最小步数<br>然后枚举每一个点，考虑他往左移好还是往右移好（其实就是求左边有几个比他大的和右边有几个比他大的，这个用树状数组和离散化瞎搞一下就好了，左右取min）<br>再全部加起来就是答案了</p>
+<p><del>我有同学树状数组写成九条可怜的了，还拿了90分。。</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 300020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">    ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">    <span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">    <span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line">ll a[N], x[N], y[N], b[N], v[N], n, ans;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">    <span class="keyword">for</span>(;x&lt;=n;x+=x&amp;-x)v[x]++;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">ask</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">    ll ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(;x;x-=x&amp;-x)ans+=v[x];</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">// freopen("flower.in", "r", stdin);</span></div><div class="line">    <span class="comment">// freopen("flower.out", "w", stdout);</span></div><div class="line">    n = read();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        b[i] = a[i] = read();</div><div class="line">    sort(b+<span class="number">1</span>, b+n+<span class="number">1</span>);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        a[i] = lower_bound(b+<span class="number">1</span>, b+n+<span class="number">1</span>, a[i])-b;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">        x[i] = i-ask(a[i])<span class="number">-1</span>;</div><div class="line">        add(a[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span> v);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)&#123;</div><div class="line">        y[i] = n-i-ask(a[i]);</div><div class="line">        add(a[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</div><div class="line">        ans += min(x[i], y[i]);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/树状数组/">树状数组</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://swwind.github.io/2017/04/12/BZOJ-4240-有趣的家庭菜园/" data-title="BZOJ 4240: 有趣的家庭菜园 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/04/12/BZOJ-4236-JOIOJI/"  title="BZOJ 4236: JOIOJI">
+ <strong>下一篇：</strong><br/> 
+ <span>BZOJ 4236: JOIOJI
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#错误的思想："><span class="toc-number">7.1.</span> <span class="toc-text">错误的思想：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正解："><span class="toc-number">7.2.</span> <span class="toc-text">正解：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数论/" title="数论">数论<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.bilibili.com/" target="_blank" title="2333">bilibili</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://shenzhebei.github.io/" target="_blank" title="dalao">szb</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/largecub233/" target="_blank" title="dalao">cfb</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/Fop_zz/" target="_blank" title="dalao">zxh</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/jzq233jzq/" target="_blank" title="dalao">jzq</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://zhzh2001.github.io/" target="_blank" title="dalao">zz</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/mdnd1234/" target="_blank" title="dalao">mdnd</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="orzdalao">zyy</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://littleredstar.github.io/" target="_blank" title="真·GAY">ljz</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://problem233.github.io/" target="_blank" title="orz">ryj</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 作为一只蒟蒻 <br/>
+			我就不说什么了233</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="SW_Wind">SW_Wind</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'swwind';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
