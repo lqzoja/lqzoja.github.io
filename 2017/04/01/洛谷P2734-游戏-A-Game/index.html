@@ -19,7 +19,7 @@ I">
 <meta property="og:site_name" content="SW_Wind's blog">
 <meta property="og:description" content="题面有如下一个双人游戏:N(2 &amp;lt;= N &amp;lt;= 100)个正整数的序列放在一个游戏平台上，游戏由玩家1开始，两人轮流从序列的任意一端取一个数，取数后该数字被去掉并累加到本玩家的得分中，当数取尽时，游戏结束。以最终得分多者为胜。现在要你编一个执行最优策略的程序，最优策略就是使玩家在与最好的对手对弈时，能得到的在当前情况下最大的可能的总分的策略。你的程序要始终为第二位玩家执行最优策略。
 I">
-<meta property="og:updated_time" content="2017-04-05T11:52:28.027Z">
+<meta property="og:updated_time" content="2017-04-13T02:31:14.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="洛谷P2734 游戏 A Game">
 <meta name="twitter:description" content="题面有如下一个双人游戏:N(2 &amp;lt;= N &amp;lt;= 100)个正整数的序列放在一个游戏平台上，游戏由玩家1开始，两人轮流从序列的任意一端取一个数，取数后该数字被去掉并累加到本玩家的得分中，当数取尽时，游戏结束。以最终得分多者为胜。现在要你编一个执行最优策略的程序，最优策略就是使玩家在与最好的对手对弈时，能得到的在当前情况下最大的可能的总分的策略。你的程序要始终为第二位玩家执行最优策略。
@@ -44,6 +44,9 @@ I">
     <style type="text/css">
       ::selection {
         background:#7F7F7F;
+      }
+      pre {
+        tab-size:4;
       }
     </style>
 </head>
@@ -124,7 +127,7 @@ I">
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><del>博弈论</del>（废话）<br>用f[i][j]表示区间[i,j]中的数全部取完时先手的得分，s[i][j]表示区间[i,j]内所有数的和。</p>
 <p align="center"><strong>f[i][j]=max(s[i][j]-f[i+1][j],s[i][j]-f[i][j-1])</strong></p>
 
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a[<span class="number">250</span>], s[<span class="number">250</span>][<span class="number">250</span>], n, f[<span class="number">250</span>][<span class="number">250</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, a+i);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n; j++)</div><div class="line">            s[i][j] = s[i][j<span class="number">-1</span>]+a[j];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</div><div class="line">            f[i][j] = max(s[i][j]-f[i+<span class="number">1</span>][j], s[i][j]-f[i][j<span class="number">-1</span>]);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d"</span>, f[<span class="number">1</span>][n], s[<span class="number">1</span>][n]-f[<span class="number">1</span>][n]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a[<span class="number">250</span>], s[<span class="number">250</span>][<span class="number">250</span>], n, f[<span class="number">250</span>][<span class="number">250</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, a+i);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt;= n; j++)</div><div class="line">			s[i][j] = s[i][j<span class="number">-1</span>]+a[j];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</div><div class="line">			f[i][j] = max(s[i][j]-f[i+<span class="number">1</span>][j], s[i][j]-f[i][j<span class="number">-1</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d %d"</span>, f[<span class="number">1</span>][n], s[<span class="number">1</span>][n]-f[<span class="number">1</span>][n]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -242,11 +245,11 @@ I">
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 			
@@ -274,11 +277,11 @@ I">
 			
 		
 			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
 			
 		
 			

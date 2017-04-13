@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://swwind.github.io/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
 <meta property="og:description" content="题面小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下">
-<meta property="og:updated_time" content="2017-03-16T13:06:03.277Z">
+<meta property="og:updated_time" content="2017-04-13T02:28:14.814Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ 1022: [SHOI2008]小约翰的游戏John">
 <meta name="twitter:description" content="题面小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下">
@@ -41,6 +41,9 @@
     <style type="text/css">
       ::selection {
         background:#7F7F7F;
+      }
+      pre {
+        tab-size:4;
       }
     </style>
 </head>
@@ -116,7 +119,7 @@
 <h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>2<br>3<br>3 5 1<br>1<br>1</p>
 <h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>John<br>Brother</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>博弈论水题，，，<br>要换成二进制观察和处理。。。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">    <span class="keyword">while</span>(T--)&#123;</div><div class="line">        <span class="keyword">int</span> n, x, sum = <span class="number">0</span>, flag = <span class="number">1</span>;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">        <span class="keyword">while</span>(n--)&#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">            <span class="keyword">if</span>(x^<span class="number">1</span>) flag = <span class="number">0</span>;</div><div class="line">            sum ^= x;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(flag) sum = !sum;</div><div class="line">        <span class="built_in">puts</span>(sum ? <span class="string">"John"</span> : <span class="string">"Brother"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="keyword">int</span> n, x, sum = <span class="number">0</span>, flag = <span class="number">1</span>;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">		<span class="keyword">while</span>(n--)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">			<span class="keyword">if</span>(x^<span class="number">1</span>) flag = <span class="number">0</span>;</div><div class="line">			sum ^= x;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(flag) sum = !sum;</div><div class="line">		<span class="built_in">puts</span>(sum ? <span class="string">"John"</span> : <span class="string">"Brother"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -234,11 +237,11 @@
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 			
@@ -266,11 +269,11 @@
 			
 		
 			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
 			
 		
 			

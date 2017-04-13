@@ -25,7 +25,7 @@ Simple Input3
 Simple Output4
 Sample Explanation这 4 个字符串分别为“221”、“212”、“210”、“222”。
 题解dpf[i]">
-<meta property="og:updated_time" content="2017-03-16T13:06:08.952Z">
+<meta property="og:updated_time" content="2017-04-13T02:28:37.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3.15摸你赛 前缀？">
 <meta name="twitter:description" content="题面题面太长，大意是要你求一个n(1&amp;lt;=n&amp;lt;=400)位的3进制数字，要求该数字所有的前缀中，2的数量都大于等于1的数量，1的数量都大于等于0的数量，求满足要求的方案数，对1,000,000,007取模。
@@ -53,6 +53,9 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
     <style type="text/css">
       ::selection {
         background:#7F7F7F;
+      }
+      pre {
+        tab-size:4;
       }
     </style>
 </head>
@@ -127,7 +130,7 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 <h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>4</p>
 <h2 id="Sample-Explanation"><a href="#Sample-Explanation" class="headerlink" title="Sample Explanation"></a>Sample Explanation</h2><p>这 4 个字符串分别为“221”、“212”、“210”、“222”。</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>dp<br>f[i][j]表示现在有i个2，j个1<br>用滚动数组递推求解</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> File(s) \</span></div><div class="line">    freopen(s<span class="meta-string">".in"</span>, <span class="meta-string">"r"</span>, stdin), \</div><div class="line">    freopen(s<span class="meta-string">".out"</span>, <span class="meta-string">"w"</span>, stdout)</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> f[<span class="number">2</span>][<span class="number">405</span>][<span class="number">405</span>], n;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    File(<span class="string">"a"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); <span class="keyword">int</span> k = n&amp;<span class="number">1</span>; f[!k][<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 第一位只能取2</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">2</span>; x &lt;= n; k ^= <span class="number">1</span>, x++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= x; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j&lt;=x; j++)&#123;</div><div class="line">                f[k][i][j] = <span class="number">0</span>;</div><div class="line">                (f[k][i][j] += f[!k][i<span class="number">-1</span>][j]) %= mod; <span class="comment">// 这一位取2</span></div><div class="line">                <span class="keyword">if</span>(j) (f[k][i][j] += f[!k][i][j<span class="number">-1</span>]) %= mod; <span class="comment">// 这一位取1</span></div><div class="line">                <span class="keyword">if</span>(x-i-j &lt;= j) (f[k][i][j] += f[!k][i][j]) %= mod; <span class="comment">// 这一位取0</span></div><div class="line">            &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j &lt;= n; j++)</div><div class="line">            (ans += f[!k][i][j]) %= mod; <span class="comment">// 统计答案</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> File(s) \</span></div><div class="line">	freopen(s<span class="meta-string">".in"</span>, <span class="meta-string">"r"</span>, stdin), \</div><div class="line">	freopen(s<span class="meta-string">".out"</span>, <span class="meta-string">"w"</span>, stdout)</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> f[<span class="number">2</span>][<span class="number">405</span>][<span class="number">405</span>], n;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	File(<span class="string">"a"</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); <span class="keyword">int</span> k = n&amp;<span class="number">1</span>; f[!k][<span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>; <span class="comment">// 第一位只能取2</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">2</span>; x &lt;= n; k ^= <span class="number">1</span>, x++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= x; i++)</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j&lt;=x; j++)&#123;</div><div class="line">				f[k][i][j] = <span class="number">0</span>;</div><div class="line">				(f[k][i][j] += f[!k][i<span class="number">-1</span>][j]) %= mod; <span class="comment">// 这一位取2</span></div><div class="line">				<span class="keyword">if</span>(j) (f[k][i][j] += f[!k][i][j<span class="number">-1</span>]) %= mod; <span class="comment">// 这一位取1</span></div><div class="line">				<span class="keyword">if</span>(x-i-j &lt;= j) (f[k][i][j] += f[!k][i][j]) %= mod; <span class="comment">// 这一位取0</span></div><div class="line">			&#125;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i &amp;&amp; i+j &lt;= n; j++)</div><div class="line">			(ans += f[!k][i][j]) %= mod; <span class="comment">// 统计答案</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -245,11 +248,11 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 			
@@ -277,11 +280,11 @@ Sample Explanation这 4 个字符串分别为“221”、“212”、“210”�
 			
 		
 			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
 			
 		
 			
