@@ -88,6 +88,75 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/28/BZOJ-1656-Usaco2006-Jan-The-Grove-树木/" title="BZOJ 1656: [Usaco2006 Jan] The Grove 树木" itemprop="url">BZOJ 1656: [Usaco2006 Jan] The Grove 树木</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-28T01:55:05.000Z" itemprop="datePublished"> 发表于 2017-03-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>The pasture contains a small, contiguous grove of trees that has no ‘holes’ in the middle of the it. Bessie wonders: how far is it to walk around that grove and get back to my starting position? She’s just sure there is a way to do it by going from her start location to successive locations by walking horizontally, vertically, or diagonally and counting each move as a single step. Just looking at it, she doesn’t think you could pass ‘through’ the grove on a tricky diagonal. Your job is to calculate the minimum number of steps she must take. Happily, Bessie lives on a simple world where the pasture is represented by a grid with R rows and C columns (1 &lt;= R &lt;= 50, 1 &lt;= C &lt;= 50). Here’s a typical example where ‘.’ is pasture (which Bessie may traverse), ‘X’ is the grove of trees, ‘*‘ represents Bessie’s start and end position, and ‘+’ marks one shortest path she can walk to circumnavigate the grove (i.e., the answer): …+… ..+X+.. .+XXX+. ..+XXX+ ..+X..+ …+++* The path shown is not the only possible shortest path; Bessie might have taken a diagonal step from her start position and achieved a similar length solution. Bessie is happy that she’s starting ‘outside’ the grove instead of in a sort of ‘harbor’ that could complicate finding the best path.<br>牧场里有一片树林，林子里没有坑。<br>贝茜很想知道，最少需要多少步能围绕树林走一圈，最后回到起点。她能上下左右走，也能走对角线格子。牧场被分成R行C列(1≤R≤50，1≤C≤50)。下面是一张样例的地图，其中“．”表示贝茜可以走的空地，  “X”表示树林，  “*”表示起点．而贝茜走的最近的路已经特别地用“+”表示出来。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201401/11(5).jpg"><br>题目保证，最短的路径一定可以找到。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><ul>
+<li>Line 1: Two space-separated integers: R and C</li>
+<li>Lines 2..R+1: Line i+1 describes row i with C characters (with no spaces between them).</li>
+</ul>
+<p>第1行输入R和C，接下来R行C列表示一张地图．地图中的符号如题干所述．</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><ul>
+<li>Line 1: The single line contains a single integer which is the smallest number of steps required to circumnavigate the grove.<br>输出最少的步数．</li>
+</ul>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>6 7<br>…….<br>…X…<br>..XXX..<br>…XXX.<br>…X…<br>……*</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>13</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>可以随机选一棵树，向下画一条射线，然后在bfs的时候强制不越过该射线，最后统计一下射线左右的值即可。<br>一遍过2333、、、</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m, mp[<span class="number">60</span>][<span class="number">60</span>], sx, sy;</div><div class="line"><span class="keyword">int</span> a[<span class="number">8</span>]=&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>&#125;;</div><div class="line"><span class="keyword">int</span> b[<span class="number">8</span>]=&#123;<span class="number">1</span>, <span class="number">1</span>,<span class="number">-1</span>, <span class="number">0</span>,<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>,<span class="number">-1</span>&#125;;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">    node()&#123;&#125;</div><div class="line">    node(<span class="keyword">int</span> a, <span class="keyword">int</span> b):x(a),y(b)&#123;&#125;</div><div class="line">    <span class="keyword">int</span> x, y;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">queue</span>&lt;node&gt; q;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">    <span class="keyword">char</span> ch = getchar();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++, ch=getchar())</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)&#123;</div><div class="line">            mp[i][j] = getchar();</div><div class="line">            <span class="keyword">if</span>(mp[i][j] == <span class="string">'.'</span>) mp[i][j] = <span class="number">0</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(mp[i][j] == <span class="string">'X'</span>) mp[i][j] = <span class="number">-1</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(mp[i][j] == <span class="string">'*'</span>) mp[sx=i][sy=j] = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">int</span> x = rand()%n+<span class="number">1</span>, y = rand()%m+<span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span>(mp[x][y]!=<span class="number">-1</span>)</div><div class="line">        x = rand()%n+<span class="number">1</span>, y = rand()%m+<span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> yy = y*<span class="number">2</span>+<span class="number">1</span>;</div><div class="line">    q.push(node(sx, sy));</div><div class="line">    <span class="keyword">while</span>(!q.empty())&#123;</div><div class="line">        node t = q.front(); q.pop();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)&#123;</div><div class="line">            <span class="keyword">if</span>(t.x+a[i] &amp;&amp; t.x+a[i]&lt;=n &amp;&amp; t.y+b[i] &amp;&amp; t.y+b[i]&lt;=m</div><div class="line">                    &amp;&amp; mp[t.x+a[i]][t.y+b[i]]==<span class="number">0</span> &amp;&amp; (t.y*<span class="number">2</span>+b[i]!=yy || t.x&gt;x))&#123;</div><div class="line">                mp[t.x+a[i]][t.y+b[i]] = mp[t.x][t.y]+<span class="number">1</span>;</div><div class="line">                q.push(node(t.x+a[i], t.y+b[i]));</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>&lt;&lt;<span class="number">30</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = x; i; i--) <span class="keyword">if</span>(mp[i][y]&gt;<span class="number">0</span>)</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">-1</span>; j &lt; <span class="number">2</span>; j++)</div><div class="line">            <span class="keyword">if</span>(mp[i+j][y+<span class="number">1</span>]&gt;<span class="number">0</span>) ans = min(ans, mp[i][y]+mp[i+j][y+<span class="number">1</span>]);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans+<span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/bfs/">bfs</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/28/BZOJ-1656-Usaco2006-Jan-The-Grove-树木/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/27/BZOJ-1037-ZJOI2008-生日聚会Party/" title="BZOJ 1037: [ZJOI2008]生日聚会Party" itemprop="url">BZOJ 1037: [ZJOI2008]生日聚会Party</a>
   </h1>
   <p class="article-author">By
@@ -642,67 +711,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/15/3-15摸你赛-前缀！/" title="3.15摸你赛 前缀！" itemprop="url">3.15摸你赛 前缀！</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-15T05:10:46.000Z" itemprop="datePublished"> 发表于 2017-03-15</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>定义f<sub>0</sub>(x)=A<sub>x</sub>, f<sub>n</sub>(x)=Sigma(f<sub>n-1</sub>(1..x))，给出长度为 N 的数组 A（从 1~N 编号）和 Q 个<br>操作。操作有两种：Add i j 表示将 Ai的值加上 j（j ≤ P）；Query i j 表示询问 f<sub>i</sub>(j)<br>的值（i ≤ M），由于答案可能会很大，给我 mod P 后的答案即可，P = 1,000,000,007。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行为三个正整数 N、M、Q。<br>第二行为 N 个非负整数，表示 A 数组。<br>接下来 Q 行，每行表示一个操作，Add i j 或 Query i j。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出有多行，每行表示 f<sub>i</sub>(j) mod P。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>4 4 4<br>1 1 1 1<br>Query 0 4<br>Query 4 3<br>Add 1 1<br>Query 3 2</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>1<br>15<br>7</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>其实是杨辉三角、、、不知你看不看得出来<br>其实就可以输入一个1 0 0 0 0…的数列，跑暴力看看就看出来了<br>看出来了就简单了哈（然而我还是爆蛋了，各种int溢出= =）</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> File(s) \</span></div><div class="line">    freopen(s<span class="meta-string">".in"</span>, <span class="meta-string">"r"</span>, stdin), \</div><div class="line">    freopen(s<span class="meta-string">".out"</span>, <span class="meta-string">"w"</span>, stdout)</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 4005</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll a[N], n, m, q, x, y, f[N][N];</div><div class="line"><span class="keyword">char</span> op[<span class="number">50</span>];</div><div class="line"><span class="function">ll <span class="title">get</span><span class="params">(ll i, ll j)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(!i) <span class="keyword">return</span> a[j];</div><div class="line">    ll ans = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(ll x = j; x&gt;=<span class="number">1</span>; x--)</div><div class="line">        (ans += (ll)f[i][x<span class="number">-1</span>]*a[j-x+<span class="number">1</span>]) %= <span class="number">1000000007</span>;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    File(<span class="string">"b"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%I64d%I64d%I64d"</span>, &amp;n, &amp;m, &amp;q);</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">0</span>; i &lt; n ;i++)</div><div class="line">        f[<span class="number">1</span>][i] = <span class="number">1</span>;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">2</span>; i &lt;= m; i++)</div><div class="line">    <span class="keyword">for</span>(ll j = <span class="number">0</span>; j &lt; n; j++)</div><div class="line">    f[i][j] = (f[i<span class="number">-1</span>][j]+f[i][j<span class="number">-1</span>])%<span class="number">1000000007</span>;</div><div class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%I64d"</span>, a+i);</div><div class="line">    <span class="keyword">while</span>(q--&amp;&amp;<span class="built_in">scanf</span>(<span class="string">"%s%I64d%I64d"</span>, op, &amp;x, &amp;y) != EOF) <span class="comment">// 强势压行</span></div><div class="line">        <span class="keyword">if</span>(op[<span class="number">0</span>] == <span class="string">'A'</span>) (a[x] += y)%=<span class="number">1000000007</span>;</div><div class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>, get(x, y));</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/15/3-15摸你赛-前缀！/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
   </nav>
 
 </div>
@@ -723,6 +734,10 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/数论/" title="数论">数论<sup>4</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/线段树/" title="线段树">线段树<sup>4</sup></a></li>
 			
 		
@@ -736,10 +751,6 @@
 		
 			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/数论/" title="数论">数论<sup>3</sup></a></li>
 			
 		
 			
@@ -759,11 +770,11 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
 			
 		
 			
@@ -791,11 +802,11 @@
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			

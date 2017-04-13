@@ -4,26 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>51nod 1526分配笔名 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 3309: DZY Loves Math | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。
-Input单组测试数据。第一行有一个整数n (">
+    <meta name="description" content="题面对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$
+Input第一行一个数T，表示询问数。接下来T行，每行两个数a,b，表示一个询问。
+Output对于每一个询问，输出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod 1526分配笔名">
-<meta property="og:url" content="http://swwind.github.io/2017/03/14/51nod-1526分配笔名/index.html">
+<meta property="og:title" content="BZOJ 3309: DZY Loves Math">
+<meta property="og:url" content="http://swwind.github.io/2017/04/13/BZOJ-3309-DZY-Loves-Math/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。
-Input单组测试数据。第一行有一个整数n (">
-<meta property="og:updated_time" content="2017-03-16T13:06:05.891Z">
+<meta property="og:description" content="题面对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$
+Input第一行一个数T，表示询问数。接下来T行，每行两个数a,b，表示一个询问。
+Output对于每一个询问，输出">
+<meta property="og:updated_time" content="2017-04-13T01:46:35.727Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod 1526分配笔名">
-<meta name="twitter:description" content="题面班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。
-Input单组测试数据。第一行有一个整数n (">
+<meta name="twitter:title" content="BZOJ 3309: DZY Loves Math">
+<meta name="twitter:description" content="题面对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$
+Input第一行一个数T，表示询问数。接下来T行，每行两个数a,b，表示一个询问。
+Output对于每一个询问，输出">
 
     
     
@@ -93,14 +96,14 @@ Input单组测试数据。第一行有一个整数n (">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/14/51nod-1526分配笔名/" title="51nod 1526分配笔名" itemprop="url">51nod 1526分配笔名</a>
+      <a href="/2017/04/13/BZOJ-3309-DZY-Loves-Math/" title="BZOJ 3309: DZY Loves Math" itemprop="url">BZOJ 3309: DZY Loves Math</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-14T11:51:28.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
+    <time datetime="2017-04-13T01:21:30.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
     
   </p>
 </header>
@@ -109,17 +112,19 @@ Input单组测试数据。第一行有一个整数n (">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>单组测试数据。<br>第一行有一个整数n (1≤n≤100000)，表示班级中同学的数目。<br>接下来n行，表示每一个同学的真名，每一个名字是非空串，且由小写字母组成。<br>名字可能重复。<br>最后n行是老师已经安排好的笔名。每一个笔名是一个非空串，且由小写字母组成。<br>笔名可能重复。<br>输入的字符总数目不超过 800000。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出最大的匹配质量。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5<br>gennady<br>galya<br>boris<br>bill<br>toshik<br>bilbo<br>torin<br>gendalf<br>smaug<br>galadriel</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>11</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>裸的Trie…<br>把每个真名在Trie上所经过的路径的标记全部+1，读入笔名的时候搜下去，如果有标记就 标记-1, ans++<br><del>怎么证我不知道，反正A了</del></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> key[<span class="number">800020</span>];</div><div class="line"><span class="keyword">int</span> n, ch[<span class="number">800020</span>][<span class="number">26</span>], val[<span class="number">800020</span>], cnt, ans, l;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</div><div class="line">        gets(key+<span class="number">1</span>);</div><div class="line">        l = <span class="built_in">strlen</span>(key+<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>, rt = <span class="number">0</span>; j &lt;= l; ++j)&#123;</div><div class="line">            <span class="keyword">if</span>(!ch[rt][key[j]-<span class="string">'a'</span>])</div><div class="line">                ch[rt][key[j]-<span class="string">'a'</span>] = ++cnt;</div><div class="line">            rt = ch[rt][key[j]-<span class="string">'a'</span>];</div><div class="line">            ++val[rt];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)&#123;</div><div class="line">        gets(key+<span class="number">1</span>);</div><div class="line">        l = <span class="built_in">strlen</span>(key+<span class="number">1</span>);</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>, rt = <span class="number">0</span>; j &lt;= l; ++j)&#123;</div><div class="line">            <span class="keyword">if</span>(!ch[rt][key[j]-<span class="string">'a'</span>]) <span class="keyword">break</span>;</div><div class="line">            rt = ch[rt][key[j]-<span class="string">'a'</span>];</div><div class="line">            <span class="keyword">if</span>(val[rt]) ++ans, --val[rt];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。<br>给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个数T，表示询问数。<br>接下来T行，每行两个数a,b，表示一个询问。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每一个询问，输出一行一个非负整数作为回答。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>7558588 9653114<br>6514903 4451211<br>7425644 1189442<br>6335198 4957</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>35793453939901<br>14225956593420<br>4332838845846<br>15400094813</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【数据规模】<br>T&lt;=10000<br>1&lt;=a,b&lt;=10^7</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一眼就能看出来：<br>先枚举gcd（1-min(a, b)）<br>然后、、然后就又不会了<br>看题解吧。。</p>
+<p>题解：<br>$$<br>\begin{align}<br>ans<br>&amp;= \sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}} \\<br>&amp;=\sum_{d=1}^{min(a,b)}{f(d)\sum_{k=1}^{min(\lfloor \frac{a}{d} \rfloor,\lfloor\frac{b}{d}\rfloor)}{\mu(k)\lfloor\frac{a}{kd}\rfloor\lfloor\frac{b}{kd}\rfloor}} \\<br>&amp;=\sum_{T=1}^{min(a,b)}{\lfloor\frac{a}{T}\rfloor\lfloor\frac{b}{T}\rfloor\sum_{d|T}{f(d)\mu(\frac{T}{d})}}<br>\end{align}<br>$$</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll _a[N], _p[N], _g[N];</div><div class="line"><span class="keyword">int</span> pri[N], cnt;</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line"><span class="function">ll <span class="title">calc</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a &gt; b) swap(a, b);</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, last; i &lt;= a; i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans += (a/i)*(b/i)*(_g[last]-_g[i<span class="number">-1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])&#123;pri[++cnt] = _p[i] = i; _a[i] = _g[i] = <span class="number">1</span>;&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; pri[j]*i &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;</div><div class="line">				_a[pri[j]*i] = _a[i]+<span class="number">1</span>;</div><div class="line">				_p[pri[j]*i] = _p[i]*pri[j];</div><div class="line">				ll tmp = i/_p[i];</div><div class="line">				<span class="keyword">if</span>(tmp == <span class="number">1</span>) _g[pri[j]*i] = <span class="number">1</span>;</div><div class="line">				<span class="keyword">else</span> _g[pri[j]*i] = (_a[tmp]==_a[pri[j]*i]?-_g[tmp]:<span class="number">0</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			_a[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			_p[pri[j]*i] = pri[j];</div><div class="line">			_g[pri[j]*i] = (_a[i]==<span class="number">1</span>?-_g[i]:<span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		_g[i] += _g[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">int</span> T; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		ll a, b;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;a, &amp;b);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, calc(a, b));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -127,7 +132,7 @@ Input单组测试数据。第一行有一个整数n (">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Trie/">Trie</a>
+  <span></span> <a href="/tags/数论/">数论</a>
   </div>
 
 </div>
@@ -136,7 +141,7 @@ Input单组测试数据。第一行有一个整数n (">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/14/51nod-1526分配笔名/" data-title="51nod 1526分配笔名 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/04/13/BZOJ-3309-DZY-Loves-Math/" data-title="BZOJ 3309: DZY Loves Math | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,19 +154,11 @@ Input单组测试数据。第一行有一个整数n (">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/15/3-15摸你赛-前缀？/" title="3.15摸你赛 前缀？">
-  <strong>上一篇：</strong><br/>
-  <span>
-  3.15摸你赛 前缀？</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/14/codevs-1204-寻找子串位置/"  title="codevs 1204 寻找子串位置">
+<a href="/2017/04/13/BZOJ-4239-巴士走读/"  title="BZOJ 4239: 巴士走读">
  <strong>下一篇：</strong><br/> 
- <span>codevs 1204 寻找子串位置
+ <span>BZOJ 4239: 巴士走读
 </span>
 </a>
 </div>
@@ -182,7 +179,7 @@ Input单组测试数据。第一行有一个整数n (">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
