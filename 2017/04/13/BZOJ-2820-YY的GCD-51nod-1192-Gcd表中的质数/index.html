@@ -4,23 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 1022: [SHOI2008]小约翰的游戏John | SW_Wind&#39;s blog</title>
+    <title>BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下">
+    <meta name="description" content="题面求$$\sum_{i=1}^{a}{\sum_{j=1}^{b}{isprime(gcd(i,j))}}$$
+Simple Input210 10100 100
+Simple Output302791
+题解当然还是枚举质数p式子是从51nod的讨论里抄来的$$\begin{align}ans(m,n) &amp;amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 1022: [SHOI2008]小约翰的游戏John">
-<meta property="og:url" content="http://swwind.github.io/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/index.html">
+<meta property="og:title" content="BZOJ 2820: YY的GCD & 51nod 1192 Gcd表中的质数">
+<meta property="og:url" content="http://swwind.github.io/2017/04/13/BZOJ-2820-YY的GCD-51nod-1192-Gcd表中的质数/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下">
-<meta property="og:updated_time" content="2017-04-13T02:28:14.814Z">
+<meta property="og:description" content="题面求$$\sum_{i=1}^{a}{\sum_{j=1}^{b}{isprime(gcd(i,j))}}$$
+Simple Input210 10100 100
+Simple Output302791
+题解当然还是枚举质数p式子是从51nod的讨论里抄来的$$\begin{align}ans(m,n) &amp;amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\">
+<meta property="og:updated_time" content="2017-04-13T05:24:32.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 1022: [SHOI2008]小约翰的游戏John">
-<meta name="twitter:description" content="题面小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下">
+<meta name="twitter:title" content="BZOJ 2820: YY的GCD & 51nod 1192 Gcd表中的质数">
+<meta name="twitter:description" content="题面求$$\sum_{i=1}^{a}{\sum_{j=1}^{b}{isprime(gcd(i,j))}}$$
+Simple Input210 10100 100
+Simple Output302791
+题解当然还是枚举质数p式子是从51nod的讨论里抄来的$$\begin{align}ans(m,n) &amp;amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\">
 
     
     
@@ -93,14 +102,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/" title="BZOJ 1022: [SHOI2008]小约翰的游戏John" itemprop="url">BZOJ 1022: [SHOI2008]小约翰的游戏John</a>
+      <a href="/2017/04/13/BZOJ-2820-YY的GCD-51nod-1192-Gcd表中的质数/" title="BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数" itemprop="url">BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-16T07:38:55.000Z" itemprop="datePublished"> 发表于 2017-03-16</time>
+    <time datetime="2017-04-13T03:39:54.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
     
   </p>
 </header>
@@ -109,17 +118,15 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下谁将获得游戏的胜利。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>本题的输入由多组数据组成第一行包括一个整数T，表示输入总共有T组数据（T≤500）。每组数据的第一行包括一个整数N（N≤50），表示共有N堆石子，接下来有N个不超过5000的整数，分别表示每堆石子的数目。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>每组数据的输出占一行，每行输出一个单词。如果约翰能赢得比赛，则输出“John”，否则输出“Brother”，请注意单词的大小写。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>2<br>3<br>3 5 1<br>1<br>1</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>John<br>Brother</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>博弈论水题，，，<br>要换成二进制观察和处理。。。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="keyword">int</span> n, x, sum = <span class="number">0</span>, flag = <span class="number">1</span>;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">		<span class="keyword">while</span>(n--)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">			<span class="keyword">if</span>(x^<span class="number">1</span>) flag = <span class="number">0</span>;</div><div class="line">			sum ^= x;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(flag) sum = !sum;</div><div class="line">		<span class="built_in">puts</span>(sum ? <span class="string">"John"</span> : <span class="string">"Brother"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>求<br>$$<br>\sum_{i=1}^{a}{\sum_{j=1}^{b}{isprime(gcd(i,j))}}<br>$$</p>
+<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>2<br>10 10<br>100 100</p>
+<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>30<br>2791</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>当然还是枚举质数p<br>式子是从51nod的讨论里抄来的<br>$$<br>\begin{align}<br>ans(m,n) &amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\right\rfloor}\sum_{j=1}^{\left\lfloor \frac mp\right\rfloor}[(i,j)=1][p] \\<br>&amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\right\rfloor}\sum_{j=1}^{\left\lfloor \frac mp\right\rfloor}\sum_{k=1}\mu(k)[k|i,k|j][p] \\<br>&amp;=\sum_p\sum_{k=1}^{\left\lfloor \frac np\right\rfloor}\sum_{i=1}^{\left\lfloor \frac n{kp}\right\rfloor}\sum_{j=1}^{\left\lfloor \frac m{kp}\right\rfloor}\mu(k)[p] \\<br>&amp;=\sum_{k=1}^n\sum_{p=1}^{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac n{kp}\right\rfloor}{\left\lfloor \frac m{kp}\right\rfloor}\mu(k)[p] \\<br>&amp;=\sum_{k=1}^n\sum_{p|k}{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac m{k}\right\rfloor}\mu(\frac kp)[p] \\<br>&amp;=\sum_{k=1}^n{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac m{k}\right\rfloor}\sum_{p|k}\mu(\frac kp)[p] \\<br>&amp;=\sum_{k=1}^n{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac m{k}\right\rfloor}f(k)<br>\end{align}<br>$$</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> pri[<span class="number">670000</span>], mu[N], cnt, f[N];</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll n, m, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	mu[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; pri[j]*i &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j])mu[pri[j]*i] = -mu[i];</div><div class="line">			<span class="keyword">else</span>&#123;mu[pri[j]*i] = <span class="number">0</span>; <span class="keyword">break</span>;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j*pri[i] &lt; N; j++)</div><div class="line">			f[pri[i]*j] += mu[j];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		f[i] += f[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		n = read(), m = read(), ans = <span class="number">0</span>;</div><div class="line">		<span class="keyword">if</span>(n &gt; m) swap(n, m);</div><div class="line">		<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= n; i = last+<span class="number">1</span>)&#123;</div><div class="line">			last = min(n/(n/i), m/(m/i));</div><div class="line">			ans += (n/i)*(m/i)*(f[last]-f[i<span class="number">-1</span>]);</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -127,7 +134,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/博弈论/">博弈论</a>
+  <span></span> <a href="/tags/数论/">数论</a>
   </div>
 
 </div>
@@ -136,7 +143,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/" data-title="BZOJ 1022: [SHOI2008]小约翰的游戏John | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/04/13/BZOJ-2820-YY的GCD-51nod-1192-Gcd表中的质数/" data-title="BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -149,19 +156,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/16/BZOJ-1452-JSOI2009-Count/" title="BZOJ 1452: [JSOI2009]Count">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 1452: [JSOI2009]Count</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/"  title="BZOJ 1954: Pku3764 The xor-longest Path">
+<a href="/2017/04/13/BZOJ-3309-DZY-Loves-Math/"  title="BZOJ 3309: DZY Loves Math">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 1954: Pku3764 The xor-longest Path
+ <span>BZOJ 3309: DZY Loves Math
 </span>
 </a>
 </div>
@@ -182,7 +181,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">4.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
