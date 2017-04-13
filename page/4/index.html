@@ -91,6 +91,67 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/" title="BZOJ 1954: Pku3764 The xor-longest Path" itemprop="url">BZOJ 1954: Pku3764 The xor-longest Path</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-16T05:07:44.000Z" itemprop="datePublished"> 发表于 2017-03-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给定一棵n个点的带权树，求树上最长的异或和路径。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>4<br>1 2 3<br>2 3 4<br>2 4 6</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>7</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>可以注意到 a -&gt; b 的异或和 = a -&gt; root 的异或和 ^ b -&gt; root 的异或和。所以用 Trie 保存所有点到根节点的异或和，再枚举每一个异或和，在Trie上尽量找与他每一位都相反的就行了（如果存在）。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> to, next, v;</div><div class="line">&#125;e[N&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> head[N], cnt, val[N], bin[<span class="number">31</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;</div><div class="line">	e[++cnt].to = y; e[cnt].next = head[x]; head[x] = cnt; e[cnt].v = z;</div><div class="line">	e[++cnt].to = x; e[cnt].next = head[y]; head[y] = cnt; e[cnt].v = z;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = head[x]; i; i = e[i].next)&#123;</div><div class="line">		<span class="keyword">if</span>(e[i].to == fa) <span class="keyword">continue</span>;</div><div class="line">		val[e[i].to] = e[i].v ^ val[x];</div><div class="line">		dfs(e[i].to, x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> ch[N*<span class="number">30</span>][<span class="number">2</span>], sz;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ins</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> rt = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">30</span>, k = (x&amp;bin[<span class="number">30</span>])&gt;<span class="number">0</span>; i &gt;= <span class="number">0</span>; k = (x&amp;bin[--i])&gt;<span class="number">0</span>)</div><div class="line">		<span class="keyword">if</span>(!ch[rt][k]) rt = ch[rt][k] = ++sz;</div><div class="line">		<span class="keyword">else</span> rt = ch[rt][k];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> rt = <span class="number">0</span>, sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">30</span>, k = (x&amp;bin[<span class="number">30</span>])&gt;<span class="number">0</span>; i &gt;= <span class="number">0</span>; k = (x&amp;bin[--i])&gt;<span class="number">0</span>)</div><div class="line">		<span class="keyword">if</span>(ch[rt][!k]) rt = ch[rt][!k], sum += bin[i];</div><div class="line">		<span class="keyword">else</span> rt = ch[rt][k];</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n, x, y, z;</div><div class="line">	bin[<span class="number">0</span>] = <span class="number">1</span>; <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">30</span>; i++) bin[i] = bin[i<span class="number">-1</span>]&lt;&lt;<span class="number">1</span>;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z);</div><div class="line">		add(x, y, z);</div><div class="line">	&#125;</div><div class="line">	dfs(<span class="number">1</span>, <span class="number">0</span>); <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) ins(val[i]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) ans = max(ans, ask(val[i]));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Trie/">Trie</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/16/hdu-2222-Keywords-Search/" title="hdu 2222 Keywords Search" itemprop="url">hdu 2222 Keywords Search</a>
   </h1>
   <p class="article-author">By
@@ -642,77 +703,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/12/线段树入门详解/" title="线段树入门详解" itemprop="url">线段树入门详解</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-12T12:12:57.000Z" itemprop="datePublished"> 发表于 2017-03-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>线段树其实就是一个超级简单的数据结构。<br>就是把一个序列搞出若干个区间，在询问和修改时改一下区间就行了。<br>比方说某节点表示[1, n]的区间，那么该节点的左子树就表示[1, (n+1)/2]的区间，右子树就表示[(n+1)/2+1, n]的区间。<br>然后每个节点维护一下该区间内的目标对象（sum、max等）就行了，<br>这样可以在n<sup>2</sup>的时间内建树，在log(n)的时间内完成查询操作。<br>注意到线段树是颗二叉树，所以每个节点的左儿子可以表示为x*2(位运算简化为x&lt;&lt;1)，右儿子为x*2+1(x&lt;&lt;1|1)<br>注意在查询的时候如果要修改的刚好就是该节点的区间，<br>那么可以为这个节点打一个flag（俗称Lazy标记），而不必把他下面的节点全部更新（不然是O（n）的了）。</p>
-<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>下面就是模板了，但是希望大家先不看模板打一遍，再与模板校对并优化<br>先是每个节点的结构体：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> l, r, sum, mx, lazy; <span class="comment">// l, r: 左右边界，sum、mx: 最大值 lazy只是个标记</span></div><div class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>]; <span class="comment">// 节点要开长度的四倍大小</span></div></pre></td></tr></table></figure>
-<p>建树：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	tr[x].l = l, tr[x].r = r;</div><div class="line">	<span class="keyword">if</span>(l == r)&#123;</div><div class="line">		tr[x].sum = tr[x].mx = a[l];</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>, l, mid);</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">	push_up(x); <span class="comment">// 更新x的值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后是push_up的内容：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	tr[x].sum = tr[x&lt;&lt;<span class="number">1</span>].sum + tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum + a[x]; <span class="comment">// 更新sum</span></div><div class="line">	tr[x].mx = max(tr[x&lt;&lt;<span class="number">1</span>].mx, tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].mx); <span class="comment">// 更新max</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>接着是查询：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">asksum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	push_down(x); <span class="comment">// 这步后来会讲到，下传标记</span></div><div class="line">	<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x].sum;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> asksum(x&lt;&lt;<span class="number">1</span>, l, r); <span class="comment">// 若果询问的区间明显在节点区间的左半边，那么去问节点的左子树</span></div><div class="line">	<span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> asksum(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r); <span class="comment">// 如果在右边就去问右子树</span></div><div class="line">	<span class="keyword">return</span> asksum(x&lt;&lt;<span class="number">1</span>, l, mid) + asksum(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r); <span class="comment">// 不然两个都要问</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">askmax</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123; <span class="comment">// 这个和上面一个基本一样</span></div><div class="line">	push_down(x);</div><div class="line">	<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x].mx;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> askmax(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> askmax(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">return</span> max(askmax(x&lt;&lt;<span class="number">1</span>, l, mid), askmax(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后是区间加的操作：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r)&#123;</div><div class="line">		tr[x].lazy += val; <span class="comment">// 这标记就是说，他的儿子都要加这么多，但是懒得算下去了</span></div><div class="line">		tr[x].sum += val*(tr[x].r - tr[x].l + <span class="number">1</span>);</div><div class="line">		tr[x].mx += val;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) update(x&lt;&lt;<span class="number">1</span>, l, r, val);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) update(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r, val);</div><div class="line">	<span class="keyword">else</span> update(x&lt;&lt;<span class="number">1</span>, l, mid, val), update(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r, val);</div><div class="line">	push_up(x); <span class="comment">// 更新x的值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后就是标记下传啦！</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!tr[x].lazy) <span class="keyword">return</span>; <span class="comment">// 没有标记就返回</span></div><div class="line">	<span class="keyword">if</span>(tr[x].l)&#123; <span class="comment">// 有左儿子</span></div><div class="line">		tr[tr[x].l].lazy += tr[x].lazy;</div><div class="line">		tr[tr[x].l].sum += tr[x].lazy*(tr[x].r - tr[x].l + <span class="number">1</span>);</div><div class="line">		tr[tr[x].l].mx += tr[x].lazy;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(tr[x].r)&#123; <span class="comment">// 有右儿子</span></div><div class="line">		tr[tr[x].r].lazy += tr[x].lazy;</div><div class="line">		tr[tr[x].r].sum += tr[x].lazy*(tr[x].r - tr[x].l + <span class="number">1</span>);</div><div class="line">		tr[tr[x].r].mx += tr[x].lazy;</div><div class="line">	&#125;</div><div class="line">	tr[x].lazy = <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>看完了之后就有一大波水题在等着你！<br>就算看不懂照题解多打几遍慢慢就懂了的！<br>刷题才是王道！<br>GL&amp;HF</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/线段树/">线段树</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/12/线段树入门详解/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -740,15 +730,11 @@
 			
 		
 			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>4</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>4</sup></a></li>
 			
 		
 			
@@ -756,11 +742,11 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
@@ -768,19 +754,23 @@
 			
 		
 			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
 			
 		
 			
@@ -792,19 +782,19 @@
 			
 		
 			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
 			
 		
 			
@@ -812,7 +802,7 @@
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
 			
 		
 		</ul>
