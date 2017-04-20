@@ -90,6 +90,69 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/" title="教程: 用Sublime Text 3编译和运行C++程序" itemprop="url">教程: 用Sublime Text 3编译和运行C++程序</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-24T06:58:03.000Z" itemprop="datePublished"> 发表于 2017-03-24</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>咳咳，如果你dev用惯了，看他不爽，想换个IDE，那么推荐用Sublime Text这款软件。由于服务器在国外，所以下载很慢<del>（挂VPN好像更慢）</del>，所以提供一个<a href="https://pan.baidu.com/s/1o7TGvk2" target="_blank" rel="external">百度网盘链接</a>。链接挂了跟我说。</p>
+<h2 id="安装编译器"><a href="#安装编译器" class="headerlink" title="安装编译器"></a>安装编译器</h2><p>由于软件不自带编译器，所以请先下载好对应操作系统位数的编译器。安装完成后请打开安装的目录，复制 安装目录/mingwXX/bin/的路径，然后在桌面上右键”计算机”（”此电脑”或者”我的电脑”） -&gt; 点击属性 -&gt; 高级系统设置 -&gt; 高级 -&gt; 环境变量 -&gt; 在下面一个框框中找到Path变量，双击打开编辑，然后如果你的系统是win7及以下，请在变量值的末尾加一个英文的分号（如果原来有就不用了），然后把路径复制进去再加一个英文分号就行了。如果你是win8 or win10，UI界面已经做好了，直接新建一个路径就行了，这里不再赘述，然后一路确定点回去，打开cmd，输入g++看看有没有配置完成。</p>
+<h2 id="添加Build-System"><a href="#添加Build-System" class="headerlink" title="添加Build System"></a>添加Build System</h2><p>打开Sublime Text，点击Tools -&gt; Build System -&gt; New Build System…，再把下面的东西复制进去<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="attr">"cmd"</span>: [<span class="string">"g++"</span>, <span class="string">"$&#123;file&#125;"</span>, <span class="string">"-o"</span>, <span class="string">"$&#123;file_path&#125;/$&#123;file_base_name&#125;"</span>],</div><div class="line">	<span class="attr">"file_regex"</span>: <span class="string">"^(..[^:]*):([0-9]+):?([0-9]+)?:?(.*)$"</span>,</div><div class="line">	<span class="attr">"working_dir"</span>: <span class="string">"$&#123;file_path&#125;"</span>,</div><div class="line">	<span class="attr">"encoding"</span>: <span class="string">"cp936"</span>,</div><div class="line">	<span class="attr">"selector"</span>: <span class="string">"source.c"</span>,</div><div class="line">	<span class="attr">"variants"</span>:</div><div class="line">	[</div><div class="line">		&#123;</div><div class="line">		<span class="attr">"name"</span>: <span class="string">"Run"</span>,</div><div class="line">		<span class="attr">"cmd"</span>: [<span class="string">"cmd"</span>,<span class="string">"/C"</span>,<span class="string">"start"</span>,<span class="string">"cmd"</span>,<span class="string">"/c"</span>,<span class="string">"$&#123;file_path&#125;/$&#123;file_base_name&#125;.exe &amp;pause"</span>]</div><div class="line">		&#125;</div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>接着保存为CPP.sublime-build，再点击Tools -&gt; Build System -&gt; CPP就完成啦。</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>Ctrl+Shift+B打开菜单，选择CPP是编译，选择CPP-RUN是运行（自带pause）<br>Ctrl+B重复上一操作</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>百度有毒</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/教程/">教程</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/24/教程-用Sublime-Text-3编译和运行C-程序/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/24/BZOJ-1854-Scoi2010-游戏/" title="BZOJ 1854: [Scoi2010]游戏" itemprop="url">BZOJ 1854: [Scoi2010]游戏</a>
   </h1>
   <p class="article-author">By
@@ -640,67 +703,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/14/codevs-1204-寻找子串位置/" title="codevs 1204 寻找子串位置" itemprop="url">codevs 1204 寻找子串位置</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-14T06:29:25.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给出字符串a和字符串b，保证b是a的一个子串，请你输出b在a中第一次出现的位置。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>abcd bc</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>2</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>范围才100…暴力都能过吧= =<br>标算是KMP匹配，和暴力一样的0ms</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> A[<span class="number">120</span>], B[<span class="number">120</span>];</div><div class="line"><span class="keyword">int</span> nxt[<span class="number">120</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s%s"</span>, A+<span class="number">1</span>, B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(A+<span class="number">1</span>), m = <span class="built_in">strlen</span>(B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; B[j+<span class="number">1</span>] != B[i]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(B[j+<span class="number">1</span>] == B[i]) j++; nxt[i] = j;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; A[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(A[i] == B[j+<span class="number">1</span>]) j++;</div><div class="line">		<span class="keyword">if</span>(j == m) <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i-m+<span class="number">1</span>)&amp;<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/KMP/">KMP</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/14/codevs-1204-寻找子串位置/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
@@ -724,11 +726,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
 			
 		
 			
@@ -736,15 +738,27 @@
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -760,11 +774,7 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 			
@@ -772,23 +782,7 @@
 			
 		
 			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/dfs/" title="dfs">dfs<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
 			
 		
 			
@@ -796,11 +790,19 @@
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
+				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 		</ul>

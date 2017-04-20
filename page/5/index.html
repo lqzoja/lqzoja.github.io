@@ -90,6 +90,67 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/14/codevs-1204-寻找子串位置/" title="codevs 1204 寻找子串位置" itemprop="url">codevs 1204 寻找子串位置</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-14T06:29:25.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给出字符串a和字符串b，保证b是a的一个子串，请你输出b在a中第一次出现的位置。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>abcd bc</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>2</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>范围才100…暴力都能过吧= =<br>标算是KMP匹配，和暴力一样的0ms</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> A[<span class="number">120</span>], B[<span class="number">120</span>];</div><div class="line"><span class="keyword">int</span> nxt[<span class="number">120</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s%s"</span>, A+<span class="number">1</span>, B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(A+<span class="number">1</span>), m = <span class="built_in">strlen</span>(B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; B[j+<span class="number">1</span>] != B[i]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(B[j+<span class="number">1</span>] == B[i]) j++; nxt[i] = j;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; A[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(A[i] == B[j+<span class="number">1</span>]) j++;</div><div class="line">		<span class="keyword">if</span>(j == m) <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i-m+<span class="number">1</span>)&amp;<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/KMP/">KMP</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/14/codevs-1204-寻找子串位置/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/14/BZOJ-1355-Baltic2009-Radio-Transmission/" title="BZOJ 1355: [Baltic2009]Radio Transmission" itemprop="url">BZOJ 1355: [Baltic2009]Radio Transmission</a>
   </h1>
   <p class="article-author">By
@@ -556,11 +617,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
 			
 		
 			
@@ -568,15 +629,27 @@
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -592,11 +665,7 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 			
@@ -604,23 +673,7 @@
 			
 		
 			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/dfs/" title="dfs">dfs<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
 			
 		
 			
@@ -628,11 +681,19 @@
 			
 		
 			
-				<li><a href="/tags/minecraft/" title="minecraft">minecraft<sup>1</sup></a></li>
+				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
+				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 		</ul>
