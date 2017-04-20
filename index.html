@@ -103,12 +103,12 @@
 </header>
     <div class="article-content">
         
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在一个5×5的棋盘上有12个白色的骑士和12个黑色的骑士， 且有一个空位。在任何时候一个骑士都能按照骑<br>士的走法（它可以走到和它横坐标相差为1，纵坐标相差为2或者横坐标相差为2，纵坐标相差为1的格子）移动到空<br>位上。 给定一个初始的棋盘，怎样才能经过移动变成如下目标棋盘： 为了体现出骑士精神，他们必须以最少的步<br>数完成任务。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201303/aa.jpg" alt=""></p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行有一个正整数T(T&lt;=10)，表示一共有N组数据。接下来有T个5×5的矩阵，0表示白色骑士，1表示黑色骑<br>士，*表示空位。两组数据之间没有空行。</p>
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在一个5×5的棋盘上有12个白色的骑士和12个黑色的骑士， 且有一个空位。在任何时候一个骑士都能按照骑士的走法（它可以走到和它横坐标相差为1，纵坐标相差为2或者横坐标相差为2，纵坐标相差为1的格子）移动到空位上。 给定一个初始的棋盘，怎样才能经过移动变成如下目标棋盘： 为了体现出骑士精神，他们必须以最少的步数完成任务。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201303/aa.jpg" alt=""></p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行有一个正整数T(T&lt;=10)，表示一共有N组数据。接下来有T个5×5的矩阵，0表示白色骑士，1表示黑色骑士，*表示空位。两组数据之间没有空行。</p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每组数据都输出一行。如果能在15步以内（包括15步）到达目标状态，则输出步数，否则输出－1。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2<br>10110<br>01<em>11<br>10111<br>01001<br>00000<br>01011<br>110</em>1<br>01110<br>01010<br>00100</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2<br>10110<br>01*11<br>10111<br>01001<br>00000<br>01011<br>110*1<br>01110<br>01010<br>00100</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>7<br>-1</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>爆搜肯定妥妥的TLE<br>所以就用IDA*好了<br>预计的步数就是现在与目标状态互不相同的个数<br>然后再用迭代深搜<br><code>for(k = 1; k &lt;= 15; k++)</code>我打成了<code>for(int k = 1; k &lt;= 15; k++)</code>然后调了半个小时</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>爆搜肯定妥妥的TLE<br>所以就用IDA*好了<br>预计的步数就是现在与目标状态互不相同的个数<br>然后再用迭代深搜</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> read(a) scanf(<span class="meta-string">"%d"</span>, &amp;a)</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> write(a) printf(<span class="meta-string">"%d\n"</span>, a);</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> ans[<span class="number">6</span>][<span class="number">6</span>] = &#123;</div><div class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;,</div><div class="line">	&#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>&#125;,</div><div class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>&#125;,</div><div class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>&#125;,</div><div class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>&#125;,</div><div class="line">	&#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;&#125;;</div><div class="line"><span class="keyword">int</span> mp[<span class="number">6</span>][<span class="number">6</span>], k;</div><div class="line"><span class="keyword">int</span> sx[<span class="number">8</span>] = &#123;<span class="number">1</span>, <span class="number">1</span>,<span class="number">-1</span>,<span class="number">-1</span>, <span class="number">2</span>, <span class="number">2</span>,<span class="number">-2</span>,<span class="number">-2</span>&#125;;</div><div class="line"><span class="keyword">int</span> sy[<span class="number">8</span>] = &#123;<span class="number">2</span>,<span class="number">-2</span>, <span class="number">2</span>,<span class="number">-2</span>, <span class="number">1</span>,<span class="number">-1</span>, <span class="number">1</span>,<span class="number">-1</span>&#125;;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ok</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++)</div><div class="line">	<span class="keyword">if</span>(ans[i][j] != mp[i][j]) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">get</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++)</div><div class="line">	sum += ans[i][j] != mp[i][j];</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> step, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(step == k) <span class="keyword">return</span> ok();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)&#123;</div><div class="line">		<span class="keyword">int</span> xx = x+sx[i], yy = y+sy[i];</div><div class="line">		<span class="keyword">if</span>(xx&gt;<span class="number">5</span>||xx&lt;<span class="number">1</span>||yy&gt;<span class="number">5</span>||yy&lt;<span class="number">1</span>)<span class="keyword">continue</span>;</div><div class="line">		swap(mp[xx][yy], mp[x][y]);</div><div class="line">		<span class="keyword">if</span>(get()+step &lt;= k)<span class="keyword">if</span>(dfs(step+<span class="number">1</span>, xx, yy))<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">		swap(mp[xx][yy], mp[x][y]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> T, x, y; read(T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="keyword">char</span> ch;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; j++)&#123;</div><div class="line">			ch=getchar();</div><div class="line">			<span class="keyword">while</span>(ch!=<span class="string">'0'</span>&amp;&amp;ch!=<span class="string">'1'</span>&amp;&amp;ch!=<span class="string">'*'</span>)ch=getchar();</div><div class="line">			<span class="keyword">if</span>(ch == <span class="string">'*'</span>) mp[x=i][y=j] = <span class="number">2</span>;</div><div class="line">			<span class="keyword">else</span> mp[i][j] = ch-<span class="string">'0'</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> flag = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(k = <span class="number">1</span>; k &lt;= <span class="number">15</span>; k++)</div><div class="line">			<span class="keyword">if</span>(dfs(<span class="number">0</span>, x, y))&#123;</div><div class="line">				write(k);</div><div class="line">				flag = <span class="number">1</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		<span class="keyword">if</span>(!flag) <span class="built_in">puts</span>(<span class="string">"-1"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
         
         
@@ -798,11 +798,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
@@ -810,27 +810,23 @@
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -842,19 +838,31 @@
 			
 		
 			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>2</sup></a></li>
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/dfs/" title="dfs">dfs<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
 			
 		
 			
@@ -866,15 +874,7 @@
 			
 		
 			
-				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 		</ul>
