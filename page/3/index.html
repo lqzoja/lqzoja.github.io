@@ -90,6 +90,68 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/04/06/BZOJ-3674-可持久化并查集加强版/" title="BZOJ 3674: 可持久化并查集加强版" itemprop="url">BZOJ 3674: 可持久化并查集加强版</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-06T07:15:09.000Z" itemprop="datePublished"> 发表于 2017-04-06</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>自从zkysb出了可持久化并查集后……<br>hzwer:乱写能AC，暴力踩标程<br>KuribohG：我不路径压缩就过了！<br>ndsf：暴力就可以轻松虐！<br>zky:……</p>
+<p>n个集合 m个操作<br>操作：<br>1 a b 合并a,b所在集合<br>2 k 回到第k次操作之后的状态(查询算作操作)<br>3 a b 询问a,b是否属于同一集合，是则输出1否则输出0<br>请注意本题采用强制在线,所给的a,b,k均经过加密,加密方法为x = x xor lastans,lastans的初始值为0<br>0&lt;n,m&lt;=2*10^5</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 6<br>1 1 2<br>3 1 2<br>2 1<br>3 0 3<br>2 1<br>3 1 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1<br>0<br>1</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><del>C++的rope真好用</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ext/rope&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> __gnu_cxx;</div><div class="line">rope&lt;<span class="keyword">int</span>&gt; *rp[<span class="number">200010</span>]; <span class="comment">// 指针快qwq，把指针改成数组就RE了这又是为什么、、</span></div><div class="line"><span class="keyword">int</span> n, m, a[<span class="number">200100</span>], f, x, y, lastans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> fa = rp[i] -&gt; at(x);</div><div class="line">	<span class="keyword">if</span>(fa==x) <span class="keyword">return</span> x;</div><div class="line">	<span class="keyword">int</span> f = find(i, fa);</div><div class="line">	<span class="keyword">if</span>(f==fa) <span class="keyword">return</span> f;</div><div class="line">	rp[i] -&gt; replace(x, f);</div><div class="line">	<span class="keyword">return</span> f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		a[i] = i;</div><div class="line">	rp[<span class="number">0</span>] = <span class="keyword">new</span> rope&lt;<span class="keyword">int</span>&gt;(a, a+n+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		rp[i] = <span class="keyword">new</span> rope&lt;<span class="keyword">int</span>&gt;(*rp[i<span class="number">-1</span>]);</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;f);</div><div class="line">		<span class="keyword">if</span>(f == <span class="number">1</span>)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</div><div class="line">			x^=lastans, y^=lastans;</div><div class="line">			x = find(i,x);</div><div class="line">			y = find(i,y);</div><div class="line">			<span class="keyword">if</span>(x != y)</div><div class="line">				rp[i] -&gt; replace(y, x);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(f == <span class="number">2</span>)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x); x^=lastans;</div><div class="line">			rp[i] = rp[x];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</div><div class="line">			x^=lastans, y^=lastans;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, lastans=find(i,x)==find(i,y));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/STL/">STL</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/04/06/BZOJ-3674-可持久化并查集加强版/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/04/06/BZOJ-3110-Zjoi2013-K大数查询/" title="BZOJ 3110: [Zjoi2013]K大数查询" itemprop="url">BZOJ 3110: [Zjoi2013]K大数查询</a>
   </h1>
   <p class="article-author">By
@@ -672,66 +734,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/28/MI作品鉴赏/" title="MI作品鉴赏" itemprop="url">MI作品鉴赏</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-28T02:32:59.000Z" itemprop="datePublished"> 发表于 2017-03-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mine-Imator其实是个好东西<img src="/img/huaji.png"><br>我会把我大部分的作品发布到这个帖子里<img src="/img/huaji.png"><br>其实都是些搞事情的图片，没有什么可以欣赏的<img src="/img/huaji.png"><br>不多说了自己看吧<img src="/img/haipa.png"></p>
-<h2 id="2017-3-27"><a href="#2017-3-27" class="headerlink" title="2017.3.27"></a>2017.3.27</h2><p>这图是来调戏同学的2333<br><img src="/img/MI1.png"></p>
-<h2 id="2017-3-28"><a href="#2017-3-28" class="headerlink" title="2017.3.28"></a>2017.3.28</h2><p>这图是用来调戏同学和oierbbs的管理的2333<br><img src="/img/OhNO3.png"></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/minecraft/">minecraft</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2017/03/28/MI作品鉴赏/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -799,11 +801,11 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/kdtree/" title="kdtree">kdtree<sup>1</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
@@ -823,7 +825,7 @@
 			
 		
 			
-				<li><a href="/tags/dfs/" title="dfs">dfs<sup>1</sup></a></li>
+				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
 			
 		
 			
