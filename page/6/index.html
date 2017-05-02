@@ -108,7 +108,7 @@
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>可能越狱的状态数，模100003取余</p>
 <h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>2 3</p>
 <h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>6</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这题还是有点简单的哎<br>其实就是求<img src="/img/mathtex.gif"><br>所以就是裸的快速幂了</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这题还是有点简单的哎<br>其实就是求$m^n-m*(m-1)^{n-1}$<br>所以就是裸的快速幂了</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">	Problem: 1008</div><div class="line">	User: SW_Wind</div><div class="line">	Language: C++</div><div class="line">	Result: Accepted</div><div class="line">	Time:0 ms</div><div class="line">	Memory:1288 kb</div><div class="line">****************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 100003</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll m, n;</div><div class="line"><span class="function">ll <span class="title">sqr</span><span class="params">(ll a)</span></span>&#123; <span class="comment">//求平方</span></div><div class="line">	<span class="keyword">return</span> a*a%MOD;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">mi</span><span class="params">(ll a, ll b)</span></span>&#123; <span class="comment">//这个就是快速幂啦！求a的b次方</span></div><div class="line">	<span class="keyword">if</span>(!b) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(b&amp;<span class="number">1</span>) <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>))*a%MOD;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; <span class="comment">//简洁的主函数</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;m, &amp;n);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, (mi(m, n)-m*mi(m<span class="number">-1</span>, n<span class="number">-1</span>)%MOD+MOD)%MOD);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
         
@@ -245,11 +245,11 @@
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
 			
@@ -293,11 +293,11 @@
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
 			
 		
 			
@@ -305,11 +305,11 @@
 			
 		
 			
-				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/并查集/" title="并查集">并查集<sup>1</sup></a></li>
+				<li><a href="/tags/CDQ分治/" title="CDQ分治">CDQ分治<sup>1</sup></a></li>
 			
 		
 		</ul>
