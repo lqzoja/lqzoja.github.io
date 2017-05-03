@@ -1,0 +1,564 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>BZOJ 3038: 上帝造题的七分钟2 | SW_Wind&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SW_Wind">
+    
+
+    
+    <meta name="description" content="题面XLk觉得《上帝造题的七分钟》不太过瘾，于是有了第二部。“第一分钟，X说，要有数列，于是便给定了一个正整数数列。第二分钟，L说，要能修改，于是便有了对一段数中每个数都开平方(下取整)的操作。第三分钟，k说，要能查询，于是便有了求一段数的和的操作。第四分钟，彩虹喵说，要是noip难度，于是便有了数据范围。第五分钟，诗人说，要有韵律，于是便有了时间限制和内存限制。第六分钟，和雪说，要省点事，于是便">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BZOJ 3038: 上帝造题的七分钟2">
+<meta property="og:url" content="http://swwind.github.io/2017/03/17/BZOJ-3038-上帝造题的七分钟2/index.html">
+<meta property="og:site_name" content="SW_Wind's blog">
+<meta property="og:description" content="题面XLk觉得《上帝造题的七分钟》不太过瘾，于是有了第二部。“第一分钟，X说，要有数列，于是便给定了一个正整数数列。第二分钟，L说，要能修改，于是便有了对一段数中每个数都开平方(下取整)的操作。第三分钟，k说，要能查询，于是便有了求一段数的和的操作。第四分钟，彩虹喵说，要是noip难度，于是便有了数据范围。第五分钟，诗人说，要有韵律，于是便有了时间限制和内存限制。第六分钟，和雪说，要省点事，于是便">
+<meta property="og:updated_time" content="2017-04-13T02:30:47.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BZOJ 3038: 上帝造题的七分钟2">
+<meta name="twitter:description" content="题面XLk觉得《上帝造题的七分钟》不太过瘾，于是有了第二部。“第一分钟，X说，要有数列，于是便给定了一个正整数数列。第二分钟，L说，要能修改，于是便有了对一段数中每个数都开平方(下取整)的操作。第三分钟，k说，要能查询，于是便有了求一段数的和的操作。第四分钟，彩虹喵说，要是noip难度，于是便有了数据范围。第五分钟，诗人说，要有韵律，于是便有了时间限制和内存限制。第六分钟，和雪说，要省点事，于是便">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <style type="text/css">
+      ::selection {
+        background:#7F7F7F;
+      }
+      pre {
+        tab-size:4;
+      }
+    </style>
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SW_Wind&#39;s blog" title="SW_Wind&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SW_Wind&#39;s blog">SW_Wind&#39;s blog</a></h1>
+				<h2 class="blog-motto">Do you like Minecraft?</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:swwind.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/03/17/BZOJ-3038-上帝造题的七分钟2/" title="BZOJ 3038: 上帝造题的七分钟2" itemprop="url">BZOJ 3038: 上帝造题的七分钟2</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-17T02:09:39.000Z" itemprop="datePublished"> 发表于 2017-03-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+		
+		</div>
+		
+		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>XLk觉得《上帝造题的七分钟》不太过瘾，于是有了第二部。<br>“第一分钟，X说，要有数列，于是便给定了一个正整数数列。<br>第二分钟，L说，要能修改，于是便有了对一段数中每个数都开平方(下取整)的操作。<br>第三分钟，k说，要能查询，于是便有了求一段数的和的操作。<br>第四分钟，彩虹喵说，要是noip难度，于是便有了数据范围。<br>第五分钟，诗人说，要有韵律，于是便有了时间限制和内存限制。<br>第六分钟，和雪说，要省点事，于是便有了保证运算过程中及最终结果均不超过64位有符号整数类型的表示范围的限制。<br>第七分钟，这道题终于造完了，然而，造题的神牛们再也不想写这道题的程序了。”<br>——《上帝造题的七分钟·第二部》<br>所以这个神圣的任务就交给你了。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n，代表数列中数的个数。<br>第二行n个正整数，表示初始状态下数列中的数。<br>第三行一个整数m，表示有m次操作。<br>接下来m行每行三个整数k,l,r，k=0表示给[l,r]中的每个数开平方(下取整)，k=1表示询问[l,r]中各个数的和。</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对于询问操作，每行输出一个回答。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>10<br>1 2 3 4 5 6 7 8 9 10<br>5<br>0 1 10<br>1 1 10<br>1 1 5<br>0 5 8<br>1 4 8</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>19<br>7<br>6</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>线段树开根，还是很水的<br>其实如果一个数是0或1，那么开不开根就没有区别<br>所以操作时如果一个区间的和为0或1，直接return就好了</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100050</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m, x, y, z;</div><div class="line"><span class="keyword">int</span> ls[N&lt;&lt;<span class="number">2</span>], rs[N&lt;&lt;<span class="number">2</span>], lazy[N&lt;&lt;<span class="number">2</span>];</div><div class="line">ll a[N&lt;&lt;<span class="number">2</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	a[x] = a[x&lt;&lt;<span class="number">1</span>] + a[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</div><div class="line">	lazy[x] = lazy[x&lt;&lt;<span class="number">1</span>] &amp; lazy[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	ls[x] = l, rs[x] = r;</div><div class="line">	<span class="keyword">if</span>(l == r)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;a[x]);</div><div class="line">		<span class="keyword">if</span>(a[x] == <span class="number">1</span> || a[x] == <span class="number">0</span>) lazy[x] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>, l, mid);</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">	push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(ls[x] == l &amp;&amp; rs[x] == r) <span class="keyword">return</span> a[x];</div><div class="line">	<span class="keyword">int</span> mid = ls[x] + rs[x] &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, mid) + ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Sqrt</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(lazy[x]) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">if</span>(ls[x] == rs[x])&#123;</div><div class="line">		a[x] = (<span class="keyword">int</span>)<span class="built_in">sqrt</span>(a[x]);</div><div class="line">		<span class="keyword">if</span>(a[x] == <span class="number">1</span> || a[x] == <span class="number">0</span>) lazy[x] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = ls[x] + rs[x] &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) Sqrt(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) Sqrt(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">else</span> Sqrt(x&lt;&lt;<span class="number">1</span>, l, mid), Sqrt(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">	push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m);</div><div class="line">	<span class="keyword">while</span>(m-- &amp;&amp; <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z) != EOF)&#123;</div><div class="line">		<span class="keyword">if</span>(y &gt; z) swap(y, z);</div><div class="line">		<span class="keyword">if</span>(x == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ask(<span class="number">1</span>, y, z));</div><div class="line">		<span class="keyword">else</span> Sqrt(<span class="number">1</span>, y, z);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/线段树/">线段树</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://swwind.github.io/2017/03/17/BZOJ-3038-上帝造题的七分钟2/" data-title="BZOJ 3038: 上帝造题的七分钟2 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2017/03/24/BZOJ-1854-Scoi2010-游戏/" title="BZOJ 1854: [Scoi2010]游戏">
+  <strong>上一篇：</strong><br/>
+  <span>
+  BZOJ 1854: [Scoi2010]游戏</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2017/03/16/BZOJ-1452-JSOI2009-Count/"  title="BZOJ 1452: [JSOI2009]Count">
+ <strong>下一篇：</strong><br/> 
+ <span>BZOJ 1452: [JSOI2009]Count
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+<section id="comments" class="comment">
+	<!-- UY BEGIN -->
+	<div id="uyan_frame"></div>
+	<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2132524"></script>
+	<!-- UY END -->
+</section>
+</div>  
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/kdtree/" title="kdtree">kdtree<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://www.bilibili.com/" target="_blank" title="2333">bilibili</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://shenzhebei.github.io/" target="_blank" title="dalao">SHENZHEBEI</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/largecub233/" target="_blank" title="dalao">largecub233</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/Fop_zz/" target="_blank" title="dalao">Fop_zz</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/jzq233jzq/" target="_blank" title="dalao">jzq233jzq</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://zhzh2001.github.io/" target="_blank" title="dalao">zhzh2001</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/mdnd1234/" target="_blank" title="dalao">mdnd</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="神犇">zhouyuyang233</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://littleredstar.github.io/" target="_blank" title="GAY">black_moon</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://problem233.github.io/" target="_blank" title="神犇">problem233</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 作为一只蒟蒻 <br/>
+			我就不说什么了233</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="SW_Wind">SW_Wind</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+
+  
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>404</title>
+	<script type="text/javascript">
+		var kkk = 10;
+		function b(){
+			document.getElementById('233').innerHTML = "页面将会在"+kkk+"秒后自动进行跳转";
+			kkk--;
+			if(kkk >= 0) setTimeout("b()", 1000);
+			else window.location.href = 'https://swwind.github.io/';
+		}
+	</script>
+</head>
+<body onload="b()">
+	<center>
+		<font color="blue">
+			<h1>震惊！您要找的页面不见了！</h1>
+			<strong><p id="233">Loading...</p></strong>
+		</font>
+		<img src="/img/sgr2.gif">
+	</center>
+</body>
+</html>
+  
