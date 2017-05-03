@@ -90,6 +90,77 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/12/线段树入门详解/" title="线段树入门详解" itemprop="url">线段树入门详解</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-12T12:12:57.000Z" itemprop="datePublished"> 发表于 2017-03-12</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>线段树其实就是一个超级简单的数据结构。<br>就是把一个序列搞出若干个区间，在询问和修改时改一下区间就行了。<br>比方说某节点表示[1, n]的区间，那么该节点的左子树就表示[1, (n+1)/2]的区间，右子树就表示[(n+1)/2+1, n]的区间。<br>然后每个节点维护一下该区间内的目标对象（sum、max等）就行了，<br>这样可以在n<sup>2</sup>的时间内建树，在log(n)的时间内完成查询操作。<br>注意到线段树是颗二叉树，所以每个节点的左儿子可以表示为x*2(位运算简化为x&lt;&lt;1)，右儿子为x*2+1(x&lt;&lt;1|1)<br>注意在查询的时候如果要修改的刚好就是该节点的区间，<br>那么可以为这个节点打一个flag（俗称Lazy标记），而不必把他下面的节点全部更新（不然是O（n）的了）。</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>下面就是模板了，但是希望大家先不看模板打一遍，再与模板校对并优化<br>先是每个节点的结构体：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> l, r, sum, mx, lazy; <span class="comment">// l, r: 左右边界，sum、mx: 最大值 lazy只是个标记</span></div><div class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>]; <span class="comment">// 节点要开长度的四倍大小</span></div></pre></td></tr></table></figure>
+<p>建树：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	tr[x].l = l, tr[x].r = r;</div><div class="line">	<span class="keyword">if</span>(l == r)&#123;</div><div class="line">		tr[x].sum = tr[x].mx = a[l];</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>, l, mid);</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">	push_up(x); <span class="comment">// 更新x的值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后是push_up的内容：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	tr[x].sum = tr[x&lt;&lt;<span class="number">1</span>].sum + tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum + a[x]; <span class="comment">// 更新sum</span></div><div class="line">	tr[x].mx = max(tr[x&lt;&lt;<span class="number">1</span>].mx, tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].mx); <span class="comment">// 更新max</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接着是查询：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">asksum</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	push_down(x); <span class="comment">// 这步后来会讲到，下传标记</span></div><div class="line">	<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x].sum;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> asksum(x&lt;&lt;<span class="number">1</span>, l, r); <span class="comment">// 若果询问的区间明显在节点区间的左半边，那么去问节点的左子树</span></div><div class="line">	<span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> asksum(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r); <span class="comment">// 如果在右边就去问右子树</span></div><div class="line">	<span class="keyword">return</span> asksum(x&lt;&lt;<span class="number">1</span>, l, mid) + asksum(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r); <span class="comment">// 不然两个都要问</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">askmax</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123; <span class="comment">// 这个和上面一个基本一样</span></div><div class="line">	push_down(x);</div><div class="line">	<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x].mx;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> askmax(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> askmax(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">return</span> max(askmax(x&lt;&lt;<span class="number">1</span>, l, mid), askmax(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后是区间加的操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r)&#123;</div><div class="line">		tr[x].lazy += val; <span class="comment">// 这标记就是说，他的儿子都要加这么多，但是懒得算下去了</span></div><div class="line">		tr[x].sum += val*(tr[x].r - tr[x].l + <span class="number">1</span>);</div><div class="line">		tr[x].mx += val;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) update(x&lt;&lt;<span class="number">1</span>, l, r, val);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) update(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r, val);</div><div class="line">	<span class="keyword">else</span> update(x&lt;&lt;<span class="number">1</span>, l, mid, val), update(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r, val);</div><div class="line">	push_up(x); <span class="comment">// 更新x的值</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>然后就是标记下传啦！</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!tr[x].lazy) <span class="keyword">return</span>; <span class="comment">// 没有标记就返回</span></div><div class="line">	<span class="keyword">if</span>(tr[x].l)&#123; <span class="comment">// 有左儿子</span></div><div class="line">		tr[tr[x].l].lazy += tr[x].lazy;</div><div class="line">		tr[tr[x].l].sum += tr[x].lazy*(tr[x].r - tr[x].l + <span class="number">1</span>);</div><div class="line">		tr[tr[x].l].mx += tr[x].lazy;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(tr[x].r)&#123; <span class="comment">// 有右儿子</span></div><div class="line">		tr[tr[x].r].lazy += tr[x].lazy;</div><div class="line">		tr[tr[x].r].sum += tr[x].lazy*(tr[x].r - tr[x].l + <span class="number">1</span>);</div><div class="line">		tr[tr[x].r].mx += tr[x].lazy;</div><div class="line">	&#125;</div><div class="line">	tr[x].lazy = <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>看完了之后就有一大波水题在等着你！<br>就算看不懂照题解多打几遍慢慢就懂了的！<br>刷题才是王道！<br>GL&amp;HF</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/线段树/">线段树</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2017/03/12/线段树入门详解/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/11/BZOJ-1008-HNOI2008-越狱/" title="BZOJ 1008: [HNOI2008]越狱" itemprop="url">BZOJ 1008: [HNOI2008]越狱</a>
   </h1>
   <p class="article-author">By
@@ -245,11 +316,11 @@
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
 			
@@ -257,7 +328,11 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
@@ -265,7 +340,7 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -277,11 +352,7 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -289,11 +360,11 @@
 			
 		
 			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/主席树/" title="主席树">主席树<sup>1</sup></a></li>
+				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
 			
 		
 			
@@ -305,7 +376,7 @@
 			
 		
 			
-				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
 			
 		
 			
