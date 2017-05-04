@@ -90,6 +90,66 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/16/BZOJ-1022-SHOI2008-小约翰的游戏John/" title="BZOJ 1022: [SHOI2008]小约翰的游戏John" itemprop="url">BZOJ 1022: [SHOI2008]小约翰的游戏John</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-16T07:38:55.000Z" itemprop="datePublished"> 发表于 2017-03-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>小约翰经常和他的哥哥玩一个非常有趣的游戏：桌子上有n堆石子，小约翰和他的哥哥轮流取石子，每个人取的时候，可以随意选择一堆石子，在这堆石子中取走任意多的石子，但不能一粒石子也不取，我们规定取到最后一粒石子的人算输。小约翰相当固执，他坚持认为先取的人有很大的优势，所以他总是先取石子，而他的哥哥就聪明多了，他从来没有在游戏中犯过错误。小约翰一怒之前请你来做他的参谋。自然，你应该先写一个程序，预测一下谁将获得游戏的胜利。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>本题的输入由多组数据组成第一行包括一个整数T，表示输入总共有T组数据（T≤500）。每组数据的第一行包括一个整数N（N≤50），表示共有N堆石子，接下来有N个不超过5000的整数，分别表示每堆石子的数目。</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>每组数据的输出占一行，每行输出一个单词。如果约翰能赢得比赛，则输出“John”，否则输出“Brother”，请注意单词的大小写。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>2<br>3<br>3 5 1<br>1<br>1</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>John<br>Brother</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>博弈论水题，，，<br>要换成二进制观察和处理。。。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> T;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="keyword">int</span> n, x, sum = <span class="number">0</span>, flag = <span class="number">1</span>;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">		<span class="keyword">while</span>(n--)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x);</div><div class="line">			<span class="keyword">if</span>(x^<span class="number">1</span>) flag = <span class="number">0</span>;</div><div class="line">			sum ^= x;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span>(flag) sum = !sum;</div><div class="line">		<span class="built_in">puts</span>(sum ? <span class="string">"John"</span> : <span class="string">"Brother"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/博弈论/">博弈论</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/16/BZOJ-1954-Pku3764-The-xor-longest-Path/" title="BZOJ 1954: Pku3764 The xor-longest Path" itemprop="url">BZOJ 1954: Pku3764 The xor-longest Path</a>
   </h1>
   <p class="article-author">By
@@ -612,66 +672,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/13/BZOJ-1756-Vijos1083-小白逛公园/" title="BZOJ 1756: Vijos1083 小白逛公园" itemprop="url">BZOJ 1756: Vijos1083 小白逛公园</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-13T01:33:53.000Z" itemprop="datePublished"> 发表于 2017-03-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>小新经常陪小白去公园玩，也就是所谓的遛狗啦…在小新家附近有一条“公园路”，路的一边从南到北依次排着n个公园，小白早就看花了眼，自己也不清楚该去哪些公园玩了。一开始，小白就根据公园的风景给每个公园打了分-.-。小新为了省事，每次遛狗的时候都会事先规定一个范围，小白只可以选择第a个和第b个公园之间（包括a、b两个公园）选择连续的一些公园玩。小白当然希望选出的公园的分数总和尽量高咯。同时，由于一些公园的景观会有所改变，所以，小白的打分也可能会有一些变化。那么，就请你来帮小白选择公园吧。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行，两个整数N和M，分别表示表示公园的数量和操作（遛狗或者改变打分）总数。 接下来N行，每行一个整数，依次给出小白 开始时对公园的打分。 接下来M行，每行三个整数。第一个整数K，1或2。K=1表示，小新要带小白出去玩，接下来的两个整数a和b给出了选择公园的范围（1≤a,b≤N）；K=2表示，小白改变了对某个公园的打分，接下来的两个整数p和s，表示小白对第p个公园的打分变成了s（1≤p≤N）。 其中，1≤N≤500 000，1≤M≤100 000，所有打分都是绝对值不超过1000的整数。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>小白每出去玩一次，都对应输出一行，只包含一个整数，表示小白可以选出的公园得分和的最大值。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5 3<br>1 2 -3 4 5<br>1 2 3<br>2 2 -1<br>1 2 3</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>2<br>-1</p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>线段树水题<br>题意是要你求区间最大子段和，支持单点修改<br>所以维护一下每一个节点 左起最大和 和 右起最大和 以及 区间最大子段和 即可</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">	Problem: 1756</div><div class="line">	User: SHENZHEBEI //我没权限号，用同学的号刷的</div><div class="line">	Language: C++</div><div class="line">	Result: Accepted</div><div class="line">	Time:2636 ms</div><div class="line">	Memory:48172 kb</div><div class="line">****************************************************************/</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 500050</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> mx, ls, rs, lmx, rmx, sum;</div><div class="line">&#125;tr[N&lt;&lt;<span class="number">2</span>]; <span class="comment">//数组要开四倍大小</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123; <span class="comment">//跟新节点x</span></div><div class="line">	tr[x].sum = tr[x&lt;&lt;<span class="number">1</span>].sum+tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum;</div><div class="line">	tr[x].lmx = max(tr[x&lt;&lt;<span class="number">1</span>].lmx, tr[x&lt;&lt;<span class="number">1</span>].sum+tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].lmx);</div><div class="line">	tr[x].rmx = max(tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].rmx, tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].sum+tr[x&lt;&lt;<span class="number">1</span>].rmx);</div><div class="line">	tr[x].mx = max(max(tr[x&lt;&lt;<span class="number">1</span>].mx, tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].mx), tr[x&lt;&lt;<span class="number">1</span>].rmx+tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>].lmx);</div><div class="line">&#125;</div><div class="line"><span class="function">node <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(tr[x].ls == l &amp;&amp; tr[x].rs == r) <span class="keyword">return</span> tr[x];</div><div class="line">	<span class="keyword">int</span> mid = tr[x].ls + tr[x].rs &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">	<span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">	node ls = ask(x&lt;&lt;<span class="number">1</span>, l, mid), rs = ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r), ans;</div><div class="line">	ans.mx = max(max(ls.mx, rs.mx), ls.rmx+rs.lmx);</div><div class="line">	ans.rmx = max(rs.rmx, rs.sum+ls.rmx);</div><div class="line">	ans.lmx = max(ls.lmx, ls.sum+rs.lmx);</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(tr[x].ls==l&amp;&amp;tr[x].rs==tr[x].ls)&#123;</div><div class="line">		tr[x].sum=tr[x].lmx=tr[x].rmx=tr[x].mx=v;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = tr[x].ls + tr[x].rs &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(l &lt;= mid) add(x&lt;&lt;<span class="number">1</span>, l, v);</div><div class="line">	<span class="keyword">else</span> add(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, v);</div><div class="line">	push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	tr[x].ls = l, tr[x].rs = r;</div><div class="line">	<span class="keyword">if</span>(l == r)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tr[x].mx);</div><div class="line">		tr[x].lmx=tr[x].rmx=tr[x].sum=tr[x].mx;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>, l, mid);</div><div class="line">	build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">	push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n, m, op, l, r;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	<span class="keyword">while</span>(m--)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;op, &amp;l, &amp;r);</div><div class="line">		<span class="keyword">if</span>(op == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ask(<span class="number">1</span>, min(l, r), max(l, r)).mx); <span class="comment">//这里有陷阱,mdzz RE了无数次</span></div><div class="line">		<span class="keyword">else</span> add(<span class="number">1</span>, l, r);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/线段树/">线段树</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/4/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next<span></span></a>
@@ -707,6 +707,10 @@
 			
 		
 			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/dp/" title="dp">dp<sup>3</sup></a></li>
 			
 		
@@ -715,7 +719,11 @@
 			
 		
 			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>3</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
 			
 		
 			
@@ -731,10 +739,6 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
@@ -747,23 +751,11 @@
 			
 		
 			
-				<li><a href="/tags/kdtree/" title="kdtree">kdtree<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 			
@@ -771,7 +763,15 @@
 			
 		
 			
+				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>1</sup></a></li>
 			
 		
 		</ul>

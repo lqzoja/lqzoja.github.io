@@ -4,41 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>如何卡掉BZOJ | SW_Wind&#39;s blog</title>
+    <title>BZOJ 1143: [CTSC2008]祭祀river | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="警告请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关
-Linux下卡掉编译器只需要写一句话1#include &amp;lt;/dev/random&amp;gt;
-然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。
-Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
-然后就愉快的爆蛋了
-原理我也不知道，自己谷歌
-后记抵制不良游戏　拒">
+    <meta name="description" content="题面在遥远的东方，有一个神秘的民族，自称Y族。他们世代居住在水面上，奉龙王为神。每逢重大庆典， Y族都会在水面上举办盛大的祭祀活动。我们可以把Y族居住地水系看成一个由岔口和河道组成的网络。每条河道连接着两个岔口，并且水在河道内按照一个固定的方向流动。显然，水系中不会有环流（下图描述一个环流的例子）。由于人数众多的原因，Y族的祭祀活动会在多个岔口上同时举行。出于对龙王的尊重，这些祭祀地点的选择必须非">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何卡掉BZOJ">
-<meta property="og:url" content="http://swwind.github.io/2017/04/10/如何卡掉BZOJ/index.html">
+<meta property="og:title" content="BZOJ 1143: [CTSC2008]祭祀river">
+<meta property="og:url" content="http://swwind.github.io/2017/05/04/BZOJ-1143-CTSC2008-祭祀river/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="警告请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关
-Linux下卡掉编译器只需要写一句话1#include &amp;lt;/dev/random&amp;gt;
-然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。
-Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
-然后就愉快的爆蛋了
-原理我也不知道，自己谷歌
-后记抵制不良游戏　拒">
-<meta property="og:updated_time" content="2017-04-13T02:31:40.734Z">
+<meta property="og:description" content="题面在遥远的东方，有一个神秘的民族，自称Y族。他们世代居住在水面上，奉龙王为神。每逢重大庆典， Y族都会在水面上举办盛大的祭祀活动。我们可以把Y族居住地水系看成一个由岔口和河道组成的网络。每条河道连接着两个岔口，并且水在河道内按照一个固定的方向流动。显然，水系中不会有环流（下图描述一个环流的例子）。由于人数众多的原因，Y族的祭祀活动会在多个岔口上同时举行。出于对龙王的尊重，这些祭祀地点的选择必须非">
+<meta property="og:image" content="http://www.lydsy.com/JudgeOnline/images/1143.jpg">
+<meta property="og:updated_time" content="2017-05-04T08:21:24.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何卡掉BZOJ">
-<meta name="twitter:description" content="警告请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关
-Linux下卡掉编译器只需要写一句话1#include &amp;lt;/dev/random&amp;gt;
-然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。
-Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
-然后就愉快的爆蛋了
-原理我也不知道，自己谷歌
-后记抵制不良游戏　拒">
+<meta name="twitter:title" content="BZOJ 1143: [CTSC2008]祭祀river">
+<meta name="twitter:description" content="题面在遥远的东方，有一个神秘的民族，自称Y族。他们世代居住在水面上，奉龙王为神。每逢重大庆典， Y族都会在水面上举办盛大的祭祀活动。我们可以把Y族居住地水系看成一个由岔口和河道组成的网络。每条河道连接着两个岔口，并且水在河道内按照一个固定的方向流动。显然，水系中不会有环流（下图描述一个环流的例子）。由于人数众多的原因，Y族的祭祀活动会在多个岔口上同时举行。出于对龙王的尊重，这些祭祀地点的选择必须非">
+<meta name="twitter:image" content="http://www.lydsy.com/JudgeOnline/images/1143.jpg">
 
     
     
@@ -110,14 +94,14 @@ Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/10/如何卡掉BZOJ/" title="如何卡掉BZOJ" itemprop="url">如何卡掉BZOJ</a>
+      <a href="/2017/05/04/BZOJ-1143-CTSC2008-祭祀river/" title="BZOJ 1143: [CTSC2008]祭祀river" itemprop="url">BZOJ 1143: [CTSC2008]祭祀river</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-10T12:38:54.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
+    <time datetime="2017-05-04T08:19:39.000Z" itemprop="datePublished"> 发表于 2017-05-04</time>
     
   </p>
 </header>
@@ -126,22 +110,26 @@ Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#警告"><span class="toc-number">1.</span> <span class="toc-text">警告</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux下卡掉编译器"><span class="toc-number">2.</span> <span class="toc-text">Linux下卡掉编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows下卡掉编译器"><span class="toc-number">3.</span> <span class="toc-text">Windows下卡掉编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原理"><span class="toc-number">4.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p><strong>请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关</strong></p>
-<h1 id="Linux下卡掉编译器"><a href="#Linux下卡掉编译器" class="headerlink" title="Linux下卡掉编译器"></a>Linux下卡掉编译器</h1><p>只需要写一句话<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;/dev/random&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。</p>
-<h1 id="Windows下卡掉编译器"><a href="#Windows下卡掉编译器" class="headerlink" title="Windows下卡掉编译器"></a>Windows下卡掉编译器</h1><p>也只要一句话<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;com1&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后就愉快的爆蛋了</p>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>我也不知道，自己谷歌</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p><del>抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当<br>适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</del><br>别作死卡OJ评测机，好好活着，不好吗？</p>
-  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在遥远的东方，有一个神秘的民族，自称Y族。他们世代居住在水面上，奉龙王为神。每逢重大庆典， Y族都<br>会在水面上举办盛大的祭祀活动。我们可以把Y族居住地水系看成一个由岔口和河道组成的网络。每条河道连接着<br>两个岔口，并且水在河道内按照一个固定的方向流动。显然，水系中不会有环流（下图描述一个环流的例子）。<br><img src="http://www.lydsy.com/JudgeOnline/images/1143.jpg" alt=""><br>由于人数众多的原因，Y族的祭祀活动会在多个岔口上同时举行。出于对龙王的尊重，这些祭祀地点的选择必<br>须非常慎重。准确地说，Y族人认为，如果水流可以从一个祭祀点流到另外一个祭祀点，那么祭祀就会失去它神圣<br>的意义。族长希望在保持祭祀神圣性的基础上，选择尽可能多的祭祀的地点。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含两个用空格隔开的整数N、M，分别表示岔口和河道的数目，岔口从1到N编号。接下来M行，每行包<br>含两个用空格隔开的整数u、v，描述一条连接岔口u和岔口v的河道，水流方向为自u向v。 N ≤ 100 M ≤ 1 000</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>第一行包含一个整数K，表示最多能选取的祭祀点的个数。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4 4<br>1 2<br>3 4<br>3 2<br>4 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>蒙特卡罗5s过。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">bool</span> mp[<span class="number">120</span>][<span class="number">120</span>];</div><div class="line"><span class="keyword">int</span> fa[<span class="number">120</span>], q[<span class="number">120</span>],n,m, cnt, ans;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">r</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</div><div class="line">		swap(fa[i], fa[rand()%i+<span class="number">1</span>]);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	srand(<span class="number">23333</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x,y; i &lt;= m; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</div><div class="line">		mp[x][y] = <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</div><div class="line">				mp[i][j] = mp[i][j] || mp[i][k]&amp;&amp;mp[k][j];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) fa[i] = i;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">100000</span>; i++)&#123;</div><div class="line">		r(); cnt = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</div><div class="line">			<span class="keyword">bool</span> flag = <span class="number">1</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= cnt&amp;&amp;flag; k++)</div><div class="line">				<span class="keyword">if</span>(mp[q[k]][fa[j]] || mp[fa[j]][q[k]])</div><div class="line">					flag = <span class="number">0</span>;</div><div class="line">			<span class="keyword">if</span>(flag) q[++cnt] = fa[j];</div><div class="line">		&#125;</div><div class="line">		ans = max(ans, cnt);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/蒙特卡罗/">蒙特卡罗</a>
+  </div>
 
 </div>
 
@@ -149,7 +137,7 @@ Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/04/10/如何卡掉BZOJ/" data-title="如何卡掉BZOJ | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/05/04/BZOJ-1143-CTSC2008-祭祀river/" data-title="BZOJ 1143: [CTSC2008]祭祀river | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -162,19 +150,11 @@ Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/04/11/BZOJ-2693-jzptab-BZOJ-2154-Crash的数字表格/" title="BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/10/BZOJ-4766-文艺计算姬/"  title="BZOJ 4766: 文艺计算姬">
+<a href="/2017/05/03/51nod-1033-骨牌覆盖-V2/"  title="51nod 1033 骨牌覆盖 V2">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 4766: 文艺计算姬
+ <span>51nod 1033 骨牌覆盖 V2
 </span>
 </a>
 </div>
@@ -191,7 +171,7 @@ Windows下卡掉编译器也只要一句话1#include &amp;lt;com1&amp;gt;
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#警告"><span class="toc-number">1.</span> <span class="toc-text">警告</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux下卡掉编译器"><span class="toc-number">2.</span> <span class="toc-text">Linux下卡掉编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows下卡掉编译器"><span class="toc-number">3.</span> <span class="toc-text">Windows下卡掉编译器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#原理"><span class="toc-number">4.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后记"><span class="toc-number">5.</span> <span class="toc-text">后记</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
