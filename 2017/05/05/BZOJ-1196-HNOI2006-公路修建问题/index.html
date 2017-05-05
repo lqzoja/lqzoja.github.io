@@ -4,34 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>51nod 1033 骨牌覆盖 V2 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 1196: [HNOI2006]公路修建问题 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面在m*n的一个长方形方格中，用一个1*2的骨牌排满方格。问有多少种不同的排列方法。（$n\leq 5$）例如：3*2的方格，共有3种不同的排法。（由于方案的数量巨大，只输出 Mod 10^9 + 7 的结果）
-Input2个数M N，中间用空格分隔（2 &amp;lt;= m &amp;lt;= 10^9，2 &amp;lt;= n &amp;lt;= 5）
-Output输出数量 Mod 10^9 + 7
-Sample In">
+    <meta name="description" content="题面OI island是一个非常漂亮的岛屿,自开发以来,到这儿来旅游的人很多。然而，由于该岛屿刚刚开发不久，所以那里的交通情况还是很糟糕。所以，OIER Association组织成立了，旨在建立OI island的交通系统。 OI island有n个旅游景点，不妨将它们从1到n标号。现在，OIER Association需要修公路将这些景点连接起来。一条公路连接两个景点。公路有，不妨称它们为一级">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod 1033 骨牌覆盖 V2">
-<meta property="og:url" content="http://swwind.github.io/2017/05/03/51nod-1033-骨牌覆盖-V2/index.html">
+<meta property="og:title" content="BZOJ 1196: [HNOI2006]公路修建问题">
+<meta property="og:url" content="http://swwind.github.io/2017/05/05/BZOJ-1196-HNOI2006-公路修建问题/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面在m*n的一个长方形方格中，用一个1*2的骨牌排满方格。问有多少种不同的排列方法。（$n\leq 5$）例如：3*2的方格，共有3种不同的排法。（由于方案的数量巨大，只输出 Mod 10^9 + 7 的结果）
-Input2个数M N，中间用空格分隔（2 &amp;lt;= m &amp;lt;= 10^9，2 &amp;lt;= n &amp;lt;= 5）
-Output输出数量 Mod 10^9 + 7
-Sample In">
-<meta property="og:image" content="http://img.51nod.com/upload/000fb99c/08cfb32da97093cc00000644.jpeg">
-<meta property="og:updated_time" content="2017-05-03T00:33:15.615Z">
+<meta property="og:description" content="题面OI island是一个非常漂亮的岛屿,自开发以来,到这儿来旅游的人很多。然而，由于该岛屿刚刚开发不久，所以那里的交通情况还是很糟糕。所以，OIER Association组织成立了，旨在建立OI island的交通系统。 OI island有n个旅游景点，不妨将它们从1到n标号。现在，OIER Association需要修公路将这些景点连接起来。一条公路连接两个景点。公路有，不妨称它们为一级">
+<meta property="og:updated_time" content="2017-05-05T02:50:49.454Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod 1033 骨牌覆盖 V2">
-<meta name="twitter:description" content="题面在m*n的一个长方形方格中，用一个1*2的骨牌排满方格。问有多少种不同的排列方法。（$n\leq 5$）例如：3*2的方格，共有3种不同的排法。（由于方案的数量巨大，只输出 Mod 10^9 + 7 的结果）
-Input2个数M N，中间用空格分隔（2 &amp;lt;= m &amp;lt;= 10^9，2 &amp;lt;= n &amp;lt;= 5）
-Output输出数量 Mod 10^9 + 7
-Sample In">
-<meta name="twitter:image" content="http://img.51nod.com/upload/000fb99c/08cfb32da97093cc00000644.jpeg">
+<meta name="twitter:title" content="BZOJ 1196: [HNOI2006]公路修建问题">
+<meta name="twitter:description" content="题面OI island是一个非常漂亮的岛屿,自开发以来,到这儿来旅游的人很多。然而，由于该岛屿刚刚开发不久，所以那里的交通情况还是很糟糕。所以，OIER Association组织成立了，旨在建立OI island的交通系统。 OI island有n个旅游景点，不妨将它们从1到n标号。现在，OIER Association需要修公路将这些景点连接起来。一条公路连接两个景点。公路有，不妨称它们为一级">
 
     
     
@@ -103,14 +92,14 @@ Sample In">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/05/03/51nod-1033-骨牌覆盖-V2/" title="51nod 1033 骨牌覆盖 V2" itemprop="url">51nod 1033 骨牌覆盖 V2</a>
+      <a href="/2017/05/05/BZOJ-1196-HNOI2006-公路修建问题/" title="BZOJ 1196: [HNOI2006]公路修建问题" itemprop="url">BZOJ 1196: [HNOI2006]公路修建问题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-05-03T00:14:32.000Z" itemprop="datePublished"> 发表于 2017-05-03</time>
+    <time datetime="2017-05-05T02:45:41.000Z" itemprop="datePublished"> 发表于 2017-05-05</time>
     
   </p>
 </header>
@@ -123,13 +112,13 @@ Sample In">
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在m*n的一个长方形方格中，用一个1*2的骨牌排满方格。问有多少种不同的排列方法。（$n\leq 5$）<br>例如：3*2的方格，共有3种不同的排法。（由于方案的数量巨大，只输出 Mod 10^9 + 7 的结果）<br><img src="http://img.51nod.com/upload/000fb99c/08cfb32da97093cc00000644.jpeg" alt=""></p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>2个数M N，中间用空格分隔（2 &lt;= m &lt;= 10^9，2 &lt;= n &lt;= 5）</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出数量 Mod 10^9 + 7</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 3</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>3</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>状压的思想来构造矩阵。<br>mp.num[i][j]表示上一列由i状态可以转成j状态。<br>这个用dfs求。最后自乘$m+1$次就是答案了</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m, n2;</div><div class="line"><span class="keyword">struct</span> mat&#123;</div><div class="line">	ll num[<span class="number">33</span>][<span class="number">33</span>];</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>&#123;<span class="built_in">memset</span>(num, <span class="number">0</span>, <span class="keyword">sizeof</span> num);&#125;</div><div class="line">	mat()&#123;clear();&#125;</div><div class="line">	mat(<span class="keyword">bool</span> flag)&#123;clear();<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++)num[i][i]=<span class="number">1</span>;&#125;</div><div class="line">&#125;mp;</div><div class="line">mat <span class="keyword">operator</span> *(<span class="keyword">const</span> mat &amp;a, <span class="keyword">const</span> mat &amp;b)&#123;</div><div class="line">	mat c;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n2; k++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++) <span class="keyword">if</span>(a.num[i][k])</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n2; j++) <span class="keyword">if</span>(b.num[k][j])</div><div class="line">				c.num[i][j] = (c.num[i][j]+a.num[i][k]*b.num[k][j])%mod;</div><div class="line">	<span class="keyword">return</span> c;</div><div class="line">&#125;</div><div class="line">mat <span class="keyword">operator</span> ^(mat a, <span class="keyword">int</span> b)&#123;</div><div class="line">	<span class="function">mat <span class="title">c</span><span class="params">(<span class="literal">true</span>)</span></span>;</div><div class="line">	<span class="keyword">for</span>(;b;b/=<span class="number">2</span>,a=a*a)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)c=c*a;</div><div class="line">	<span class="keyword">return</span> c;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> dep, <span class="keyword">int</span> pre, <span class="keyword">int</span> now)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(dep &gt; n) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">if</span>(dep == n)&#123;</div><div class="line">		mp.num[pre][now]++;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	dfs(dep+<span class="number">1</span>, pre&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, now&lt;&lt;<span class="number">1</span>);</div><div class="line">	dfs(dep+<span class="number">1</span>, pre&lt;&lt;<span class="number">1</span>, now&lt;&lt;<span class="number">1</span>|<span class="number">1</span>);</div><div class="line">	dfs(dep+<span class="number">2</span>, pre&lt;&lt;<span class="number">2</span>, now&lt;&lt;<span class="number">2</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;m, &amp;n);</div><div class="line">	n2 = <span class="number">1</span> &lt;&lt; n;</div><div class="line">	dfs(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</div><div class="line">	mp = mp^(m+<span class="number">1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, mp.num[<span class="number">0</span>][n2<span class="number">-1</span>]);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>OI island是一个非常漂亮的岛屿,自开发以来,到这儿来旅游的人很多。然而，由于该岛屿刚刚开发不久，所以那里的交通情况还是很糟糕。所以，OIER Association组织成立了，旨在建立OI island的交通系统。 OI island有n个旅游景点，不妨将它们从1到n标号。现在，OIER Association需要修公路将这些景点连接起来。一条公路连接两个景点。公路有，不妨称它们为一级公路和二级公路。一级公路上的车速快，但是修路的花费要大一些。 OIER Association打算修n-1条公路将这些景点连接起来（使得任意两个景点之间都会有一条路径）。为了保证公路系统的效率, OIER Association希望在这n-1条公路之中,至少有k条(0≤k≤n-1)一级公路。OIER Association也不希望为一条公路花费的钱。所以，他们希望在满足上述条件的情况下，花费最多的一条公路的花费尽可能的少。而你的任务就是，在给定一些可能修建的公路的情况下，选择n-1条公路，满足上面的条件。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行有三个数$n(1≤n≤10000),k(0≤k≤n-1),m(n-1≤m≤20000)$，这些数之间用空格分开。 N和k如前所述，m表示有m对景点之间可以修公路。以下的m-1行，每一行有4个正整数$a,b,c1,c2 (1≤a,b≤n,a≠b,1≤c2≤c1≤30000)$表示在景点$a$与$b$ 之间可以修公路,如果修一级公路,则需要$c1$的花费,如果修二级公路,则需要$c2$的花费。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一个数据，表示花费最大的公路的花费。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>10 4 20<br>3 9 6 3<br>1 3 4 1<br>5 3 10 2<br>8 9 8 7<br>6 8 8 3<br>7 1 3 2<br>4 9 9 5<br>10 8 9 1<br>2 6 9 1<br>6 7 9 8<br>2 6 2 1<br>3 8 9 5<br>3 2 9 6<br>1 6 10 3<br>5 6 3 1<br>2 7 6 1<br>7 8 6 2<br>10 9 2 1<br>7 1 10 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>5</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>二分一下答案。<br>判断的话就先把$c1\leq k$的边全部拿出来，看看有没有到达$k$条。<br>然后再把$c2\leq k$的边全部加上去，看看能不能形成一棵树。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 20020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">char</span> ch = getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> x, y, c1, c2;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">		x = ::read(); y = ::read();</div><div class="line">		c1 = ::read(); c2 = ::read();</div><div class="line">	&#125;</div><div class="line">&#125;e[N];</div><div class="line"><span class="keyword">int</span> fa[N], n, k, m;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> xs)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) fa[i] = i;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x,y; i &lt; m; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(e[i].c1 &gt; xs) <span class="keyword">continue</span>;</div><div class="line">		x = find(e[i].x); y = find(e[i].y);</div><div class="line">		<span class="keyword">if</span>(x == y) <span class="keyword">continue</span>;</div><div class="line">		fa[x] = y; ans++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(ans &lt; k) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x, y; i &lt; m; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(e[i].c2 &gt; xs) <span class="keyword">continue</span>;</div><div class="line">		x = find(e[i].x); y = find(e[i].y);</div><div class="line">		<span class="keyword">if</span>(x == y) <span class="keyword">continue</span>;</div><div class="line">		fa[x] = y; ans++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans == n<span class="number">-1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	n = read(); k = read(); m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) e[i].read();</div><div class="line">	<span class="keyword">int</span> l = <span class="number">1</span>, r = <span class="number">30000</span>, mid;</div><div class="line">	<span class="keyword">while</span>(l &lt; r)&#123;</div><div class="line">		mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(check(mid)) r = mid;</div><div class="line">		<span class="keyword">else</span> l = mid+<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, l);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -137,7 +126,7 @@ Sample In">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/矩阵乘法/">矩阵乘法</a>
+  <span></span> <a href="/tags/二分/">二分</a>
   </div>
 
 </div>
@@ -146,7 +135,7 @@ Sample In">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/05/03/51nod-1033-骨牌覆盖-V2/" data-title="51nod 1033 骨牌覆盖 V2 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/05/05/BZOJ-1196-HNOI2006-公路修建问题/" data-title="BZOJ 1196: [HNOI2006]公路修建问题 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,19 +148,11 @@ Sample In">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/05/04/BZOJ-1143-CTSC2008-祭祀river/" title="BZOJ 1143: [CTSC2008]祭祀river">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 1143: [CTSC2008]祭祀river</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/24/BZOJ-4809-皇后/"  title="BZOJ 4809: 皇后">
+<a href="/2017/05/04/BZOJ-1143-CTSC2008-祭祀river/"  title="BZOJ 1143: [CTSC2008]祭祀river">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 4809: 皇后
+ <span>BZOJ 1143: [CTSC2008]祭祀river
 </span>
 </a>
 </div>
