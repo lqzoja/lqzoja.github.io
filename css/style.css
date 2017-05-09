@@ -2099,6 +2099,19 @@ footer {
 .cc-license img {
   display: inline-block;
 }
+::selection {
+  background: #7f7f7f;
+}
+pre {
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+.mz {
+  height: 159px;
+  width: 150px;
+  background: url("https://swwind.github.io/img/mz.png") no-repeat;
+}
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
