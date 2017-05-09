@@ -90,6 +90,66 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/14/BZOJ-3670-Noi2014-动物园/" title="BZOJ 3670: [Noi2014]动物园" itemprop="url">BZOJ 3670: [Noi2014]动物园</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-14T05:20:42.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>近日，园长发现动物园中好吃懒做的动物越来越多了。例如企鹅，只会卖萌向游客要吃的。为了整治动物园的不良风气，让动物们凭自己的真才实学向游客要吃的，园长决定开设算法班，让动物们学习算法。<br>某天，园长给动物们讲解KMP算法。<br>园长：“对于一个字符串S，它的长度为L。我们可以在O(L)的时间内，求出一个名为next的数组。有谁预习了next数组的含义吗？”<br>熊猫：“对于字符串S的前i个字符构成的子串，既是它的后缀又是它的前缀的字符串中（它本身除外），最长的长度记作next[i]。”<br>园长：“非常好！那你能举个例子吗？”<br>熊猫：“例S为abcababc，则next[5]=2。因为S的前5个字符为abcab，ab既是它的后缀又是它的前缀，并且找不到一个更长的字符串满足这个性质。同理，还可得出next[1] = next[2] = next[3] = 0，next[4] = next[6] = 1，next[7] = 2，next[8] = 3。”<br>园长表扬了认真预习的熊猫同学。随后，他详细讲解了如何在O(L)的时间内求出next数组。<br>下课前，园长提出了一个问题：“KMP算法只能求出next数组。我现在希望求出一个更强大num数组一一对于字符串S的前i个字符构成的子串，既是它的后缀同时又是它的前缀，并且该后缀与该前缀不重叠，将这种字符串的数量记作num[i]。例如S为aaaaa，则num[4] = 2。这是因为S的前4个字符为aaaa，其中a和aa都满足性质‘既是后缀又是前缀’，同时保证这个后缀与这个前缀不重叠。而aaa虽然满足性质‘既是后缀又是前缀’，但遗憾的是这个后缀与这个前缀重叠了，所以不能计算在内。同理，num[1] = 0,num[2] = num[3] = 1,num[5] = 2。”<br>最后，园长给出了奖励条件，第一个做对的同学奖励巧克力一盒。听了这句话，睡了一节课的企鹅立刻就醒过来了！但企鹅并不会做这道题，于是向参观动物园的你寻求帮助。你能否帮助企鹅写一个程序求出num数组呢？<br>特别地，为了避免大量的输出，你不需要输出num[i]分别是多少，你只需要输出$\Pi_{i=1}^L{(num[i]+1)}$对1,000,000,007取模的结果即可。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第1行仅包含一个正整数n ，表示测试数据的组数。随后n行，每行描述一组测试数据。每组测试数据仅含有一个字符串S，S的定义详见题目描述。数据保证S中仅含小写字母。输入文件中不会包含多余的空行，行末不会存在多余的空格。</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>包含 n 行，每行描述一组测试数据的答案，答案的顺序应与输入数据的顺序保持一致。对于每组测试数据，仅需要输出一个整数，表示这组测试数据的答案对1,000,000,007 取模的结果。输出文件中不应包含多余的空行。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>3<br>aaaaa<br>ab<br>abcababc</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>36<br>1<br>32</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>裸的KMP，只是多了一个限制条件，要前缀和后缀不能重叠而已，所以当j &gt; i/2时，j = nxt[j]就好了</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">	Problem: 3670</div><div class="line">	User: SW_Wind</div><div class="line">	Language: C++</div><div class="line">	Result: Accepted</div><div class="line">	Time:748 ms</div><div class="line">	Memory:10076 kb</div><div class="line">****************************************************************/</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000050</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> B[N]; ll ans;</div><div class="line"><span class="keyword">int</span> T, nxt[N], cnt[N];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		ans = cnt[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, B+<span class="number">1</span>);</div><div class="line">		<span class="keyword">int</span> n = <span class="built_in">strlen</span>(B+<span class="number">1</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">			<span class="keyword">while</span>(j &amp;&amp; B[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">			<span class="keyword">if</span>(B[i] == B[j+<span class="number">1</span>]) j++; nxt[i] = j; cnt[i] = cnt[j]+<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">			<span class="keyword">while</span>(j &amp;&amp; B[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">			<span class="keyword">if</span>(B[i] == B[j+<span class="number">1</span>]) j++;</div><div class="line">			<span class="keyword">while</span>(j*<span class="number">2</span> &gt; i) j = nxt[j];</div><div class="line">			ans *= cnt[j] + <span class="number">1</span>;</div><div class="line">			ans %= MOD;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/KMP/">KMP</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/14/51nod-1277-字符串中的最大值/" title="51nod 1277 字符串中的最大值" itemprop="url">51nod 1277 字符串中的最大值</a>
   </h1>
   <p class="article-author">By
@@ -463,15 +523,15 @@
 			
 		
 			
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
 			
 		
 			
@@ -491,7 +551,7 @@
 			
 		
 			
-				<li><a href="/tags/Java/" title="Java">Java<sup>1</sup></a></li>
+				<li><a href="/tags/离散化/" title="离散化">离散化<sup>1</sup></a></li>
 			
 		
 		</ul>

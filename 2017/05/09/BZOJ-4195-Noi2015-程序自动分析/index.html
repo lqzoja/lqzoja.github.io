@@ -4,25 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 4238: 电压 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 4195: [Noi2015]程序自动分析 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面你知道Just Odd Inventions社吗？这个公司的业务是“只不过是奇妙的发明(Just Odd Inventions)”。这里简称为JOI社。JOI社的某个实验室中有着复杂的电路。电路由n个节点和m根细长的电阻组成。节点被标号为1~N每个节点有一个可设定的状态【高电压】或者【低电压】。每个电阻连接两个节点，只有一端是高电压，另一端是低电压的电阻才会有电流流过。两端都是高电压或者低电压">
+    <meta name="description" content="题面在实现程序自动分析的过程中,常常需要判定一些约束条件是否能被同时满足。考虑一个约束满足问题的简化版本：假设$x1,x2,x3,…$代表程序中出现的变量，给定$n$个形如$xi=xj$或$xi≠xj$的变量相等/不等的约束条件，请判定是否可以分别为每一个变量赋予恰当的值，使得上述所有约束条件同时被满足。例如，一个问题中的约束条件为：$x1=x2,x2=x3,x3=x4,x1≠x4$，这些约束条件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 4238: 电压">
-<meta property="og:url" content="http://swwind.github.io/2017/04/14/BZOJ-4238-电压/index.html">
+<meta property="og:title" content="BZOJ 4195: [Noi2015]程序自动分析">
+<meta property="og:url" content="http://swwind.github.io/2017/05/09/BZOJ-4195-Noi2015-程序自动分析/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面你知道Just Odd Inventions社吗？这个公司的业务是“只不过是奇妙的发明(Just Odd Inventions)”。这里简称为JOI社。JOI社的某个实验室中有着复杂的电路。电路由n个节点和m根细长的电阻组成。节点被标号为1~N每个节点有一个可设定的状态【高电压】或者【低电压】。每个电阻连接两个节点，只有一端是高电压，另一端是低电压的电阻才会有电流流过。两端都是高电压或者低电压">
-<meta property="og:image" content="http://www.lydsy.com/JudgeOnline/upload/201508/bb.jpg">
-<meta property="og:updated_time" content="2017-04-14T01:25:21.039Z">
+<meta property="og:description" content="题面在实现程序自动分析的过程中,常常需要判定一些约束条件是否能被同时满足。考虑一个约束满足问题的简化版本：假设$x1,x2,x3,…$代表程序中出现的变量，给定$n$个形如$xi=xj$或$xi≠xj$的变量相等/不等的约束条件，请判定是否可以分别为每一个变量赋予恰当的值，使得上述所有约束条件同时被满足。例如，一个问题中的约束条件为：$x1=x2,x2=x3,x3=x4,x1≠x4$，这些约束条件">
+<meta property="og:updated_time" content="2017-05-09T00:43:23.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 4238: 电压">
-<meta name="twitter:description" content="题面你知道Just Odd Inventions社吗？这个公司的业务是“只不过是奇妙的发明(Just Odd Inventions)”。这里简称为JOI社。JOI社的某个实验室中有着复杂的电路。电路由n个节点和m根细长的电阻组成。节点被标号为1~N每个节点有一个可设定的状态【高电压】或者【低电压】。每个电阻连接两个节点，只有一端是高电压，另一端是低电压的电阻才会有电流流过。两端都是高电压或者低电压">
-<meta name="twitter:image" content="http://www.lydsy.com/JudgeOnline/upload/201508/bb.jpg">
+<meta name="twitter:title" content="BZOJ 4195: [Noi2015]程序自动分析">
+<meta name="twitter:description" content="题面在实现程序自动分析的过程中,常常需要判定一些约束条件是否能被同时满足。考虑一个约束满足问题的简化版本：假设$x1,x2,x3,…$代表程序中出现的变量，给定$n$个形如$xi=xj$或$xi≠xj$的变量相等/不等的约束条件，请判定是否可以分别为每一个变量赋予恰当的值，使得上述所有约束条件同时被满足。例如，一个问题中的约束条件为：$x1=x2,x2=x3,x3=x4,x1≠x4$，这些约束条件">
 
     
     
@@ -94,14 +92,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/14/BZOJ-4238-电压/" title="BZOJ 4238: 电压" itemprop="url">BZOJ 4238: 电压</a>
+      <a href="/2017/05/09/BZOJ-4195-Noi2015-程序自动分析/" title="BZOJ 4195: [Noi2015]程序自动分析" itemprop="url">BZOJ 4195: [Noi2015]程序自动分析</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-14T01:09:27.000Z" itemprop="datePublished"> 发表于 2017-04-14</time>
+    <time datetime="2017-05-09T00:38:21.000Z" itemprop="datePublished"> 发表于 2017-05-09</time>
     
   </p>
 </header>
@@ -114,14 +112,14 @@
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>你知道Just Odd Inventions社吗？这个公司的业务是“只不过是奇妙的发明(Just Odd Inventions)”。这里简称为JOI社。<br>JOI社的某个实验室中有着复杂的电路。电路由n个节点和m根细长的电阻组成。节点被标号为1~N<br>每个节点有一个可设定的状态【高电压】或者【低电压】。每个电阻连接两个节点，只有一端是高电压，另一端是低电压的电阻才会有电流流过。两端都是高电压或者低电压的电阻不会有电流流过。<br>某天，JOI社为了维护电路，选择了一根电阻，为了能让【只有这根电阻上的电流停止流动，其他M-1根电阻中都有电流流过】，需要调节各节点的电压。为了满足这个条件，能选择的电阻共有多少根？<br>对了，JOI社这个奇妙的电路是用在什么样的发明上的呢？这是公司内的最高机密，除了社长以外谁都不知道哦~<br>现在给出电路的信息，请你输出电路维护时可以选择使其不流的电阻的个数。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行两个空格分隔的正整数N和M，表示电路中有N个节点和M根电阻。<br>接下来M行，第i行有两个空格分隔的正整数Ai和Bi(1&lt;=Ai&lt;=N,1&lt;=Bi&lt;=N,Ai≠Bi)，表示第i个电阻连接节点Ai和节点Bi。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数，代表电路维护时可选择的使其不流的电阻个数。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4 4<br>1 2<br>2 3<br>3 2<br>4 3</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>可以选择第一根电阻或第四根电阻。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201508/bb.jpg"><br>2&lt;=N&lt;=10^5<br>1&lt;=M&lt;=2*10^5<br>不保证图是连通的，不保证没有重边</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>还以为是跟摸你赛一样的难度。。<br>其实可以用dfs过<br>注意到只有奇环才有答案<br>所以dfs一波，记录一下深度，当遇到访问过的点时用深度来判断是不是奇环<br><del>然后就照抄了，别问我c数组是干啥的，我也不知道</del></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> nxt, to;</div><div class="line">&#125;e[N&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> head[N], n, m, cnt=<span class="number">1</span>, d[N], fa[N], c[N][<span class="number">2</span>], cnt1, cnt0;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ins</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	e[++cnt] = (node)&#123;head[x], y&#125;;</div><div class="line">	head[x] = cnt;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> p)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = head[x],y=e[i].to; i; y=e[i=e[i].nxt].to)&#123;</div><div class="line">		<span class="keyword">if</span>((i^<span class="number">1</span>)==p)<span class="keyword">continue</span>;</div><div class="line">		<span class="keyword">if</span>(!d[y])&#123;</div><div class="line">			d[y] = d[fa[y]=x]+<span class="number">1</span>;</div><div class="line">			dfs(y, i);</div><div class="line">			c[x][<span class="number">0</span>] += c[y][<span class="number">0</span>];</div><div class="line">			c[x][<span class="number">1</span>] += c[y][<span class="number">1</span>];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(d[y]&lt;=d[x])</div><div class="line">			<span class="keyword">if</span>(d[x]&amp;<span class="number">1</span>^d[y]&amp;<span class="number">1</span>) <span class="comment">// (d[x]-d[y])&amp;1</span></div><div class="line">				c[x][<span class="number">0</span>]++, c[y][<span class="number">0</span>]--, cnt0++;</div><div class="line">			<span class="keyword">else</span></div><div class="line">				c[x][<span class="number">1</span>]++, c[y][<span class="number">1</span>]--, cnt1++;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x,y; i &lt;= m; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</div><div class="line">		ins(x, y); ins(y, x);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span>(!d[i])</div><div class="line">		d[i] = <span class="number">1</span>, dfs(i, <span class="number">0</span>);</div><div class="line">	<span class="keyword">int</span> ans = cnt1==<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		ans += (fa[i]&amp;&amp;c[i][<span class="number">1</span>]==cnt1&amp;&amp;!c[i][<span class="number">0</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在实现程序自动分析的过程中,常常需要判定一些约束条件是否能被同时满足。<br>考虑一个约束满足问题的简化版本：假设$x1,x2,x3,…$代表程序中出现的变量，给定$n$个形如$xi=xj$或$xi≠xj$的变量相等/不等的约束条件，请判定是否可以分别为每一个变量赋予恰当的值，使得上述所有约束条件同时被满足。例如，一个问题中的约束条件为：$x1=x2,x2=x3,x3=x4,x1≠x4$，这些约束条件显然是不可能同时被满足的，因此这个问题应判定为不可被满足。<br>现在给出一些约束满足问题，请分别对它们进行判定。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入文件的第1行包含1个正整数t，表示需要判定的问题个数。注意这些问题之间是相互独立的。<br>对于每个问题，包含若干行：<br>第1行包含1个正整数n，表示该问题中需要被满足的约束条件个数。<br>接下来n行，每行包括3个整数i,j,e，描述1个相等/不等的约束条件，相邻整数之间用单个空格隔开。若e=1，则该约束条件为xi=xj；若e=0，则该约束条件为xi≠xj。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出文件包括t行。<br>输出文件的第k行输出一个字符串“YES”或者“NO”（不包含引号，字母全部大写），“YES”表示输入中的第k个问题判定为可以被满足，“NO”表示不可被满足。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2<br>2<br>1 2 1<br>1 2 0<br>2<br>1 2 1<br>2 1 1</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>NO<br>YES</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>在第一个问题中，约束条件为：$x1=x2,x1≠x2$。这两个约束条件互相矛盾，因此不可被同时满足。<br>在第二个问题中，约束条件为：$x1=x2,x2=x1$。这两个约束条件是等价的，可以被同时满足。<br>$1\leq n\leq 1000000$<br>$1\leq i,j\leq 1000000000$</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一眼看觉得是并查集水题。<br>发现i和j的范围有点大，那就再来个离散化好了。<br>哎，过了。。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> x, y, type;</div><div class="line">&#125;ask[N];</div><div class="line"><span class="keyword">int</span> a[N&lt;&lt;<span class="number">1</span>], b[N&lt;&lt;<span class="number">1</span>], fa[N&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> xx = find(x), yy = find(y);</div><div class="line">	<span class="keyword">if</span>(xx == yy) <span class="keyword">return</span>;</div><div class="line">	fa[xx] = yy;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="keyword">int</span> n = read(); b[<span class="number">0</span>] = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x, y, z; i &lt;= n; i++)&#123;</div><div class="line">			x = read(); y = read(); z = read();</div><div class="line">			a[(i&lt;&lt;<span class="number">1</span>)<span class="number">-1</span>] = x; a[i&lt;&lt;<span class="number">1</span>] = y; ask[i] = (node)&#123;x, y, z&#125;;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> n2 = n &lt;&lt; <span class="number">1</span>;</div><div class="line">		sort(a+<span class="number">1</span>, a+n2+<span class="number">1</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n2; i++)</div><div class="line">			<span class="keyword">if</span>(a[i] != a[i<span class="number">-1</span>]) b[++b[<span class="number">0</span>]] = a[i];</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">			ask[i].x = lower_bound(b+<span class="number">1</span>, b+b[<span class="number">0</span>]+<span class="number">1</span>, ask[i].x)-b;</div><div class="line">			ask[i].y = lower_bound(b+<span class="number">1</span>, b+b[<span class="number">0</span>]+<span class="number">1</span>, ask[i].y)-b;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b[<span class="number">0</span>]; i++) fa[i] = i;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">			<span class="keyword">if</span>(ask[i].type) merge(ask[i].x, ask[i].y);</div><div class="line">		<span class="keyword">bool</span> flag = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">			<span class="keyword">if</span>(!ask[i].type) <span class="keyword">if</span>(find(ask[i].x) == find(ask[i].y))&#123;</div><div class="line">				flag = <span class="number">1</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		<span class="built_in">puts</span>(flag?<span class="string">"NO"</span>:<span class="string">"YES"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -129,7 +127,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/dfs/">dfs</a>
+  <span></span> <a href="/tags/离散化/">离散化</a><a href="/tags/并查集/">并查集</a>
   </div>
 
 </div>
@@ -138,7 +136,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/04/14/BZOJ-4238-电压/" data-title="BZOJ 4238: 电压 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/05/09/BZOJ-4195-Noi2015-程序自动分析/" data-title="BZOJ 4195: [Noi2015]程序自动分析 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -151,19 +149,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/04/14/BZOJ-2049-Sdoi2008-Cave-洞穴勘测/" title="BZOJ 2049: [Sdoi2008]Cave 洞穴勘测">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 2049: [Sdoi2008]Cave 洞穴勘测</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/13/Dirichlet卷积/"  title="Dirichlet卷积">
+<a href="/2017/05/05/BZOJ-1196-HNOI2006-公路修建问题/"  title="BZOJ 1196: [HNOI2006]公路修建问题">
  <strong>下一篇：</strong><br/> 
- <span>Dirichlet卷积
+ <span>BZOJ 1196: [HNOI2006]公路修建问题
 </span>
 </a>
 </div>
