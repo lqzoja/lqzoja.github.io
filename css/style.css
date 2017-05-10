@@ -2108,8 +2108,8 @@ pre {
   tab-size: 4;
 }
 .mz {
-  height: 159px;
-  width: 150px;
+  min-height: 159px;
+  min-width: 150px;
   background: url("https://swwind.github.io/img/mz.png") no-repeat;
 }
 .article-content pre,
