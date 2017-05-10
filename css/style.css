@@ -2102,14 +2102,17 @@ footer {
 ::selection {
   background: #7f7f7f;
 }
+::-moz-selection {
+  background: #7f7f7f;
+}
 pre {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
 }
 .mz {
-  min-height: 159px;
-  min-width: 150px;
+  min-height: 160px;
+  min-width: 160px;
   background: url("https://swwind.github.io/img/mz.png") no-repeat;
 }
 .article-content pre,
