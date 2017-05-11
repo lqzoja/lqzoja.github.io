@@ -9,9 +9,9 @@
 	<script type="text/javascript">
 		var kkk = 10;
 		function b(){
-			document.getElementById('233').innerHTML = "将会在"+kkk+"秒后把你送回主页|<a href=\"/\">立即返回</a>";
+			document.getElementById('233').innerHTML = "将会在"+kkk+"秒后把你送回主页<a href=\"/\">立即返回</a>";
 			kkk--;
-			if(kkk >= 0) setTimeout("b()", 1000);
+			if(kkk > 0) setTimeout("b()", 1000);
 			else window.location.href = 'https://swwind.github.io/';
 		}
 	</script>
@@ -19,9 +19,9 @@
 </head>
 <body onload="b()" bgcolor="#9f9f9f"><br><br><br><br><br><br><br><br><br><br>
 	<center>
-		<font color="#546515" size="10em">Sorry...这个页面飞走了_(:з」∠)_</font><br><br><br><br>
-		<font size="4em" color="#444444"><p id="233">先让我们等SGR撕完衣服</p></font>
-		<img src="/img/sgr2.gif">
+		<font color="#546515" size="10em">Sorry...这个页面飞走了_(:з」∠)_</font><br><br><br>
+		<font size="4em" color="#444444"><p id="233">正在为您准备飞机票...</p><br></font>
+		<img src="/img/mz.png">
 	</center>
 </body>
 </html>
