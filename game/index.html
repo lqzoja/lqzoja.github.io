@@ -74,11 +74,11 @@ $(document).ready(function(e) {
 	var fa = 10;
 	var yi = true;
 	var dkong = false;
-	var choosestyle = '#fff';
+	var choosestyle = '#ddd';
 	var menustyle = '#999';
 	var restyle = '#999';
 	var tingstyle = '#999';
-	var backstyle = '#fff'; 
+	var backstyle = '#ddd'; 
 	var cox = 100, coy = 100, cow = 60, coh = 30, coxk = 85, coyk = 40;
 	var coy2 = coy;
 	var cox2 = cox;
@@ -89,7 +89,7 @@ $(document).ready(function(e) {
 	ctx.fillStyle = '#000';
 	ctx.fillRect(0,0,w,h);
 	function begin(){
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.fillRect(0,0,w,h);
 		if(start)toStart();
 		if(choose)toChoose();
@@ -117,7 +117,7 @@ $(document).ready(function(e) {
 			}
 			else{
 				kaishisize = '20px';
-				choosestyle = '#fff';
+				choosestyle = '#ddd';
 				c.css('cursor',cur);
 			}
 		}
@@ -126,14 +126,14 @@ $(document).ready(function(e) {
 				backstyle = '#000';
 				c.css('cursor','pointer');
 			}else{
-				backstyle = "#fff";
+				backstyle = "#ddd";
 				for(var i=0;i<lea;i++){
 					if(dx >= choo[i].x && dx <= choo[i].x+cow && dy >= choo[i].y && dy <= choo[i].y+coh){
 						choo[i].c = "#000";
 						c.css('cursor','pointer');
 						break;
 					}else{
-						choo[i].c = "#fff";
+						choo[i].c = "#ddd";
 						c.css('cursor',cur);
 					}
 				}
@@ -174,7 +174,7 @@ $(document).ready(function(e) {
 			}else if(dx >= 270 && dx <= 330 && dy >= 362 && dy <= 386){
 				start = false;
 				kaishisize = '20px';
-				choosestyle = '#fff';
+				choosestyle = '#ddd';
 				c.css('cursor',cur);
 				choose = true;
 			}
@@ -230,7 +230,7 @@ $(document).ready(function(e) {
 		ctx.closePath();
 		ctx.fill();
 		ctx.beginPath();
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.arc(300,300,96,0,4*pi2);
 		ctx.closePath();
 		ctx.fill();
@@ -252,10 +252,10 @@ $(document).ready(function(e) {
 			choo[i].x = cox+(cohang*coxk);
 			choo[i].y = coy;
 			ctx.beginPath();
-			ctx.strokeStyle = choo[i].c ||'#fff';
+			ctx.strokeStyle = choo[i].c ||'#ddd';
 			ctx.strokeRect(cox+(cohang*coxk),coy,cow,coh);
 			ctx.closePath();
-			ctx.fillStyle = choo[i].c ||'#fff';
+			ctx.fillStyle = choo[i].c ||'#ddd';
 			ctx.font = '16px 微软雅黑';
 			ctx.fillText(i+1, cox+(cohang*coxk)+cow/2,coy+coh*2/3);
 			cohang++;
@@ -280,14 +280,14 @@ $(document).ready(function(e) {
 		ctx.fillStyle = '#999';
 		ctx.fillRect(0,0,w,h);
 		ctx.font = kaishisize+' 微软雅黑';
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.textAlign = 'center';
 		ctx.fillText("开始游戏", 300, 310);
 		ctx.fillStyle = choosestyle;
 		ctx.font = '16px 微软雅黑';
 		ctx.fillText("选关", 300, 380);
 		ctx.beginPath();
-		ctx.strokeStyle = '#fff';
+		ctx.strokeStyle = '#ddd';
 		ctx.strokeRect(250,288,100,30);
 		ctx.closePath();
 		ctx.beginPath();
@@ -296,7 +296,7 @@ $(document).ready(function(e) {
 		ctx.closePath();
 	}
 	function toFade(){
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.fillRect(0,0,w,h);
 		if(tle != 1){
 			if(yi){
@@ -1349,19 +1349,19 @@ $(document).ready(function(e) {
 		ctx.fillStyle = '#f82';
 		ctx.fillRect(x,y,mr,mr);
 		ctx.beginPath();
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.arc(x+5,y+5,4,0,2*Math.PI);
 		ctx.fill();
 		ctx.beginPath();
 		ctx.arc(x+15,y+5,4,0,2*Math.PI);
 		ctx.fill();
 		if(kong){
-			ctx.fillStyle = '#fff';
+			ctx.fillStyle = '#ddd';
 			ctx.beginPath();
 			ctx.arc(x+10,y+15,4,0,2*Math.PI);
 			ctx.fill();
 		}else{
-			ctx.fillStyle = '#fff';
+			ctx.fillStyle = '#ddd';
 			ctx.beginPath();
 			ctx.fillRect(x+2,y+12,16,6);
 		}
@@ -1383,7 +1383,7 @@ $(document).ready(function(e) {
 		ctx.closePath();
 		ctx.fill();
 		ctx.beginPath();
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.arc(530,22,10,0,4*pi2);
 		ctx.closePath();
 		ctx.fill();
@@ -1419,7 +1419,7 @@ $(document).ready(function(e) {
 		ctx.fillStyle = '#999';
 		ctx.fillRect(0,0,w,h);
 		ctx.font = kaishisize+' 微软雅黑';
-		ctx.fillStyle = '#fff';
+		ctx.fillStyle = '#ddd';
 		ctx.textAlign = 'center';
 		ctx.fillText("恭喜通关", 300, 310);
 	}
