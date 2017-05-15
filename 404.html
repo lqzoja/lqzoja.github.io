@@ -15,16 +15,19 @@
 			else window.location.href = '/';
 		}
 	</script>
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/jquery-2.0.3.min.js"></script>
-    <script src="/js/mz.gif.js"></script>
-    <script type="text/javascript">
-    	var xx = 1;
-    	$(".go").click(function(){
-    		xx++;
-    		if(xx == 6) window.location.href = "/555555555555555";
-    	});
-    </script>
+	<link rel="stylesheet" href="/css/style.css">
+	<script src="/js/jquery-2.0.3.min.js"></script>
+	<script src="/js/mz.gif.js"></script>
+	<script type="text/javascript">
+		var xx = 1;
+		$(document).ready(function(){
+			$(".go").click(function(){
+				xx++;
+				if(xx == 6)
+					window.location.href = "/555555555555555";
+			});
+		});
+	</script>
 </head>
 <body onload="b()" bgcolor="#9f9f9f"><br><br><br><br><br><br><br><br><br><br>
 	<center>
