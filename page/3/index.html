@@ -86,6 +86,67 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/04/13/BZOJ-3309-DZY-Loves-Math/" title="BZOJ 3309: DZY Loves Math" itemprop="url">BZOJ 3309: DZY Loves Math</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-13T01:21:30.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。<br>给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个数T，表示询问数。<br>接下来T行，每行两个数a,b，表示一个询问。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每一个询问，输出一行一个非负整数作为回答。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>7558588 9653114<br>6514903 4451211<br>7425644 1189442<br>6335198 4957</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>35793453939901<br>14225956593420<br>4332838845846<br>15400094813</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【数据规模】<br>T&lt;=10000<br>1&lt;=a,b&lt;=10^7</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一眼就能看出来：<br>先枚举gcd<br>然后、、然后就又不会了<br>看题解吧。。<br>看到题解又跪了。。<a href="http://blog.csdn.net/popoqqq/article/details/42122413" target="_blank" rel="external">orz PoPoQQQ</a><br>$$<br>\begin{align}<br>ans<br>&amp;=\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}} \\<br>&amp;=\sum_{d=1}^{min(a,b)}{f(d)\sum_{k=1}^{min(\left\lfloor \frac{a}{d} \right\rfloor,\left\lfloor\frac{b}{d}\right\rfloor)}{\mu(k)\left\lfloor\frac{a}{kd}\right\rfloor\left\lfloor\frac{b}{kd}\right\rfloor}} \\<br>&amp;=\sum_{T=1}^{min(a,b)}{\left\lfloor\frac{a}{T}\right\rfloor\left\lfloor\frac{b}{T}\right\rfloor\sum_{d|T}{f(d)\mu(\frac{T}{d})}}<br>\end{align}<br>$$<br>现在我们只需要知道$\sum_{d|T}{f(d)\mu(\frac{T}{d})}$的前缀和就行了 设这个函数为$g(x)$<br>观察这个函数 由于含平方因子数的$\mu$值都为零，因此我们只考虑$\mu(\frac{T}{d})\neq0$的数<br>令$T=p_1^{a_1}p_2^{a_2}…p_k^{a_k}$，$d=p_1^{b_1}p_2^{b_2}…p_k^{b_k}$那么$0\le(ai-bi)\le1$<br>如果存在$a_i\neq a_j(i\neq j)$，那么我们可以将所有的$a$分为两部分：最大的$a$的集合$A$和非最大$a$的集合$B$<br>很显然$f$值由$A$中的选取方案决定<br>对于$A$中的每种选取方案，$\mu$值决定于总选择的数量的奇偶性<br>在集合$B$中选取奇数个元素和偶数个元素的方案数是相等的，故对于$A$中的每种选取方案，得到的和都是$0$<br>故如果存在$a_i\neq a_j(i\neq j)$，则$g(T)=0$<br>反之，如果所有的$a$值都相等，我们假设对于任意选取方案，$f$值都不变<br>那么由于选取奇数个元素和偶数个元素的方案数相等，和仍然为$0$<br>但是有一种选取方案的$f$值$=a-1$ 因此我们要将这个$1$减掉<br>考虑到$\mu$的符号之后，最终结果为$(-1)^{k+1}$<br>故如果不存在$a_i\neq a_j$，则$g(T)=(-1)^{k+1}$<br>不知道说明白了没有。。。（显然没有）<br>求出$g$函数的方法是线性筛 对于每个值记录$g$值和最小质因数的次数 具体细节见代码<br>别忘了开long long</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll _a[N], _p[N], _g[N];</div><div class="line"><span class="keyword">int</span> pri[N], cnt;</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line"><span class="function">ll <span class="title">calc</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a &gt; b) swap(a, b);</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, last; i &lt;= a; i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans += (a/i)*(b/i)*(_g[last]-_g[i<span class="number">-1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])&#123;pri[++cnt] = _p[i] = i; _a[i] = _g[i] = <span class="number">1</span>;&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; pri[j]*i &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;</div><div class="line">				_a[pri[j]*i] = _a[i]+<span class="number">1</span>;</div><div class="line">				_p[pri[j]*i] = _p[i]*pri[j];</div><div class="line">				ll tmp = i/_p[i];</div><div class="line">				<span class="keyword">if</span>(tmp == <span class="number">1</span>) _g[pri[j]*i] = <span class="number">1</span>;</div><div class="line">				<span class="keyword">else</span> _g[pri[j]*i] = (_a[tmp]==_a[pri[j]*i]?-_g[tmp]:<span class="number">0</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			_a[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			_p[pri[j]*i] = pri[j];</div><div class="line">			_g[pri[j]*i] = (_a[i]==<span class="number">1</span>?-_g[i]:<span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		_g[i] += _g[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">int</span> T; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		ll a, b;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;a, &amp;b);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, calc(a, b));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/数论/">数论</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/04/13/BZOJ-4239-巴士走读/" title="BZOJ 4239: 巴士走读" itemprop="url">BZOJ 4239: 巴士走读</a>
   </h1>
   <p class="article-author">By
@@ -633,78 +694,9 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/06/BZOJ-3110-Zjoi2013-K大数查询/" title="BZOJ 3110: [Zjoi2013]K大数查询" itemprop="url">BZOJ 3110: [Zjoi2013]K大数查询</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-06T03:00:15.000Z" itemprop="datePublished"> 发表于 2017-04-06</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有N个位置，M个操作。操作有两种，每次操作如果是1 a b c的形式表示在第a个位置到第b个位置，每个位置加入一个数c<br>如果是2 a b c形式，表示询问从第a个位置到第b个位置，第C大的数是多少。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行N，M<br>接下来M行，每行形如1 a b c或2 a b c</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出每个询问的结果</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 5<br>1 1 2 1<br>1 1 2 2<br>2 1 1 2<br>2 1 1 1<br>2 1 2 3</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1<br>2<br>1</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例说明】</p>
-<ul>
-<li>第一个操作 后位置 1 的数只有 1 ， 位置 2 的数也只有 1 。</li>
-<li>第二个操作 后位置 1 的数有 1 、 2 ，位置 2 的数也有 1 、 2 。</li>
-<li>第三次询问 位置 1 到位置 1 第 2 大的数是 1 。</li>
-<li>第四次询问 位置 1 到位置 1 第 1 大的数是 2 。</li>
-<li>第五次询问 位置 1 到位置 2 第 3 大的数是 1 。‍</li>
-</ul>
-<p>N,M&lt;=50000,a&lt;=b&lt;=N<br>1操作中abs(c)&lt;=N<br>2操作中c&lt;=Maxlongint</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>线段树套线段树，就是题目有些拗口。。。<br>因为有负数，所以在加的时候要加上一个 n 、询问的时候减去一个 n。<br>然后就可以了。过几天再打一遍，以免自己忘记和加深理解。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 20000020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">int</span> sz, rt[<span class="number">1000010</span>], ls[N], rs[N], tag[N], sum[N];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> L, <span class="keyword">int</span> R)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!ls[x]) ls[x] = ++sz;</div><div class="line">	<span class="keyword">if</span>(!rs[x]) rs[x] = ++sz;</div><div class="line">	<span class="keyword">int</span> mid = L + R &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(tag[x])&#123;</div><div class="line">		tag[ls[x]] += tag[x];</div><div class="line">		sum[ls[x]] += tag[x]*(mid-L+<span class="number">1</span>);</div><div class="line">		tag[rs[x]] += tag[x];</div><div class="line">		sum[rs[x]] += tag[x]*(R-mid);</div><div class="line">		tag[x] = <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 把l-r的区间都加上1</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> &amp;x, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!x) x = ++sz;</div><div class="line">	<span class="keyword">if</span>(L==l&amp;&amp;R==r)&#123;</div><div class="line">		sum[x] += R-L+<span class="number">1</span>;</div><div class="line">		tag[x]++;</div><div class="line">		<span class="keyword">return</span>;</div><div class="line">	&#125;</div><div class="line">	pushdown(x, L, R);</div><div class="line">	<span class="keyword">int</span> mid = L + R &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r&lt;=mid) insert(ls[x], L, mid, l, r);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l&gt;mid) insert(rs[x], mid+<span class="number">1</span>, R, l, r);</div><div class="line">	<span class="keyword">else</span> insert(ls[x], L, mid, l, mid), insert(rs[x], mid+<span class="number">1</span>, R, mid+<span class="number">1</span>, r);</div><div class="line">	sum[x] = sum[ls[x]]+sum[rs[x]];</div><div class="line">&#125;</div><div class="line"><span class="comment">// 询问l-r区间的和</span></div><div class="line"><span class="function">ll <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!x) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span>(L==l &amp;&amp; R==r) <span class="keyword">return</span> sum[x];</div><div class="line">	pushdown(x, L, R);</div><div class="line">	<span class="keyword">int</span> mid = L + R &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(r&lt;=mid) <span class="keyword">return</span> ask(ls[x], L, mid, l, r);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l&gt;mid) <span class="keyword">return</span> ask(rs[x], mid+<span class="number">1</span>, R, l, r);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> ask(ls[x], L, mid, l, mid)+ask(rs[x], mid+<span class="number">1</span>, R, mid+<span class="number">1</span>, r);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> val)</span></span>&#123;</div><div class="line">	insert(rt[x], <span class="number">1</span>, n, l, r);</div><div class="line">	<span class="keyword">if</span>(L==R) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">int</span> mid = L + R &gt;&gt; <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(val&lt;=mid) insert(x&lt;&lt;<span class="number">1</span>, L, mid, l, r, val);</div><div class="line">	<span class="keyword">else</span> insert(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, R, l, r, val);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> L, <span class="keyword">int</span> R, <span class="keyword">int</span> l, <span class="keyword">int</span> r, ll k)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(L==R) <span class="keyword">return</span> L;</div><div class="line">	<span class="keyword">int</span> mid = L + R &gt;&gt; <span class="number">1</span>;</div><div class="line">	ll lefts = ask(rt[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>], <span class="number">1</span>, n, l, r);</div><div class="line">	<span class="keyword">if</span>(k&gt;lefts) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, L, mid, l, r, k-lefts);</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, R, l, r, k);</div><div class="line">&#125;</div><div class="line">ll K;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, t, l, r, num; i &lt;= m; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;t, &amp;l, &amp;r);</div><div class="line">		<span class="keyword">if</span>(t==<span class="number">1</span>)&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;num);insert(<span class="number">1</span>, <span class="number">0</span>, n&lt;&lt;<span class="number">1</span>, l, r, num+n);&#125;</div><div class="line">		<span class="keyword">else</span>&#123;<span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;K);<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ask(<span class="number">1</span>, <span class="number">0</span>, n&lt;&lt;<span class="number">1</span>, l, r, K)-n);&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/线段树/">线段树</a><a href="/tags/树套树/">树套树</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
-    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
   </nav>
 
 </div>
@@ -733,11 +725,11 @@
 			
 		
 			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>4</sup></a></li>
+				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>4</sup></a></li>
 			
 		
 			
@@ -745,23 +737,27 @@
 			
 		
 			
-				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
 			
@@ -773,11 +769,11 @@
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>2</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
 			
@@ -789,10 +785,6 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
 			
 		
@@ -801,7 +793,7 @@
 			
 		
 			
-				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
+				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>1</sup></a></li>
 			
 		
 		</ul>
