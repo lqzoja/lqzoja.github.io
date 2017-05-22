@@ -86,6 +86,64 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/03/16/hdu-2222-Keywords-Search/" title="hdu 2222 Keywords Search" itemprop="url">hdu 2222 Keywords Search</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-03-16T03:04:14.000Z" itemprop="datePublished"> 发表于 2017-03-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给你一堆子串，要你求在母串里找有多少个子串出现过，多组数据。</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>1<br>5<br>she<br>he<br>say<br>shr<br>her<br>yasherhs</p>
+<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>3</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>AC自动机。。。<br>不明白网上一堆人为毛要用指针动态开点<br>听说这样跑得快？<br>但我还是打了非指针型的O(n<sup>2</sup>)，指针的太复杂回头再研究<br><del>照抄hzwer的竟然还调了一个上午</del></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> ch[<span class="number">60</span>];</div><div class="line"><span class="keyword">char</span> key[<span class="number">1000020</span>];</div><div class="line"><span class="keyword">int</span> T, n, sz, ans;</div><div class="line"><span class="keyword">int</span> son[<span class="number">1000020</span>][<span class="number">26</span>], mark[<span class="number">1000020</span>], fail[<span class="number">1000020</span>], q[<span class="number">1000020</span>], vis[<span class="number">1000020</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); ans = <span class="number">0</span>; sz = <span class="number">1</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) son[<span class="number">0</span>][i] = <span class="number">1</span>;</div><div class="line">		<span class="comment">// 建Trie</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">			<span class="built_in">scanf</span>(<span class="string">"%s"</span>, ch);</div><div class="line">			<span class="keyword">int</span> len = <span class="built_in">strlen</span>(ch), rt = <span class="number">1</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>, k = ch[<span class="number">0</span>]-<span class="string">'a'</span>; j &lt; len; k = ch[++j]-<span class="string">'a'</span>)</div><div class="line">				<span class="keyword">if</span>(!son[rt][k]) rt = son[rt][k] = ++sz;</div><div class="line">				<span class="keyword">else</span> rt = son[rt][k];</div><div class="line">			mark[rt]++;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">// 求fail</span></div><div class="line">		<span class="keyword">int</span> h = <span class="number">1</span>, t = <span class="number">0</span>, now;</div><div class="line">		q[<span class="number">0</span>] = <span class="number">1</span>; fail[<span class="number">1</span>] = <span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(t &lt; h)&#123;</div><div class="line">			now = q[t++];</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)&#123;</div><div class="line">				<span class="keyword">if</span>(!son[now][i]) <span class="keyword">continue</span>;</div><div class="line">				<span class="keyword">int</span> tmp = fail[now];</div><div class="line">				<span class="keyword">while</span>(!son[tmp][i]) tmp = fail[tmp];</div><div class="line">				fail[son[now][i]] = son[tmp][i];</div><div class="line">				q[h++] = son[now][i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, key);</div><div class="line">		<span class="comment">// 求解</span></div><div class="line">		<span class="keyword">int</span> rt = <span class="number">1</span>, len = <span class="built_in">strlen</span>(key);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, k = key[<span class="number">0</span>]-<span class="string">'a'</span>; i &lt; len; k = key[++i]-<span class="string">'a'</span>)&#123;</div><div class="line">			vis[rt] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">while</span>(!son[rt][k]) rt = fail[rt];</div><div class="line">			rt = son[rt][k];</div><div class="line">			<span class="keyword">if</span>(!vis[rt])</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j = rt; j; j = fail[j])</div><div class="line">					ans += mark[j],</div><div class="line">					mark[j] = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">		<span class="comment">// 听说这样比memset快、、、</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= sz; i++)&#123;</div><div class="line">			fail[i] = mark[i] = vis[i] = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++)</div><div class="line">				son[i][j] = <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/AC自动机/">AC自动机</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/03/15/3-15摸你赛-前缀！/" title="3.15摸你赛 前缀！" itemprop="url">3.15摸你赛 前缀！</a>
   </h1>
   <p class="article-author">By
@@ -620,67 +678,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/11/BZOJ-1008-HNOI2008-越狱/" title="BZOJ 1008: [HNOI2008]越狱" itemprop="url">BZOJ 1008: [HNOI2008]越狱</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-11T06:20:50.000Z" itemprop="datePublished"> 发表于 2017-03-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>监狱有连续编号为1…N的N个房间，每个房间关押一个犯人，有M种宗教，每个犯人可能信仰其中一种。如果相邻房间的犯人的宗教相同，就可能发生越狱，求有多少种状态可能发生越狱</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入两个整数M，N.1&lt;=M&lt;=10^8,1&lt;=N&lt;=10^12</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>可能越狱的状态数，模100003取余</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>2 3</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>6</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这题还是有点简单的哎<br>其实就是求$m^n-m*(m-1)^{n-1}$<br>所以就是裸的快速幂了</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">	Problem: 1008</div><div class="line">	User: SW_Wind</div><div class="line">	Language: C++</div><div class="line">	Result: Accepted</div><div class="line">	Time:0 ms</div><div class="line">	Memory:1288 kb</div><div class="line">****************************************************************/</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MOD 100003</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll m, n;</div><div class="line"><span class="function">ll <span class="title">sqr</span><span class="params">(ll a)</span></span>&#123; <span class="comment">//求平方</span></div><div class="line">	<span class="keyword">return</span> a*a%MOD;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">mi</span><span class="params">(ll a, ll b)</span></span>&#123; <span class="comment">//这个就是快速幂啦！求a的b次方</span></div><div class="line">	<span class="keyword">if</span>(!b) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(b&amp;<span class="number">1</span>) <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>))*a%MOD;</div><div class="line">	<span class="keyword">else</span> <span class="keyword">return</span> sqr(mi(a, b&gt;&gt;<span class="number">1</span>));</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123; <span class="comment">//简洁的主函数</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;m, &amp;n);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, (mi(m, n)-m*mi(m<span class="number">-1</span>, n<span class="number">-1</span>)%MOD+MOD)%MOD);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/数论/">数论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/5/"><span></span>Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">Next<span></span></a>
@@ -736,10 +733,6 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
@@ -748,7 +741,11 @@
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -756,7 +753,7 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
 			
 		
 			
@@ -780,7 +777,7 @@
 			
 		
 			
-				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>1</sup></a></li>
+				<li><a href="/tags/网络流/" title="网络流">网络流<sup>1</sup></a></li>
 			
 		
 		</ul>
