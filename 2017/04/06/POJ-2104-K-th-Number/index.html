@@ -56,6 +56,12 @@ Simple Output563
     <script src="/js/mz.gif.js"></script>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if(document.referrer.indexOf('baidu.com') > -1)
+          $('#nobaidu_dlg').show('slow');
+      })
+    </script>
 </head>
 
   <body>
@@ -596,19 +602,6 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-<script type="text/javascript">
-;(function($) {
-  $(function() {
-    var url=document.referrer;
-    if ( url && url.search("http://")>-1) {
-      var refurl =  url.match(/:\/\/(.[^/]+)/)[1];
-      if(refurl.indexOf("baidu.com")>-1){
-        $('#nobaidu_dlg').show('slow');
-      }
-    }
-  });
-})(jQuery);
-</script>
 <div id="nobaidu_dlg" style="border: solid;border-color: #888;background-color:#fff;color:#000;display:none;padding:20px;min-width:450px;min-height:180px;position: fixed;align-self: center;top: 350px;">
     <img src="http://coolshell.cn/wp-content/themes/inove/img/nobaidu.jpg" align="left">
      <p style="margin-left:200px;margin-top: 20px; line-height: 30px;">
