@@ -4,32 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 4491: 我也不知道题目名字是什么 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 2743: [HEOI2012]采花 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Input第一行n，表示A数组有多少元素接下来一行为n个整数A[i]接下来一个整数Q，表示询问数量接下来Q行，每行2个整数l，r
-Output对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
+    <meta name="description" content="题面萧芸斓是Z国的公主，平时的一大爱好是采花。今天天气晴朗，阳光明媚，公主清晨便去了皇宫中新建的花园采花。花园足够大，容纳了n朵花，花有c种颜色（用整数1-c表示），且花是排成一排的，以便于公主采花。公主每次采花后会统计采到的花的颜色数，颜色数越多她会越高兴！同时，她有一癖好，她不允许最后自己采到的花中，某一颜色的花只有一朵。为此，公主每采一朵花，要么此前已采到此颜色的花，要么有相当正确的直觉告诉">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 4491: 我也不知道题目名字是什么">
-<meta property="og:url" content="http://swwind.github.io/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/index.html">
+<meta property="og:title" content="BZOJ 2743: [HEOI2012]采花">
+<meta property="og:url" content="http://swwind.github.io/2017/05/25/BZOJ-2743-HEOI2012-采花/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Input第一行n，表示A数组有多少元素接下来一行为n个整数A[i]接下来一个整数Q，表示询问数量接下来Q行，每行2个整数l，r
-Output对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
-<meta property="og:updated_time" content="2017-04-17T01:51:15.063Z">
+<meta property="og:description" content="题面萧芸斓是Z国的公主，平时的一大爱好是采花。今天天气晴朗，阳光明媚，公主清晨便去了皇宫中新建的花园采花。花园足够大，容纳了n朵花，花有c种颜色（用整数1-c表示），且花是排成一排的，以便于公主采花。公主每次采花后会统计采到的花的颜色数，颜色数越多她会越高兴！同时，她有一癖好，她不允许最后自己采到的花中，某一颜色的花只有一朵。为此，公主每采一朵花，要么此前已采到此颜色的花，要么有相当正确的直觉告诉">
+<meta property="og:updated_time" content="2017-05-25T02:01:47.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 4491: 我也不知道题目名字是什么">
-<meta name="twitter:description" content="题面给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Input第一行n，表示A数组有多少元素接下来一行为n个整数A[i]接下来一个整数Q，表示询问数量接下来Q行，每行2个整数l，r
-Output对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
+<meta name="twitter:title" content="BZOJ 2743: [HEOI2012]采花">
+<meta name="twitter:description" content="题面萧芸斓是Z国的公主，平时的一大爱好是采花。今天天气晴朗，阳光明媚，公主清晨便去了皇宫中新建的花园采花。花园足够大，容纳了n朵花，花有c种颜色（用整数1-c表示），且花是排成一排的，以便于公主采花。公主每次采花后会统计采到的花的颜色数，颜色数越多她会越高兴！同时，她有一癖好，她不允许最后自己采到的花中，某一颜色的花只有一朵。为此，公主每采一朵花，要么此前已采到此颜色的花，要么有相当正确的直觉告诉">
 
     
     
@@ -97,14 +88,14 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/" title="BZOJ 4491: 我也不知道题目名字是什么" itemprop="url">BZOJ 4491: 我也不知道题目名字是什么</a>
+      <a href="/2017/05/25/BZOJ-2743-HEOI2012-采花/" title="BZOJ 2743: [HEOI2012]采花" itemprop="url">BZOJ 2743: [HEOI2012]采花</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-17T01:35:33.000Z" itemprop="datePublished"> 发表于 2017-04-17</time>
+    <time datetime="2017-05-25T01:53:11.000Z" itemprop="datePublished"> 发表于 2017-05-25</time>
     
   </p>
 </header>
@@ -117,15 +108,22 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行n，表示A数组有多少元素<br>接下来一行为n个整数A[i]<br>接下来一个整数Q，表示询问数量<br>接下来Q行，每行2个整数l，r</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>9<br>1 2 3 4 5 6 5 4 3<br>5<br>1 6<br>1 7<br>2 7<br>1 9<br>5 9</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>6<br>6<br>5<br>6<br>4</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例解释】<br>五个询问分别对应<br>[1,6][1,6][2,6][1,6][6,9]</p>
-<p>N,Q&lt;=50000</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>线段树。。<br>一颗维护上升序列，一颗维护下降序列。。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 50020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> tree&#123;</div><div class="line">	<span class="keyword">int</span> val[<span class="number">50020</span>];</div><div class="line">	<span class="keyword">struct</span> node&#123;</div><div class="line">		<span class="keyword">int</span> lx, rx, l, r, mx;</div><div class="line">	&#125;tr[N&lt;&lt;<span class="number">2</span>];</div><div class="line">	<span class="function">node <span class="title">merge</span><span class="params">(<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)</span></span>&#123;</div><div class="line">		node c; c.l = a.l, c.r = b.r;</div><div class="line">		c.lx = a.lx, c.rx = b.rx; c.mx = max(a.mx, b.mx);</div><div class="line">		<span class="keyword">if</span>(c.lx == a.r-a.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.lx += b.lx;</div><div class="line">		<span class="keyword">if</span>(c.rx == b.r-b.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.rx += a.rx;</div><div class="line">		<span class="keyword">if</span>(val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.mx = max(c.mx, a.rx+b.lx);</div><div class="line">		<span class="keyword">return</span> c;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(l == r)&#123;</div><div class="line">			tr[x].l = l, tr[x].r = r;</div><div class="line">			tr[x].mx = tr[x].lx = tr[x].rx = <span class="number">1</span>;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">		build(x&lt;&lt;<span class="number">1</span>, l, mid); build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">		tr[x] = merge(tr[x&lt;&lt;<span class="number">1</span>], tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="function">node <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x];</div><div class="line">		<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">return</span> merge(ask(x&lt;&lt;<span class="number">1</span>, l, mid), ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r));</div><div class="line">	&#125;</div><div class="line">&#125;up,down;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) down.val[i]=-(up.val[i]=read());</div><div class="line">	down.build(<span class="number">1</span>, <span class="number">1</span>, n), up.build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	<span class="keyword">int</span> m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, l, r; i &lt;= m; i++)&#123;</div><div class="line">		l = read(); r = read();</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, max(down.ask(<span class="number">1</span>, l, r).mx, up.ask(<span class="number">1</span>, l, r).mx));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>萧芸斓是Z国的公主，平时的一大爱好是采花。<br>今天天气晴朗，阳光明媚，公主清晨便去了皇宫中新建的花园采花。花园足够大，容纳了n朵花，花有c种颜色（用整数1-c表示），且花是排成一排的，以便于公主采花。公主每次采花后会统计采到的花的颜色数，颜色数越多她会越高兴！同时，她有一癖好，她不允许最后自己采到的花中，某一颜色的花只有一朵。为此，公主每采一朵花，要么此前已采到此颜色的花，要么有相当正确的直觉告诉她，她必能再次采到此颜色的花。由于时间关系，公主只能走过花园连续的一段进行采花，便让女仆福涵洁安排行程。福涵洁综合各种因素拟定了m个行程，然后一一向你询问公主能采到多少朵花（她知道你是编程高手，定能快速给出答案！），最后会选择令公主最高兴的行程（为了拿到更多奖金！）。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行四个空格隔开的整数n、c以及m。接下来一行n个空格隔开的整数，每个数在[1, c]间，第i个数表示第i朵花的颜色。接下来m行每行两个空格隔开的整数l和r（l ≤ r），表示女仆安排的行程为公主经过第l到第r朵花进行采花。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>共m行，每行一个整数，第i个数表示公主在女仆的第i个行程中能采到的花的颜色数。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 3 5<br>1 2 2 3 1<br>1 5<br>1 2<br>2 2<br>2 3<br>3 5</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2<br>0 0 1 0</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例说明】</p>
+<ul>
+<li>询问[1, 5]：公主采颜色为1和2的花，由于颜色3的花只有一朵，公主不采；</li>
+<li>询问[1, 2]：颜色1和颜色2的花均只有一朵，公主不采；</li>
+<li>询问[2, 2]：颜色2的花只有一朵，公主不采；</li>
+<li>询问[2, 3]：由于颜色2的花有两朵，公主采颜色2的花；</li>
+<li>询问[3, 5]：颜色1、2、3的花各一朵，公主不采。</li>
+</ul>
+<p>【数据范围】<br>对于$100\%$的数据，$1\leq n\leq 10^6,c\leq n,m\leq 10^6$。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>出题卡莫队我*****<br>那么只能换一种方法了。<br>预处理一下每朵花下一个相同颜色出现的位置。<br>然后把询问按左边界排序，用树状数组搞一波就好了。<br><del>垃圾题目降我AC率</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> a[N], ans[N], c[N], pos[N], nxt[N], vis[N];</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> l, r, id;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt;(<span class="keyword">const</span> node &amp;b) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">return</span> l &lt; b.l;</div><div class="line">	&#125;</div><div class="line">&#125;asks[N];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> v)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!x) <span class="keyword">return</span>;</div><div class="line">	<span class="keyword">for</span>(;x&lt;N;x+=x&amp;-x)c[x]+=v;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(;x;x^=x&amp;-x)ans+=c[x];</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), c = read(), m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--) nxt[i] = pos[a[i]], pos[a[i]] = i;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span>(!vis[a[i]]) add(nxt[i], vis[a[i]]=<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		asks[i].id = i;</div><div class="line">		asks[i].l = read();</div><div class="line">		asks[i].r = read();</div><div class="line">	&#125;</div><div class="line">	sort(asks+<span class="number">1</span>, asks+m+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, now = <span class="number">0</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(now &lt; asks[i].l)&#123;</div><div class="line">			<span class="keyword">if</span>(nxt[now])&#123;</div><div class="line">				add(nxt[now], <span class="number">-1</span>);</div><div class="line">				add(nxt[nxt[now]], <span class="number">1</span>);</div><div class="line">			&#125;</div><div class="line">			now++;</div><div class="line">		&#125;</div><div class="line">		ans[asks[i].id] = ask(asks[i].r);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -133,7 +131,7 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/线段树/">线段树</a>
+  <span></span> <a href="/tags/树状数组/">树状数组</a>
   </div>
 
 </div>
@@ -142,7 +140,7 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/" data-title="BZOJ 4491: 我也不知道题目名字是什么 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/05/25/BZOJ-2743-HEOI2012-采花/" data-title="BZOJ 2743: [HEOI2012]采花 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -155,19 +153,11 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/04/20/BZOJ-1085-SCOI2005-骑士精神/" title="BZOJ 1085: [SCOI2005]骑士精神">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 1085: [SCOI2005]骑士精神</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/"  title="BZOJ 4551: [Tjoi2016&amp;Heoi2016]树">
+<a href="/2017/05/25/BZOJ-1055-HAOI2008-玩具取名/"  title="BZOJ 1055: [HAOI2008]玩具取名">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 4551: [Tjoi2016&amp;Heoi2016]树
+ <span>BZOJ 1055: [HAOI2008]玩具取名
 </span>
 </a>
 </div>
