@@ -2113,10 +2113,10 @@ pre {
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
-  background: #3f3f3f;
+  background: #eee;
   margin: 0.5em 0;
   padding: 0.5em 2%;
-  color: #ccc;
+  color: #4d4d4c;
   line-height: 1.5;
   font-size: 1.2em;
   -webkit-border-radius: 0.35em;
@@ -2132,7 +2132,7 @@ pre {
 }
 .article-content .highlight .gutter pre,
 .article-content .gist .gist-file .gist-data .line-numbers {
-  color: #666;
+  color: #999;
   font-size: 0.4em;
 }
 @media only screen and (min-width: 568px) {
@@ -2171,7 +2171,7 @@ pre {
   zoom: 1;
   font-size: 0.85em;
   text-align: left;
-  color: #999;
+  color: #8e908c;
   line-height: 1em;
   padding: 0.5em 0;
   margin-bottom: 0.5em;
@@ -2196,7 +2196,7 @@ pre {
 }
 .article-content .gist {
   margin: 0.5em 0;
-  background: #3f3f3f;
+  background: #eee;
   padding: 1em 2%;
   -webkit-border-radius: 0.35em;
   border-radius: 0.35em;
@@ -2222,11 +2222,11 @@ pre {
   margin: 0;
   padding: 0;
   border: none;
-  background: #3f3f3f;
+  background: #eee;
 }
 .article-content .gist .gist-file .gist-meta {
-  background: #3f3f3f;
-  color: #999;
+  background: #eee;
+  color: #8e908c;
   font: 0.85em "Georgia", serif;
   text-shadow: 0 0;
   padding: 0;
@@ -2241,7 +2241,7 @@ pre {
 }
 pre .comment,
 pre .title {
-  color: #999;
+  color: #8e908c;
 }
 pre .variable,
 pre .attribute,
@@ -2255,7 +2255,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #f2777a;
+  color: #c82829;
 }
 pre .number,
 pre .preprocessor,
@@ -2263,12 +2263,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #f99157;
+  color: #f5871f;
 }
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #9c9;
+  color: #718c00;
 }
 pre .string,
 pre .value,
@@ -2276,10 +2276,10 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #9c9;
+  color: #718c00;
 }
 pre .css .hexcolor {
-  color: #6cc;
+  color: #3e999f;
 }
 pre .function,
 pre .python .decorator,
@@ -2289,11 +2289,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #69c;
+  color: #4271ae;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #c9c;
+  color: #8959a8;
 }
 .gallery {
   overflow: hidden;

@@ -16,13 +16,13 @@
 我只想查看一个文件的第一行，但是它太大了，打开它太慢了。
 
 这时候就是本程序大展身手的好时机了。
-使用方法1LOOK [-L] [-N num] path 或者 LOOK -?
+使用方法LOOK [-L] [-N num] path 或者 LOOK -?
 
 [-L] - 是否显示行号（可选）
 [-N num] - 要显示的行数（默认999999）（可选）
 path - 文件路径（必须）
 
-把编译过的代码放到某个path路径里就可以用cmd玩了">
+把编译过的代码放到某个path路径里就可以用cmd玩了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在命令行预览文件的小程序">
 <meta property="og:url" content="http://swwind.github.io/2017/05/09/在命令行预览文件的小程序/index.html">
@@ -32,13 +32,13 @@ path - 文件路径（必须）
 我只想查看一个文件的第一行，但是它太大了，打开它太慢了。
 
 这时候就是本程序大展身手的好时机了。
-使用方法1LOOK [-L] [-N num] path 或者 LOOK -?
+使用方法LOOK [-L] [-N num] path 或者 LOOK -?
 
 [-L] - 是否显示行号（可选）
 [-N num] - 要显示的行数（默认999999）（可选）
 path - 文件路径（必须）
 
-把编译过的代码放到某个path路径里就可以用cmd玩了">
+把编译过的代码放到某个path路径里就可以用cmd玩了。">
 <meta property="og:updated_time" content="2017-05-10T03:23:01.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在命令行预览文件的小程序">
@@ -47,13 +47,13 @@ path - 文件路径（必须）
 我只想查看一个文件的第一行，但是它太大了，打开它太慢了。
 
 这时候就是本程序大展身手的好时机了。
-使用方法1LOOK [-L] [-N num] path 或者 LOOK -?
+使用方法LOOK [-L] [-N num] path 或者 LOOK -?
 
 [-L] - 是否显示行号（可选）
 [-N num] - 要显示的行数（默认999999）（可选）
 path - 文件路径（必须）
 
-把编译过的代码放到某个path路径里就可以用cmd玩了">
+把编译过的代码放到某个path路径里就可以用cmd玩了。">
 
     
     
@@ -80,6 +80,9 @@ path - 文件路径（必须）
           $('#nobaidu_dlg').show('slow');
       })
     </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+    <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 </head>
 
   <body>
@@ -154,14 +157,14 @@ path - 文件路径（必须）
 <p>我只想查看一个文件的第一行，但是它太大了，打开它太慢了。</p>
 </blockquote>
 <p>这时候就是本程序大展身手的好时机了。</p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">LOOK [-L] [-N num] <span class="built_in">path</span> 或者 LOOK -?</div></pre></td></tr></table></figure>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><figure class="highlight cmd"><table><tr><td class="code"><pre><div class="line">LOOK [-L] [-N num] <span class="built_in">path</span> 或者 LOOK -?</div></pre></td></tr></table></figure>
 <ul>
 <li>[-L] - 是否显示行号（可选）</li>
 <li>[-N num] - 要显示的行数（默认999999）（可选）</li>
 <li>path - 文件路径（必须）</li>
 </ul>
 <p>把编译过的代码放到某个path路径里就可以用cmd玩了。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> lin = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(argc &gt; <span class="number">1</span>)</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'?'</span>)</div><div class="line">			argc = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(argc == <span class="number">1</span>)&#123;</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"Check a file."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"LOOK [-L] [-N num] [path]"</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -L         Show line-numbers or not."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -N [num]   Lines that you want to see."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  path       The path of the file that you want to see."</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'l'</span> || argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'L'</span>)</div><div class="line">			lin = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> maxline = <span class="number">999999</span>, fl = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'n'</span> || argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'N'</span>)&#123;</div><div class="line">			fl = <span class="number">2</span>;</div><div class="line">			<span class="keyword">int</span> len = <span class="built_in">strlen</span>(argv[lin+<span class="number">2</span>]), x = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</div><div class="line">				x = x*<span class="number">10</span>+argv[lin+<span class="number">2</span>][i]-<span class="string">'0'</span>;</div><div class="line">			maxline = x;</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	ifstream is;</div><div class="line">	is.open(argv[lin+fl+<span class="number">1</span>]);</div><div class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(getline(is, str) &amp;&amp; ++a &lt;= maxline)&#123;</div><div class="line">		<span class="keyword">if</span>(lin) <span class="built_in">printf</span>(<span class="string">"%6d: "</span>, a);</div><div class="line">		<span class="built_in">puts</span>(str.c_str());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(a &gt; maxline) <span class="built_in">puts</span>(<span class="string">"..."</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> lin = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(argc &gt; <span class="number">1</span>)</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'?'</span>)</div><div class="line">			argc = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(argc == <span class="number">1</span>)&#123;</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"Check a file."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"LOOK [-L] [-N num] [path]"</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -L         Show line-numbers or not."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -N [num]   Lines that you want to see."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  path       The path of the file that you want to see."</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'l'</span> || argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'L'</span>)</div><div class="line">			lin = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> maxline = <span class="number">999999</span>, fl = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'n'</span> || argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'N'</span>)&#123;</div><div class="line">			fl = <span class="number">2</span>;</div><div class="line">			<span class="keyword">int</span> len = <span class="built_in">strlen</span>(argv[lin+<span class="number">2</span>]), x = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</div><div class="line">				x = x*<span class="number">10</span>+argv[lin+<span class="number">2</span>][i]-<span class="string">'0'</span>;</div><div class="line">			maxline = x;</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	ifstream is;</div><div class="line">	is.open(argv[lin+fl+<span class="number">1</span>]);</div><div class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(getline(is, str) &amp;&amp; ++a &lt;= maxline)&#123;</div><div class="line">		<span class="keyword">if</span>(lin) <span class="built_in">printf</span>(<span class="string">"%6d: "</span>, a);</div><div class="line">		<span class="built_in">puts</span>(str.c_str());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(a &gt; maxline) <span class="built_in">puts</span>(<span class="string">"..."</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
