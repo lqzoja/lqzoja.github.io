@@ -42,6 +42,8 @@ I">
     </script>
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/mz.gif.js"></script>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 </head>
 
   <body>
@@ -174,6 +176,18 @@ I">
 	
 
 
+<div id="container"></div>
+<script>
+var gitment = new Gitment({
+  owner: 'swwind',
+  repo: 'swwind.github.io',
+  oauth: {
+    client_id: 'a3bf04bcce99a1cd4515',
+    client_secret: '375280ccb9a2fff6bf1345832e500033c3137e39',
+  },
+})
+gitment.render('container')
+</script>
 </div>  
 
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
