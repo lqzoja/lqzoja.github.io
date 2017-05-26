@@ -37,12 +37,6 @@
     <script src="/js/mz.gif.js"></script>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        if(document.referrer.indexOf('baidu.com') > -1)
-          $('#nobaidu_dlg').show('slow');
-      })
-    </script>
 </head>
 
     <body>
@@ -295,6 +289,8 @@ ga('send', 'pageview');
   $(document).ready(function () {
     $('#nobaidu_dlg').css('top', (window.innerHeight-$('#nobaidu_dlg').height()-100)/2+'px');
     $('#nobaidu_dlg').css('left', (window.innerWidth-$('#nobaidu_dlg').width()-50)/2+'px');
+    if(document.referrer.indexOf('baidu.com') > -1)
+      $('#nobaidu_dlg').show('slow');
   })
 </script>
 
