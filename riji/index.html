@@ -29,7 +29,7 @@
 2017-3-30 写了两个小工具（BUG计算器和Minecraft skin checker）
 2017-4-5 最近都没怎么更博客。回头有空会多写一些大家感兴趣的">
 <meta property="og:image" content="http://swwind.github.io/img/haipa.png">
-<meta property="og:updated_time" content="2017-05-26T02:50:42.145Z">
+<meta property="og:updated_time" content="2017-05-26T03:03:19.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日记">
 <meta name="twitter:description" content="我打算把日记搬到这里来。该链接是保密的。除非你找到了入口链接或者查看了我的github源码。超链接的入口只有我知道。
@@ -174,7 +174,7 @@
 <li>2017-5-23 最近都比较忙。。。写了两个项目的UI。具体可以看我的<a href="https://github.com/swwind/" target="_blank" rel="external">github</a></li>
 <li>2017-5-23 听说了有一种东西叫做Rolling Sky。。。有空下载一个玩玩。</li>
 <li>2017-5-25 把评论框改为gitment。现在应该靠谱了，只是只能用github的账号登录，不过如果你连github的账号都没有，我也不想让你来哔哔。哈哈哈<del>（发出了金馆长般的笑声）</del></li>
-<li>2017-5-26 加了一个nobaidu的框框，，从百度链接来的都会弹出那个框框，，或者<a href="javascript:$('#nobaidu_dlg').show('slow');" target="_blank" rel="external">点我直接召唤</a></li>
+<li>2017-5-26 加了一个nobaidu的框框，，从百度链接来的都会弹出那个框框，，或者<a href="javascript:$('#nobaidu_dlg').fadeIn('slow');" target="_blank" rel="external">点我直接召唤</a></li>
 </ul>
   
 	</div>
@@ -407,9 +407,9 @@ ga('send', 'pageview');
 
 <!-- Tiny_search End -->
 
-<div id="nobaidu_dlg" style="border: solid;border-color: #888;background-color:#ccc;color:#000;display:none;padding:20px;min-width:450px;min-height:180px;position: fixed;">
+<div id="nobaidu_dlg" style="border: solid;border-color: #888;background-color:#ccc;color:#000;display:none;padding:20px;min-width:450px;min-height180px;position: fixed;">
     <img src="/img/nobaidu.png" align="left">
-     <p style="margin-left:200px;margin-top: 20px; line-height: 30px;">
+     <p style="margin-left:200px;margin-top: 20px; line-height: 30px;word-break: normal;">
      检测到你还在使用百度这个搜索引擎，<br/>
      做为一个程序员，这是一种自暴自弃！<br/>
      <br/>
@@ -417,7 +417,7 @@ ga('send', 'pageview');
      <p align="center" style="margin-top:20px;">
      <b><a href="http://coolshell.cn/articles/9308.html" target="view_window">作环保的程序员，从不用百度开始！</a></b>
      </p>
-    <a href="javascript:;" style="position: absolute;right: 5px;top: 5px;" onclick="$('#nobaidu_dlg').hide('slow')">Close</a>
+    <a href="javascript:$('#nobaidu_dlg').fadeOut('slow');" style="position: absolute;right: 5px;top: 5px;">Close</a>
 </div>
 <script type="text/javascript">
   $(document).ready(function () {
