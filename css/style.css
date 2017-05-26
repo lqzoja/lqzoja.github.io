@@ -2100,10 +2100,10 @@ footer {
   display: inline-block;
 }
 ::selection {
-  background: #7f7f7f;
+  background: #ccc;
 }
 ::-moz-selection {
-  background: #7f7f7f;
+  background: #ccc;
 }
 pre {
   -moz-tab-size: 4;
