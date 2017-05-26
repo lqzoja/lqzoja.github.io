@@ -35,8 +35,8 @@
     </script>
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/mz.gif.js"></script>
-    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <link rel="stylesheet" href="/css/default.css">
+    <script src="/js/gitment.js"></script>
 </head>
 
   <body>
@@ -81,6 +81,82 @@
     </header>
     <div id="container">
       <div id="main">
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/04/14/BZOJ-2049-Sdoi2008-Cave-洞穴勘测/" title="BZOJ 2049: [Sdoi2008]Cave 洞穴勘测" itemprop="url">BZOJ 2049: [Sdoi2008]Cave 洞穴勘测</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-14T03:07:57.000Z" itemprop="datePublished"> 发表于 2017-04-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>辉辉热衷于洞穴勘测。某天，他按照地图来到了一片被标记为JSZX的洞穴群地区。经过初步勘测，辉辉发现这片区域由n个洞穴（分别编号为1到n）以及若干通道组成，并且每条通道连接了恰好两个洞穴。假如两个洞穴可以通过一条或者多条通道按一定顺序连接起来，那么这两个洞穴就是连通的，按顺序连接在一起的这些通道则被称之为这两个洞穴之间的一条路径。洞穴都十分坚固无法破坏，然而通道不太稳定，时常因为外界影响而发生改变，比如，根据有关仪器的监测结果，123号洞穴和127号洞穴之间有时会出现一条通道，有时这条通道又会因为某种稀奇古怪的原因被毁。辉辉有一台监测仪器可以实时将通道的每一次改变状况在辉辉手边的终端机上显示：如果监测到洞穴u和洞穴v之间出现了一条通道，终端机上会显示一条指令 Connect u v 如果监测到洞穴u和洞穴v之间的通道被毁，终端机上会显示一条指令 Destroy u v 经过长期的艰苦卓绝的手工推算，辉辉发现一个奇怪的现象：无论通道怎么改变，任意时刻任意两个洞穴之间至多只有一条路径。因而，辉辉坚信这是由于某种本质规律的支配导致的。因而，辉辉更加夜以继日地坚守在终端机之前，试图通过通道的改变情况来研究这条本质规律。然而，终于有一天，辉辉在堆积成山的演算纸中崩溃了……他把终端机往地面一砸（终端机也足够坚固无法破坏），转而求助于你，说道：“你老兄把这程序写写吧”。辉辉希望能随时通过终端机发出指令 Query u v，向监测仪询问此时洞穴u和洞穴v是否连通。现在你要为他编写程序回答每一次询问。已知在第一条指令显示之前，JSZX洞穴群中没有任何通道存在。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行为两个正整数n和m，分别表示洞穴的个数和终端机上出现过的指令的个数。以下m行，依次表示终端机上出现的各条指令。每行开头是一个表示指令种类的字符串s（”Connect”、”Destroy”或者”Query”，区分大小写），之后有两个整数u和v (1≤u, v≤n且u≠v) 分别表示两个洞穴的编号。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对每个Query指令，输出洞穴u和洞穴v是否互相连通：是输出”Yes”，否则输出”No”。（不含双引号）</p>
+<h1 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input #1"></a>Sample Input #1</h1><p>200 5<br>Query 123 127<br>Connect 123 127<br>Query 123 127<br>Destroy 127 123<br>Query 123 127</p>
+<h1 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output #1"></a>Sample Output #1</h1><p>No<br>Yes<br>No</p>
+<h1 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input #2"></a>Sample Input #2</h1><p>3 5<br>Connect 1 2<br>Connect 3 1<br>Query 2 3<br>Destroy 1 3<br>Query 2 3</p>
+<h1 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output #2"></a>Sample Output #2</h1><p>Yes<br>No</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>数据说明</p>
+<ul>
+<li>10%的数据满足n≤1000，m≤20000</li>
+<li>20%的数据满足n≤2000，m≤40000</li>
+<li>30%的数据满足n≤3000，m≤60000</li>
+<li>40%的数据满足n≤4000，m≤80000</li>
+<li>50%的数据满足n≤5000，m≤100000</li>
+<li>60%的数据满足n≤6000，m≤120000</li>
+<li>70%的数据满足n≤7000，m≤140000</li>
+<li>80%的数据满足n≤8000，m≤160000</li>
+<li>90%的数据满足n≤9000，m≤180000</li>
+<li>100%的数据满足n≤10000，m≤200000</li>
+</ul>
+<p>保证所有Destroy指令将摧毁的是一条存在的通道<br>本题输入、输出规模比较大，建议c\c++选手使用scanf和printf进行I\O操作以免超时<br><del>（说得好像cin cout可以用一样的）</del></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>就是LCT模板题。。<br>这玩意和纯Splay区别还是蛮大的</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> c[N][<span class="number">2</span>], fa[N], rev[N], st[N];</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isroot</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> c[fa[x]][<span class="number">0</span>] != x &amp;&amp; c[fa[x]][<span class="number">1</span>] != x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!rev[x])<span class="keyword">return</span>;</div><div class="line">	rev[x] ^= <span class="number">1</span>;</div><div class="line">	rev[c[x][<span class="number">0</span>]] ^= <span class="number">1</span>;</div><div class="line">	rev[c[x][<span class="number">1</span>]] ^= <span class="number">1</span>;</div><div class="line">	swap(c[x][<span class="number">0</span>], c[x][<span class="number">1</span>]);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> y = fa[x], z = fa[y];</div><div class="line">	<span class="keyword">int</span> r = c[y][<span class="number">0</span>] == x, l = r^<span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(!isroot(y)) c[z][c[z][<span class="number">0</span>]!=y] = x;</div><div class="line">	fa[x] = z; fa[y] = x; fa[c[x][r]] = y;</div><div class="line">	c[y][l] = c[x][r]; c[x][r] = y;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> top = <span class="number">0</span>; st[++top]=x;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = x; !isroot(i); i=fa[i])</div><div class="line">		st[++top] = fa[i];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = top; i; i--)</div><div class="line">		push_down(st[i]);</div><div class="line">	<span class="keyword">while</span>(!isroot(x))&#123;</div><div class="line">		<span class="keyword">int</span> y = fa[x], z = fa[y];</div><div class="line">		<span class="keyword">if</span>(!isroot(y))<span class="keyword">if</span>(c[y][<span class="number">0</span>]==x^c[z][<span class="number">0</span>]==y)rotate(x);</div><div class="line">		<span class="keyword">else</span> rotate(y);</div><div class="line">		rotate(x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">access</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> t = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(x)&#123;</div><div class="line">		splay(x);</div><div class="line">		c[x][<span class="number">1</span>] = t;</div><div class="line">		t = x; x = fa[x];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rever</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	access(x); splay(x);</div><div class="line">	rev[x]^=<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	rever(x);</div><div class="line">	fa[x] = y;</div><div class="line">	splay(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cut</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	rever(x); access(y); splay(y);</div><div class="line">	c[y][<span class="number">0</span>] = fa[x] = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	access(x); splay(x);</div><div class="line">	<span class="keyword">int</span> y = x;</div><div class="line">	<span class="keyword">while</span>(c[y][<span class="number">0</span>])y=c[y][<span class="number">0</span>];</div><div class="line">	<span class="keyword">return</span> y;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read();</div><div class="line">	<span class="keyword">char</span> str[<span class="number">50</span>];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x,y; i &lt;= m; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, str);</div><div class="line">		x=read(); y=read();</div><div class="line">		<span class="keyword">if</span>(str[<span class="number">0</span>] == <span class="string">'D'</span>)cut(x, y);</div><div class="line">		<span class="keyword">if</span>(str[<span class="number">0</span>] == <span class="string">'C'</span>)link(x, y);</div><div class="line">		<span class="keyword">if</span>(str[<span class="number">0</span>] == <span class="string">'Q'</span>)<span class="built_in">puts</span>(find(x)==find(y)?<span class="string">"Yes"</span>:<span class="string">"No"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/LCT/">LCT</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
    
     
@@ -662,67 +738,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/10/BZOJ-4766-文艺计算姬/" title="BZOJ 4766: 文艺计算姬" itemprop="url">BZOJ 4766: 文艺计算姬</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-10T02:29:36.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标号完全二分图K_{n,m}，计算姬能快速算出其生成树个数。小W不知道计算姬算的对不对，你能帮助他吗？</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>仅一行三个整数n,m,p，表示给出的完全二分图K_{n,m}<br>1 &lt;= n,m,p &lt;= 10^18</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>仅一行一个整数，表示完全二分图K_{n,m}的生成树个数，答案需要模p。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 3 7</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>5</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><a href="http://www.cnblogs.com/neighthorn/p/6568410.html" target="_blank" rel="external">orz NeighThorn</a><br>答案其实就是m^(n-1)*n^(m-1)…<br>此外还要用到<strong>快速乘</strong>。？？一个长得和快速幂有点像的东西，可以防止乘法溢出。。<br>为毛他不开long long也能过得去啊(ノ=Д=)ノ┻━┻</p>
-<p>4.13:我靠，他有#define int long long啊(ノ=Д=)ノ┻━┻</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll n, m, p;</div><div class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll x, ll y)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(y)&#123;</div><div class="line">		<span class="keyword">if</span>(y&amp;<span class="number">1</span>) ans = (ans+x)%p;</div><div class="line">		x = (x&lt;&lt;<span class="number">1</span>)%p; y &gt;&gt;= <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll x, ll y)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>(y)&#123;</div><div class="line">		<span class="keyword">if</span>(y&amp;<span class="number">1</span>) ans = mul(ans, x);</div><div class="line">		x = mul(x, x); y &gt;&gt;= <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; p;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; mul(f(n, m<span class="number">-1</span>), f(m, n<span class="number">-1</span>)) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/图论/">图论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -766,7 +781,7 @@
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
 			
 		
 			
@@ -774,11 +789,7 @@
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
@@ -786,7 +797,11 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
@@ -794,15 +809,7 @@
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
@@ -810,15 +817,23 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/AC自动机/" title="AC自动机">AC自动机<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树套树/" title="树套树">树套树<sup>1</sup></a></li>
 			
 		
 			
