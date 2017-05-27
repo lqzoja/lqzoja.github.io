@@ -1,0 +1,26 @@
+
+  
+    <!DOCTYPE html>
+<!-- saved from url=(0047)http://www.erdangjiade.com/jquery/24/2427/demo/ -->
+<html><head>
+<meta charset="utf-8">
+<title>自己做特效</title>
+</head>
+<body style="background-color:#fff;margin: 0">
+<script type="text/javascript" src="/js/musicplayer.js"></script>
+<center>
+<canvas id="canvas" style="border: 0"></canvas>
+<input type="file" id="file" onchange="onInputFileChange()"><br>
+<audio id="audio" controls autoplay loop>Your browser can't support HTML5 Audio</audio>
+</center>
+<script>
+function onInputFileChange() {
+	var file = document.getElementById('file').files[0];
+	if(file == null) return;
+	var url = URL.createObjectURL(file);
+	console.log(url);
+	document.getElementById("audio").src = url;
+}
+</script>
+</body></html>
+  
