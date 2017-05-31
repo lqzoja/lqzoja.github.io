@@ -90,6 +90,70 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/" title="BZOJ 4551: [Tjoi2016&amp;Heoi2016]树" itemprop="url">BZOJ 4551: [Tjoi2016&amp;Heoi2016]树</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-17T01:35:15.000Z" itemprop="datePublished"> 发表于 2017-04-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在2016年，佳媛姐姐刚刚学习了树，非常开心。现在他想解决这样一个问题：给定一颗有根树（根为1），有以下两种操作：</p>
+<ol>
+<li>标记操作：对某个结点打上标记（在最开始，只有结点1有标记，其他结点均无标记，而且对于某个结点，可以打多次标记。）</li>
+<li>询问操作：询问某个结点最近的一个打了标记的祖先（这个结点本身也算自己的祖先）你能帮帮他吗?</li>
+</ol>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入第一行两个正整数N和Q分别表示节点个数和操作次数接下来N-1行，每行两个正整数u,v(1≤u,v≤n)表示u到v<br>有一条有向边接下来Q行，形如“opernum”oper为“C”时表示这是一个标记操作,oper为“Q”时表示这是一个询<br>问操作对于每次询问操作，1 ≤ N, Q ≤ 100000。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一个正整数，表示结果</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 5<br>1 2<br>1 3<br>2 4<br>2 5<br>Q 2<br>C 2<br>Q 2<br>Q 5<br>Q 3</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1<br>2<br>2<br>1</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>第一眼树剖<br>然后因为懒得打，百度了一下题解，发现有并查集的做法<br>就是离线倒着求解，一开始把所有的点都连向他的父亲，把所有打过标记的点都连向他自身<br>然后就可以用并查集啦，遇到C操作，就把flag[x]–，如果flag[x]==0就把他连向他的父亲<br><del>眼瞎导致两遍才过</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> fa[N], fl[N], ans[N], _fa[N], cnt;</div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">struct</span> ask&#123;</div><div class="line">	<span class="keyword">char</span> type;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">&#125;qus[N];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	n=read(); m=read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x, y; i &lt; n; i++)&#123;</div><div class="line">		x=read(); y=read();</div><div class="line">		fa[y] = _fa[y] = x;</div><div class="line">	&#125;fa[<span class="number">1</span>]=<span class="number">1</span>; fl[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">char</span> ch=getchar();</div><div class="line">		<span class="keyword">while</span>(ch!=<span class="string">'C'</span>&amp;&amp;ch!=<span class="string">'Q'</span>)ch=getchar(); x=read();</div><div class="line">		qus[i].type = ch; qus[i].val = x;</div><div class="line">		<span class="keyword">if</span>(ch==<span class="string">'C'</span>)fl[x]++, fa[x]=x;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = m; i; i--)</div><div class="line">		<span class="keyword">if</span>(qus[i].type==<span class="string">'C'</span>)&#123;</div><div class="line">			fl[qus[i].val]--;</div><div class="line">			<span class="keyword">if</span>(!fl[qus[i].val])fa[qus[i].val]=_fa[qus[i].val];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> ans[i] = find(qus[i].val);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">	<span class="keyword">if</span>(ans[i]) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/并查集/">并查集</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/04/14/BZOJ-2049-Sdoi2008-Cave-洞穴勘测/" title="BZOJ 2049: [Sdoi2008]Cave 洞穴勘测" itemprop="url">BZOJ 2049: [Sdoi2008]Cave 洞穴勘测</a>
   </h1>
   <p class="article-author">By
@@ -684,62 +748,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/10/如何卡掉BZOJ/" title="如何卡掉BZOJ" itemprop="url">如何卡掉BZOJ</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-10T12:38:54.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p><strong>请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关</strong></p>
-<h1 id="Linux下卡掉编译器"><a href="#Linux下卡掉编译器" class="headerlink" title="Linux下卡掉编译器"></a>Linux下卡掉编译器</h1><p>只需要写一句话<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;/dev/random&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。</p>
-<h1 id="Windows下卡掉编译器"><a href="#Windows下卡掉编译器" class="headerlink" title="Windows下卡掉编译器"></a>Windows下卡掉编译器</h1><p>也只要一句话<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;com1&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后就愉快的爆蛋了</p>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>我也不知道，自己谷歌</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p><del>抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当<br>适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</del><br>别作死卡OJ评测机，好好活着，不好吗？</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -763,15 +771,15 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>5</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
@@ -787,11 +795,11 @@
 			
 		
 			
-				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
 			
 		
 			
@@ -803,11 +811,15 @@
 			
 		
 			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -819,6 +831,10 @@
 			
 		
 			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
@@ -827,19 +843,11 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+				<li><a href="/tags/网络流/" title="网络流">网络流<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 		</ul>

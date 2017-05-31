@@ -90,6 +90,73 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/05/31/BZOJ-4419-Shoi2013-发微博/" title="BZOJ 4419: [Shoi2013]发微博" itemprop="url">BZOJ 4419: [Shoi2013]发微博</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-05-31T08:03:25.000Z" itemprop="datePublished"> 发表于 2017-05-31</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>刚开通的SH微博共有n个用户（1..n标号），在短短一个月的时间内，用户们活动频繁，共有m条按时间顺序的记录：</p>
+<ul>
+<li>! x表示用户x发了一条微博；</li>
+<li>+ x y 表示用户x和用户y成为了好友</li>
+<li>- x y 表示用户x和用户y解除了好友关系</li>
+</ul>
+<p>当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。<br>假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而- x y时x和y一定是好友）。<br>问这m条记录发生之后，每个用户分别看到了多少条消息。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第1行2个整数n,m。<br>接下来m行，按时间顺序读入m条记录，每条记录的格式如题目所述，用空格隔开。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行n个用空格隔开的数（行末无空格），第i个数表示用户i最后看到了几条消息。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 8<br>! 1<br>! 2<br>+ 1 2<br>! 1<br>! 2<br>- 1 2<br>! 1<br>! 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1 1</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>只有第4和第5条记录对应的消息被看到过。其他消息发送时，1和2不是好友。<br>对100%的数据，$N\leq 200000,M\leq 500000$</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>暴力即可。。。代码奇短无比。。<br>注意PE，行末不能有空格和回车</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> M 500007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 1000000007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> x[M], y[M], a[N], b[N], op[M];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		op[i] = getchar(); x[i] = read();</div><div class="line">		<span class="keyword">if</span>(op[i] != <span class="string">'!'</span>) y[i] = read();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = m; i; i--)</div><div class="line">		<span class="keyword">if</span>(op[i] == <span class="string">'!'</span>) b[x[i]]++;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(op[i] == <span class="string">'+'</span>) a[x[i]] += b[y[i]], a[y[i]] += b[x[i]];</div><div class="line">		<span class="keyword">else</span> a[x[i]] -= b[y[i]], a[y[i]] -= b[x[i]];</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, a[<span class="number">1</span>]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">" %d"</span>, a[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/模拟/">模拟</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/05/26/BZOJ-4562-Haoi2016-食物链/" title="BZOJ 4562: [Haoi2016]食物链" itemprop="url">BZOJ 4562: [Haoi2016]食物链</a>
   </h1>
   <p class="article-author">By
@@ -664,67 +731,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/05/09/BZOJ-4195-Noi2015-程序自动分析/" title="BZOJ 4195: [Noi2015]程序自动分析" itemprop="url">BZOJ 4195: [Noi2015]程序自动分析</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-05-09T00:38:21.000Z" itemprop="datePublished"> 发表于 2017-05-09</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在实现程序自动分析的过程中,常常需要判定一些约束条件是否能被同时满足。<br>考虑一个约束满足问题的简化版本：假设$x1,x2,x3,…$代表程序中出现的变量，给定$n$个形如$xi=xj$或$xi≠xj$的变量相等/不等的约束条件，请判定是否可以分别为每一个变量赋予恰当的值，使得上述所有约束条件同时被满足。例如，一个问题中的约束条件为：$x1=x2,x2=x3,x3=x4,x1≠x4$，这些约束条件显然是不可能同时被满足的，因此这个问题应判定为不可被满足。<br>现在给出一些约束满足问题，请分别对它们进行判定。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入文件的第1行包含1个正整数t，表示需要判定的问题个数。注意这些问题之间是相互独立的。<br>对于每个问题，包含若干行：<br>第1行包含1个正整数n，表示该问题中需要被满足的约束条件个数。<br>接下来n行，每行包括3个整数i,j,e，描述1个相等/不等的约束条件，相邻整数之间用单个空格隔开。若e=1，则该约束条件为xi=xj；若e=0，则该约束条件为xi≠xj。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出文件包括t行。<br>输出文件的第k行输出一个字符串“YES”或者“NO”（不包含引号，字母全部大写），“YES”表示输入中的第k个问题判定为可以被满足，“NO”表示不可被满足。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2<br>2<br>1 2 1<br>1 2 0<br>2<br>1 2 1<br>2 1 1</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>NO<br>YES</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>在第一个问题中，约束条件为：$x1=x2,x1≠x2$。这两个约束条件互相矛盾，因此不可被同时满足。<br>在第二个问题中，约束条件为：$x1=x2,x2=x1$。这两个约束条件是等价的，可以被同时满足。<br>$1\leq n\leq 1000000$<br>$1\leq i,j\leq 1000000000$</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一眼看觉得是并查集水题。<br>发现i和j的范围有点大，那就再来个离散化好了。<br>哎，过了。。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> x, y, type;</div><div class="line">&#125;ask[N];</div><div class="line"><span class="keyword">int</span> a[N&lt;&lt;<span class="number">1</span>], b[N&lt;&lt;<span class="number">1</span>], fa[N&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> xx = find(x), yy = find(y);</div><div class="line">	<span class="keyword">if</span>(xx == yy) <span class="keyword">return</span>;</div><div class="line">	fa[xx] = yy;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		<span class="keyword">int</span> n = read(); b[<span class="number">0</span>] = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x, y, z; i &lt;= n; i++)&#123;</div><div class="line">			x = read(); y = read(); z = read();</div><div class="line">			a[(i&lt;&lt;<span class="number">1</span>)<span class="number">-1</span>] = x; a[i&lt;&lt;<span class="number">1</span>] = y; ask[i] = (node)&#123;x, y, z&#125;;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> n2 = n &lt;&lt; <span class="number">1</span>;</div><div class="line">		sort(a+<span class="number">1</span>, a+n2+<span class="number">1</span>);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n2; i++)</div><div class="line">			<span class="keyword">if</span>(a[i] != a[i<span class="number">-1</span>]) b[++b[<span class="number">0</span>]] = a[i];</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">			ask[i].x = lower_bound(b+<span class="number">1</span>, b+b[<span class="number">0</span>]+<span class="number">1</span>, ask[i].x)-b;</div><div class="line">			ask[i].y = lower_bound(b+<span class="number">1</span>, b+b[<span class="number">0</span>]+<span class="number">1</span>, ask[i].y)-b;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b[<span class="number">0</span>]; i++) fa[i] = i;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">			<span class="keyword">if</span>(ask[i].type) merge(ask[i].x, ask[i].y);</div><div class="line">		<span class="keyword">bool</span> flag = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">			<span class="keyword">if</span>(!ask[i].type) <span class="keyword">if</span>(find(ask[i].x) == find(ask[i].y))&#123;</div><div class="line">				flag = <span class="number">1</span>;</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		<span class="built_in">puts</span>(flag?<span class="string">"NO"</span>:<span class="string">"YES"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/离散化/">离散化</a><a href="/tags/并查集/">并查集</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -748,15 +754,15 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>5</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/线段树/" title="线段树">线段树<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
@@ -772,11 +778,11 @@
 			
 		
 			
-				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
 			
 		
 			
@@ -788,11 +794,15 @@
 			
 		
 			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -804,6 +814,10 @@
 			
 		
 			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
 			
 		
@@ -812,19 +826,11 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/bfs/" title="bfs">bfs<sup>1</sup></a></li>
+				<li><a href="/tags/网络流/" title="网络流">网络流<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>1</sup></a></li>
 			
 		
 		</ul>

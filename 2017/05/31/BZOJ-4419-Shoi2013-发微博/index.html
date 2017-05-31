@@ -4,38 +4,41 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 4551: [Tjoi2016&amp;Heoi2016]树 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 4419: [Shoi2013]发微博 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面在2016年，佳媛姐姐刚刚学习了树，非常开心。现在他想解决这样一个问题：给定一颗有根树（根为1），有以下两种操作：
+    <meta name="description" content="题面刚开通的SH微博共有n个用户（1..n标号），在短短一个月的时间内，用户们活动频繁，共有m条按时间顺序的记录：
 
-标记操作：对某个结点打上标记（在最开始，只有结点1有标记，其他结点均无标记，而且对于某个结点，可以打多次标记。）
-询问操作：询问某个结点最近的一个打了标记的祖先（这个结点本身也算自己的祖先）你能帮帮他吗?
+! x表示用户x发了一条微博；
++ x y 表示用户x和用户y成为了好友
+- x y 表示用户x和用户y解除了好友关系
 
-Input输入第一行两个正整数N和Q分别表示节点个数和操作次数接下来N">
+当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而-">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 4551: [Tjoi2016&Heoi2016]树">
-<meta property="og:url" content="http://swwind.github.io/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/index.html">
+<meta property="og:title" content="BZOJ 4419: [Shoi2013]发微博">
+<meta property="og:url" content="http://swwind.github.io/2017/05/31/BZOJ-4419-Shoi2013-发微博/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面在2016年，佳媛姐姐刚刚学习了树，非常开心。现在他想解决这样一个问题：给定一颗有根树（根为1），有以下两种操作：
+<meta property="og:description" content="题面刚开通的SH微博共有n个用户（1..n标号），在短短一个月的时间内，用户们活动频繁，共有m条按时间顺序的记录：
 
-标记操作：对某个结点打上标记（在最开始，只有结点1有标记，其他结点均无标记，而且对于某个结点，可以打多次标记。）
-询问操作：询问某个结点最近的一个打了标记的祖先（这个结点本身也算自己的祖先）你能帮帮他吗?
+! x表示用户x发了一条微博；
++ x y 表示用户x和用户y成为了好友
+- x y 表示用户x和用户y解除了好友关系
 
-Input输入第一行两个正整数N和Q分别表示节点个数和操作次数接下来N">
-<meta property="og:updated_time" content="2017-04-17T02:01:09.036Z">
+当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而-">
+<meta property="og:updated_time" content="2017-05-31T08:12:15.799Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 4551: [Tjoi2016&Heoi2016]树">
-<meta name="twitter:description" content="题面在2016年，佳媛姐姐刚刚学习了树，非常开心。现在他想解决这样一个问题：给定一颗有根树（根为1），有以下两种操作：
+<meta name="twitter:title" content="BZOJ 4419: [Shoi2013]发微博">
+<meta name="twitter:description" content="题面刚开通的SH微博共有n个用户（1..n标号），在短短一个月的时间内，用户们活动频繁，共有m条按时间顺序的记录：
 
-标记操作：对某个结点打上标记（在最开始，只有结点1有标记，其他结点均无标记，而且对于某个结点，可以打多次标记。）
-询问操作：询问某个结点最近的一个打了标记的祖先（这个结点本身也算自己的祖先）你能帮帮他吗?
+! x表示用户x发了一条微博；
++ x y 表示用户x和用户y成为了好友
+- x y 表示用户x和用户y解除了好友关系
 
-Input输入第一行两个正整数N和Q分别表示节点个数和操作次数接下来N">
+当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而-">
 
     
     
@@ -107,14 +110,14 @@ Input输入第一行两个正整数N和Q分别表示节点个数和操作次数�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/" title="BZOJ 4551: [Tjoi2016&amp;Heoi2016]树" itemprop="url">BZOJ 4551: [Tjoi2016&amp;Heoi2016]树</a>
+      <a href="/2017/05/31/BZOJ-4419-Shoi2013-发微博/" title="BZOJ 4419: [Shoi2013]发微博" itemprop="url">BZOJ 4419: [Shoi2013]发微博</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-17T01:35:15.000Z" itemprop="datePublished"> 发表于 2017-04-17</time>
+    <time datetime="2017-05-31T08:03:25.000Z" itemprop="datePublished"> 发表于 2017-05-31</time>
     
   </p>
 </header>
@@ -123,21 +126,24 @@ Input输入第一行两个正整数N和Q分别表示节点个数和操作次数�
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>在2016年，佳媛姐姐刚刚学习了树，非常开心。现在他想解决这样一个问题：给定一颗有根树（根为1），有以下两种操作：</p>
-<ol>
-<li>标记操作：对某个结点打上标记（在最开始，只有结点1有标记，其他结点均无标记，而且对于某个结点，可以打多次标记。）</li>
-<li>询问操作：询问某个结点最近的一个打了标记的祖先（这个结点本身也算自己的祖先）你能帮帮他吗?</li>
-</ol>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入第一行两个正整数N和Q分别表示节点个数和操作次数接下来N-1行，每行两个正整数u,v(1≤u,v≤n)表示u到v<br>有一条有向边接下来Q行，形如“opernum”oper为“C”时表示这是一个标记操作,oper为“Q”时表示这是一个询<br>问操作对于每次询问操作，1 ≤ N, Q ≤ 100000。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一个正整数，表示结果</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 5<br>1 2<br>1 3<br>2 4<br>2 5<br>Q 2<br>C 2<br>Q 2<br>Q 5<br>Q 3</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1<br>2<br>2<br>1</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>第一眼树剖<br>然后因为懒得打，百度了一下题解，发现有并查集的做法<br>就是离线倒着求解，一开始把所有的点都连向他的父亲，把所有打过标记的点都连向他自身<br>然后就可以用并查集啦，遇到C操作，就把flag[x]–，如果flag[x]==0就把他连向他的父亲<br><del>眼瞎导致两遍才过</del></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> fa[N], fl[N], ans[N], _fa[N], cnt;</div><div class="line"><span class="keyword">int</span> n, m;</div><div class="line"><span class="keyword">struct</span> ask&#123;</div><div class="line">	<span class="keyword">char</span> type;</div><div class="line">	<span class="keyword">int</span> val;</div><div class="line">&#125;qus[N];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	n=read(); m=read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x, y; i &lt; n; i++)&#123;</div><div class="line">		x=read(); y=read();</div><div class="line">		fa[y] = _fa[y] = x;</div><div class="line">	&#125;fa[<span class="number">1</span>]=<span class="number">1</span>; fl[<span class="number">1</span>]=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, x; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">char</span> ch=getchar();</div><div class="line">		<span class="keyword">while</span>(ch!=<span class="string">'C'</span>&amp;&amp;ch!=<span class="string">'Q'</span>)ch=getchar(); x=read();</div><div class="line">		qus[i].type = ch; qus[i].val = x;</div><div class="line">		<span class="keyword">if</span>(ch==<span class="string">'C'</span>)fl[x]++, fa[x]=x;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = m; i; i--)</div><div class="line">		<span class="keyword">if</span>(qus[i].type==<span class="string">'C'</span>)&#123;</div><div class="line">			fl[qus[i].val]--;</div><div class="line">			<span class="keyword">if</span>(!fl[qus[i].val])fa[qus[i].val]=_fa[qus[i].val];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span> ans[i] = find(qus[i].val);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">	<span class="keyword">if</span>(ans[i]) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>刚开通的SH微博共有n个用户（1..n标号），在短短一个月的时间内，用户们活动频繁，共有m条按时间顺序的记录：</p>
+<ul>
+<li>! x表示用户x发了一条微博；</li>
+<li>+ x y 表示用户x和用户y成为了好友</li>
+<li>- x y 表示用户x和用户y解除了好友关系</li>
+</ul>
+<p>当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。<br>假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而- x y时x和y一定是好友）。<br>问这m条记录发生之后，每个用户分别看到了多少条消息。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第1行2个整数n,m。<br>接下来m行，按时间顺序读入m条记录，每条记录的格式如题目所述，用空格隔开。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行n个用空格隔开的数（行末无空格），第i个数表示用户i最后看到了几条消息。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 8<br>! 1<br>! 2<br>+ 1 2<br>! 1<br>! 2<br>- 1 2<br>! 1<br>! 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1 1</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>只有第4和第5条记录对应的消息被看到过。其他消息发送时，1和2不是好友。<br>对100%的数据，$N\leq 200000,M\leq 500000$</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>暴力即可。。。代码奇短无比。。<br>注意PE，行末不能有空格和回车</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> M 500007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 1000000007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> x[M], y[M], a[N], b[N], op[M];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		op[i] = getchar(); x[i] = read();</div><div class="line">		<span class="keyword">if</span>(op[i] != <span class="string">'!'</span>) y[i] = read();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = m; i; i--)</div><div class="line">		<span class="keyword">if</span>(op[i] == <span class="string">'!'</span>) b[x[i]]++;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(op[i] == <span class="string">'+'</span>) a[x[i]] += b[y[i]], a[y[i]] += b[x[i]];</div><div class="line">		<span class="keyword">else</span> a[x[i]] -= b[y[i]], a[y[i]] -= b[x[i]];</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, a[<span class="number">1</span>]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">" %d"</span>, a[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -145,7 +151,7 @@ Input输入第一行两个正整数N和Q分别表示节点个数和操作次数�
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/并查集/">并查集</a>
+  <span></span> <a href="/tags/模拟/">模拟</a>
   </div>
 
 </div>
@@ -154,7 +160,7 @@ Input输入第一行两个正整数N和Q分别表示节点个数和操作次数�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/" data-title="BZOJ 4551: [Tjoi2016&amp;Heoi2016]树 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/05/31/BZOJ-4419-Shoi2013-发微博/" data-title="BZOJ 4419: [Shoi2013]发微博 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -167,19 +173,11 @@ Input输入第一行两个正整数N和Q分别表示节点个数和操作次数�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/" title="BZOJ 4491: 我也不知道题目名字是什么">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 4491: 我也不知道题目名字是什么</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/14/BZOJ-2049-Sdoi2008-Cave-洞穴勘测/"  title="BZOJ 2049: [Sdoi2008]Cave 洞穴勘测">
+<a href="/2017/05/26/BZOJ-4562-Haoi2016-食物链/"  title="BZOJ 4562: [Haoi2016]食物链">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 2049: [Sdoi2008]Cave 洞穴勘测
+ <span>BZOJ 4562: [Haoi2016]食物链
 </span>
 </a>
 </div>
@@ -210,7 +208,7 @@ gitment.render('containers')
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
