@@ -90,6 +90,68 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/" title="BZOJ 4491: 我也不知道题目名字是什么" itemprop="url">BZOJ 4491: 我也不知道题目名字是什么</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-04-17T01:35:33.000Z" itemprop="datePublished"> 发表于 2017-04-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行n，表示A数组有多少元素<br>接下来一行为n个整数A[i]<br>接下来一个整数Q，表示询问数量<br>接下来Q行，每行2个整数l，r</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>9<br>1 2 3 4 5 6 5 4 3<br>5<br>1 6<br>1 7<br>2 7<br>1 9<br>5 9</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>6<br>6<br>5<br>6<br>4</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例解释】<br>五个询问分别对应<br>[1,6][1,6][2,6][1,6][6,9]</p>
+<p>N,Q&lt;=50000</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>线段树。。<br>一颗维护上升序列，一颗维护下降序列。。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 50020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> tree&#123;</div><div class="line">	<span class="keyword">int</span> val[<span class="number">50020</span>];</div><div class="line">	<span class="keyword">struct</span> node&#123;</div><div class="line">		<span class="keyword">int</span> lx, rx, l, r, mx;</div><div class="line">	&#125;tr[N&lt;&lt;<span class="number">2</span>];</div><div class="line">	<span class="function">node <span class="title">merge</span><span class="params">(<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)</span></span>&#123;</div><div class="line">		node c; c.l = a.l, c.r = b.r;</div><div class="line">		c.lx = a.lx, c.rx = b.rx; c.mx = max(a.mx, b.mx);</div><div class="line">		<span class="keyword">if</span>(c.lx == a.r-a.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.lx += b.lx;</div><div class="line">		<span class="keyword">if</span>(c.rx == b.r-b.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.rx += a.rx;</div><div class="line">		<span class="keyword">if</span>(val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.mx = max(c.mx, a.rx+b.lx);</div><div class="line">		<span class="keyword">return</span> c;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(l == r)&#123;</div><div class="line">			tr[x].l = l, tr[x].r = r;</div><div class="line">			tr[x].mx = tr[x].lx = tr[x].rx = <span class="number">1</span>;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">		build(x&lt;&lt;<span class="number">1</span>, l, mid); build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">		tr[x] = merge(tr[x&lt;&lt;<span class="number">1</span>], tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="function">node <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x];</div><div class="line">		<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">return</span> merge(ask(x&lt;&lt;<span class="number">1</span>, l, mid), ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r));</div><div class="line">	&#125;</div><div class="line">&#125;up,down;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) down.val[i]=-(up.val[i]=read());</div><div class="line">	down.build(<span class="number">1</span>, <span class="number">1</span>, n), up.build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	<span class="keyword">int</span> m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, l, r; i &lt;= m; i++)&#123;</div><div class="line">		l = read(); r = read();</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, max(down.ask(<span class="number">1</span>, l, r).mx, up.ask(<span class="number">1</span>, l, r).mx));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/线段树/">线段树</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/" title="BZOJ 4551: [Tjoi2016&amp;Heoi2016]树" itemprop="url">BZOJ 4551: [Tjoi2016&amp;Heoi2016]树</a>
   </h1>
   <p class="article-author">By
@@ -684,70 +746,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/11/BZOJ-2693-jzptab-BZOJ-2154-Crash的数字表格/" title="BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格" itemprop="url">BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-11T05:58:37.000Z" itemprop="datePublished"> 发表于 2017-04-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>都是要你求<br>$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j)$$</p>
-<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>4 5</p>
-<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>122</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>不会做+看题解+公式恐惧症、、、<br>下面是某爬虫网站抄来的，也不知道作者是谁、、先orz一波</p>
-<p>下面均设n&lt;=m<br>$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j) = \sum_{i=1}^{n} \sum_{j=1}^{m} \frac{ij}{(i,j)}$$<br>然后我们要想枚举$d=(i,j)$，那么就要确定$ij$怎么取，显然我们只需要先除去$i$和$j$的$d$，也就是$(i/d,j/d)=1$就行了，那么设<br>$$F(x, y) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1]$$<br>那么原式变成<br>$$\sum_{d=1}^{n} \frac{d^2 F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor)}{d} = \sum_{d=1}^{n} d F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor)$$<br>考虑求$F(x,y)$<br>$$<br>\begin{align}<br>F(x, y) &amp; = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1] \\<br>&amp; = \sum_{i=1}^{x} \sum_{j=1}^{y} ij \sum_{d|(i,j)} \mu (d) \\<br>&amp; = \sum_{d=1}^{x} \mu (d) \sum_{d|i}^{x} i \sum_{d|j}^{y} j \\<br>&amp; = \sum_{d=1}^{x} \mu (d) d^2 \sum_{i=1}^{\lfloor \frac{x}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{y}{d} \rfloor} 1 \\<br>&amp; = \sum_{d=1}^{x} \mu (d) d^2 \frac{\lfloor \frac{x}{d} \rfloor (\lfloor \frac{x}{d} \rfloor +1)}{2} \frac{\lfloor \frac{y}{d} \rfloor (\lfloor \frac{y}{d} \rfloor +1)}{2} \\<br>\end{align}<br>$$<br>带回原式得<br>$$<br>\begin{align}<br>&amp; \sum_{d=1}^{n} d F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor) \\<br>= &amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{\lfloor \frac{n}{d} \rfloor}{i} \rfloor (\lfloor \frac{\lfloor \frac{n}{d} \rfloor}{i} \rfloor +1)}{2} \frac{\lfloor \frac{\lfloor \frac{m}{d} \rfloor}{i} \rfloor (\lfloor \frac{\lfloor \frac{m}{d} \rfloor}{i} \rfloor +1)}{2} \\<br>= &amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{n}{di} \rfloor (\lfloor \frac{n}{di} \rfloor +1)}{2} \frac{\lfloor \frac{m}{di} \rfloor (\lfloor \frac{m}{di} \rfloor +1)}{2} \\<br>\end{align}<br>$$<br>现在已经可以$O(\sqrt n \sqrt n) = O(n)$单次查询了，可以完成那道数字表格了<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 20101009</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll mu[N], pri[N], s[N], cnt;</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll ans, x, y;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(ll a)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a&gt;<span class="number">9</span>)write(a/<span class="number">10</span>);</div><div class="line">	<span class="built_in">putchar</span>(a%<span class="number">10</span>+<span class="string">'0'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> (a*(a+<span class="number">1</span>)/<span class="number">2</span>)%zyy*(b*(b+<span class="number">1</span>)/<span class="number">2</span>%zyy)%zyy;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= min(a, b); i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans = (ans+(s[last]-s[i<span class="number">-1</span>])*sum(a/i, b/i)%zyy)%zyy;</div><div class="line">		<span class="comment">// printf("ans  = %d\n", ans);</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</div><div class="line">	mu[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">2</span>; i &lt;= min(x, y); i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>;</div><div class="line">		<span class="keyword">for</span>(ll j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i*pri[j] &lt;= min(x, y); j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>, mu[pri[j]*i] = -mu[i];</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[pri[j]*i] = <span class="number">0</span>; <span class="keyword">break</span>;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= min(x, y); i++)</div><div class="line">		s[i] = (s[i<span class="number">-1</span>]+i*i*mu[i]%zyy)%zyy;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= min(x, y); i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(x/(x/i), y/(y/i));</div><div class="line">		ans = (ans+(i+last)*(last-i+<span class="number">1</span>)/<span class="number">2</span>%zyy*f(x/i, y/i)%zyy)%zyy;</div><div class="line">		<span class="comment">// printf("ans2 = %d\n", ans);</span></div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;(ans+zyy)%zyy&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>但是交到第一题还是TLE，我们继续化简<br>令$T = di$，则$i|T,d = T/i$，换掉指标，得<br>$$<br>\begin{align}<br>&amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{n}{di} \rfloor (\lfloor \frac{n}{di} \rfloor +1)}{2} \frac{\lfloor \frac{m}{di} \rfloor (\lfloor \frac{m}{di} \rfloor +1)}{2} \\<br>= &amp;<br>\sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} \sum_{i|T} \frac{T}{i} \mu (i) i^2 \\<br>= &amp; \sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} T \sum_{i|T} \mu (i) i \\<br>\end{align}<br>$$<br>设$g(T)=T \sum_{i|T} \mu (i) i$，我们再设$f(T)=\sum_{i|T} \mu (i) i$那么$g(T)=Tf(T)$，考虑求$f(T)$<br>在线性筛中，外层为$k$，内层为$p_y$，所以求$f(kp_y)=\sum_{i|T} \mu(i) i$</p>
-<p>当$p_y|k$时<br>当$i$取的数的因子中不包含新加入的$p_y$时，答案就是$f(k)$<br>当$i$取包含新加入的因子$p_y$时，由于此时$p_y$指数已经&gt;=2，所以$\mu (i)=0$，因此贡献为0<br>综上，当$p_y|k$时，答案为$f(k)$</p>
-<p>当$p_y∤k$时<br>当$i$取的数的因子中不包含新加入的$p_y$时，同上，答案是$f(k)$<br>当$i$取的数的因子包含新加入的$p_y$时，由于指数为1，所以我们考虑$i=ap_y$，原式变为<br>$$\begin{align}<br>&amp; \sum_{i|T} \mu(i) i \\<br>= &amp; \sum_{ap_y|kp_y} \mu (ap_y) ap_y \\<br>= &amp; p_y \sum_{a|k} \mu (a) \mu(p_y) a \\<br>= &amp; -p_y \sum_{a|k} \mu(a) a \\<br>= &amp; -p_y f(k) \\<br>\end{align}$$<br>综上，当$p_y∤k$时，答案为$(1−p_y)f(k)$<br>然后线性筛随便搞搞即可，最后答案就是<br>$$\sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} g(T)$$<br>$$F(x,y)= \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1] = \sum_{i=1}^{x} \sum_{j=1}^{y} ij \sum_{d|(i,j)} \mu (d)$$</p>
-<p>接着第一题也可以做了（小心被卡常数！<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 100000009</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> mu[N], pri[N], cnt;</div><div class="line">ll s[N];</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll x, y;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> (a*(a+<span class="number">1</span>)/<span class="number">2</span>%zyy)*(b*(b+<span class="number">1</span>)/<span class="number">2</span>%zyy)%zyy;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= a; i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans = (ans+(s[last]-s[i<span class="number">-1</span>]+zyy)%zyy*sum(a/i, b/i)%zyy)%zyy;</div><div class="line">		<span class="comment">// printf("ans  = %d\n", ans);</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	mu[<span class="number">1</span>] = s[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>,s[i]=<span class="number">1</span>-i;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i*pri[j] &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[pri[j]*i] = <span class="number">0</span>; s[i*pri[j]]=s[i]; <span class="keyword">break</span>;&#125;</div><div class="line">			s[i*pri[j]] = (s[i]*s[pri[j]])%zyy; mu[pri[j]*i] = -mu[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		s[i] = (s[i<span class="number">-1</span>]+i*s[i]%zyy)%zyy;</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		x = read(); y = read();</div><div class="line">		<span class="keyword">if</span>(x &gt; y) swap(x, y);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, (f(x, y)+zyy)%zyy);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>做完感觉人已经完全傻掉了<br>调了半个小时才知道BZOJ和cin cout有仇<br><img src="https://swwind.github.io/img/haipa.png"></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/数论/">数论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <a class="extend prev" rel="prev" href="/page/2/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/4/">Next<span></span></a>
@@ -791,10 +789,6 @@
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
@@ -803,7 +797,7 @@
 			
 		
 			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
 			
 		
 			
@@ -811,11 +805,7 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
@@ -823,15 +813,19 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -839,15 +833,19 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/网络流/" title="网络流">网络流<sup>1</sup></a></li>
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
+				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 		</ul>

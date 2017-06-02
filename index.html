@@ -90,6 +90,67 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/06/02/BZOJ-1004-HNOI2008-Cards/" title="BZOJ 1004: [HNOI2008]Cards" itemprop="url">BZOJ 1004: [HNOI2008]Cards</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-06-02T01:14:15.000Z" itemprop="datePublished"> 发表于 2017-06-02</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>小春现在很清闲,面对书桌上的N张牌,他决定给每张染色,目前小春只有3种颜色:红色,蓝色,绿色.他询问Sun有<br>多少种染色方案,Sun很快就给出了答案.进一步,小春要求染出Sr张红色,Sb张蓝色,Sg张绝色.他又询问有多少种方<br>案,Sun想了一下,又给出了正确答案. 最后小春发明了M种不同的洗牌法,这里他又问Sun有多少种不同的染色方案.<br>两种染色方法相同当且仅当其中一种可以通过任意的洗牌法(即可以使用多种洗牌法,而每种方法可以使用多次)洗<br>成另一种.Sun发现这个问题有点难度,决定交给你,答案可能很大,只要求出答案除以P的余数(P为质数).</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行输入 5 个整数：$S_r,S_b,S_g,m,p(m\leq 60,m+1\lt p\lt 100),n=S_r+S_b+S_g$。<br>接下来 m 行，每行描述一种洗牌法，每行有 n 个用空格隔开的整数 X1 X2 … Xn，恰为 1 到 n 的一个排列，<br>表示使用这种洗牌法，第 i 位变为原来的 Xi 位的牌。输入数据保证任意多次洗牌都可用这 m 种洗牌法中的一种代<br>替，且对每种洗牌法，都存在一种洗牌法使得能回到原状态。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>不同染法除以P的余数</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>1 1 1 2 7<br>2 3 1<br>3 1 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>有2 种本质上不同的染色法RGB 和RBG，使用洗牌法231 一次可得GBR 和BGR，使用洗牌法312 一次 可得BRG和GRB。<br>100%数据满足$Max\{Sr,Sb,Sg\}\leq 20$。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>$$<br>ans=n!*Sr!^{p-2}*Sb!^{p-2}*Sg!^{p-2}*(m+1)^{p-2}\pmod p<br>$$<br>似乎和后面的东西没多大关系。。<br><del>别问我怎么知道的</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> frav[<span class="number">202</span>], p;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">pw</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b = p<span class="number">-2</span>)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> c = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(;b;b/=<span class="number">2</span>,a=a*a%p)<span class="keyword">if</span>(b&amp;<span class="number">1</span>)c=c*a%p;</div><div class="line">	<span class="keyword">return</span> c;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> r = read(), b = read(), g = read(), m = read(); p = read();</div><div class="line">	frav[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">200</span>; i++) frav[i] = frav[i<span class="number">-1</span>]*i%p;</div><div class="line">	<span class="keyword">int</span> n = r+b+g;</div><div class="line">	<span class="keyword">int</span> ans = frav[n]*pw(frav[r])*pw(frav[b])*pw(frav[g])%p;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans*pw(m+<span class="number">1</span>)%p);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/瞎搞/">瞎搞</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/05/31/BZOJ-4419-Shoi2013-发微博/" title="BZOJ 4419: [Shoi2013]发微博" itemprop="url">BZOJ 4419: [Shoi2013]发微博</a>
   </h1>
   <p class="article-author">By
@@ -665,72 +726,6 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/05/09/在命令行预览文件的小程序/" title="在命令行预览文件的小程序" itemprop="url">在命令行预览文件的小程序</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-05-09T01:44:36.000Z" itemprop="datePublished"> 发表于 2017-05-09</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>你有没有遇到过这种情况？</p>
-<blockquote>
-<p>我只想查看一个文件的第一行，但是它太大了，打开它太慢了。</p>
-</blockquote>
-<p>这时候就是本程序大展身手的好时机了。</p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><figure class="highlight cmd"><table><tr><td class="code"><pre><div class="line">LOOK [-L] [-N num] <span class="built_in">path</span> 或者 LOOK -?</div></pre></td></tr></table></figure>
-<ul>
-<li>[-L] - 是否显示行号（可选）</li>
-<li>[-N num] - 要显示的行数（默认999999）（可选）</li>
-<li>path - 文件路径（必须）</li>
-</ul>
-<p>把编译过的代码放到某个path路径里就可以用cmd玩了。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> lin = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(argc &gt; <span class="number">1</span>)</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'?'</span>)</div><div class="line">			argc = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(argc == <span class="number">1</span>)&#123;</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"Check a file."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"LOOK [-L] [-N num] [path]"</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -L         Show line-numbers or not."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -N [num]   Lines that you want to see."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  path       The path of the file that you want to see."</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'l'</span> || argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'L'</span>)</div><div class="line">			lin = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> maxline = <span class="number">999999</span>, fl = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'n'</span> || argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'N'</span>)&#123;</div><div class="line">			fl = <span class="number">2</span>;</div><div class="line">			<span class="keyword">int</span> len = <span class="built_in">strlen</span>(argv[lin+<span class="number">2</span>]), x = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</div><div class="line">				x = x*<span class="number">10</span>+argv[lin+<span class="number">2</span>][i]-<span class="string">'0'</span>;</div><div class="line">			maxline = x;</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	ifstream is;</div><div class="line">	is.open(argv[lin+fl+<span class="number">1</span>]);</div><div class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(getline(is, str) &amp;&amp; ++a &lt;= maxline)&#123;</div><div class="line">		<span class="keyword">if</span>(lin) <span class="built_in">printf</span>(<span class="string">"%6d: "</span>, a);</div><div class="line">		<span class="built_in">puts</span>(str.c_str());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(a &gt; maxline) <span class="built_in">puts</span>(<span class="string">"..."</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/作品发布/">作品发布</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -774,10 +769,6 @@
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
@@ -786,7 +777,7 @@
 			
 		
 			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
 			
 		
 			
@@ -794,11 +785,7 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
@@ -806,15 +793,19 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -822,15 +813,19 @@
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/网络流/" title="网络流">网络流<sup>1</sup></a></li>
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/BSGS/" title="BSGS">BSGS<sup>1</sup></a></li>
+				<li><a href="/tags/毒瘤题/" title="毒瘤题">毒瘤题<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/迭代加深搜索/" title="迭代加深搜索">迭代加深搜索<sup>1</sup></a></li>
 			
 		
 		</ul>
