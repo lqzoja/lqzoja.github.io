@@ -4,32 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 4491: 我也不知道题目名字是什么 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 2654: tree | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Input第一行n，表示A数组有多少元素接下来一行为n个整数A[i]接下来一个整数Q，表示询问数量接下来Q行，每行2个整数l，r
-Output对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
+    <meta name="description" content="题面给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。题目保证有解。
+Input第一行V,E,need分别表示点数，边数和需要的白色边数。接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。
+Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所有数据边权为[1,100">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 4491: 我也不知道题目名字是什么">
-<meta property="og:url" content="http://swwind.github.io/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/index.html">
+<meta property="og:title" content="BZOJ 2654: tree">
+<meta property="og:url" content="http://swwind.github.io/2017/06/02/BZOJ-2654-tree/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Input第一行n，表示A数组有多少元素接下来一行为n个整数A[i]接下来一个整数Q，表示询问数量接下来Q行，每行2个整数l，r
-Output对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
-<meta property="og:updated_time" content="2017-04-17T01:51:15.063Z">
+<meta property="og:description" content="题面给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。题目保证有解。
+Input第一行V,E,need分别表示点数，边数和需要的白色边数。接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。
+Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所有数据边权为[1,100">
+<meta property="og:updated_time" content="2017-06-02T02:24:40.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 4491: 我也不知道题目名字是什么">
-<meta name="twitter:description" content="题面给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Input第一行n，表示A数组有多少元素接下来一行为n个整数A[i]接下来一个整数Q，表示询问数量接下来Q行，每行2个整数l，r
-Output对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串
-Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
+<meta name="twitter:title" content="BZOJ 2654: tree">
+<meta name="twitter:description" content="题面给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。题目保证有解。
+Input第一行V,E,need分别表示点数，边数和需要的白色边数。接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。
+Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所有数据边权为[1,100">
 
     
     
@@ -101,14 +98,14 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/" title="BZOJ 4491: 我也不知道题目名字是什么" itemprop="url">BZOJ 4491: 我也不知道题目名字是什么</a>
+      <a href="/2017/06/02/BZOJ-2654-tree/" title="BZOJ 2654: tree" itemprop="url">BZOJ 2654: tree</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-04-17T01:35:33.000Z" itemprop="datePublished"> 发表于 2017-04-17</time>
+    <time datetime="2017-06-02T02:21:11.000Z" itemprop="datePublished"> 发表于 2017-06-02</time>
     
   </p>
 </header>
@@ -117,19 +114,17 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行n，表示A数组有多少元素<br>接下来一行为n个整数A[i]<br>接下来一个整数Q，表示询问数量<br>接下来Q行，每行2个整数l，r</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>9<br>1 2 3 4 5 6 5 4 3<br>5<br>1 6<br>1 7<br>2 7<br>1 9<br>5 9</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>6<br>6<br>5<br>6<br>4</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例解释】<br>五个询问分别对应<br>[1,6][1,6][2,6][1,6][6,9]</p>
-<p>N,Q&lt;=50000</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>线段树。。<br>一颗维护上升序列，一颗维护下降序列。。</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 50020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> tree&#123;</div><div class="line">	<span class="keyword">int</span> val[<span class="number">50020</span>];</div><div class="line">	<span class="keyword">struct</span> node&#123;</div><div class="line">		<span class="keyword">int</span> lx, rx, l, r, mx;</div><div class="line">	&#125;tr[N&lt;&lt;<span class="number">2</span>];</div><div class="line">	<span class="function">node <span class="title">merge</span><span class="params">(<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)</span></span>&#123;</div><div class="line">		node c; c.l = a.l, c.r = b.r;</div><div class="line">		c.lx = a.lx, c.rx = b.rx; c.mx = max(a.mx, b.mx);</div><div class="line">		<span class="keyword">if</span>(c.lx == a.r-a.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.lx += b.lx;</div><div class="line">		<span class="keyword">if</span>(c.rx == b.r-b.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.rx += a.rx;</div><div class="line">		<span class="keyword">if</span>(val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.mx = max(c.mx, a.rx+b.lx);</div><div class="line">		<span class="keyword">return</span> c;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(l == r)&#123;</div><div class="line">			tr[x].l = l, tr[x].r = r;</div><div class="line">			tr[x].mx = tr[x].lx = tr[x].rx = <span class="number">1</span>;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">		build(x&lt;&lt;<span class="number">1</span>, l, mid); build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">		tr[x] = merge(tr[x&lt;&lt;<span class="number">1</span>], tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="function">node <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x];</div><div class="line">		<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">return</span> merge(ask(x&lt;&lt;<span class="number">1</span>, l, mid), ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r));</div><div class="line">	&#125;</div><div class="line">&#125;up,down;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) down.val[i]=-(up.val[i]=read());</div><div class="line">	down.build(<span class="number">1</span>, <span class="number">1</span>, n), up.build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	<span class="keyword">int</span> m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, l, r; i &lt;= m; i++)&#123;</div><div class="line">		l = read(); r = read();</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, max(down.ask(<span class="number">1</span>, l, r).mx, up.ask(<span class="number">1</span>, l, r).mx));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。<br>题目保证有解。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行V,E,need分别表示点数，边数和需要的白色边数。<br>接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一行表示所求生成树的边权和。<br>$V\leq 50000,E\leq 100000$,所有数据边权为[1,100]中的正整数。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 2 1<br>0 1 1 1<br>0 1 2 0</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>按c把边从小到大排序<br>然后先把need条白边取了<br>然后在剩下的里面取n-1-need条边就行了</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> x, y, c, t;</div><div class="line">	<span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)&#123;</div><div class="line">		<span class="keyword">return</span> a.c &lt; b.c;</div><div class="line">	&#125;</div><div class="line">&#125;a[<span class="number">100020</span>];</div><div class="line"><span class="keyword">int</span> vis[<span class="number">100020</span>], fa[<span class="number">50020</span>], ans, tot;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read(), need = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		a[i].x = read(); a[i].y = read();</div><div class="line">		a[i].c = read(); a[i].t = read();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) fa[i] = i;</div><div class="line">	sort(a+<span class="number">1</span>, a+m+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(a[i].t) <span class="keyword">continue</span>; vis[i] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> x = find(a[i].x), y = find(a[i].y);</div><div class="line">		<span class="keyword">if</span>(x == y) <span class="keyword">continue</span>; fa[x] = y;</div><div class="line">		ans += a[i].c; tot++;</div><div class="line">		<span class="keyword">if</span>(!--need) <span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)<span class="keyword">if</span>(!vis[i])&#123;</div><div class="line">		<span class="keyword">int</span> x = find(a[i].x), y = find(a[i].y);</div><div class="line">		<span class="keyword">if</span>(x == y) <span class="keyword">continue</span>; fa[x] = y;</div><div class="line">		ans += a[i].c; <span class="keyword">if</span>(++tot == n<span class="number">-1</span>) <span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -137,7 +132,7 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/线段树/">线段树</a>
+  <span></span> <a href="/tags/瞎搞/">瞎搞</a>
   </div>
 
 </div>
@@ -146,7 +141,7 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/04/17/BZOJ-4491-我也不知道题目名字是什么/" data-title="BZOJ 4491: 我也不知道题目名字是什么 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/06/02/BZOJ-2654-tree/" data-title="BZOJ 2654: tree | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,19 +154,11 @@ Sample Input91 2 3 4 5 6 5 4 351 61 72 71">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/04/20/BZOJ-1085-SCOI2005-骑士精神/" title="BZOJ 1085: [SCOI2005]骑士精神">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 1085: [SCOI2005]骑士精神</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/04/17/BZOJ-4551-Tjoi2016-Heoi2016-树/"  title="BZOJ 4551: [Tjoi2016&amp;Heoi2016]树">
+<a href="/2017/06/02/BZOJ-1004-HNOI2008-Cards/"  title="BZOJ 1004: [HNOI2008]Cards">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 4551: [Tjoi2016&amp;Heoi2016]树
+ <span>BZOJ 1004: [HNOI2008]Cards
 </span>
 </a>
 </div>
@@ -202,7 +189,7 @@ gitment.render('containers')
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
