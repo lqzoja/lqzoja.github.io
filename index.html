@@ -108,7 +108,9 @@
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一个正整数，表示搭建方法的个数。（注：搭建方法个数可能很大。）</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>3</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>5</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>ans[3]=5。。。是不是想到了什么。。。<br>没错。然后我毫不要脸的用了python。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>ans[3]=5。。。是不是想到了什么。。。</p>
+<p>给个证明吧。。<br>首先比如这么一张图<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">*</div><div class="line">+*</div><div class="line">++*</div><div class="line">#++*</div></pre></td></tr></table></figure></p>
+<p>我们注意到每个切割出来的矩形都必需包括一块标示为*的小正方形，那么我们此时枚举每个*与#标示的两角作为矩形，剩下的两个小阶梯就是我们的两个更小的子问题了，于是我们的注意到这里的式子<br>$$C_4=C_0*C_3+C_1*C_2+C_2*C_1+C_3*C_0$$<br>这就是卡特兰数的递推公式。。。<br>然后我毫不要脸的用了python。<br>233333</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight python"><table><tr><td class="code"><pre><div class="line">n = int(raw_input())</div><div class="line">f = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>)]</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(x)</span>:</span></div><div class="line">	<span class="keyword">if</span> f[x]:</div><div class="line">		<span class="keyword">return</span> f[x]</div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(x):</div><div class="line">		f[x] += get(x<span class="number">-1</span>-i)*get(i)</div><div class="line">	<span class="keyword">return</span> f[x]</div><div class="line"></div><div class="line">f[<span class="number">1</span>] = f[<span class="number">0</span>] = <span class="number">1</span></div><div class="line">print(get(n))</div></pre></td></tr></table></figure>
         
         
@@ -748,15 +750,11 @@
 			
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
@@ -764,11 +762,7 @@
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
 			
 		
 			
@@ -776,11 +770,19 @@
 			
 		
 			
-				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -788,7 +790,7 @@
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
 			
 		
 			
@@ -812,11 +814,11 @@
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
