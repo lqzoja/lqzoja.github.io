@@ -95,33 +95,31 @@ var html2Escape = function(sHtml) {
 		})
 }
 
-var read = function () {
-	var sty = $('<style/>').appendTo($('head'))
-	sty.html('.s{position: absolute;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;}')
-	sty[0].type = 'text/css'
-	var urls = "https://swwind.github.io/img/a.txt";     
-	var htmlobj = $.ajax({url:urls,async:false})  
-	var dataString = htmlobj.responseText
-	speed = 1
-	playspeed = 1
-	var lis = html2Escape(dataString).split('\n')
-	for(var i = 0; i < lis.length; i++) {
-		var dg = lis[i].split(' ')
-		if(dg.length == null || dg.length < 3) return
-		if(dg[0] == 1){ dg.shift()
-			var sd = Math.floor(parseFloat(dg.shift())*1000)
-			addFly(dg.join(' '), sd)
-		}
-		if(dg[0] == 0){ dg.shift()
-			var sd = Math.floor(parseFloat(dg.shift())*1000)
-			addTop(dg.join(' '), sd)
-		}
+for(var i = 0; i < lines; i++)
+	tops[i] = 0, ls[i] = 0
+var sty = $('<style/>').appendTo($('head'))
+sty.html('.s{position: absolute;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;}')
+sty[0].type = 'text/css'
+var urls = "https://swwind.github.io/img/a.txt";     
+var htmlobj = $.ajax({url:urls,async:false})  
+var dataString = htmlobj.responseText
+speed = 1
+playspeed = 1
+var lis = html2Escape(dataString).split('\n')
+for(var i = 0; i < lis.length; i++) {
+	var dg = lis[i].split(' ')
+	if(dg.length == null || dg.length < 3) return
+	if(dg[0] == 1){ dg.shift()
+		var sd = Math.floor(parseFloat(dg.shift())*1000)
+		addFly(dg.join(' '), sd)
+	}
+	if(dg[0] == 0){ dg.shift()
+		var sd = Math.floor(parseFloat(dg.shift())*1000)
+		addTop(dg.join(' '), sd)
 	}
 }
 
-for(var i = 0; i < lines; i++)
-	tops[i] = 0, ls[i] = 0
 // $('#but').click(read)
 
 
-// javascript:var k=document.createElement('script');k.src='https://swwind.github.io/js/fuck.js';document.body.appendChild(k);read();
+// javascript:var k=document.createElement('script');k.src='https://swwind.github.io/js/fuck.js';document.body.appendChild(k);
