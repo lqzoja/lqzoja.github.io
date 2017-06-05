@@ -4,29 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>BZOJ 2654: tree | SW_Wind&#39;s blog</title>
+    <title>BZOJ 2822: [AHOI2012]树屋阶梯 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。题目保证有解。
-Input第一行V,E,need分别表示点数，边数和需要的白色边数。接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。
-Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所有数据边权为[1,100">
+    <meta name="description" content="题面暑假期间，小龙报名了一个模拟野外生存作战训练班来锻炼体魄，训练的第一个晚上，教官就给他们出了个难题。由于地上露营湿气重，必须选择在高处的树屋露营。小龙分配的树屋建立在一颗高度为N+1尺（N为正整数）的大树上，正当他发愁怎么爬上去的时候，发现旁边堆满了一些空心四方钢材（如图1.1），经过观察和测量，这些钢材截面的宽和高大小不一，但都是1尺的整数倍，教官命令队员们每人选取N个空心钢材来搭建一个总高">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 2654: tree">
-<meta property="og:url" content="http://swwind.github.io/2017/06/02/BZOJ-2654-tree/index.html">
+<meta property="og:title" content="BZOJ 2822: [AHOI2012]树屋阶梯">
+<meta property="og:url" content="http://swwind.github.io/2017/06/05/BZOJ-2822-AHOI2012-树屋阶梯/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。题目保证有解。
-Input第一行V,E,need分别表示点数，边数和需要的白色边数。接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。
-Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所有数据边权为[1,100">
-<meta property="og:updated_time" content="2017-06-02T02:24:40.563Z">
+<meta property="og:description" content="题面暑假期间，小龙报名了一个模拟野外生存作战训练班来锻炼体魄，训练的第一个晚上，教官就给他们出了个难题。由于地上露营湿气重，必须选择在高处的树屋露营。小龙分配的树屋建立在一颗高度为N+1尺（N为正整数）的大树上，正当他发愁怎么爬上去的时候，发现旁边堆满了一些空心四方钢材（如图1.1），经过观察和测量，这些钢材截面的宽和高大小不一，但都是1尺的整数倍，教官命令队员们每人选取N个空心钢材来搭建一个总高">
+<meta property="og:image" content="http://www.lydsy.com/JudgeOnline/upload/201305/1(6).jpg">
+<meta property="og:image" content="http://www.lydsy.com/JudgeOnline/upload/201305/2(1).jpg">
+<meta property="og:updated_time" content="2017-06-05T07:45:27.863Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 2654: tree">
-<meta name="twitter:description" content="题面给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。题目保证有解。
-Input第一行V,E,need分别表示点数，边数和需要的白色边数。接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。
-Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所有数据边权为[1,100">
+<meta name="twitter:title" content="BZOJ 2822: [AHOI2012]树屋阶梯">
+<meta name="twitter:description" content="题面暑假期间，小龙报名了一个模拟野外生存作战训练班来锻炼体魄，训练的第一个晚上，教官就给他们出了个难题。由于地上露营湿气重，必须选择在高处的树屋露营。小龙分配的树屋建立在一颗高度为N+1尺（N为正整数）的大树上，正当他发愁怎么爬上去的时候，发现旁边堆满了一些空心四方钢材（如图1.1），经过观察和测量，这些钢材截面的宽和高大小不一，但都是1尺的整数倍，教官命令队员们每人选取N个空心钢材来搭建一个总高">
+<meta name="twitter:image" content="http://www.lydsy.com/JudgeOnline/upload/201305/1(6).jpg">
 
     
     
@@ -98,14 +95,14 @@ Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所�
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/06/02/BZOJ-2654-tree/" title="BZOJ 2654: tree" itemprop="url">BZOJ 2654: tree</a>
+      <a href="/2017/06/05/BZOJ-2822-AHOI2012-树屋阶梯/" title="BZOJ 2822: [AHOI2012]树屋阶梯" itemprop="url">BZOJ 2822: [AHOI2012]树屋阶梯</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-06-02T02:21:11.000Z" itemprop="datePublished"> 发表于 2017-06-02</time>
+    <time datetime="2017-06-05T07:39:53.000Z" itemprop="datePublished"> 发表于 2017-06-05</time>
     
   </p>
 </header>
@@ -118,13 +115,13 @@ Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所�
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。<br>题目保证有解。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行V,E,need分别表示点数，边数和需要的白色边数。<br>接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一行表示所求生成树的边权和。<br>$V\leq 50000,E\leq 100000$,所有数据边权为[1,100]中的正整数。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 2 1<br>0 1 1 1<br>0 1 2 0</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>按c把边从小到大排序<br>然后先把need条白边取了<br>然后在剩下的里面取n-1-need条边就行了</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> x, y, c, t;</div><div class="line">	<span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)&#123;</div><div class="line">		<span class="keyword">return</span> a.c &lt; b.c;</div><div class="line">	&#125;</div><div class="line">&#125;a[<span class="number">100020</span>];</div><div class="line"><span class="keyword">int</span> vis[<span class="number">100020</span>], fa[<span class="number">50020</span>], ans, tot;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> fa[x]==x?x:fa[x]=find(fa[x]);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read(), need = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		a[i].x = read(); a[i].y = read();</div><div class="line">		a[i].c = read(); a[i].t = read();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) fa[i] = i;</div><div class="line">	sort(a+<span class="number">1</span>, a+m+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(a[i].t) <span class="keyword">continue</span>; vis[i] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">int</span> x = find(a[i].x), y = find(a[i].y);</div><div class="line">		<span class="keyword">if</span>(x == y) <span class="keyword">continue</span>; fa[x] = y;</div><div class="line">		ans += a[i].c; tot++;</div><div class="line">		<span class="keyword">if</span>(!--need) <span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)<span class="keyword">if</span>(!vis[i])&#123;</div><div class="line">		<span class="keyword">int</span> x = find(a[i].x), y = find(a[i].y);</div><div class="line">		<span class="keyword">if</span>(x == y) <span class="keyword">continue</span>; fa[x] = y;</div><div class="line">		ans += a[i].c; <span class="keyword">if</span>(++tot == n<span class="number">-1</span>) <span class="keyword">break</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>暑假期间，小龙报名了一个模拟野外生存作战训练班来锻炼体魄，训练的第一个晚上，教官就给他们出了个难题。由于地上露营湿气重，必须选择在高处的树屋露营。小龙分配的树屋建立在一颗高度为N+1尺（N为正整数）的大树上，正当他发愁怎么爬上去的时候，发现旁边堆满了一些空心四方钢材（如图1.1），经过观察和测量，这些钢材截面的宽和高大小不一，但都是1尺的整数倍，教官命令队员们每人选取N个空心钢材来搭建一个总高度为N尺的阶梯来进入树屋，该阶梯每一步台阶的高度为1尺，宽度也为1尺。如果这些钢材有各种尺寸，且每种尺寸数量充足，那么小龙可以有多少种搭建方法？（注：为了避免夜里踏空，钢材空心的一面绝对不可以向上。）<br><img src="http://www.lydsy.com/JudgeOnline/upload/201305/1(6).jpg"><br>以树屋高度为4尺、阶梯高度N=3尺为例，小龙一共有如图1.2所示的5种<br>搭建方法：<br><img src="http://www.lydsy.com/JudgeOnline/upload/201305/2(1).jpg"></p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>一个正整数 $N(1≤N≤500)$，表示阶梯的高度</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一个正整数，表示搭建方法的个数。（注：搭建方法个数可能很大。）</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>3</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>5</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>ans[3]=5。。。是不是想到了什么。。。<br>没错。然后我毫不要脸的用了python。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight python"><table><tr><td class="code"><pre><div class="line">n = int(raw_input())</div><div class="line">f = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>)]</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(x)</span>:</span></div><div class="line">	<span class="keyword">if</span> f[x]:</div><div class="line">		<span class="keyword">return</span> f[x]</div><div class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(x):</div><div class="line">		f[x] += get(x<span class="number">-1</span>-i)*get(i)</div><div class="line">	<span class="keyword">return</span> f[x]</div><div class="line"></div><div class="line">f[<span class="number">1</span>] = f[<span class="number">0</span>] = <span class="number">1</span></div><div class="line">print(get(n))</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -132,7 +129,7 @@ Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所�
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/瞎搞/">瞎搞</a>
+  <span></span> <a href="/tags/卡特兰数/">卡特兰数</a>
   </div>
 
 </div>
@@ -141,7 +138,7 @@ Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所�
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/06/02/BZOJ-2654-tree/" data-title="BZOJ 2654: tree | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/06/05/BZOJ-2822-AHOI2012-树屋阶梯/" data-title="BZOJ 2822: [AHOI2012]树屋阶梯 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -154,19 +151,11 @@ Output一行表示所求生成树的边权和。$V\leq 50000,E\leq 100000$,所�
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/06/05/BZOJ-1095-ZJOI2007-Hide-捉迷藏/" title="BZOJ 1095: [ZJOI2007]Hide 捉迷藏">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 1095: [ZJOI2007]Hide 捉迷藏</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/06/02/BZOJ-1004-HNOI2008-Cards/"  title="BZOJ 1004: [HNOI2008]Cards">
+<a href="/2017/06/05/BZOJ-1095-ZJOI2007-Hide-捉迷藏/"  title="BZOJ 1095: [ZJOI2007]Hide 捉迷藏">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 1004: [HNOI2008]Cards
+ <span>BZOJ 1095: [ZJOI2007]Hide 捉迷藏
 </span>
 </a>
 </div>
