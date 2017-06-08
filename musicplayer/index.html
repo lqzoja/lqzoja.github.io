@@ -1,27 +1,41 @@
 
   
     <!DOCTYPE html>
-<!-- saved from url=(0047)http://www.erdangjiade.com/jquery/24/2427/demo/ -->
-<html><head>
-<meta charset="utf-8">
-<title>自己做特效</title>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		@keyframes ms{
+			0%	{transform: rotate(6deg);left: -20px;}
+			25%	{transform: rotate(-6deg);left: 50px;}
+			50%	{transform: rotate(360deg);left: -100px;}
+			75% {transform: rotate(-180deg);left: 50px;}
+			100%{transform: rotate(6deg);left: -20px;}
+		}
+		h1{
+			animation: ms 6s linear;
+			animation-iteration-count: infinite;
+			text-align: center;
+			text-shadow: 0px 0px 10px #fff;
+			width: 100%;
+			position: absolute;
+			font-size: 3em;
+			top: 200px;
+			font-family: 'Hobo Std';
+		}
+		html{overflow: hidden;}
+	</style>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/musicplayer.js"></script>
+	<script src="/js/imgread.js"></script>
 </head>
-<body style="background-color:#fff;margin: 0">
-<script type="text/javascript" src="/js/musicplayer.js"></script>
-<center>
-<canvas id="canvas" style="border: 0;padding: 2px;"></canvas>
-<input type="file" id="file" onchange="onInputFileChange()"><br>
-<audio id="audio" controls autoplay loop>Your browser can't support HTML5 Audio</audio>
-</center>
-<script>
-function onInputFileChange() {
-	var file = document.getElementById('file').files[0];
-	if(file == null) return;
-	var url = URL.createObjectURL(file);
-	console.log(url);
-	document.getElementById("audio").src = url;
-}
-</script>
+<body style="padding: 0;">
+<img id="img" style="position: fixed;">
+<div onmouseenter="this.style.opacity='1';" onmouseleave="this.style.opacity='0';">
+<input type="file" id="file"><br>
+<audio id="audio" controls="controls" autoplay="1"></audio></div>
+<h1 id="tit" align="center"></h1>
+<canvas id="canvas" style="border: 0;position: fixed;left: 0px;bottom: 0px;" width="1280" height="250"></canvas>
 </body>
 </html>
   
