@@ -4,37 +4,111 @@
 <html>
 <head>
 	<title></title>
+	<meta charset="utf-8">
 	<style type="text/css">
-		@keyframes ms{
-			0%	{transform: rotate(6deg);left: -20px;}
-			25%	{transform: rotate(-6deg);left: 50px;}
-			50%	{transform: rotate(360deg);left: -100px;}
-			75% {transform: rotate(-180deg);left: 50px;}
-			100%{transform: rotate(6deg);left: -20px;}
-		}
-		h1{
-			animation: ms 6s linear;
-			animation-iteration-count: infinite;
-			text-align: center;
-			text-shadow: 0px 0px 10px #fff;
-			width: 100%;
-			position: absolute;
-			font-size: 3em;
-			top: 200px;
-			font-family: 'Hobo Std';
-		}
-		html{overflow: hidden;}
+	@keyframes ms{
+		0%	{transform: rotate(6deg);left: -20px;color:#0f0;}
+		25%	{transform: rotate(-6deg);left: 50px;color:#00f;}
+		50%	{transform: rotate(-9deg);left: -100px;color:#f00;}
+		75% {transform: rotate(10deg);left: 120px;color:#0ff;}
+		100%{transform: rotate(6deg);left: -20px;color:#0f0;}
+	}
+	h1{
+		animation: ms 6s linear;
+		animation-iteration-count: infinite;
+		text-align: center;
+		text-shadow: 0px 0px 10px #fff;
+		width: 100%;
+		position: absolute;
+		font-size: 3em;
+		top: 200px;
+		font-family: 'Hobo Std';
+	}
+	html{overflow: hidden;}
+	@keyframes shakeEffect {
+		0%   {transform: translate(3px, 2px)   rotate(0deg);}
+		10%  {transform: translate(-2px, -3px) rotate(-0.1deg);}
+		20%  {transform: translate(-5px, 0px)  rotate(0.1deg);}
+		30%  {transform: translate(0px, 3px)   rotate(0deg);}
+		40%  {transform: translate(2px, -2px)  rotate(0.1deg);}
+		50%  {transform: translate(-2px, 2px)  rotate(-0.1deg);}
+		60%  {transform: translate(-5px, -3px)  rotate(0deg);}
+		70%  {transform: translate(3px, 2px)   rotate(-0.1deg);}
+		80%  {transform: translate(-2px, -3px) rotate(0.1deg);}
+		90%  {transform: translate(3px, -2px)   rotate(0deg);}
+		100% {transform: translate(2px, -3px)  rotate(-0.1deg);}
+	}
+	@-moz-keyframes shakeEffect {
+		0%   {-moz-transform: translate(3px, 2px)   rotate(0deg);}
+		10%  {-moz-transform: translate(-2px, -3px) rotate(-0.1deg);}
+		20%  {-moz-transform: translate(-5px, 0px)  rotate(0.1deg);}
+		30%  {-moz-transform: translate(0px, 3px)   rotate(0deg);}
+		40%  {-moz-transform: translate(2px, -2px)  rotate(0.1deg);}
+		50%  {-moz-transform: translate(-2px, 2px)  rotate(-0.1deg);}
+		60%  {-moz-transform: translate(-5px, -3px)  rotate(0deg);}
+		70%  {-moz-transform: translate(3px, 2px)   rotate(-0.1deg);}
+		80%  {-moz-transform: translate(-2px, -3px) rotate(0.1deg);}
+		90%  {-moz-transform: translate(3px, -2px)   rotate(0deg);}
+		100% {-moz-transform: translate(2px, -3px)  rotate(-0.1deg);}
+	}
+	@-webkit-keyframes shakeEffect {
+		0%   {-webkit-transform: translate(3px, 2px)   rotate(0deg);}
+		10%  {-webkit-transform: translate(-2px, -3px) rotate(-0.1deg);}
+		20%  {-webkit-transform: translate(-5px, 0px)  rotate(0.1deg);}
+		30%  {-webkit-transform: translate(0px, 3px)   rotate(0deg);}
+		40%  {-webkit-transform: translate(2px, -2px)  rotate(0.1deg);}
+		50%  {-webkit-transform: translate(-2px, 2px)  rotate(-0.1deg);}
+		60%  {-webkit-transform: translate(-5px, -3px)  rotate(0deg);}
+		70%  {-webkit-transform: translate(3px, 2px)   rotate(-0.1deg);}
+		80%  {-webkit-transform: translate(-2px, -3px) rotate(0.1deg);}
+		90%  {-webkit-transform: translate(3px, -2px)   rotate(0deg);}
+		100% {-webkit-transform: translate(2px, -3px)  rotate(-0.1deg);}
+	}
+	.ShakeAndBorder{
+		-webkit-animation-name: shakeEffect;
+		-moz-animation-name: shakeEffect;
+		animation-name: shakeEffect;
+		-webkit-animation-duration: 5s;
+		-moz-animation-duration: 5s;
+		animation-duration: 5s;
+		-webkit-transform-origin:50% 50%;
+		-moz-transform-origin:50% 50%;
+		transform-origin:50% 50%;
+		-webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		-moz-animation-timing-function: linear;
+		animation-timing-function: linear;
+		-webkit-animation-direction: alternate;
+		-moz-animation-direction: alternate;
+		animation-direction: alternate;
+	}
+	.msg-text{
+		padding: 10px;
+		background-color: #0f0;
+		opacity: 0.5;
+		display: none;
+	}
 	</style>
 	<script src="/js/jquery.js"></script>
 	<script src="/js/musicplayer.js"></script>
 	<script src="/js/imgread.js"></script>
 </head>
 <body style="padding: 0;">
-<img id="img" style="position: fixed;">
-<div onmouseenter="this.style.opacity='1';" onmouseleave="this.style.opacity='0';">
-<input type="file" id="file"><br>
-<audio id="audio" controls="controls" autoplay="1"></audio></div>
+<img id="img" style="position: fixed;" class="ShakeAndBorder">
+<div style="position: fixed;background-color: #66ccff;opacity: 0.8;top: 0;left: 0;" id="cos"><form>
+	<input type="file" id="file">
+	<input type="checkbox" id="img-bg" checked>专辑背景
+	<input type="checkbox" id="bg-shack" checked>背景晃动
+	<input type="checkbox" id="tit-show" checked>标题大字
+	<input type="button" value="Play!" id="play">
+</form><audio id="audio" controls="controls" autoplay="1"></audio><strong>点确定后该区域将会隐藏，按回车切换显示/隐藏</strong></div>
+
+
 <h1 id="tit" align="center"></h1>
+<div id="msg-box" style="position: fixed;top: 0;right: 0;">
+</div>
 <canvas id="canvas" style="border: 0;position: fixed;left: 0px;bottom: 0px;" width="1280" height="250"></canvas>
 </body>
 </html>

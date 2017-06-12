@@ -1,17 +1,56 @@
-window.AudioContext=window.AudioContext||window.webkitAudioContext||window.mozAudioContext;
-var cssn = 2;
-var voicec1 = ["#0ff", "#0f8", "#0f0"];
-var times = 0
-var lastTime, IID
+window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+var cssn = 2,
+	voicec1 = ["#0ff", "#0f8", "#0f0"],
+	times = 0, lastTime, IID, zj
 window.onload = function play(){
-	var rand = function () {
-		var str = "0123456789ABCDEF";
-		return str.charAt(Math.floor(Math.random()*16));
-	}
-	// setInterval(function(){document.body.style.background = '#'+rand()+rand()+rand()+rand()+rand()+rand();}, 5000)
 	var $_ = function(id){
 		return document.getElementById(id);
 	}
+	$('#bg-shack').click(function () {
+		this.checked
+			? $('#img').addClass('ShakeAndBorder')
+			: $('#img').removeClass('ShakeAndBorder')
+	})
+	$('#tit-show').click(function () {
+		this.checked
+			? $('#tit').fadeIn(1000)
+			: $('#tit').fadeOut(1000)
+	})
+	$('#img-bg').click(function () {
+		this.checked
+			? insertImage(zj)
+			: insertImage(DEFAULT_IMG)
+	})
+	$('#play').click(function(e) {
+		var file = $_('file').files[0],
+			reader = new FileReader();
+		if(file == null) return;
+		$('#cos').hide(500);
+		$('#tit').focus();
+		$('#tit').html(file.name.replace(/\.\w+$/, ''));
+		var url = URL.createObjectURL(file);
+		$_("audio").src = url;
+		$_("audio").onerror = function () {
+			msg('播放音频失败<3', 'red');
+		}
+		msg('开始播放'+$('#tit').html());
+		reader.onloadend = function(e) {
+			var result = this.result;
+			if(result.slice(0, 3) === 'ID3') {
+				var imgdata = getApic(result);
+				if(typeof imgdata === 'string'){
+					zj = 'data:image/jpeg;base64,' + btoa(imgdata);
+					if($_('img-bg').checked) insertImage(zj)
+					msg('图片加载成功！<3')
+				}
+			} else {
+				msg('未能找到ID3 <3', 'red');
+				insertImage(DEFAULT_IMG);
+				return false;
+			}
+		};
+		reader.readAsBinaryString(file);
+	});
 	var canvas = $_('canvas');
 	canvas.width = window.innerWidth;
 	canvas.height = 250;
@@ -53,17 +92,30 @@ window.onload = function play(){
 		})
 	}
 	document.body.onkeydown = function () {
-		if(++times == 1){
-			lastTime = new Date().getTime()
+		if(event.which == 13)
+			return $('#cos').toggle(500);
+		if(event.which == 32){
+			if(++times == 1){
+				lastTime = new Date().getTime()
+			}
+			if(times == 10){
+				msg('自动打节奏已开启^_^')
+				IID = setInterval(boom, ((new Date().getTime())-lastTime)/9-3)
+			}
+			if(times == 11){
+				msg('自动打节奏已关闭>_<', 'orange')
+				times = 0
+				clearInterval(IID);
+			}
+			if(times)boom();
 		}
-		if(times == 10){
-			IID = setInterval(boom, ((new Date().getTime())-lastTime)/9-3)
-		}
-		if(times == 11){
-			times = 0
-			clearInterval(IID);
-		}
-		if(times)boom();
 		// alert('down');
 	}
+	audio.onended = function () {
+		msg('If you like this player, you can press Ctrl+S to save it.')
+		$('#cos').show('slow');
+	}
+	setTimeout(function () {
+		msg('按节奏敲十下空格有惊喜哦', '#66ccff')
+	}, 20000)
 }
