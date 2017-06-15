@@ -4,26 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>51nod 1277 字符串中的最大值 | SW_Wind&#39;s blog</title>
+    <title>BZOJ 2561: 最小生成树 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。例如：S = “abababa” 所有的前缀如下:
-“a”, 长度与出现次数的乘积 1 * 4 = 4,“ab”,长度与出现次数的乘积 2 * 3 = 6,“aba”, 长度与出现次数的乘积 3 * 3 = 9,“a">
+    <meta name="description" content="题面给定一个边带正权的连通无向图G=(V,E)，其中N=|V|，M=|E|，N个点从1到N依次编号，给定三个正整数u，v，和L (u≠v)，假设现在加入一条边权为L的边(u,v)，那么需要删掉最少多少条边，才能够使得这条边既可能出现在最小生成树上，也可能出现在最大生成树上？
+Input第一行包含用空格隔开的两个整数，分别为N和M；接下来M行，每行包含三个正整数u，v和w表示图G存在一条边权为w的边">
 <meta property="og:type" content="article">
-<meta property="og:title" content="51nod 1277 字符串中的最大值">
-<meta property="og:url" content="http://swwind.github.io/2017/03/14/51nod-1277-字符串中的最大值/index.html">
+<meta property="og:title" content="BZOJ 2561: 最小生成树">
+<meta property="og:url" content="http://swwind.github.io/2017/06/15/BZOJ-2561-最小生成树/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。例如：S = “abababa” 所有的前缀如下:
-“a”, 长度与出现次数的乘积 1 * 4 = 4,“ab”,长度与出现次数的乘积 2 * 3 = 6,“aba”, 长度与出现次数的乘积 3 * 3 = 9,“a">
-<meta property="og:updated_time" content="2017-04-13T02:28:38.928Z">
+<meta property="og:description" content="题面给定一个边带正权的连通无向图G=(V,E)，其中N=|V|，M=|E|，N个点从1到N依次编号，给定三个正整数u，v，和L (u≠v)，假设现在加入一条边权为L的边(u,v)，那么需要删掉最少多少条边，才能够使得这条边既可能出现在最小生成树上，也可能出现在最大生成树上？
+Input第一行包含用空格隔开的两个整数，分别为N和M；接下来M行，每行包含三个正整数u，v和w表示图G存在一条边权为w的边">
+<meta property="og:updated_time" content="2017-06-15T00:44:46.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="51nod 1277 字符串中的最大值">
-<meta name="twitter:description" content="题面一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。例如：S = “abababa” 所有的前缀如下:
-“a”, 长度与出现次数的乘积 1 * 4 = 4,“ab”,长度与出现次数的乘积 2 * 3 = 6,“aba”, 长度与出现次数的乘积 3 * 3 = 9,“a">
+<meta name="twitter:title" content="BZOJ 2561: 最小生成树">
+<meta name="twitter:description" content="题面给定一个边带正权的连通无向图G=(V,E)，其中N=|V|，M=|E|，N个点从1到N依次编号，给定三个正整数u，v，和L (u≠v)，假设现在加入一条边权为L的边(u,v)，那么需要删掉最少多少条边，才能够使得这条边既可能出现在最小生成树上，也可能出现在最大生成树上？
+Input第一行包含用空格隔开的两个整数，分别为N和M；接下来M行，每行包含三个正整数u，v和w表示图G存在一条边权为w的边">
 
     
     
@@ -95,14 +95,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/14/51nod-1277-字符串中的最大值/" title="51nod 1277 字符串中的最大值" itemprop="url">51nod 1277 字符串中的最大值</a>
+      <a href="/2017/06/15/BZOJ-2561-最小生成树/" title="BZOJ 2561: 最小生成树" itemprop="url">BZOJ 2561: 最小生成树</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-14T02:18:22.000Z" itemprop="datePublished"> 发表于 2017-03-14</time>
+    <time datetime="2017-06-15T00:36:58.000Z" itemprop="datePublished"> 发表于 2017-06-15</time>
     
   </p>
 </header>
@@ -111,17 +111,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解法"><span class="toc-number">4.</span> <span class="toc-text">解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>一个字符串的前缀是指包含该字符第一个字母的连续子串，例如：abcd的所有前缀为a, ab, abc, abcd。<br>给出一个字符串S，求其所有前缀中，字符长度与出现次数的乘积的最大值。<br>例如：S = “abababa” 所有的前缀如下:</p>
-<p>“a”, 长度与出现次数的乘积 1 * 4 = 4,<br>“ab”,长度与出现次数的乘积 2 * 3 = 6,<br>“aba”, 长度与出现次数的乘积 3 * 3 = 9,<br>“abab”, 长度与出现次数的乘积 4 * 2 = 8,<br>“ababa”, 长度与出现次数的乘积 5 * 2 = 10,<br>“ababab”, 长度与出现次数的乘积 6 * 1 = 6,<br>“abababa”, 长度与出现次数的乘积 7 * 1 = 7.</p>
-<p>其中”ababa”出现了2次，二者的乘积为10，是所有前缀中最大的。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>abababa</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>10</p>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><p>先线性求2-n的next数组（表示字符串[1, i]的最长非自身border的长度）<br>然后乘起来取max就行了<br>传说这玩意叫KMP</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100050</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> B[N];</div><div class="line">ll nxt[N], cnt[N], ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>, B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> n = <span class="built_in">strlen</span>(B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123; <span class="comment">// 线性求next</span></div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; B[i] != B[j+<span class="number">1</span>]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(B[i] == B[j+<span class="number">1</span>]) j++; nxt[i] = j; cnt[j]++;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)&#123; <span class="comment">// 求值</span></div><div class="line">		ans = max(ans, (ll)i*cnt[i]+i);</div><div class="line">		cnt[nxt[i]] += cnt[i];</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个边带正权的连通无向图G=(V,E)，其中N=|V|，M=|E|，N个点从1到N依次编号，给定三个正整数u，v，和L (u≠v)，假设现在加入一条边权为L的边(u,v)，那么需要删掉最少多少条边，才能够使得这条边既可能出现在最小生成树上，也可能出现在最大生成树上？</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含用空格隔开的两个整数，分别为N和M；<br>接下来M行，每行包含三个正整数u，v和w表示图G存在一条边权为w的边(u,v)。<br>最后一行包含用空格隔开的三个整数，分别为u，v，和 L；<br>数据保证图中没有自环。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数表示最少需要删掉的边的数量。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>3 2<br>3 2 1<br>1 2 3<br>1 2 2</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>对于20%的数据满足$N\leq 10，M\leq 20，L\leq 20$；<br>对于50%的数据满足$N\leq 300，M\leq 3000，L\leq 200$；<br>对于100%的数据满足$N\leq 20000，M\leq 200000，L\leq 20000$。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>若要使边出现在最小生成树上，那么必须保证边权比他小的边无法将u与v连通。<br>因此把所有边权小于L的边加入网络流中，然后跑一边最小割就好了。<br>最大生成树同理。<br><del>模板打错WA了两发</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1000007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 1000000007</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> to[N], nxt[N], head[N], val[N], dep[N], cnt = <span class="number">1</span>, st, ed, q[N], ans;</div><div class="line"><span class="keyword">int</span> x[N], y[N], z[N];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ins</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;</div><div class="line">	to[++cnt] = y; nxt[cnt] = head[x]; val[cnt] = z; head[x] = cnt;</div><div class="line">	to[++cnt] = x; nxt[cnt] = head[y]; val[cnt] = z; head[y] = cnt;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">memset</span>(dep, <span class="number">0</span>, <span class="keyword">sizeof</span> dep);</div><div class="line">	<span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">1</span>; q[<span class="number">1</span>] = st; dep[st] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>(l &lt; r)&#123;</div><div class="line">		<span class="keyword">int</span> x = q[++l];</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = head[x]; i; i = nxt[i])</div><div class="line">			<span class="keyword">if</span>(val[i] &amp;&amp; !dep[to[i]])&#123;</div><div class="line">				q[++r] = to[i];</div><div class="line">				dep[to[i]] = dep[x]+<span class="number">1</span>;</div><div class="line">			&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> dep[ed];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> f)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(x == ed) <span class="keyword">return</span> f;</div><div class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = head[x]; i; i = nxt[i])&#123;</div><div class="line">		<span class="keyword">if</span>(val[i] &amp;&amp; dep[to[i]] == dep[x]+<span class="number">1</span>)&#123;</div><div class="line">			<span class="keyword">int</span> w = dfs(to[i], min(f-sum, val[i]));</div><div class="line">			val[i] -= w; val[i^<span class="number">1</span>] += w;</div><div class="line">			sum += w; <span class="keyword">if</span>(sum == f) <span class="keyword">return</span> f;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(!sum) dep[x] = <span class="number">0</span>;</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read(), ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">		x[i] = read(), y[i] = read(), z[i] = read();</div><div class="line">	st = read(); ed = read(); <span class="keyword">int</span> c = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">		<span class="keyword">if</span>(z[i] &lt; c) ins(x[i], y[i], <span class="number">1</span>);</div><div class="line">	<span class="keyword">while</span>(bfs())ans+=dfs(st, <span class="number">1</span>&lt;&lt;<span class="number">30</span>);</div><div class="line">	cnt = <span class="number">1</span>; <span class="built_in">memset</span>(head, <span class="number">0</span>, <span class="keyword">sizeof</span> head);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</div><div class="line">		<span class="keyword">if</span>(z[i] &gt; c) ins(x[i], y[i], <span class="number">1</span>);</div><div class="line">	<span class="keyword">while</span>(bfs())ans+=dfs(st, <span class="number">1</span>&lt;&lt;<span class="number">30</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -129,7 +130,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/KMP/">KMP</a>
+  <span></span> <a href="/tags/网络流/">网络流</a>
   </div>
 
 </div>
@@ -138,7 +139,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/14/51nod-1277-字符串中的最大值/" data-title="51nod 1277 字符串中的最大值 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/06/15/BZOJ-2561-最小生成树/" data-title="BZOJ 2561: 最小生成树 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -151,19 +152,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/14/BZOJ-3670-Noi2014-动物园/" title="BZOJ 3670: [Noi2014]动物园">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 3670: [Noi2014]动物园</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/13/BZOJ-1756-Vijos1083-小白逛公园/"  title="BZOJ 1756: Vijos1083 小白逛公园">
+<a href="/2017/06/05/BZOJ-2822-AHOI2012-树屋阶梯/"  title="BZOJ 2822: [AHOI2012]树屋阶梯">
  <strong>下一篇：</strong><br/> 
- <span>BZOJ 1756: Vijos1083 小白逛公园
+ <span>BZOJ 2822: [AHOI2012]树屋阶梯
 </span>
 </a>
 </div>
@@ -194,7 +187,7 @@ gitment.render('containers')
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">2.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">3.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解法"><span class="toc-number">4.</span> <span class="toc-text">解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
