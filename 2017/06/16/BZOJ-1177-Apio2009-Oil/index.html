@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://swwind.github.io/2017/06/16/BZOJ-1177-Apio2009-Oil/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
 <meta property="og:description" content="题面采油区域 Siruseri政府决定将石油资源丰富的Navalur省的土地拍卖给私人承包商以建立油井。被拍卖的整块土地为一个矩形区域，被划分为M×N个小块。 Siruseri地质调查局有关于Navalur土地石油储量的估测数据。这些数据表示为M×N个非负整数，即对每一小块土地石油储量的估计值。 为了避免出现垄断，政府规定每一个承包商只能承包一个由K×K块相连的土地构成的正方形区域。 AoE石油联">
-<meta property="og:updated_time" content="2017-06-16T01:02:04.274Z">
+<meta property="og:updated_time" content="2017-06-17T04:57:22.356Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ 1177: [Apio2009]Oil">
 <meta name="twitter:description" content="题面采油区域 Siruseri政府决定将石油资源丰富的Navalur省的土地拍卖给私人承包商以建立油井。被拍卖的整块土地为一个矩形区域，被划分为M×N个小块。 Siruseri地质调查局有关于Navalur土地石油储量的估测数据。这些数据表示为M×N个非负整数，即对每一小块土地石油储量的估计值。 为了避免出现垄断，政府规定每一个承包商只能承包一个由K×K块相连的土地构成的正方形区域。 AoE石油联">
@@ -119,7 +119,7 @@
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出只包含一个整数，表示AoE公司可以承包的区域的石油储量之和的最大值。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>9 9 3<br>1 1 1 1 1 1 1 1 1<br>1 1 1 1 1 1 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 1 1 1 8 8 8 1 1<br>1 1 1 1 1 1 8 8 8<br>1 1 1 1 1 1 9 9 9<br>1 1 1 1 1 1 9 9 9</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>208</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>很裸的dp。<br>预先处理好以(i,j)为左上角、右上角、左下角、右下角时整块区域中k*k的最大值以及每行每列的最大值。<br>接着分为六种情况暴力枚举就好了。<br>强迫症的我愣是把他们画了出来。<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+---+---+---+  +-----------+  +---+-------+</div><div class="line">|   |   |   |  |           |  |   |       |</div><div class="line">|   |   |   |  +-----------+  |   |       |</div><div class="line">|   |   |   |  |           |  |   +-------+</div><div class="line">|   |   |   |  +-----------+  |   |       |</div><div class="line">|   |   |   |  |           |  |   |       |</div><div class="line">+---+---+---+  +-----------+  +---+-------+</div><div class="line"></div><div class="line">+-------+---+  +-----+-----+  +-----------+</div><div class="line">|       |   |  |     |     |  |           |</div><div class="line">|       |   |  |     |     |  |           |</div><div class="line">+-------+   |  +-----+-----+  +-----+-----+</div><div class="line">|       |   |  |           |  |     |     |</div><div class="line">|       |   |  |           |  |     |     |</div><div class="line">+-------+---+  +-----------+  +-----+-----+</div></pre></td></tr></table></figure></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>很裸的dp。<br>预先处理好以(i,j)为左上角、右上角、左下角、右下角时整块区域中k*k的最大值以及每行每列的最大值。<br>接着分为六种情况暴力枚举就好了。<br>强迫症的我愣是把他们画了出来。^ω^<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">+---+---+---+  +-----------+  +---+-------+</div><div class="line">|   |   |   |  |           |  |   |       |</div><div class="line">|   |   |   |  +-----------+  |   |       |</div><div class="line">|   |   |   |  |           |  |   +-------+</div><div class="line">|   |   |   |  +-----------+  |   |       |</div><div class="line">|   |   |   |  |           |  |   |       |</div><div class="line">+---+---+---+  +-----------+  +---+-------+</div><div class="line"></div><div class="line">+-------+---+  +-----+-----+  +-----------+</div><div class="line">|       |   |  |     |     |  |           |</div><div class="line">|       |   |  |     |     |  |           |</div><div class="line">+-------+   |  +-----+-----+  +-----+-----+</div><div class="line">|       |   |  |           |  |     |     |</div><div class="line">|       |   |  |           |  |     |     |</div><div class="line">+-------+---+  +-----------+  +-----+-----+</div></pre></td></tr></table></figure></p>
 <p><strong>这题读入优化会RE！读入优化会RE！读入优化会RE！</strong><br><del>垃圾题目降我AC率</del></p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 1505</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x); <span class="keyword">return</span> x;</div><div class="line">	<span class="comment">// int x=0,f=0;char ch=getchar();</span></div><div class="line">	<span class="comment">// while(ch&gt;'9'||ch&lt;'0')&#123;if(ch=='-')f=1;ch=getchar();&#125;</span></div><div class="line">	<span class="comment">// while(ch&lt;='9'&amp;&amp;ch&gt;='0')&#123;x=(x&lt;&lt;3)+(x&lt;&lt;1)+ch-'0';ch=getchar();&#125;</span></div><div class="line">	<span class="comment">// return f?-x:x;</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> sum[N][N], tr[N][N], a[N][N], b[N][N], c[N][N], d[N][N], h[N], l[N], ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span>&#123;<span class="keyword">return</span> max(max(a, b), c);&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read(), k = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</div><div class="line">			sum[i][j] = read()+sum[i][j<span class="number">-1</span>]+sum[i<span class="number">-1</span>][j]-sum[i<span class="number">-1</span>][j<span class="number">-1</span>];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = k; j &lt;= m; j++)&#123;</div><div class="line">			tr[i][j] = sum[i][j]-sum[i][j-k]-sum[i-k][j]+sum[i-k][j-k];</div><div class="line">			h[i] = max(h[i], tr[i][j]); l[j] = max(l[j], tr[i][j]);</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = k; j &lt;= m; j++)</div><div class="line">			a[i][j] = max(a[i<span class="number">-1</span>][j], a[i][j<span class="number">-1</span>], tr[i][j]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt;= n; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = m-k+<span class="number">1</span>; j; j--)</div><div class="line">			b[i][j] = max(b[i<span class="number">-1</span>][j], b[i][j+<span class="number">1</span>], tr[i][j+k<span class="number">-1</span>]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n-k+<span class="number">1</span>; i; i--)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = k; j &lt;= m; j++)</div><div class="line">			c[i][j] = max(c[i+<span class="number">1</span>][j], c[i][j<span class="number">-1</span>], tr[i+k<span class="number">-1</span>][j]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n-k+<span class="number">1</span>; i; i--)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = m-k+<span class="number">1</span>; j; j--)</div><div class="line">			d[i][j] = max(d[i+<span class="number">1</span>][j], d[i][j+<span class="number">1</span>], tr[i+k<span class="number">-1</span>][j+k<span class="number">-1</span>]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt;= n-k; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = k; j &lt;= m-k; j++)&#123;</div><div class="line">			ans = max(ans, a[i][m]+c[i+<span class="number">1</span>][j]+d[i+<span class="number">1</span>][j+<span class="number">1</span>]);</div><div class="line">			ans = max(ans, c[i+<span class="number">1</span>][m]+b[i][j+<span class="number">1</span>]+a[i][j]);</div><div class="line">			ans = max(ans, a[n][j]+b[i][j+<span class="number">1</span>]+d[i+<span class="number">1</span>][j+<span class="number">1</span>]);</div><div class="line">			ans = max(ans, b[n][j+<span class="number">1</span>]+a[i][j]+c[i+<span class="number">1</span>][j]);</div><div class="line">		&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt;= n-k*<span class="number">2</span>; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i+k; j &lt;= n-k; j++)</div><div class="line">			ans = max(ans, b[i][<span class="number">1</span>]+h[j]+d[j+<span class="number">1</span>][<span class="number">1</span>]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = k; i &lt;= m-k*<span class="number">2</span>; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = i+k; j &lt;= m-k; j++)</div><div class="line">			ans = max(ans, c[<span class="number">1</span>][i]+l[j]+d[<span class="number">1</span>][j+<span class="number">1</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
@@ -209,7 +209,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>5</sup></a></li>
 			
 		
 			
@@ -217,7 +217,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>5</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
@@ -229,23 +229,15 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/网络流/" title="网络流">网络流<sup>2</sup></a></li>
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
@@ -253,15 +245,31 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络流/" title="网络流">网络流<sup>2</sup></a></li>
 			
 		
 			
@@ -273,15 +281,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 		</ul>
