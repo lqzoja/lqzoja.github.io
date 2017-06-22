@@ -84,650 +84,222 @@
     <div id="container">
       <div id="main">
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/13/Dirichlet卷积/" title="Dirichlet卷积" itemprop="url">Dirichlet卷积</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-13T05:35:49.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>两个数论函数$f$,$g$的Dirichlet卷积为：<br>$$<br>(f*g)(n)=\sum_{d|n}{f(d)g(\frac nd)}<br>$$</p>
-<h1 id="Dirichlet卷积的一些性质："><a href="#Dirichlet卷积的一些性质：" class="headerlink" title="Dirichlet卷积的一些性质："></a>Dirichlet卷积的一些性质：</h1><ul>
-<li>交换律$f*g=g*f$</li>
-<li>结合律$(f*g)*h=f*(g*h)$</li>
-<li>分配律$f*(g+h)=f*g+f*h$</li>
-<li>单位元$\varepsilon*f=f$</li>
-</ul>
-<h1 id="常见的Dirichlet卷积"><a href="#常见的Dirichlet卷积" class="headerlink" title="常见的Dirichlet卷积"></a>常见的Dirichlet卷积</h1><p>首先你要知道下面这些东西</p>
-<ul>
-<li>$\sigma_k(n)$表示$n$的所有正因子的k次幂的和</li>
-<li>$d(n)=\sigma_0(n)$表示$n$的正因子个数</li>
-<li>$\sigma(n)=\sigma_1(n)$表示$n$的所有正因子的和</li>
-<li>$ld_k(n)=n^k$</li>
-<li>$l(n)=lk_0(n)=1$</li>
-<li>$ld(n)=ld_1(n)=n$（记住这个就好）</li>
-<li>$\varepsilon(n)=\begin{cases}1,&amp;n=1\\0,&amp;n&gt;1\end{cases}$</li>
-</ul>
-<p>然后试图理解下面的</p>
-<ul>
-<li>$d(n)=\sum_{d|n}l\Leftrightarrow l*l$</li>
-<li>$\sigma(n)=\sum_{d|n}d\Leftrightarrow l*ld$</li>
-<li>$\varepsilon(n)=\sum_{d|n}\mu(d)\Leftrightarrow \varepsilon=l*\mu$</li>
-<li>$\varphi(n)=\sum_{d|n}\mu(d)\frac nd\Leftrightarrow \varphi=\mu*ld$</li>
-<li>$n=\sum_{d|n}\varphi(d)\Leftrightarrow ld=l*\varphi$</li>
-</ul>
-<p>此外还有</p>
-<ul>
-<li>$\varepsilon(n)=\sum_{d|n}\mu(d)$</li>
-<li>$\varphi(n)=\sum_{d|n}\mu(d)\frac nd\Leftrightarrow n=\sum_{d|n}\varphi(d)$</li>
-</ul>
-<p>在整数集$D$里还有</p>
-<ul>
-<li>$f(d)=\sum_{x|d,d\in D}g(d)\Leftrightarrow g(x)=\sum_{x|d,d\in D}\mu(d)f(\frac dx)$</li>
-</ul>
-<p>看懂了吗<del>（我也没有</del><br>GL&amp;HF</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
   
-  <span></span> <a href="/tags/教程/">教程</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/13/BZOJ-2820-YY的GCD-51nod-1192-Gcd表中的质数/" title="BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数" itemprop="url">BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-13T03:39:54.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>求<br>$$<br>\sum_{i=1}^{a}{\sum_{j=1}^{b}{isprime(gcd(i,j))}}<br>$$</p>
-<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>2<br>10 10<br>100 100</p>
-<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>30<br>2791</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>当然还是枚举质数p<br>式子是从51nod的讨论里抄来的<br>$$<br>\begin{align}<br>ans(m,n) &amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\right\rfloor}\sum_{j=1}^{\left\lfloor \frac mp\right\rfloor}[(i,j)=1][p] \\<br>&amp;=\sum_p\sum_{i=1}^{\left\lfloor \frac np\right\rfloor}\sum_{j=1}^{\left\lfloor \frac mp\right\rfloor}\sum_{k=1}\mu(k)[k|i,k|j][p] \\<br>&amp;=\sum_p\sum_{k=1}^{\left\lfloor \frac np\right\rfloor}\sum_{i=1}^{\left\lfloor \frac n{kp}\right\rfloor}\sum_{j=1}^{\left\lfloor \frac m{kp}\right\rfloor}\mu(k)[p] \\<br>&amp;=\sum_{k=1}^n\sum_{p=1}^{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac n{kp}\right\rfloor}{\left\lfloor \frac m{kp}\right\rfloor}\mu(k)[p] \\<br>&amp;=\sum_{k=1}^n\sum_{p|k}{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac m{k}\right\rfloor}\mu(\frac kp)[p] \\<br>&amp;=\sum_{k=1}^n{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac m{k}\right\rfloor}\sum_{p|k}\mu(\frac kp)[p] \\<br>&amp;=\sum_{k=1}^n{\left\lfloor \frac n{k}\right\rfloor}{\left\lfloor \frac m{k}\right\rfloor}f(k)<br>\end{align}<br>$$</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> pri[<span class="number">670000</span>], mu[N], cnt, f[N];</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll n, m, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	mu[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; pri[j]*i &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j])mu[pri[j]*i] = -mu[i];</div><div class="line">			<span class="keyword">else</span>&#123;mu[pri[j]*i] = <span class="number">0</span>; <span class="keyword">break</span>;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j*pri[i] &lt; N; j++)</div><div class="line">			f[pri[i]*j] += mu[j];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		f[i] += f[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		n = read(), m = read(), ans = <span class="number">0</span>;</div><div class="line">		<span class="keyword">if</span>(n &gt; m) swap(n, m);</div><div class="line">		<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= n; i = last+<span class="number">1</span>)&#123;</div><div class="line">			last = min(n/(n/i), m/(m/i));</div><div class="line">			ans += (n/i)*(m/i)*(f[last]-f[i<span class="number">-1</span>]);</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/数论/">数论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/13/BZOJ-3309-DZY-Loves-Math/" title="BZOJ 3309: DZY Loves Math" itemprop="url">BZOJ 3309: DZY Loves Math</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-13T01:21:30.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。<br>给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个数T，表示询问数。<br>接下来T行，每行两个数a,b，表示一个询问。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每一个询问，输出一行一个非负整数作为回答。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>7558588 9653114<br>6514903 4451211<br>7425644 1189442<br>6335198 4957</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>35793453939901<br>14225956593420<br>4332838845846<br>15400094813</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【数据规模】<br>T&lt;=10000<br>1&lt;=a,b&lt;=10^7</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一眼就能看出来：<br>先枚举gcd<br>然后、、然后就又不会了<br>看题解吧。。<br>看到题解又跪了。。<a href="http://blog.csdn.net/popoqqq/article/details/42122413" target="_blank" rel="external">orz PoPoQQQ</a><br>$$<br>\begin{align}<br>ans<br>&amp;=\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}} \\<br>&amp;=\sum_{d=1}^{min(a,b)}{f(d)\sum_{k=1}^{min(\left\lfloor \frac{a}{d} \right\rfloor,\left\lfloor\frac{b}{d}\right\rfloor)}{\mu(k)\left\lfloor\frac{a}{kd}\right\rfloor\left\lfloor\frac{b}{kd}\right\rfloor}} \\<br>&amp;=\sum_{T=1}^{min(a,b)}{\left\lfloor\frac{a}{T}\right\rfloor\left\lfloor\frac{b}{T}\right\rfloor\sum_{d|T}{f(d)\mu(\frac{T}{d})}}<br>\end{align}<br>$$<br>现在我们只需要知道$\sum_{d|T}{f(d)\mu(\frac{T}{d})}$的前缀和就行了 设这个函数为$g(x)$<br>观察这个函数 由于含平方因子数的$\mu$值都为零，因此我们只考虑$\mu(\frac{T}{d})\neq0$的数<br>令$T=p_1^{a_1}p_2^{a_2}…p_k^{a_k}$，$d=p_1^{b_1}p_2^{b_2}…p_k^{b_k}$那么$0\le(ai-bi)\le1$<br>如果存在$a_i\neq a_j(i\neq j)$，那么我们可以将所有的$a$分为两部分：最大的$a$的集合$A$和非最大$a$的集合$B$<br>很显然$f$值由$A$中的选取方案决定<br>对于$A$中的每种选取方案，$\mu$值决定于总选择的数量的奇偶性<br>在集合$B$中选取奇数个元素和偶数个元素的方案数是相等的，故对于$A$中的每种选取方案，得到的和都是$0$<br>故如果存在$a_i\neq a_j(i\neq j)$，则$g(T)=0$<br>反之，如果所有的$a$值都相等，我们假设对于任意选取方案，$f$值都不变<br>那么由于选取奇数个元素和偶数个元素的方案数相等，和仍然为$0$<br>但是有一种选取方案的$f$值$=a-1$ 因此我们要将这个$1$减掉<br>考虑到$\mu$的符号之后，最终结果为$(-1)^{k+1}$<br>故如果不存在$a_i\neq a_j$，则$g(T)=(-1)^{k+1}$<br>不知道说明白了没有。。。（显然没有）<br>求出$g$函数的方法是线性筛 对于每个值记录$g$值和最小质因数的次数 具体细节见代码<br>别忘了开long long</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll _a[N], _p[N], _g[N];</div><div class="line"><span class="keyword">int</span> pri[N], cnt;</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line"><span class="function">ll <span class="title">calc</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a &gt; b) swap(a, b);</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, last; i &lt;= a; i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans += (a/i)*(b/i)*(_g[last]-_g[i<span class="number">-1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])&#123;pri[++cnt] = _p[i] = i; _a[i] = _g[i] = <span class="number">1</span>;&#125;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; pri[j]*i &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;</div><div class="line">				_a[pri[j]*i] = _a[i]+<span class="number">1</span>;</div><div class="line">				_p[pri[j]*i] = _p[i]*pri[j];</div><div class="line">				ll tmp = i/_p[i];</div><div class="line">				<span class="keyword">if</span>(tmp == <span class="number">1</span>) _g[pri[j]*i] = <span class="number">1</span>;</div><div class="line">				<span class="keyword">else</span> _g[pri[j]*i] = (_a[tmp]==_a[pri[j]*i]?-_g[tmp]:<span class="number">0</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			_a[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			_p[pri[j]*i] = pri[j];</div><div class="line">			_g[pri[j]*i] = (_a[i]==<span class="number">1</span>?-_g[i]:<span class="number">0</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		_g[i] += _g[i<span class="number">-1</span>];</div><div class="line">	<span class="keyword">int</span> T; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		ll a, b;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;a, &amp;b);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, calc(a, b));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+    <a href="/2017/04/14/BZOJ-4238-电压/" title="BZOJ 4238: 电压" itemprop="url">
   
-  <span></span> <a href="/tags/数论/">数论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">BZOJ 4238: 电压</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >题面你知道Just Odd Inventions社吗？这个公司的业务是“只不过是奇妙的发明(Just Odd Inventions)”。这里简称为JOI社。JOI社的某个实验室中有着复杂的电路。电路由n个节点和m根细长的电阻组成。节点被标号为1~N每个节点有一个可设定的状态【高电</p>
+        
     
-      <a href="/2017/04/13/BZOJ-4239-巴士走读/" title="BZOJ 4239: 巴士走读" itemprop="url">BZOJ 4239: 巴士走读</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-13T00:06:27.000Z" itemprop="datePublished"> 发表于 2017-04-13</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>大学生的JOI君每天乘坐巴士走读。<br>JOI君的家和学校都在IOI市内。IOI市内共有N个巴士停靠点，编号为1~N，离JOI家最近的停靠点为1号停靠点，离大学最近的停靠点为N号停靠点。<br>IOI市内共有M辆巴士，每辆巴士一天只跑一次，从某一时刻某一停靠点出发，在某一时刻到达另一个站点。运行途中不可以下车。<br>JOI君每天要乘坐一次以上的巴士到达学校。我们可以无视JOI君换车的时间，换言之，为了换乘某个时刻从某个停靠点出发的巴士，只需要在该巴士的出发时间或之前到达停靠点就可以了。此外，多次在某个停靠点换乘也是可以的。<br>在这样的条件下，JOI君想知道自己应该何时从家中出发才能按时赶到学校。然而，学校每天开始上课的时间都不同。在某Q天里，每天到达N号站点的最晚时间都是已知的，JOI君想知道，他最晚何时到达1号站点才能赶上学校的授课。<br>现在给你巴士的运营信息，以及这Q天里每天到达N号站点的最晚时间，请你求出每天JOI君最晚何时到达1号站点。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行两个空格分隔的正整数N和M，表示IOI市内有N个巴士站点和M辆巴士。<br>接下来M行，第i行(1&lt;=i&lt;=M)有四个空格分隔的整数Ai,Bi,Xi,Yi(1&lt;=Ai&lt;=N,1&lt;=Bi&lt;=N,Ai≠Bi)，表示第i辆巴士在时刻Xi从停靠点Ai出发，在时刻Yi到达停靠点Bi。时刻从半夜12点开始计算，单位为毫秒。<br>接下来一行一个整数Q，含义如题目中所示<br>接下来Q行，第i行(1&lt;=i&lt;=Q)有一个整数Li，表示第i天最迟Li时刻到达站点N</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出Q行，第i行(1&lt;=i&lt;=Q)一个整数，表示JOI君第i天最迟到达1号站点的时刻。<br>如果无法在时限内到达，输出-1。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 6<br>1 2 10 25<br>1 2 12 30<br>2 5 26 50<br>1 5 5 20<br>1 4 30 40<br>4 5 50 70<br>4<br>10<br>30<br>60<br>100</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>-1<br>5<br>10<br>30</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>2&lt;=N&lt;=100000<br>1&lt;=M&lt;=300000<br>0&lt;=Xi&lt;Yi&lt;86400000(=24*60*60*1000)(1&lt;=i&lt;=M)<br>1&lt;=Q&lt;=100000<br>0&lt;=Li&lt;86400000(1&lt;=i&lt;=Q)</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>不知道怎么说。。答案显然是分段的<br>比如样例中：<br>$$<br>ans=\begin{cases}<br>-1,&amp;0≤ans&lt;20\\<br>5,&amp;20≤ans&lt;50\\<br>10,&amp;50≤ans&lt;70\\<br>30,&amp;70≤ans&lt;\infty\end{cases}<br>$$<br>所以离线是必然的<br>然后还是瞎搞一下。。<br>f[i]表示到达第i个点的最迟出发时间。。。<br>g[i]表示能赶上第i辆车的最迟出发时间、、、<br>然后两个互相更新，把所有终点为n的车的g[i]都统计出来，就能完美的解决了<br><del>（Sublime对markdown的高亮有点萎啊）</del></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> M 300020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>, f=<span class="number">1</span>;<span class="keyword">char</span> ch = getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch = getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x = x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch = getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(x&gt;<span class="number">9</span>)write(x/<span class="number">10</span>);</div><div class="line">	<span class="built_in">putchar</span>(x%<span class="number">10</span>+<span class="string">'0'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">writeln</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(x&lt;<span class="number">0</span>)<span class="built_in">putchar</span>(<span class="string">'-'</span>), x=-x;</div><div class="line">	write(x); <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> edge&#123;</div><div class="line">	<span class="keyword">int</span> x, y, st, ed;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> edge &amp;b) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">return</span> st &lt; b.st;</div><div class="line">	&#125;</div><div class="line">&#125;e[M];</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> x, y;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp;b) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">return</span> x &lt; b.x;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &gt; (<span class="keyword">const</span> node &amp;b) <span class="keyword">const</span> &#123;</div><div class="line">		<span class="keyword">return</span> x &gt; b.x;</div><div class="line">	&#125;</div><div class="line">&#125;ks[M], a[N];</div><div class="line"><span class="keyword">struct</span> My_Priority_Queue&#123;</div><div class="line">	node val[<span class="number">400010</span>];</div><div class="line">	<span class="keyword">int</span> size;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</div><div class="line">		<span class="keyword">while</span>(pos&gt;<span class="number">1</span>&amp;&amp;val[pos]&lt;val[pos&gt;&gt;<span class="number">1</span>])</div><div class="line">			swap(val[pos], val[pos&gt;&gt;<span class="number">1</span>]),pos&gt;&gt;=<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> pos)</span></span>&#123;</div><div class="line">		<span class="keyword">int</span> p = pos;</div><div class="line">		<span class="keyword">while</span>(<span class="number">1</span>)&#123;</div><div class="line">			<span class="keyword">if</span>((pos&lt;&lt;<span class="number">1</span>)&lt;=size&amp;&amp;val[pos&lt;&lt;<span class="number">1</span>]&lt;val[p])p=pos&lt;&lt;<span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>((pos&lt;&lt;<span class="number">1</span>|<span class="number">1</span>)&lt;=size&amp;&amp;val[pos&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]&lt;val[p])p=pos&lt;&lt;<span class="number">1</span>|<span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(pos==p)<span class="keyword">return</span>; swap(val[pos], val[p]); pos=p;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(node d)</span></span>&#123;</div><div class="line">		val[++size]=d;</div><div class="line">		up(size);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</div><div class="line">		swap(val[<span class="number">1</span>], val[size--]);</div><div class="line">		down(<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="function">node <span class="title">top</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> val[<span class="number">1</span>];</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> !size;</div><div class="line">	&#125;</div><div class="line">&#125;sw;</div><div class="line"><span class="keyword">int</span> f[N], g[M], ans[N], n, m, cnt;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="comment">// freopen("school.in", "r", stdin);</span></div><div class="line">	<span class="comment">// freopen("school.out", "w", stdout);</span></div><div class="line">	n = read(); m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		e[i].x = read(); e[i].y = read();</div><div class="line">		e[i].st = read(); e[i].ed = read();</div><div class="line">	&#125;</div><div class="line">	sort(e+<span class="number">1</span>, e+m+<span class="number">1</span>);</div><div class="line">	<span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span> f); f[<span class="number">1</span>]=<span class="number">1</span>&lt;&lt;<span class="number">30</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(!sw.empty() &amp;&amp; sw.top().x&lt;=e[i].st)&#123;</div><div class="line">			node t = sw.top(); sw.pop();</div><div class="line">			f[e[t.y].y]=max(f[e[t.y].y], g[t.y]);</div><div class="line">		&#125;</div><div class="line">		g[i]=min(e[i].st, f[e[i].x]);</div><div class="line">		sw.push((node)&#123;e[i].ed, i&#125;);</div><div class="line">		<span class="keyword">if</span>(e[i].y == n)&#123;</div><div class="line">			ks[++cnt].x = e[i].ed;</div><div class="line">			ks[cnt].y = g[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	sort(ks+<span class="number">1</span>, ks+cnt+<span class="number">1</span>);</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= T; i++)</div><div class="line">		a[i] = (node)&#123;read(), i&#125;;</div><div class="line">	sort(a+<span class="number">1</span>, a+T+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, now = <span class="number">-1</span>, j = <span class="number">1</span>; i &lt;= T; i++)&#123;</div><div class="line">		<span class="keyword">for</span>(; j &lt;= cnt &amp;&amp; ks[j].x &lt;= a[i].x; j++)</div><div class="line">			now = max(now, ks[j].y);</div><div class="line">		ans[a[i].y] = now;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= T; i++)</div><div class="line">		writeln(ans[i]);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+    <time datetime="2017-04-14T01:09:27.000Z" itemprop="datePublished">2017-04-14</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/毒瘤题/">毒瘤题</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/" title="BZOJ 4240: 有趣的家庭菜园" itemprop="url">BZOJ 4240: 有趣的家庭菜园</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-12T07:47:27.000Z" itemprop="datePublished"> 发表于 2017-04-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有N株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。<br>为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有比它高的IOI草存在，那么这株IOI草就会在夏天之前枯萎。换句话说，为了不让任何一株IOI草枯萎，需要满足以下条件：<br>对于任意2&lt;=i&lt;=N-1，以下两个条件至少满足一个：</p>
-<ol>
-<li>对于任意1&lt;=j&lt;=i-1，hj&lt;=hi</li>
-<li>对于任意i+1&lt;=j&lt;=N，hk&lt;=hi</li>
-</ol>
-<p>IOI草是非常昂贵的，为了不让IOI草枯萎，JOI君需要调换IOI草的顺序。IOI草非常非常的高大且纤细的植物，因此JOI君每次只能交换相邻两株IOI草。也就是说，JOI君每次需要选择一个整数i(1&lt;=i&lt;=N-1)，然后交换第i株IOI草和第i+1株IOI草。随着夏天临近，IOI草枯萎的可能性越来越大，因此JOI君想知道让所有IOI草都不会枯萎的最少操作次数。<br>现在给出田地的区域数，以及每株IOI草的高度，请你求出让所有IOI草的不会枯萎的最少操作次数。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个正整数N，代表田地被分为了N个区域。<br>接下来N行，第i行(1&lt;=i&lt;=N)一个整数hi，表示第i株植物在春天时的高度</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数，表示最少需要的操作次数</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>6<br>2<br>8<br>4<br>5<br>3<br>6</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>3</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>最终的高度序列为 2 4 5 8 6 3，共需要操作三次。<br>3&lt;=N&lt;=3*10^5<br>1&lt;=hi&lt;=10^9</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>摸你赛题（全班80%只有10分。。<br>反正题面就是要你找一个让序列成为单峰的最小移动步数</p>
-<h2 id="错误的思想："><a href="#错误的思想：" class="headerlink" title="错误的思想："></a>错误的思想：</h2><p>预处理出[1-i]成为上升序列的最小移动步数和[i-n]成为下降序列的最小移动步数<br>然后枚举一下分界线统计一下就好了（然而只有10分）</p>
-<h2 id="正解："><a href="#正解：" class="headerlink" title="正解："></a>正解：</h2><p>预处理出每个点往左移的最小步数和往右移的最小步数<br>然后枚举每一个点，考虑他往左移好还是往右移好（其实就是求左边有几个比他大的和右边有几个比他大的，这个用树状数组和离散化瞎搞一下就好了，左右取min）<br>再全部加起来就是答案了</p>
-<p><del>我有同学树状数组写成九条可怜的了，还拿了90分。。</del></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 300020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line">ll a[N], x[N], y[N], b[N], v[N], n, ans;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(;x&lt;=n;x+=x&amp;-x)v[x]++;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">ask</span><span class="params">(ll x)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(;x;x-=x&amp;-x)ans+=v[x];</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="comment">// freopen("flower.in", "r", stdin);</span></div><div class="line">	<span class="comment">// freopen("flower.out", "w", stdout);</span></div><div class="line">	n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		b[i] = a[i] = read();</div><div class="line">	sort(b+<span class="number">1</span>, b+n+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		a[i] = lower_bound(b+<span class="number">1</span>, b+n+<span class="number">1</span>, a[i])-b;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">		x[i] = i-ask(a[i])<span class="number">-1</span>;</div><div class="line">		add(a[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">memset</span>(v, <span class="number">0</span>, <span class="keyword">sizeof</span> v);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)&#123;</div><div class="line">		y[i] = n-i-ask(a[i]);</div><div class="line">		add(a[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</div><div class="line">		ans += min(x[i], y[i]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/树状数组/">树状数组</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/12/BZOJ-4236-JOIOJI/" title="BZOJ 4236: JOIOJI" itemprop="url">BZOJ 4236: JOIOJI</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-12T07:46:46.000Z" itemprop="datePublished"> 发表于 2017-04-12</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>JOIOJI桑是JOI君的叔叔。“JOIOJI”这个名字是由“J、O、I”三个字母各两个构成的。<br>最近，JOIOJI桑有了一个孩子。JOIOJI桑想让自己孩子的名字和自己一样由“J、O、I”三个字母构成，并且想让“J、O、I”三个字母的出现次数恰好相同。<br>JOIOJI桑家有一份祖传的卷轴，上面写着一首长诗，长度为N，由“J、O、I”三个字母组成。JOIOJIさん想用诗中最长的满足要求的连续子串作为孩子的名字。<br>现在JOIOJI桑将这首长诗交给了你，请你求出诗中最长的、包含同样数目的“J、O、I”三个字母的连续子串。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个正整数N，代表这首长诗的长度<br>接下来一行一个长度为N的字符串S，表示这首长诗，保证每个字符都是“J、O、I”三个字母中的一个</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个正整数，代表最长的包含等数量“J、O、I”三个字母的最长连续子串的长度。如果不存在这样的子串，输出0</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>10<br>JOIIJOJOOI</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>6</p>
-<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>选择“IIJOJO”这个子串，长度为6，包含“J、O、I”三个字母各2个，这是最长的满足要求的子串。<br>1&lt;=N&lt;=2*10^5</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>听说可以用hash过。。<br>我这里直接用map水了2333</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> pii pair<span class="meta-string">&lt;int, int&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mk make_pair</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, J, O, I, ans;</div><div class="line"><span class="keyword">char</span> s[N];</div><div class="line"><span class="built_in">map</span>&lt;pii, <span class="keyword">int</span>&gt; mp;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="comment">// freopen("name.in", "r", stdin);</span></div><div class="line">	<span class="comment">// freopen("name.out", "w", stdout);</span></div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%s"</span>, &amp;n, s+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(s[i] == <span class="string">'J'</span>) J++;</div><div class="line">		<span class="keyword">if</span>(s[i] == <span class="string">'O'</span>) O++;</div><div class="line">		<span class="keyword">if</span>(s[i] == <span class="string">'I'</span>) I++;</div><div class="line">		pii tmp = mk(J-O, O-I);</div><div class="line">		<span class="keyword">if</span>(!mp[tmp]) mp[tmp] = i;</div><div class="line">		<span class="keyword">else</span> ans = max(ans, i-mp[tmp]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(J==O&amp;&amp;O==I) ans = n;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+    <a href="/2017/04/13/Dirichlet卷积/" title="Dirichlet卷积" itemprop="url">
   
-  <span></span> <a href="/tags/STL/">STL</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
+    <h1 itemprop="name">Dirichlet卷积</h1>
     
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
+     
+           <p itemprop="description" >定义两个数论函数$f$,$g$的Dirichlet卷积为：$$(f*g)(n)=\sum_{d|n}{f(d)g(\frac nd)}$$
+Dirichlet卷积的一些性质：
+交换律$f*g=g*f$
+结合律$(f*g)*h=f*(g*h)$
+分配律$f*(g+h)=f*g+f*</p>
+        
     
-      <a href="/2017/04/11/BZOJ-2693-jzptab-BZOJ-2154-Crash的数字表格/" title="BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格" itemprop="url">BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-11T05:58:37.000Z" itemprop="datePublished"> 发表于 2017-04-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>都是要你求<br>$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j)$$</p>
-<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>4 5</p>
-<h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>122</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>不会做+看题解+公式恐惧症、、、<br>下面是某爬虫网站抄来的，也不知道作者是谁、、先orz一波</p>
-<p>下面均设n&lt;=m<br>$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j) = \sum_{i=1}^{n} \sum_{j=1}^{m} \frac{ij}{(i,j)}$$<br>然后我们要想枚举$d=(i,j)$，那么就要确定$ij$怎么取，显然我们只需要先除去$i$和$j$的$d$，也就是$(i/d,j/d)=1$就行了，那么设<br>$$F(x, y) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1]$$<br>那么原式变成<br>$$\sum_{d=1}^{n} \frac{d^2 F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor)}{d} = \sum_{d=1}^{n} d F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor)$$<br>考虑求$F(x,y)$<br>$$<br>\begin{align}<br>F(x, y) &amp; = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1] \\<br>&amp; = \sum_{i=1}^{x} \sum_{j=1}^{y} ij \sum_{d|(i,j)} \mu (d) \\<br>&amp; = \sum_{d=1}^{x} \mu (d) \sum_{d|i}^{x} i \sum_{d|j}^{y} j \\<br>&amp; = \sum_{d=1}^{x} \mu (d) d^2 \sum_{i=1}^{\lfloor \frac{x}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{y}{d} \rfloor} 1 \\<br>&amp; = \sum_{d=1}^{x} \mu (d) d^2 \frac{\lfloor \frac{x}{d} \rfloor (\lfloor \frac{x}{d} \rfloor +1)}{2} \frac{\lfloor \frac{y}{d} \rfloor (\lfloor \frac{y}{d} \rfloor +1)}{2} \\<br>\end{align}<br>$$<br>带回原式得<br>$$<br>\begin{align}<br>&amp; \sum_{d=1}^{n} d F(\lfloor \frac{n}{d} \rfloor, \lfloor \frac{m}{d} \rfloor) \\<br>= &amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{\lfloor \frac{n}{d} \rfloor}{i} \rfloor (\lfloor \frac{\lfloor \frac{n}{d} \rfloor}{i} \rfloor +1)}{2} \frac{\lfloor \frac{\lfloor \frac{m}{d} \rfloor}{i} \rfloor (\lfloor \frac{\lfloor \frac{m}{d} \rfloor}{i} \rfloor +1)}{2} \\<br>= &amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{n}{di} \rfloor (\lfloor \frac{n}{di} \rfloor +1)}{2} \frac{\lfloor \frac{m}{di} \rfloor (\lfloor \frac{m}{di} \rfloor +1)}{2} \\<br>\end{align}<br>$$<br>现在已经可以$O(\sqrt n \sqrt n) = O(n)$单次查询了，可以完成那道数字表格了<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 20101009</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll mu[N], pri[N], s[N], cnt;</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll ans, x, y;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(ll a)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(a&gt;<span class="number">9</span>)write(a/<span class="number">10</span>);</div><div class="line">	<span class="built_in">putchar</span>(a%<span class="number">10</span>+<span class="string">'0'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> (a*(a+<span class="number">1</span>)/<span class="number">2</span>)%zyy*(b*(b+<span class="number">1</span>)/<span class="number">2</span>%zyy)%zyy;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= min(a, b); i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans = (ans+(s[last]-s[i<span class="number">-1</span>])*sum(a/i, b/i)%zyy)%zyy;</div><div class="line">		<span class="comment">// printf("ans  = %d\n", ans);</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</div><div class="line">	mu[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">2</span>; i &lt;= min(x, y); i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>;</div><div class="line">		<span class="keyword">for</span>(ll j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i*pri[j] &lt;= min(x, y); j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>, mu[pri[j]*i] = -mu[i];</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[pri[j]*i] = <span class="number">0</span>; <span class="keyword">break</span>;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= min(x, y); i++)</div><div class="line">		s[i] = (s[i<span class="number">-1</span>]+i*i*mu[i]%zyy)%zyy;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= min(x, y); i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(x/(x/i), y/(y/i));</div><div class="line">		ans = (ans+(i+last)*(last-i+<span class="number">1</span>)/<span class="number">2</span>%zyy*f(x/i, y/i)%zyy)%zyy;</div><div class="line">		<span class="comment">// printf("ans2 = %d\n", ans);</span></div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span>&lt;&lt;(ans+zyy)%zyy&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>但是交到第一题还是TLE，我们继续化简<br>令$T = di$，则$i|T,d = T/i$，换掉指标，得<br>$$<br>\begin{align}<br>&amp; \sum_{d=1}^{n} d \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \mu (i) i^2 \frac{\lfloor \frac{n}{di} \rfloor (\lfloor \frac{n}{di} \rfloor +1)}{2} \frac{\lfloor \frac{m}{di} \rfloor (\lfloor \frac{m}{di} \rfloor +1)}{2} \\<br>= &amp;<br>\sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} \sum_{i|T} \frac{T}{i} \mu (i) i^2 \\<br>= &amp; \sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} T \sum_{i|T} \mu (i) i \\<br>\end{align}<br>$$<br>设$g(T)=T \sum_{i|T} \mu (i) i$，我们再设$f(T)=\sum_{i|T} \mu (i) i$那么$g(T)=Tf(T)$，考虑求$f(T)$<br>在线性筛中，外层为$k$，内层为$p_y$，所以求$f(kp_y)=\sum_{i|T} \mu(i) i$</p>
-<p>当$p_y|k$时<br>当$i$取的数的因子中不包含新加入的$p_y$时，答案就是$f(k)$<br>当$i$取包含新加入的因子$p_y$时，由于此时$p_y$指数已经&gt;=2，所以$\mu (i)=0$，因此贡献为0<br>综上，当$p_y|k$时，答案为$f(k)$</p>
-<p>当$p_y∤k$时<br>当$i$取的数的因子中不包含新加入的$p_y$时，同上，答案是$f(k)$<br>当$i$取的数的因子包含新加入的$p_y$时，由于指数为1，所以我们考虑$i=ap_y$，原式变为<br>$$\begin{align}<br>&amp; \sum_{i|T} \mu(i) i \\<br>= &amp; \sum_{ap_y|kp_y} \mu (ap_y) ap_y \\<br>= &amp; p_y \sum_{a|k} \mu (a) \mu(p_y) a \\<br>= &amp; -p_y \sum_{a|k} \mu(a) a \\<br>= &amp; -p_y f(k) \\<br>\end{align}$$<br>综上，当$p_y∤k$时，答案为$(1−p_y)f(k)$<br>然后线性筛随便搞搞即可，最后答案就是<br>$$\sum_{T=1}^{n} \frac{\lfloor \frac{n}{T} \rfloor (\lfloor \frac{n}{T} \rfloor +1)}{2} \frac{\lfloor \frac{m}{T} \rfloor (\lfloor \frac{m}{T} \rfloor +1)}{2} g(T)$$<br>$$F(x,y)= \sum_{i=1}^{x} \sum_{j=1}^{y} ij[(i,j)=1] = \sum_{i=1}^{x} \sum_{j=1}^{y} ij \sum_{d|(i,j)} \mu (d)$$</p>
-<p>接着第一题也可以做了（小心被卡常数！<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> zyy 100000009</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 10000020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> mu[N], pri[N], cnt;</div><div class="line">ll s[N];</div><div class="line"><span class="keyword">bool</span> mark[N];</div><div class="line">ll x, y;</div><div class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	ll x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">sum</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> (a*(a+<span class="number">1</span>)/<span class="number">2</span>%zyy)*(b*(b+<span class="number">1</span>)/<span class="number">2</span>%zyy)%zyy;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll a, ll b)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>, last; i &lt;= a; i = last+<span class="number">1</span>)&#123;</div><div class="line">		last = min(a/(a/i), b/(b/i));</div><div class="line">		ans = (ans+(s[last]-s[i<span class="number">-1</span>]+zyy)%zyy*sum(a/i, b/i)%zyy)%zyy;</div><div class="line">		<span class="comment">// printf("ans  = %d\n", ans);</span></div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	mu[<span class="number">1</span>] = s[<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; N; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(!mark[i])pri[++cnt]=i,mu[i]=<span class="number">-1</span>,s[i]=<span class="number">1</span>-i;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= cnt &amp;&amp; i*pri[j] &lt; N; j++)&#123;</div><div class="line">			mark[pri[j]*i] = <span class="number">1</span>;</div><div class="line">			<span class="keyword">if</span>(i%pri[j]==<span class="number">0</span>)&#123;mu[pri[j]*i] = <span class="number">0</span>; s[i*pri[j]]=s[i]; <span class="keyword">break</span>;&#125;</div><div class="line">			s[i*pri[j]] = (s[i]*s[pri[j]])%zyy; mu[pri[j]*i] = -mu[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</div><div class="line">		s[i] = (s[i<span class="number">-1</span>]+i*s[i]%zyy)%zyy;</div><div class="line">	<span class="keyword">int</span> T = read();</div><div class="line">	<span class="keyword">while</span>(T--)&#123;</div><div class="line">		x = read(); y = read();</div><div class="line">		<span class="keyword">if</span>(x &gt; y) swap(x, y);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, (f(x, y)+zyy)%zyy);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>做完感觉人已经完全傻掉了<br>调了半个小时才知道BZOJ和cin cout有仇<br><img src="https://swwind.github.io/img/haipa.png"></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
+    <time datetime="2017-04-13T05:35:49.000Z" itemprop="datePublished">2017-04-13</time>
+  </a>
+</section>
 
 
-  <div class="article-tags">
+
+
+
+
   
-  <span></span> <a href="/tags/数论/">数论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/10/如何卡掉BZOJ/" title="如何卡掉BZOJ" itemprop="url">如何卡掉BZOJ</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-10T12:38:54.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><p><strong>请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关</strong></p>
-<h1 id="Linux下卡掉编译器"><a href="#Linux下卡掉编译器" class="headerlink" title="Linux下卡掉编译器"></a>Linux下卡掉编译器</h1><p>只需要写一句话<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;/dev/random&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。</p>
-<h1 id="Windows下卡掉编译器"><a href="#Windows下卡掉编译器" class="headerlink" title="Windows下卡掉编译器"></a>Windows下卡掉编译器</h1><p>也只要一句话<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;com1&gt;</span></span></div></pre></td></tr></table></figure></p>
-<p>然后就愉快的爆蛋了</p>
-<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>我也不知道，自己谷歌</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p><del>抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当<br>适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</del><br>别作死卡OJ评测机，好好活着，不好吗？</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/10/BZOJ-4766-文艺计算姬/" title="BZOJ 4766: 文艺计算姬" itemprop="url">BZOJ 4766: 文艺计算姬</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-10T02:29:36.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标号完全二分图K_{n,m}，计算姬能快速算出其生成树个数。小W不知道计算姬算的对不对，你能帮助他吗？</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>仅一行三个整数n,m,p，表示给出的完全二分图K_{n,m}<br>1 &lt;= n,m,p &lt;= 10^18</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>仅一行一个整数，表示完全二分图K_{n,m}的生成树个数，答案需要模p。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 3 7</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>5</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><a href="http://www.cnblogs.com/neighthorn/p/6568410.html" target="_blank" rel="external">orz NeighThorn</a><br>答案其实就是m^(n-1)*n^(m-1)…<br>此外还要用到<strong>快速乘</strong>。？？一个长得和快速幂有点像的东西，可以防止乘法溢出。。<br>为毛他不开long long也能过得去啊(ノ=Д=)ノ┻━┻</p>
-<p>4.13:我靠，他有#define int long long啊(ノ=Д=)ノ┻━┻</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll n, m, p;</div><div class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll x, ll y)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(y)&#123;</div><div class="line">		<span class="keyword">if</span>(y&amp;<span class="number">1</span>) ans = (ans+x)%p;</div><div class="line">		x = (x&lt;&lt;<span class="number">1</span>)%p; y &gt;&gt;= <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function">ll <span class="title">f</span><span class="params">(ll x, ll y)</span></span>&#123;</div><div class="line">	ll ans = <span class="number">1</span>;</div><div class="line">	<span class="keyword">while</span>(y)&#123;</div><div class="line">		<span class="keyword">if</span>(y&amp;<span class="number">1</span>) ans = mul(ans, x);</div><div class="line">		x = mul(x, x); y &gt;&gt;= <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; p;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; mul(f(n, m<span class="number">-1</span>), f(m, n<span class="number">-1</span>)) &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+<section class="post" itemscope itemprop="blogitem">
   
-  <span></span> <a href="/tags/图论/">图论</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/04/10/BZOJ-2002-Hnoi2010-Bounce-弹飞绵羊/" title="BZOJ 2002: [Hnoi2010]Bounce 弹飞绵羊" itemprop="url">BZOJ 2002: [Hnoi2010]Bounce 弹飞绵羊</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-04-10T00:44:29.000Z" itemprop="datePublished"> 发表于 2017-04-10</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>某天，Lostmonkey发明了一种超级弹力装置，为了在他的绵羊朋友面前显摆，他邀请小绵羊一起玩个游戏。游戏一开始，Lostmonkey在地上沿着一条直线摆上n个装置，每个装置设定初始弹力系数ki，当绵羊达到第i个装置时，它会往后弹ki步，达到第i+ki个装置，若不存在第i+ki个装置，则绵羊被弹飞。绵羊想知道当它从第i个装置起步时，被弹几次后会被弹飞。为了使得游戏更有趣，Lostmonkey可以修改某个弹力装置的弹力系数，任何时候弹力系数均为正整数。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含一个整数n，表示地上有n个装置，装置的编号从0到n-1,接下来一行有n个正整数，依次为那n个装置的初始弹力系数。第三行有一个正整数m，接下来m行每行至少有两个数i、j，若i=1，你要输出从j出发被弹几次后被弹飞，若i=2则还会再输入一个正整数k，表示第j个弹力装置的系数被修改成k。<br>对于20%的数据n,m&lt;=10000。<br>对于100%的数据n&lt;=200000,m&lt;=100000。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个i=1的情况，你都要输出一个需要的步数，占一行。</p>
-<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>1 2 1 1<br>3<br>1 1<br>2 1 1<br>1 1</p>
-<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2<br>3</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这题有两种做法。。但我只会分块。。LCT太恶心了，看了一个晚上就是看不懂他在干什么。。没事rever个毛线啊（听说是为了保证复杂度。。）<br>分块的话，直接一个块一个块跳。。具体我就不说了（<del>别问我怎么这么像hzwer的</del></p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n, st[N], pt[N], a[N], l[<span class="number">1020</span>], pos[N];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> block = <span class="built_in">sqrt</span>(n = read());</div><div class="line">	<span class="keyword">int</span> cnt = n/block;</div><div class="line">	<span class="keyword">if</span>(n%block) cnt++;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)&#123;</div><div class="line">		a[i] = read();</div><div class="line">		pos[i] = (i<span class="number">-1</span>)/block+<span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</div><div class="line">		l[i] = (i<span class="number">-1</span>)*block+<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = n; i; i--)</div><div class="line">		<span class="keyword">if</span>(i+a[i]&gt;n) st[i] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(pos[i]==pos[i+a[i]])</div><div class="line">			st[i] = st[i+a[i]]+<span class="number">1</span>, pt[i] = pt[i+a[i]];</div><div class="line">		<span class="keyword">else</span> st[i] = <span class="number">1</span>, pt[i] = i+a[i];</div><div class="line">	<span class="keyword">int</span> m = read();</div><div class="line">	<span class="keyword">while</span>(m--)&#123;</div><div class="line">		<span class="keyword">int</span> op = read(), x = read()+<span class="number">1</span>, y = <span class="number">0</span>;</div><div class="line">		<span class="keyword">if</span>(op == <span class="number">1</span>)&#123;</div><div class="line">			<span class="keyword">while</span>(x)&#123;</div><div class="line">				y += st[x];</div><div class="line">				x = pt[x];</div><div class="line">			&#125;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, y);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			a[x] = read();</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = x; i &gt;= l[pos[x]]; i--)</div><div class="line">				<span class="keyword">if</span>(pos[i]==pos[i+a[i]])</div><div class="line">					st[i] = st[i+a[i]]+<span class="number">1</span>, pt[i] = pt[i+a[i]];</div><div class="line">				<span class="keyword">else</span> st[i] = <span class="number">1</span>, pt[i] = i+a[i];</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="LCT做法-4-14-Update"><a href="#LCT做法-4-14-Update" class="headerlink" title="LCT做法 (4.14 Update)"></a>LCT做法 (4.14 Update)</h1><p>学过了才发现不过如此<br>跑的比分块慢多了<br><del>别问我怎么还是很像hzwer的</del><br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 200020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> c[N][<span class="number">2</span>], fa[N], rev[N], st[N], sz[N], nxt[N];</div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isroot</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">return</span> c[fa[x]][<span class="number">0</span>] != x &amp;&amp; c[fa[x]][<span class="number">1</span>] != x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!rev[x])<span class="keyword">return</span>;</div><div class="line">	rev[x] ^= <span class="number">1</span>;</div><div class="line">	rev[c[x][<span class="number">0</span>]] ^= <span class="number">1</span>;</div><div class="line">	rev[c[x][<span class="number">1</span>]] ^= <span class="number">1</span>;</div><div class="line">	swap(c[x][<span class="number">0</span>], c[x][<span class="number">1</span>]);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	sz[x] = sz[c[x][<span class="number">0</span>]]+sz[c[x][<span class="number">1</span>]]+<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> y = fa[x], z = fa[y];</div><div class="line">	<span class="keyword">int</span> r = c[y][<span class="number">0</span>] == x, l = r^<span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(!isroot(y)) c[z][c[z][<span class="number">0</span>]!=y] = x;</div><div class="line">	fa[x] = z; fa[y] = x; fa[c[x][r]] = y;</div><div class="line">	c[y][l] = c[x][r]; c[x][r] = y;</div><div class="line">	push_up(y); push_up(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> top = <span class="number">0</span>; st[++top]=x;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = x; !isroot(i); i=fa[i])</div><div class="line">		st[++top] = fa[i];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = top; i; i--)</div><div class="line">		push_down(st[i]);</div><div class="line">	<span class="keyword">while</span>(!isroot(x))&#123;</div><div class="line">		<span class="keyword">int</span> y = fa[x], z = fa[y];</div><div class="line">		<span class="keyword">if</span>(!isroot(y))<span class="keyword">if</span>(c[y][<span class="number">0</span>]==x^c[z][<span class="number">0</span>]==y)rotate(x);</div><div class="line">		<span class="keyword">else</span> rotate(y);</div><div class="line">		rotate(x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">access</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> t = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(x)&#123;</div><div class="line">		splay(x);</div><div class="line">		c[x][<span class="number">1</span>] = t;</div><div class="line">		t = x; x = fa[x];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rever</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	access(x);splay(x);</div><div class="line">	rev[x]^=<span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">link</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	rever(x);</div><div class="line">	fa[x] = y;</div><div class="line">	splay(x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">cut</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</div><div class="line">	rever(x); access(y); splay(y);</div><div class="line">	c[y][<span class="number">0</span>] = fa[x] = <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	access(x); splay(x);</div><div class="line">	<span class="keyword">int</span> y = x;</div><div class="line">	<span class="keyword">while</span>(c[y][<span class="number">0</span>])y=c[y][<span class="number">0</span>];</div><div class="line">	<span class="keyword">return</span> y;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>,x; i &lt;= n; i++)&#123;</div><div class="line">		nxt[i] = (x=read())+i;</div><div class="line">		sz[i] = <span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(nxt[i] &gt; n) nxt[i] = n+<span class="number">1</span>;</div><div class="line">		fa[i] = nxt[i];</div><div class="line">	&#125;</div><div class="line">	sz[n+<span class="number">1</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(read()==<span class="number">1</span>)&#123;</div><div class="line">			<span class="keyword">int</span> x = read()+<span class="number">1</span>;</div><div class="line">			rever(n+<span class="number">1</span>); access(x); splay(x);</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sz[c[x][<span class="number">0</span>]]);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span>&#123;</div><div class="line">			<span class="keyword">int</span> x = read()+<span class="number">1</span>, y = read();</div><div class="line">			<span class="keyword">int</span> t = min(x+y, n+<span class="number">1</span>);</div><div class="line">			cut(x, nxt[x]); link(x, nxt[x]=t);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
+    <a href="/2017/04/13/BZOJ-2820-YY的GCD-51nod-1192-Gcd表中的质数/" title="BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数" itemprop="url">
   
-  <span></span> <a href="/tags/LCT/">LCT</a><a href="/tags/分块/">分块</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
+    <h1 itemprop="name">BZOJ 2820: YY的GCD &amp; 51nod 1192 Gcd表中的质数</h1>
+    
+     
+           <p itemprop="description" >题面求$$\sum_{i=1}^{a}{\sum_{j=1}^{b}{isprime(gcd(i,j))}}$$
+Simple Input210 10100 100
+Simple Output302791
+题解当然还是枚举质数p式子是从51nod的讨论里抄来的$$\begin{a</p>
+        
+    
+    <time datetime="2017-04-13T03:39:54.000Z" itemprop="datePublished">2017-04-13</time>
+  </a>
+</section>
 
 
 
 
 
 
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/13/BZOJ-3309-DZY-Loves-Math/" title="BZOJ 3309: DZY Loves Math" itemprop="url">
+  
+    <h1 itemprop="name">BZOJ 3309: DZY Loves Math</h1>
+    
+     
+           <p itemprop="description" >题面对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}</p>
+        
+    
+    <time datetime="2017-04-13T01:21:30.000Z" itemprop="datePublished">2017-04-13</time>
+  </a>
+</section>
 
-  <nav id="page-nav" class="clearfix">
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/13/BZOJ-4239-巴士走读/" title="BZOJ 4239: 巴士走读" itemprop="url">
+  
+    <h1 itemprop="name">BZOJ 4239: 巴士走读</h1>
+    
+     
+           <p itemprop="description" >题面大学生的JOI君每天乘坐巴士走读。JOI君的家和学校都在IOI市内。IOI市内共有N个巴士停靠点，编号为1~N，离JOI家最近的停靠点为1号停靠点，离大学最近的停靠点为N号停靠点。IOI市内共有M辆巴士，每辆巴士一天只跑一次，从某一时刻某一停靠点出发，在某一时刻到达另一个站点</p>
+        
+    
+    <time datetime="2017-04-13T00:06:27.000Z" itemprop="datePublished">2017-04-13</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/" title="BZOJ 4240: 有趣的家庭菜园" itemprop="url">
+  
+    <h1 itemprop="name">BZOJ 4240: 有趣的家庭菜园</h1>
+    
+     
+           <p itemprop="description" >题面对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有N株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。为了观察春天的样子而出行的</p>
+        
+    
+    <time datetime="2017-04-12T07:47:27.000Z" itemprop="datePublished">2017-04-12</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/12/BZOJ-4236-JOIOJI/" title="BZOJ 4236: JOIOJI" itemprop="url">
+  
+    <h1 itemprop="name">BZOJ 4236: JOIOJI</h1>
+    
+     
+           <p itemprop="description" >题面JOIOJI桑是JOI君的叔叔。“JOIOJI”这个名字是由“J、O、I”三个字母各两个构成的。最近，JOIOJI桑有了一个孩子。JOIOJI桑想让自己孩子的名字和自己一样由“J、O、I”三个字母构成，并且想让“J、O、I”三个字母的出现次数恰好相同。JOIOJI桑家有一份祖</p>
+        
+    
+    <time datetime="2017-04-12T07:46:46.000Z" itemprop="datePublished">2017-04-12</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/11/BZOJ-2693-jzptab-BZOJ-2154-Crash的数字表格/" title="BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格" itemprop="url">
+  
+    <h1 itemprop="name">BZOJ 2693: jzptab &amp; BZOJ 2154: Crash的数字表格</h1>
+    
+     
+           <p itemprop="description" >题面都是要你求$$\sum_{i=1}^{n} \sum_{j=1}^{m} lcm(i, j)$$
+Simple Input4 5
+Simple Output122
+题解不会做+看题解+公式恐惧症、、、下面是某爬虫网站抄来的，也不知道作者是谁、、先orz一波
+下面均设n&amp;lt;</p>
+        
+    
+    <time datetime="2017-04-11T05:58:37.000Z" itemprop="datePublished">2017-04-11</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/10/如何卡掉BZOJ/" title="如何卡掉BZOJ" itemprop="url">
+  
+    <h1 itemprop="name">如何卡掉BZOJ</h1>
+    
+     
+           <p itemprop="description" >警告请不要利用任何黑客技术对网站进行恶意攻击，违者将追究法律责任，但与本博客无关
+Linux下卡掉编译器只需要写一句话#include &amp;lt;/dev/random&amp;gt;
+然后编译器就被卡掉了2333，之前有一个人用这句话卡了两页的测评。。。
+Windows下卡掉编译器也只要</p>
+        
+    
+    <time datetime="2017-04-10T12:38:54.000Z" itemprop="datePublished">2017-04-10</time>
+  </a>
+</section>
+
+
+
+
+
+
+  
+<section class="post" itemscope itemprop="blogitem">
+  
+    <a href="/2017/04/10/BZOJ-4766-文艺计算姬/" title="BZOJ 4766: 文艺计算姬" itemprop="url">
+  
+    <h1 itemprop="name">BZOJ 4766: 文艺计算姬</h1>
+    
+     
+           <p itemprop="description" >题面“奋战三星期，造台计算机”。小W响应号召，花了三星期造了台文艺计算姬。文艺计算姬比普通计算机有更多的艺术细胞。普通计算机能计算一个带标号完全图的生成树个数，而文艺计算姬能计算一个带标号完全二分图的生成树个数。更具体地，给定一个一边点数为n，另一边点数为m，共有n*m条边的带标</p>
+        
+    
+    <time datetime="2017-04-10T02:29:36.000Z" itemprop="datePublished">2017-04-10</time>
+  </a>
+</section>
+
+
+
+
+
+
+
+  <nav id="page-nav" class="clearfix unexpand">
     <a class="extend prev" rel="prev" href="/page/3/"><span></span>Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next<span></span></a>
   </nav>
 
@@ -753,11 +325,11 @@
 			
 		
 			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>5</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>5</sup></a></li>
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
 			
 		
 			
@@ -769,10 +341,6 @@
 			
 		
 			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
 			
 		
@@ -781,19 +349,7 @@
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/网络流/" title="网络流">网络流<sup>2</sup></a></li>
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
 			
 		
 			
@@ -801,7 +357,11 @@
 			
 		
 			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
 			
 		
 			
@@ -809,15 +369,15 @@
 			
 		
 			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -825,7 +385,19 @@
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+				<li><a href="/tags/网络流/" title="网络流">网络流<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
 			
 		
 		</ul>

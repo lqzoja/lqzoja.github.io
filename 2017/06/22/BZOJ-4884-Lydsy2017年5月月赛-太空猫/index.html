@@ -4,26 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>3.15摸你赛 前缀！ | SW_Wind&#39;s blog</title>
+    <title>BZOJ 4884: [Lydsy2017年5月月赛]太空猫 | SW_Wind&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="SW_Wind">
     
 
     
-    <meta name="description" content="题面定义$f_0(x)=A_x,f_n(x)=\sum_{i=1}^{x-1}{f_{n-1}(i)}$，给出长度为 N 的数组 A（从 1~N 编号）和 Q 个操作。操作有两种：Add i j 表示将 Ai的值加上 j（j ≤ P）；Query i j 表示询问 fi(j)的值（i ≤ M），由于答案可能会很大，给我 mod P 后的答案即可，P = 1,000,000,007。
-Input第一">
+    <meta name="description" content="题面太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空猫位于地图最左边的下边界之上，且重力方向向下。在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力方向时，你需要消耗的能量值等于上下底边之">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.15摸你赛 前缀！">
-<meta property="og:url" content="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀！/index.html">
+<meta property="og:title" content="BZOJ 4884: [Lydsy2017年5月月赛]太空猫">
+<meta property="og:url" content="http://swwind.github.io/2017/06/22/BZOJ-4884-Lydsy2017年5月月赛-太空猫/index.html">
 <meta property="og:site_name" content="SW_Wind's blog">
-<meta property="og:description" content="题面定义$f_0(x)=A_x,f_n(x)=\sum_{i=1}^{x-1}{f_{n-1}(i)}$，给出长度为 N 的数组 A（从 1~N 编号）和 Q 个操作。操作有两种：Add i j 表示将 Ai的值加上 j（j ≤ P）；Query i j 表示询问 fi(j)的值（i ≤ M），由于答案可能会很大，给我 mod P 后的答案即可，P = 1,000,000,007。
-Input第一">
-<meta property="og:updated_time" content="2017-04-13T02:34:24.061Z">
+<meta property="og:description" content="题面太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空猫位于地图最左边的下边界之上，且重力方向向下。在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力方向时，你需要消耗的能量值等于上下底边之">
+<meta property="og:image" content="http://www.lydsy.com/JudgeOnline/upload/201705/vv1.jpg">
+<meta property="og:updated_time" content="2017-06-22T07:24:45.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3.15摸你赛 前缀！">
-<meta name="twitter:description" content="题面定义$f_0(x)=A_x,f_n(x)=\sum_{i=1}^{x-1}{f_{n-1}(i)}$，给出长度为 N 的数组 A（从 1~N 编号）和 Q 个操作。操作有两种：Add i j 表示将 Ai的值加上 j（j ≤ P）；Query i j 表示询问 fi(j)的值（i ≤ M），由于答案可能会很大，给我 mod P 后的答案即可，P = 1,000,000,007。
-Input第一">
+<meta name="twitter:title" content="BZOJ 4884: [Lydsy2017年5月月赛]太空猫">
+<meta name="twitter:description" content="题面太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空猫位于地图最左边的下边界之上，且重力方向向下。在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力方向时，你需要消耗的能量值等于上下底边之">
+<meta name="twitter:image" content="http://www.lydsy.com/JudgeOnline/upload/201705/vv1.jpg">
 
     
     
@@ -95,14 +94,14 @@ Input第一">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/03/15/3-15摸你赛-前缀！/" title="3.15摸你赛 前缀！" itemprop="url">3.15摸你赛 前缀！</a>
+      <a href="/2017/06/22/BZOJ-4884-Lydsy2017年5月月赛-太空猫/" title="BZOJ 4884: [Lydsy2017年5月月赛]太空猫" itemprop="url">BZOJ 4884: [Lydsy2017年5月月赛]太空猫</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
 		
   <p class="article-time">
-    <time datetime="2017-03-15T05:10:46.000Z" itemprop="datePublished"> 发表于 2017-03-15</time>
+    <time datetime="2017-06-22T07:14:16.000Z" itemprop="datePublished"> 发表于 2017-06-22</time>
     
   </p>
 </header>
@@ -111,17 +110,18 @@ Input第一">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
 		
 		</div>
 		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>定义$f_0(x)=A_x,f_n(x)=\sum_{i=1}^{x-1}{f_{n-1}(i)}$，给出长度为 N 的数组 A（从 1~N 编号）和 Q 个<br>操作。操作有两种：Add i j 表示将 Ai的值加上 j（j ≤ P）；Query i j 表示询问 f<sub>i</sub>(j)<br>的值（i ≤ M），由于答案可能会很大，给我 mod P 后的答案即可，P = 1,000,000,007。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行为三个正整数 N、M、Q。<br>第二行为 N 个非负整数，表示 A 数组。<br>接下来 Q 行，每行表示一个操作，Add i j 或 Query i j。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出有多行，每行表示 f<sub>i</sub>(j) mod P。</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>4 4 4<br>1 1 1 1<br>Query 0 4<br>Query 4 3<br>Add 1 1<br>Query 3 2</p>
-<h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>1<br>15<br>7</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>其实是杨辉三角、、、不知你看不看得出来<br>其实就可以输入一个1 0 0 0 0…的数列，跑暴力看看就看出来了<br>看出来了就简单了哈（然而我还是爆蛋了，各种int溢出= =）</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> File(s) \</span></div><div class="line">	freopen(s<span class="meta-string">".in"</span>, <span class="meta-string">"r"</span>, stdin), \</div><div class="line">	freopen(s<span class="meta-string">".out"</span>, <span class="meta-string">"w"</span>, stdout)</div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 4005</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line">ll a[N], n, m, q, x, y, f[N][N];</div><div class="line"><span class="keyword">char</span> op[<span class="number">50</span>];</div><div class="line"><span class="function">ll <span class="title">get</span><span class="params">(ll i, ll j)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(!i) <span class="keyword">return</span> a[j];</div><div class="line">	ll ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(ll x = j; x&gt;=<span class="number">1</span>; x--)</div><div class="line">		(ans += (ll)f[i][x<span class="number">-1</span>]*a[j-x+<span class="number">1</span>]) %= <span class="number">1000000007</span>;</div><div class="line">	<span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	File(<span class="string">"b"</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%I64d%I64d%I64d"</span>, &amp;n, &amp;m, &amp;q);</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">0</span>; i &lt; n ;i++)</div><div class="line">		f[<span class="number">1</span>][i] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">2</span>; i &lt;= m; i++)</div><div class="line">	<span class="keyword">for</span>(ll j = <span class="number">0</span>; j &lt; n; j++)</div><div class="line">	f[i][j] = (f[i<span class="number">-1</span>][j]+f[i][j<span class="number">-1</span>])%<span class="number">1000000007</span>;</div><div class="line">	<span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%I64d"</span>, a+i);</div><div class="line">	<span class="keyword">while</span>(q--&amp;&amp;<span class="built_in">scanf</span>(<span class="string">"%s%I64d%I64d"</span>, op, &amp;x, &amp;y) != EOF) <span class="comment">// 强势压行</span></div><div class="line">		<span class="keyword">if</span>(op[<span class="number">0</span>] == <span class="string">'A'</span>) (a[x] += y)%=<span class="number">1000000007</span>;</div><div class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%I64d\n"</span>, get(x, y));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探<br>索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空<br>猫位于地图最左边的下边界之上，且重力方向向下。<br>在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力<br>方向时，你需要消耗的能量值等于上下底边之间的高度差。在左右移动的时候，太空猫可以下降到对应重力方向更<br>低的位置，但不能往上爬。当然，太空猫也不能穿墙而过。在重力翻转的过程中，直到碰到地面之前，你都不能操<br>控太空猫左右移动。太空猫的终点位于地图的最右端的下底边之上，请计算为了让太空猫到达终点，需要消耗能量<br>的最小值。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201705/vv1.jpg" alt="啦啦啦"></p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含一个正整数$n(1\leq n\leq 100000)$，即地图的宽度。<br>第二行包含$n$个正整数$c_1,c_2,…,c_n(2\leq c_i\leq 10^9)$，分别表示每个横坐标对应的上边界的高度。<br>第三行包含$n$个正整数$f_1,f_2,…,f_n(1\leq f_i\lt c_i)$，分别表示每个横坐标对应的下边界的高度。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数，即最少的能量，若无法到达终点，请输出”-1”。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>3 4 3 2<br>1 2 1 1</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>4</p>
+<h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p> “在左右移动的时候，太空猫【可以】下降到对应重力方向更低的位置”<br>应改为 “太空猫【会】下降到对应重力方向更低的位置”<br>就是说，太空猫在能往下掉的时候不能选择直接飞过去</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>很简单的dp。<br>f[i][0/1]表示彩虹猫在第i个位置停留在上方/下方时的最优解。。<br>先判断一下无解的情况，然后直接转移就行了。<br>40+ms WA就说明你inf设小了。。<del>（别问我怎么知道的）</del></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">1</span>);ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> f?-x:x;</div><div class="line">&#125;</div><div class="line">ll a[N], b[N];</div><div class="line">ll f[N][<span class="number">2</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) a[i] = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) b[i] = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">if</span>(b[i<span class="number">-1</span>] &gt;= a[i] || a[i<span class="number">-1</span>] &lt;= b[i] || a[i] &lt; a[i<span class="number">-1</span>] &amp;&amp; b[i] &gt; b[i<span class="number">-1</span>])</div><div class="line">			<span class="keyword">return</span> <span class="built_in">puts</span>(<span class="string">"-1"</span>)&amp;<span class="number">0</span>;</div><div class="line">	f[<span class="number">1</span>][<span class="number">0</span>] = a[<span class="number">1</span>]-b[<span class="number">1</span>];</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">if</span>(b[i<span class="number">-1</span>] &gt;= b[i]) f[i][<span class="number">1</span>] = min(f[i<span class="number">-1</span>][<span class="number">1</span>], f[i<span class="number">-1</span>][<span class="number">0</span>]+a[i<span class="number">-1</span>]-b[i<span class="number">-1</span>]);</div><div class="line">		<span class="keyword">else</span> f[i][<span class="number">1</span>] = <span class="number">1e16</span>;</div><div class="line">		<span class="keyword">if</span>(a[i<span class="number">-1</span>] &lt;= a[i]) f[i][<span class="number">0</span>] = min(f[i<span class="number">-1</span>][<span class="number">0</span>], f[i<span class="number">-1</span>][<span class="number">1</span>]+a[i<span class="number">-1</span>]-b[i<span class="number">-1</span>]);</div><div class="line">		<span class="keyword">else</span> f[i][<span class="number">0</span>] = <span class="number">1e16</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, min(f[n][<span class="number">1</span>], f[n][<span class="number">0</span>]+a[n]-b[n]));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -133,7 +133,7 @@ Input第一">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://swwind.github.io/2017/03/15/3-15摸你赛-前缀！/" data-title="3.15摸你赛 前缀！ | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  <div data-url="http://swwind.github.io/2017/06/22/BZOJ-4884-Lydsy2017年5月月赛-太空猫/" data-title="BZOJ 4884: [Lydsy2017年5月月赛]太空猫 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -146,19 +146,11 @@ Input第一">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/03/16/hdu-2222-Keywords-Search/" title="hdu 2222 Keywords Search">
-  <strong>上一篇：</strong><br/>
-  <span>
-  hdu 2222 Keywords Search</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/03/15/3-15摸你赛-前缀？/"  title="3.15摸你赛 前缀？">
+<a href="/2017/06/20/zyy的模拟赛-simple/"  title="zyy的模拟赛 森破">
  <strong>下一篇：</strong><br/> 
- <span>3.15摸你赛 前缀？
+ <span>zyy的模拟赛 森破
 </span>
 </a>
 </div>
@@ -189,7 +181,7 @@ gitment.render('containers')
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Input"><span class="toc-number">4.</span> <span class="toc-text">Simple Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Output"><span class="toc-number">5.</span> <span class="toc-text">Simple Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HINT"><span class="toc-number">6.</span> <span class="toc-text">HINT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">7.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
  
   </div>
 
