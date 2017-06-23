@@ -8,119 +8,120 @@
 
 
 
+;(function ($) {
+	var w = window.innerWidth
+	var h = window.innerHeight
+	var speed = 0, playspeed = 0
+	var line_height = 27
+	var lines = Math.floor(h/line_height)
+	var colors_length = 17
+	var tops = new Array(lines)
+	var ls = new Array(lines)
+	var sec = 0, min = 0, cnt = 0
 
+	var colors = ['fff', '000', '6cf', '0f0', 'f0f', 'cfc', 'ff0', '0ff', '816', '891', '6cc', '9a4', 'c5c', 'af8', '999', 'fff']
 
-var w = window.innerWidth
-var h = window.innerHeight
-var speed = 0, playspeed = 0
-var line_height = 27
-var lines = Math.floor(h/line_height)
-var colors_length = 17
-var tops = new Array(lines)
-var ls = new Array(lines)
-var sec = 0, min = 0, cnt = 0
-
-var colors = ['fff', '000', '6cf', '0f0', 'f0f', 'cfc', 'ff0', '0ff', '816', '891', '6cc', '9a4', 'c5c', 'af8', '999', 'fff']
-
-var rand = function (n) {
-	return Math.floor(Math.random()*n)
-}
-
-var range = function (a, b) {
-	return rand(b-a)+a
-}
-
-var getLine = function () {
-	var mn = 0
-	for(var i = 1; i < lines; i++)
-		if(ls[i] < ls[mn])
-			mn = i
-	ls[mn]++
-	return mn
-}
-
-var addFly = function (msg, startTime) {
-	setTimeout(function () {
-		var d = $('<div/>').appendTo($('body'))
-		var k = getLine()
-		var ww = d.width()
-		d.addClass('dm___')
-		d.html(msg)
-		d.css('left', w+50+'px')
-		d.css('top', k*line_height+'px') // Witch line
-		d.css('color', '#'+colors[rand(colors_length)]) // Witch color
-		// $('#cnt').html(++cnt)
-		d.animate({left: '-'+(d.width()+50)+'px'}, speed*5000, 'linear', function () {
-			// $('#cnt').html(--cnt)
-			d.remove()
-		})
-		setTimeout(function () {
-			ls[k]--
-		}, Math.floor(ww*speed*5000/(w+ww)))
-	}, startTime*playspeed)
-}
-
-var getTop = function () {
-	var mn = 0
-	for(var i = 1; i < lines; i++)
-		if(tops[i] < tops[mn])
-			mn = i
-	tops[mn]++
-	return mn
-}
-
-var addTop = function (msg, startTime) {
-	setTimeout(function () {
-		var d = $('<div/>').appendTo($('body'))
-		d.addClass('dm___')
-		d.html(msg)
-		d.css('left', (w-d.width())/2+'px')
-		d.css('color', '#'+colors[rand(colors_length)]) // Witch color
-		var k = getTop()
-		d.css('top', k*line_height+5*(~tops[k]&1)+'px')
-		// $('#cnt').html(++cnt)
-		d.show()
-		setTimeout(function () {
-			d.remove()
-			// $('#cnt').html(--cnt)
-			tops[k]--
-		}, speed*5000)
-	}, startTime*playspeed)
-}
-
-var html2Escape = function(sHtml) { 
-	return sHtml.replace(/[<>&"]/g,
-		function(c){
-			return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]
-		})
-}
-
-for(var i = 0; i < lines; i++)
-	tops[i] = 0, ls[i] = 0
-var sty = $('<style/>')
-sty.html('html{overflow-x: hidden;}.dm___{z-index:600;position: fixed;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;font-family: "微软雅黑"}')
-sty.attr('type', 'text/css')
-$('head').append(sty)
-var urls = "https://swwind.github.io/img/a.txt";
-var htmlobj = $.ajax({url:urls,async:false})
-var dataString = htmlobj.responseText
-speed = 1
-playspeed = 1
-var lis = html2Escape(dataString).split('\n')
-for(var i = 0; i < lis.length; i++) {
-	var dg = lis[i].split(' ')
-	if(dg.length == null || dg.length < 3) continue
-	if(dg[0] == 1){ dg.shift()
-		var sd = Math.floor(parseFloat(dg.shift())*1000)
-		addFly(dg.join(' '), sd)
+	var rand = function (n) {
+		return Math.floor(Math.random()*n)
 	}
-	if(dg[0] == 0){ dg.shift()
-		var sd = Math.floor(parseFloat(dg.shift())*1000)
-		addTop(dg.join(' '), sd)
+
+	var range = function (a, b) {
+		return rand(b-a)+a
 	}
-}
+
+	var getLine = function () {
+		var mn = 0
+		for(var i = 1; i < lines; i++)
+			if(ls[i] < ls[mn])
+				mn = i
+		ls[mn]++
+		return mn
+	}
+
+	var addFly = function (msg, startTime) {
+		setTimeout(function () {
+			var d = $('<div/>').appendTo($('body'))
+			var k = getLine()
+			var ww = d.width()
+			d.addClass('dm___')
+			d.html(msg)
+			d.css('left', w+50+'px')
+			d.css('top', k*line_height+'px') // Witch line
+			d.css('color', '#'+colors[rand(colors_length)]) // Witch color
+			// $('#cnt').html(++cnt)
+			d.animate({left: '-'+(d.width()+50)+'px'}, speed*5000, 'linear', function () {
+				// $('#cnt').html(--cnt)
+				d.remove()
+			})
+			setTimeout(function () {
+				ls[k]--
+			}, Math.floor(ww*speed*5000/(w+ww)))
+		}, startTime*playspeed)
+	}
+
+	var getTop = function () {
+		var mn = 0
+		for(var i = 1; i < lines; i++)
+			if(tops[i] < tops[mn])
+				mn = i
+		tops[mn]++
+		return mn
+	}
+
+	var addTop = function (msg, startTime) {
+		setTimeout(function () {
+			var d = $('<div/>').appendTo($('body'))
+			d.addClass('dm___')
+			d.html(msg)
+			d.css('left', (w-d.width())/2+'px')
+			d.css('color', '#'+colors[rand(colors_length)]) // Witch color
+			var k = getTop()
+			d.css('top', k*line_height+5*(~tops[k]&1)+'px')
+			// $('#cnt').html(++cnt)
+			d.show()
+			setTimeout(function () {
+				d.remove()
+				// $('#cnt').html(--cnt)
+				tops[k]--
+			}, speed*5000)
+		}, startTime*playspeed)
+	}
+
+	var html2Escape = function(sHtml) { 
+		return sHtml.replace(/[<>&"]/g,
+			function(c){
+				return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]
+			})
+	}
+
+	for(var i = 0; i < lines; i++)
+		tops[i] = 0, ls[i] = 0
+	var sty = $('<style/>')
+	sty.html('html{overflow-x: hidden;}.dm___{z-index:600;position: fixed;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;font-family: "微软雅黑"}')
+	sty.attr('type', 'text/css')
+	$('head').append(sty)
+	var urls = "https://swwind.github.io/img/a.txt";
+	var htmlobj = $.ajax({url:urls,async:false})
+	var dataString = htmlobj.responseText
+	speed = 1
+	playspeed = 1
+	var lis = html2Escape(dataString).split('\n')
+	for(var i = 0; i < lis.length; i++) {
+		var dg = lis[i].split(' ')
+		if(dg.length == null || dg.length < 3) continue
+		if(dg[0] == 1){ dg.shift()
+			var sd = Math.floor(parseFloat(dg.shift())*1000)
+			addFly(dg.join(' '), sd)
+		}
+		if(dg[0] == 0){ dg.shift()
+			var sd = Math.floor(parseFloat(dg.shift())*1000)
+			addTop(dg.join(' '), sd)
+		}
+	}
 
 // $('#but').click(read)
 
 
 // javascript:var k=document.createElement('script');k.src='https://swwind.github.io/js/fuck.js';document.body.appendChild(k);
+})(jQuery)
+
