@@ -44,7 +44,7 @@ var addFly = function (msg, startTime) {
 		var d = $('<div/>').appendTo($('body'))
 		var k = getLine()
 		var ww = d.width()
-		d.addClass('s')
+		d.addClass('dm___')
 		d.html(msg)
 		d.css('left', w+50+'px')
 		d.css('top', k*line_height+'px') // Witch line
@@ -72,7 +72,7 @@ var getTop = function () {
 var addTop = function (msg, startTime) {
 	setTimeout(function () {
 		var d = $('<div/>').appendTo($('body'))
-		d.addClass('s')
+		d.addClass('dm___')
 		d.html(msg)
 		d.css('left', (w-d.width())/2+'px')
 		d.css('color', '#'+colors[rand(colors_length)]) // Witch color
@@ -97,11 +97,12 @@ var html2Escape = function(sHtml) {
 
 for(var i = 0; i < lines; i++)
 	tops[i] = 0, ls[i] = 0
-var sty = $('<style/>').appendTo($('head'))
-sty.html('html{overflow-x: hidden;}.s{position: fixed;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;font-family: "微软雅黑"}')
-sty[0].type = 'text/css'
-var urls = "https://swwind.github.io/img/a.txt";     
-var htmlobj = $.ajax({url:urls,async:false})  
+var sty = $('<style/>')
+sty.html('html{overflow-x: hidden;}.dm___{z-index:600;position: fixed;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;font-family: "微软雅黑"}')
+sty.attr('type', 'text/css')
+$('head').append(sty)
+var urls = "https://swwind.github.io/img/a.txt";
+var htmlobj = $.ajax({url:urls,async:false})
 var dataString = htmlobj.responseText
 speed = 1
 playspeed = 1
