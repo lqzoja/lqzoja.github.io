@@ -97,7 +97,9 @@
 	for(var i = 0; i < lines; i++)
 		tops[i] = 0, ls[i] = 0
 	var sty = $('<style/>')
-	sty.html('html{overflow-x: hidden;}.dm___{z-index:600;position: fixed;white-space: nowrap;font-size: 1.3em;text-shadow: 0px 0px 5px #000;font-weight: bold;font-family: "微软雅黑"}')
+	sty.html('html{overflow-x: hidden;}'
+			+'.dm___{z-index:600;position: fixed;white-space: nowrap;font-size: 1.3em;'
+			+'text-shadow: 0px 0px 5px #000;font-weight: bold;font-family: "微软雅黑"}');
 	sty.attr('type', 'text/css')
 	$('head').append(sty)
 	var urls = "https://swwind.github.io/img/a.txt";
