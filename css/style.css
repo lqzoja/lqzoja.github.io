@@ -2110,6 +2110,16 @@ pre {
   -o-tab-size: 4;
   tab-size: 4;
 }
+.truth {
+  background-color: #000;
+  color: #000;
+}
+.truth:hover {
+  color: #fff;
+}
+.hide {
+  color: #fafafa;
+}
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
