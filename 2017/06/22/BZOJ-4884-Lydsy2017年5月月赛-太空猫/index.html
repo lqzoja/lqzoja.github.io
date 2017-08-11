@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="SW_Wind&#39;s blog">
 <meta property="og:description" content="题面太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空猫位于地图最左边的下边界之上，且重力方向向下。在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力方向时，你需要消耗的能量值等于上下底边之">
 <meta property="og:image" content="http://www.lydsy.com/JudgeOnline/upload/201705/vv1.jpg">
-<meta property="og:updated_time" content="2017-06-22T07:27:54.648Z">
+<meta property="og:updated_time" content="2017-08-11T03:44:16.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ 4884: [Lydsy2017年5月月赛]太空猫">
 <meta name="twitter:description" content="题面太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空猫位于地图最左边的下边界之上，且重力方向向下。在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力方向时，你需要消耗的能量值等于上下底边之">
@@ -115,7 +115,7 @@
 		
 		</div>
 		
-		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探<br>索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空<br>猫位于地图最左边的下边界之上，且重力方向向下。<br>在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力<br>方向时，你需要消耗的能量值等于上下底边之间的高度差。在左右移动的时候，太空猫可以下降到对应重力方向更<br>低的位置，但不能往上爬。当然，太空猫也不能穿墙而过。在重力翻转的过程中，直到碰到地面之前，你都不能操<br>控太空猫左右移动。太空猫的终点位于地图的最右端的下底边之上，请计算为了让太空猫到达终点，需要消耗能量<br>的最小值。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201705/vv1.jpg" alt="啦啦啦"></p>
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>太空猫(SpaceCat)是一款画面精致、玩法有趣的休闲游戏，你需要控制一只坐在迷你飞碟上的猫咪在太空里不断探索，让大家看看你能飞得多远。游戏地图可以看成一个二维的网格图，上下是两段障碍物。在游戏的一开始，太空猫位于地图最左边的下边界之上，且重力方向向下。<br>在每个时刻，你可以用手指点击屏幕，翻转重力的方向，或者通过遥感控制太空猫往左或往右移动。每次翻转重力方向时，你需要消耗的能量值等于上下底边之间的高度差。在左右移动的时候，太空猫可以下降到对应重力方向更低的位置，但不能往上爬。当然，太空猫也不能穿墙而过。在重力翻转的过程中，直到碰到地面之前，你都不能操控太空猫左右移动。太空猫的终点位于地图的最右端的下底边之上，请计算为了让太空猫到达终点，需要消耗能量的最小值。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201705/vv1.jpg" alt="啦啦啦"></p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含一个正整数$n(1\leq n\leq 100000)$，即地图的宽度。<br>第二行包含$n$个正整数$c_1,c_2,…,c_n(2\leq c_i\leq 10^9)$，分别表示每个横坐标对应的上边界的高度。<br>第三行包含$n$个正整数$f_1,f_2,…,f_n(1\leq f_i\lt c_i)$，分别表示每个横坐标对应的下边界的高度。</p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数，即最少的能量，若无法到达终点，请输出”-1”。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>3 4 3 2<br>1 2 1 1</p>
@@ -196,13 +196,6 @@ gitment.render('containers')
 <aside class="clearfix">
 
   
-<div class="github-card">
-<p class="asidetitle">Github 名片</p>
-<div class="github-card" data-github="https://github.com/swwind" data-width="220" data-height="119" data-theme="medium">
-<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
-</div>
-  </div>
-
 
 
   
@@ -213,11 +206,11 @@ gitment.render('containers')
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>6</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>6</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>6</sup></a></li>
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>6</sup></a></li>
 			
 		
 			
@@ -245,7 +238,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
 			
 		
 			
@@ -253,11 +246,11 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>2</sup></a></li>
+				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
 			
 		
 			
@@ -269,7 +262,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>2</sup></a></li>
 			
 		
 			
@@ -285,7 +278,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -384,8 +377,6 @@ gitment.render('containers')
 	 
 	<div class="social-font" class="clearfix">
 		
-		
-		<a href="https://github.com/https://github.com/swwind" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		

@@ -2120,6 +2120,10 @@ pre {
 .hide {
   color: #fafafa;
 }
+@font-face {
+  font-family: nv;
+  src: url("/fonts/kgt.ttf");
+}
 .article-content pre,
 .article-content .highlight,
 .article-content .highlight pre {
