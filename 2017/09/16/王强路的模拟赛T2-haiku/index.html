@@ -1,0 +1,609 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>王强路的模拟赛T2 haiku | SW_Wind&#39;s blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="SW_Wind">
+    
+
+    
+    <meta name="description" content="题面给定一个长度为$N$的序列$a$，序列中的每个数都可以是$1\sim10$中的某一个，总共有$10^N$种序列，现在给出$N,X,Y,Z$，问有多少个长度为$N$的序列满足其有四个下标$x,y,z,w$使得$a[x]+a[x+1]+…+a[y-1]=X$，$a[y]+a[y+1]+…+a[z-1]=Y$，$a[z]+a[z+1]+…+a[w]=Z$。 Sample Input3 5 7 5 S">
+<meta name="keywords" content="状态压缩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="王强路的模拟赛T2 haiku">
+<meta property="og:url" content="http://swwind.github.io/2017/09/16/王强路的模拟赛T2-haiku/index.html">
+<meta property="og:site_name" content="SW_Wind&#39;s blog">
+<meta property="og:description" content="题面给定一个长度为$N$的序列$a$，序列中的每个数都可以是$1\sim10$中的某一个，总共有$10^N$种序列，现在给出$N,X,Y,Z$，问有多少个长度为$N$的序列满足其有四个下标$x,y,z,w$使得$a[x]+a[x+1]+…+a[y-1]=X$，$a[y]+a[y+1]+…+a[z-1]=Y$，$a[z]+a[z+1]+…+a[w]=Z$。 Sample Input3 5 7 5 S">
+<meta property="og:image" content="http://swwind.github.io/img/orz1.jpg">
+<meta property="og:image" content="http://swwind.github.io/img/orz2.jpg">
+<meta property="og:image" content="http://swwind.github.io/img/huaji.png">
+<meta property="og:updated_time" content="2017-09-16T14:04:06.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="王强路的模拟赛T2 haiku">
+<meta name="twitter:description" content="题面给定一个长度为$N$的序列$a$，序列中的每个数都可以是$1\sim10$中的某一个，总共有$10^N$种序列，现在给出$N,X,Y,Z$，问有多少个长度为$N$的序列满足其有四个下标$x,y,z,w$使得$a[x]+a[x+1]+…+a[y-1]=X$，$a[y]+a[y+1]+…+a[z-1]=Y$，$a[z]+a[z+1]+…+a[w]=Z$。 Sample Input3 5 7 5 S">
+<meta name="twitter:image" content="http://swwind.github.io/img/orz1.jpg">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/mz.gif.js"></script>
+    <link rel="stylesheet" href="/css/default.css">
+    <script src="/js/gitment.js"></script>
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="SW_Wind&#39;s blog" title="SW_Wind&#39;s blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="SW_Wind&#39;s blog">SW_Wind&#39;s blog</a></h1>
+				<h2 class="blog-motto">Do you like Minecraft?</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">档案</a></li>
+					
+						<li><a href="/game">小游戏</a></li>
+					
+						<li><a href="/music">音乐欣赏</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:swwind.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/09/16/王强路的模拟赛T2-haiku/" title="王强路的模拟赛T2 haiku" itemprop="url">王强路的模拟赛T2 haiku</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
+		
+  <p class="article-time">
+    <time datetime="2017-09-16T05:24:22.000Z" itemprop="datePublished"> 发表于 2017-09-16</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">2.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">3.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#样例解释"><span class="toc-number">4.</span> <span class="toc-text">样例解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据范围"><span class="toc-number">5.</span> <span class="toc-text">数据范围</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个长度为$N$的序列$a$，序列中的每个数都可以是$1\sim10$中的某一个，总共有$10^N$种序列，现在给出$N,X,Y,Z$，问有多少个长度为$N$的序列满足其有四个下标$x,y,z,w$使得$a[x]+a[x+1]+…+a[y-1]=X$，$a[y]+a[y+1]+…+a[z-1]=Y$，$a[z]+a[z+1]+…+a[w]=Z$。</p>
+<h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>3 5 7 5</p>
+<h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1</p>
+<h1 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h1><p>在这组样例中，只存在一组合法的序列，即$a[] = [5,7,5]$。</p>
+<h1 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h1><p>$3 \le N \le 40$。<br>$1 \le X \le 5$，$1 \le Y \le 7$，$1 \le Z \le 5$。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>神题。。首先膜拜<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" rel="external">zyy大佬</a>用AC自动机水了此题。<br><img src="/img/orz1.jpg" alt="orz1"><img src="/img/orz2.jpg" alt="orz2"><br><del>P.S.王强路应该不会说什么的对吧</del><br>直接说正解吧。。<br>很容易想到的方法枚举所有成立的序列$a[x],a[x+1],a[x+2],…,a[z-1],a[z]$，然后计算其余位数随便取的方案数就行了。<br>但这样会有重复的出现。<br>注意到$n$、$x$、$y$、$z$都很小，于是我们可以从第一位开始dfs枚举每一位取什么。<br>如果以当前位为$z$，前面有符合条件的$x$和$y$的话，就可以直接加上后面几位随便取的方案数并返回。<br>这样就不会有重复计算的了。<br>那么问题就在于如何快速地算出有没有符合条件的$x$、$y$、$z$了。<br>标算提供了一种状压的思路。<br>我们可以用<code>&quot;1&quot;</code>来代替1，<code>&quot;10&quot;</code>来代替2，<code>&quot;100&quot;</code>来代替3，以此类推。<br>拿样例$x=5,y=7,z=5$来说，<br>这样替换一个符合条件的数组<code>[2, 3, 2, 5, 1, 4]</code>即为<code>&quot;10100101000011000&quot;</code>。<br>而xyz组成的数组替换后即为<code>&quot;10000100000010000&quot;</code>。<br>可以注意到，两个$01$串的<code>&amp;</code>值即为xyz组成的01串。<br>$$<br>\begin{array}<br>{}&amp;{10100101000011000}\\<br>{\&amp;}&amp;{10000100000010000}\\<br>\hline<br>{}&amp;{10000100000010000}<br>\end{array}<br>$$<br>这样就可以愉快地在$O(1)$的时间里判断是否满足条件啦。<br>具体可以看我程序。<br><img src="/img/huaji.png" alt="huaji"><br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">0</span>)||(ch=getchar());</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> f?x:-x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> f[<span class="number">41</span>][<span class="number">1</span>&lt;&lt;<span class="number">17</span>], p[<span class="number">41</span>];</div><div class="line"><span class="keyword">int</span> n, z, y, x, end_state;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span> (i == n) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (~f[i][j]) <span class="keyword">return</span> f[i][j];</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">10</span>; k++) &#123;</div><div class="line">		<span class="keyword">int</span> next_state = (j &lt;&lt; k) | (<span class="number">1</span> &lt;&lt; k<span class="number">-1</span>);</div><div class="line">		res += ((next_state &amp; end_state) == end_state)</div><div class="line">			? p[n-i<span class="number">-1</span>] : dfs(i+<span class="number">1</span>, next_state &amp; ((<span class="number">1</span> &lt;&lt; x+y+z) - <span class="number">1</span>));</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> f[i][j] = res%mod;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span>&#123;</div><div class="line">	freopen(<span class="string">"haiku.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</div><div class="line">	freopen(<span class="string">"haiku.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</div><div class="line">	<span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*<span class="number">5373952</span>);</div><div class="line">	n = read(); x = read(); y = read(); z = read(); p[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">40</span>; i++) p[i] = p[i<span class="number">-1</span>]*<span class="number">10l</span>l%mod;</div><div class="line">	end_state = (<span class="number">1</span> &lt;&lt; x+y+z<span class="number">-1</span>) | (<span class="number">1</span> &lt;&lt; y+z<span class="number">-1</span>) | (<span class="number">1</span> &lt;&lt; z<span class="number">-1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dfs(<span class="number">0</span>, <span class="number">0</span>));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/状态压缩/">状态压缩</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://swwind.github.io/2017/09/16/王强路的模拟赛T2-haiku/" data-title="王强路的模拟赛T2 haiku | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/06/22/BZOJ-4884-Lydsy2017年5月月赛-太空猫/"  title="BZOJ 4884: [Lydsy2017年5月月赛]太空猫">
+ <strong>下一篇：</strong><br/> 
+ <span>BZOJ 4884: [Lydsy2017年5月月赛]太空猫
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+<section id="comments" class="comment">
+	<div id="containers"></div>
+</section>
+<script>
+var gitment = new Gitment({
+  owner: 'swwind',
+  repo: 'swwind.github.io',
+  oauth: {
+    client_id: 'a3bf04bcce99a1cd4515',
+    client_secret: '375280ccb9a2fff6bf1345832e500033c3137e39',
+  },
+})
+gitment.render('containers')
+</script>
+</div>  
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Input"><span class="toc-number">2.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sample-Output"><span class="toc-number">3.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#样例解释"><span class="toc-number">4.</span> <span class="toc-text">样例解释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据范围"><span class="toc-number">5.</span> <span class="toc-text">数据范围</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dp/" title="dp">dp<sup>6</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/网络流/" title="网络流">网络流<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">ゼロから始めるOIERS</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://shenzhebei.github.io/" target="_blank" title="SHENZHEBEI">SHENZHEBEI</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/largecub233/" target="_blank" title="largecub233">largecub233</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/Fop_zz/" target="_blank" title="Fop_zz">Fop_zz</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/jzq233jzq/" target="_blank" title="jzq233jzq">jzq233jzq</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://zhzh2001.github.io/" target="_blank" title="zhzh2001">zhzh2001</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/mdnd1234/" target="_blank" title="mdnd">mdnd</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.bilibili.com/" target="_blank" title="bilibili(乱入)">bilibili(乱入)</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="zhouyuyang233">zhouyuyang233</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://littleredstar.github.io/" target="_blank" title="black_moon">black_moon</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="https://problem233.github.io/" target="_blank" title="problem233">problem233</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 作为一只蒟蒻 <br/>
+			我就不说什么了233</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		<a href="https://www.facebook.com/https://www.facebook.com/smith.jimmy.54966" target="_blank" class="icon-facebook" title="facebook"></a>
+		
+		
+		
+		
+		
+		
+		<a href="mailto:swwind233@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+				<div class="cc-license">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0" class="cc-opacity" target="_blank">
+            <img src="/img/cc-by-nc.svg" alt="Creative Commons" />
+          </a>
+        </div>
+    
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
+		
+		<a href="/about" target="_blank" title="SW_Wind">SW_Wind</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-99238066-1', 'swwind.github.io');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+<div id="nobaidu_dlg" style="border: solid;border-color: #888;background-color:#ccc;color:#000;display:none;padding:20px;min-width:450px;min-height180px;position: fixed;">
+    <img src="/img/nobaidu.png" align="left">
+     <p style="margin-left:200px;margin-top: 20px; line-height: 30px;word-break: normal;">
+     检测到你还在使用百度这个搜索引擎，<br/>
+     做为一个程序员，这是一种自暴自弃！<br/>
+     <br/>
+     </p>
+     <p align="center" style="margin-top:20px;">
+     <b><a href="http://coolshell.cn/articles/9308.html" target="view_window">作环保的程序员，从不用百度开始！</a></b>
+     </p>
+    <a href="javascript:$('#nobaidu_dlg').fadeOut('slow');" style="position: absolute;right: 5px;top: 5px;">Close</a>
+</div>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#nobaidu_dlg').css('top', (window.innerHeight-$('#nobaidu_dlg').height()-100)/2+'px');
+    $('#nobaidu_dlg').css('left', (window.innerWidth-$('#nobaidu_dlg').width()-50)/2+'px');
+    if(document.referrer.indexOf('baidu.com') > -1)
+      $('#nobaidu_dlg').fadeIn('slow');
+  })
+</script>
+
+  </body>
+</html>
