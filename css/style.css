@@ -119,7 +119,7 @@ a img {
 }
 body {
   background: #ddd;
-  font-family: "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: Meiryo, "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
   font-size: 100%;
   color: #817c7c;
   line-height: 1.5;
@@ -1063,7 +1063,7 @@ article .article-content strong code,
 article .article-content em code,
 article .article-content table th>code,
 article .article-content table td>code {
-  font-family: "New Courier", "Courier New", Monaco, Menlo, Consolas, monospace;
+  font-family: "Courier New", Monaco, Menlo, Consolas, monospace;
   background: #eee;
   color: #555;
   padding: 0 5px;
@@ -2120,8 +2120,8 @@ pre {
   src: url("/fonts/kgt.ttf");
 }
 @font-face {
-  font-family: New Courier;
-  src: url("/fonts/cour.ttf");
+  font-family: Meityo;
+  src: url("/fonts/meiryo.ttc");
 }
 .article-content pre,
 .article-content .highlight,
@@ -2156,7 +2156,7 @@ pre {
   }
 }
 .article-content pre {
-  font-family: "New Courier", "Courier New", Monaco, Menlo, Consolas, monospace;
+  font-family: "Courier New", Monaco, Menlo, Consolas, monospace;
 }
 .article-content .highlight {
   overflow: auto;
@@ -2216,7 +2216,7 @@ pre {
 }
 .article-content .gist .gist-file {
   border: none;
-  font-family: "New Courier", "Courier New", Monaco, Menlo, Consolas, monospace;
+  font-family: "Courier New", Monaco, Menlo, Consolas, monospace;
   margin: 0;
 }
 .article-content .gist .gist-file .gist-data {
