@@ -22,6 +22,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BZOJ 3038: 上帝造题的七分钟2">
 <meta name="twitter:description" content="题面XLk觉得《上帝造题的七分钟》不太过瘾，于是有了第二部。“第一分钟，X说，要有数列，于是便给定了一个正整数数列。第二分钟，L说，要能修改，于是便有了对一段数中每个数都开平方(下取整)的操作。第三分钟，k说，要能查询，于是便有了求一段数的和的操作。第四分钟，彩虹喵说，要是noip难度，于是便有了数据范围。第五分钟，诗人说，要有韵律，于是便有了时间限制和内存限制。第六分钟，和雪说，要省点事，于是便">
+<meta name="twitter:creator" content="@swwind233">
 
     
     
@@ -39,14 +40,21 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     <script src="/js/jquery-2.0.3.min.js"></script>
-    <script src="/js/mz.gif.js"></script>
     <link rel="stylesheet" href="/css/default.css">
     <script src="/js/gitment.js"></script>
+    <script src="/js/nprogress.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/nprogress.css">
 </head>
 
   <body>
     <header>
-      
+      <script type="text/javascript">
+  NProgress.start();
+  $(document).ready(function () {
+    NProgress.done();
+  })
+</script>
+
 <div>
 		
 			<div id="imglogo">
@@ -200,8 +208,12 @@ gitment.render('containers')
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
-  
-
+  <div class="hitokoto">
+  <p class="asidetitle">一言（ヒトコト）</p>
+  <p class="hitokoto-text" id="yiyan-text">Loading...</p>
+  <p class="hitokoto-author" id="yiyan-author"></p>
+  <script type="text/javascript">$.get("https://sslapi.hitokoto.cn/?c="+('ab'[Math.floor(Math.random()*2)]),function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})</script>
+</div>
 
   
 
@@ -211,11 +223,11 @@ gitment.render('containers')
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>6</sup></a></li>
+				<li><a href="/tags/dp/" title="dp">dp<sup>6</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/dp/" title="dp">dp<sup>6</sup></a></li>
+				<li><a href="/tags/线段树/" title="线段树">线段树<sup>6</sup></a></li>
 			
 		
 			
@@ -235,6 +247,10 @@ gitment.render('containers')
 			
 		
 			
+				<li><a href="/tags/教程/" title="教程">教程<sup>3</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
 			
 		
@@ -243,7 +259,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
+				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
 			
 		
 			
@@ -251,27 +267,7 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/矩阵乘法/" title="矩阵乘法">矩阵乘法<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
 			
 		
 			
@@ -279,15 +275,31 @@ gitment.render('containers')
 			
 		
 			
-				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
+				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
 			
 		
 		</ul>
@@ -358,6 +370,12 @@ gitment.render('containers')
             
           </li>
         
+          <li>
+            
+            	<a href="http://blog.csdn.net/nn020701/" target="_blank" title="nn020701">nn020701</a>
+            
+          </li>
+        
     </ul>
 </div>
 
@@ -383,10 +401,14 @@ gitment.render('containers')
 	<div class="social-font" class="clearfix">
 		
 		
+		<a href="https://github.com/swwind" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
-		<a href="https://www.facebook.com/https://www.facebook.com/smith.jimmy.54966" target="_blank" class="icon-facebook" title="facebook"></a>
+		<a href="https://twitter.com/swwind233" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		<a href="https://www.facebook.com/smith.jimmy.54966" target="_blank" class="icon-facebook" title="facebook"></a>
 		
 		
 		
