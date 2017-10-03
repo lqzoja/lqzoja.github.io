@@ -1,635 +1,132 @@
 
- <!DOCTYPE HTML>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  
-    <title>BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    
-    <meta name="author" content="SW_Wind">
-    
 
-    
-    <meta name="description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
-<meta name="keywords" content="蒙特卡罗">
-<meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 3632: 外太空旅行">
-<meta property="og:url" content="http://swwind.github.io/2017/03/28/BZOJ-3632-外太空旅行/index.html">
-<meta property="og:site_name" content="SW_Wind&#39;s blog">
-<meta property="og:description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
-<meta property="og:updated_time" content="2017-04-13T02:30:42.563Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 3632: 外太空旅行">
-<meta name="twitter:description" content="题面在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可">
-<meta name="twitter:creator" content="@swwind233">
+<!-- post | photo -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
 
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/jacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
-    
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-    <link rel="stylesheet" href="/css/default.css">
-    <script src="/js/gitment.js"></script>
-    <script src="/js/nprogress.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/nprogress.css">
-</head>
+<title>BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog</title>
 
+<script src="/js/jquery-2.0.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<!-- Mathjax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Valine -->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/Valine.min.js"></script>
+  </head>
   <body>
     <header>
-      <script type="text/javascript">
-  NProgress.start();
-  $(document).ready(function () {
-    NProgress.done();
-  })
-</script>
-
-<div>
-		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="SW_Wind&#39;s blog" title="SW_Wind&#39;s blog"/></a>
-			</div>
-			
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="SW_Wind&#39;s blog">SW_Wind&#39;s blog</a></h1>
-				<h2 class="blog-motto">Do you like Minecraft?</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					<ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">档案</a></li>
-					
-						<li><a href="/game">小游戏</a></li>
-					
-						<li><a href="/music">音乐欣赏</a></li>
-					
-						<li><a href="/about">关于</a></li>
-					
-					<li>
- 					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:swwind.github.io">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
+      <div style="background-image: url(/img/author.jpg)" class="author_img"></div>
+<div class="blog-title">
+	<p class="title">SW_Wind&#39;s blog</p>
+	<p class="subtitle">你指尖跃动的电光，是我此生不变的信仰</p>
 </div>
+<ul class="headerlinks">
+
+  <li><a href="/">首页</a></li>
+
+  <li><a href="/about">关于</a></li>
+
+  <li><a href="/archives">档案</a></li>
+
+</ul>
     </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-  
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/03/28/BZOJ-3632-外太空旅行/" title="BZOJ 3632: 外太空旅行" itemprop="url">BZOJ 3632: 外太空旅行</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="SW_Wind" target="_blank" itemprop="author">SW_Wind</a>
-		
-  <p class="article-time">
-    <time datetime="2017-03-28T05:59:43.000Z" itemprop="datePublished"> 发表于 2017-03-28</time>
-    
-  </p>
-</header>
-	<div class="article-content">
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
-		
-		</div>
-		
-		<h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。<br>可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可能小A和小B是朋友，小B和小C是朋友，但是小A和小C两人势如水火。<br>任意两个人之间要不就是敌人，要不就是朋友。<br>因为在太空船上发生人员斗殴事件是很恶劣也很危险的，因此选出来参加旅行活动的同学必须互相之间都是朋友。你的任务就是确定最多可以选多少人参加旅行。</p>
+    <div class="container">
+      <div class="main">
+        <div class="post">
+  <article>
+    <div class="artc-title">
+      <h1>BZOJ 3632: 外太空旅行</h1>
+      <p><span class="time-icon">2017-03-28</span><span class="author-icon">SW_Wind</span></p>
+    </div>
+    <div class="artc">
+      
+        <div class="toc-father">
+          <strong class="toc-title">文章目录</strong>
+          
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
+          
+        </div>
+      
+      <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。<br>可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可能小A和小B是朋友，小B和小C是朋友，但是小A和小C两人势如水火。<br>任意两个人之间要不就是敌人，要不就是朋友。<br>因为在太空船上发生人员斗殴事件是很恶劣也很危险的，因此选出来参加旅行活动的同学必须互相之间都是朋友。你的任务就是确定最多可以选多少人参加旅行。</p>
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n(1&lt;=n&lt;=50)。所有的同学按照1~n编号。<br>接下来若干行，每行两个用空格隔开的整数a, b(1&lt;=a,b&lt;=n)，表示a和b是朋友。<br>注意：如果一个数对(x,y)（或者(y,x)）没有在文件中出现，那么编号为x和y的两个同学就是敌人。</p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>仅仅一个数，即最多可以选多少人参加活动。</p>
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>4<br>1 2<br>2 3<br>3 1<br>1 4</p>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>传说有一种随机的算法叫蒙特卡罗、、<br>就是随机一下查找顺序，然后找一下再统计一下就行了</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, x, y, mp[<span class="number">60</span>][<span class="number">60</span>], vis[<span class="number">60</span>], a[<span class="number">60</span>];</div><div class="line"><span class="keyword">int</span> sum, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); srand(<span class="number">2333</span>);</div><div class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y) != EOF &amp;&amp; x &amp;&amp; y)</div><div class="line">		mp[x][y] = mp[y][x] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) a[i] = i;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">10000</span>; ++k, ans = <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">			swap(a[i], a[rand()%i+<span class="number">1</span>]); <span class="comment">// 随机一下查找的顺序</span></div><div class="line">		<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">			<span class="keyword">if</span>(!vis[i])&#123;</div><div class="line">				++ans;</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= n; ++j)</div><div class="line">					<span class="keyword">if</span>(!mp[a[i]][a[j]])</div><div class="line">						vis[j] = <span class="number">1</span>; <span class="comment">// 把所有统计紧答案的人的敌人都筛去</span></div><div class="line">			&#125;</div><div class="line">		sum = max(sum, ans);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>  
-	</div>
-		<footer class="article-footer clearfix">
-<div class="article-catetags">
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> n, x, y, mp[<span class="number">60</span>][<span class="number">60</span>], vis[<span class="number">60</span>], a[<span class="number">60</span>];</div><div class="line"><span class="keyword">int</span> sum, ans;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n); srand(<span class="number">2333</span>);</div><div class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y) != EOF &amp;&amp; x &amp;&amp; y)</div><div class="line">		mp[x][y] = mp[y][x] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) a[i] = i;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">10000</span>; ++k, ans = <span class="number">0</span>)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">			swap(a[i], a[rand()%i+<span class="number">1</span>]); <span class="comment">// 随机一下查找的顺序</span></div><div class="line">		<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span> vis);</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</div><div class="line">			<span class="keyword">if</span>(!vis[i])&#123;</div><div class="line">				++ans;</div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt;= n; ++j)</div><div class="line">					<span class="keyword">if</span>(!mp[a[i]][a[j]])</div><div class="line">						vis[j] = <span class="number">1</span>; <span class="comment">// 把所有统计紧答案的人的敌人都筛去</span></div><div class="line">			&#125;</div><div class="line">		sum = max(sum, ans);</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+    </div>
+    <div class="article-catetags">
 
 
-  <div class="article-tags">
+  <div class="tags-icon">
   
-  <span></span> <a href="/tags/蒙特卡罗/">蒙特卡罗</a>
+    <a href="/tags/蒙特卡罗/">蒙特卡罗</a>
   </div>
 
 </div>
 
-
-
-	<div class="article-share" id="share">
-	
-	  <div data-url="http://swwind.github.io/2017/03/28/BZOJ-3632-外太空旅行/" data-title="BZOJ 3632: 外太空旅行 | SW_Wind&#39;s blog" data-tsina="null" class="share clearfix">
-	  </div>
-	
-	</div>
-
-
-</footer>
-
-   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2017/03/28/BZOJ-2824-AHOI2012-铁盘整理/" title="BZOJ 2824: [AHOI2012]铁盘整理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  BZOJ 2824: [AHOI2012]铁盘整理</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2017/03/28/MI作品鉴赏/"  title="MI作品鉴赏">
- <strong>下一篇：</strong><br/> 
- <span>MI作品鉴赏
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-
-
-<section id="comments" class="comment">
-	<div id="containers"></div>
-</section>
-<script>
-var gitment = new Gitment({
-  owner: 'swwind',
-  repo: 'swwind.github.io',
-  oauth: {
-    client_id: 'a3bf04bcce99a1cd4515',
-    client_secret: '375280ccb9a2fff6bf1345832e500033c3137e39',
-  },
-})
-gitment.render('containers')
-</script>
+  </article>
 </div>  
 
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+        
+          
+	<div class="comment"></div>
+	<script type="text/javascript">
+		new Valine({
+            av: AV, 
+            el: '.comment',
+            app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
+            app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+            notify: false,
+  			verify: false
+        });
+	</script>
 
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
- 
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">7.</span> <span class="toc-text">代码</span></a></li></ol>
- 
-  </div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
+        
+      </div>
+      <aside class="sidebar">
 
   <div class="hitokoto">
-  <p class="asidetitle">一言（ヒトコト）</p>
-  <p class="hitokoto-text" id="yiyan-text">Loading...</p>
-  <p class="hitokoto-author" id="yiyan-author"></p>
-  <script type="text/javascript">$.get("https://sslapi.hitokoto.cn/?c="+('ab'[Math.floor(Math.random()*2)]),function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})</script>
+  <p class="sidebar-title">一言</p>
+  <div class="hitokoto-text" id="yiyan-text">Loading...</div>
+  <div class="hitokoto-author" id="yiyan-author"></div>
+  <script type="text/javascript">$.get("https://sslapi.hitokoto.cn/?c=ac",function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})</script>
 </div>
-
-  
-
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/dp/" title="dp">dp<sup>6</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/线段树/" title="线段树">线段树<sup>6</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/数论/" title="数论">数论<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/树状数组/" title="树状数组">树状数组<sup>5</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/KMP/" title="KMP">KMP<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/博弈论/" title="博弈论">博弈论<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/教程/" title="教程">教程<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/作品发布/" title="作品发布">作品发布<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LCT/" title="LCT">LCT<sup>3</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/启发式搜索/" title="启发式搜索">启发式搜索<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Trie/" title="Trie">Trie<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/蒙特卡罗/" title="蒙特卡罗">蒙特卡罗<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/网络流/" title="网络流">网络流<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/LCA/" title="LCA">LCA<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/分块/" title="分块">分块<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/STL/" title="STL">STL<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/并查集/" title="并查集">并查集<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/dfs/" title="dfs">dfs<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/模拟/" title="模拟">模拟<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/瞎搞/" title="瞎搞">瞎搞<sup>2</sup></a></li>
-			
-		
-		</ul>
-</div>
-
 
   <div class="linkslist">
-  <p class="asidetitle">ゼロから始めるOIERS</p>
+  <p class="sidebar-title">友情链接</p>
+  <div class="sidebar-main">
     <ul>
-        
-          <li>
-            
-            	<a href="https://shenzhebei.github.io/" target="_blank" title="SHENZHEBEI">SHENZHEBEI</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://blog.csdn.net/largecub233/" target="_blank" title="largecub233">largecub233</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://blog.csdn.net/Fop_zz/" target="_blank" title="Fop_zz">Fop_zz</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://blog.csdn.net/jzq233jzq/" target="_blank" title="jzq233jzq">jzq233jzq</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="https://zhzh2001.github.io/" target="_blank" title="zhzh2001">zhzh2001</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://blog.csdn.net/mdnd1234/" target="_blank" title="mdnd">mdnd</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://www.bilibili.com/" target="_blank" title="bilibili(乱入)">bilibili(乱入)</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="zhouyuyang233">zhouyuyang233</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="https://littleredstar.github.io/" target="_blank" title="black_moon">black_moon</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="https://problem233.github.io/" target="_blank" title="problem233">problem233</a>
-            
-          </li>
-        
-          <li>
-            
-            	<a href="http://blog.csdn.net/nn020701/" target="_blank" title="nn020701">nn020701</a>
-            
-          </li>
-        
+      <li><a href="https://shenzhebei.github.io/" target="_blank">SHENZHEBEI</a></li>
+      <li><a href="http://blog.csdn.net/largecub233/" target="_blank">largecub233</a></li>
+      <li><a href="http://blog.csdn.net/Fop_zz/" target="_blank">Fop_zz</a></li>
+      <li><a href="http://blog.csdn.net/jzq233jzq/" target="_blank">jzq233jzq</a></li>
+      <li><a href="https://zhzh2001.github.io/" target="_blank">zhzh2001</a></li>
+      <li><a href="http://blog.csdn.net/mdnd1234/" target="_blank">mdnd</a></li>
+      <li><a href="http://www.bilibili.com/" target="_blank">bilibili(乱入)</a></li>
+      <li><a href="http://blog.csdn.net/zhouyuyang233/" target="_blank">zhouyuyang233</a></li>
+      <li><a href="https://littleredstar.github.io/" target="_blank">black_moon</a></li>
+      <li><a href="https://problem233.github.io/" target="_blank">problem233</a></li>
+      <li><a href="http://blog.csdn.net/nn020701/" target="_blank">nn020701</a></li>
     </ul>
+  </div>
 </div>
-
-  
-
 
 </aside>
-</div>
     </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> 作为一只蒟蒻 <br/>
-			我就不说什么了233</p>
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		
-		<a href="https://github.com/swwind" target="_blank" class="icon-github" title="github"></a>
-		
-		
-		
-		<a href="https://twitter.com/swwind233" target="_blank" class="icon-twitter" title="twitter"></a>
-		
-		
-		<a href="https://www.facebook.com/smith.jimmy.54966" target="_blank" class="icon-facebook" title="facebook"></a>
-		
-		
-		
-		
-		
-		
-		<a href="mailto:swwind233@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
-		
-	</div>
-			
-		
-				<div class="cc-license">
-          <a href="http://creativecommons.org/licenses/by-nc/4.0" class="cc-opacity" target="_blank">
-            <img src="/img/cc-by-nc.svg" alt="Creative Commons" />
-          </a>
-        </div>
-    
-
-		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2017 
-		
-		<a href="/about" target="_blank" title="SW_Wind">SW_Wind</a>
-		
-		
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.0.3.min.js"></script>
-<script src="/js/jquery.imagesloaded.min.js"></script>
-<script src="/js/gallery.js"></script>
-<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-  
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else{
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
-        
-    }
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  c.click(function(){
-    ta.css('display', 'block').addClass('fadeIn');
-  });
-  o.click(function(){
-    ta.css('display', 'none');
-  });
-  $(window).scroll(function(){
-    ta.css("top",Math.max(140,320-$(this).scrollTop()));
-  });
-});
-</script>
-
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina'),
-      description = $this.attr('description');
-  var html = [
-  '<div class="hoverqrcode clearfix"></div>',
-  '<a class="overlay" id="qrcode"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
-  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-
-  $('.hoverqrcode').hide();
-
-  var myWidth = 0;
-  function updatehoverqrcode(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-    var qrsize = myWidth > 1024 ? 200:100;
-    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
-    var p = $('.article-share-qrcode').position();
-    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
-                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
-                          .qrcode(options);
-  };
-  $(window).resize(function(){
-    $('.hoverqrcode').hide();
-  });
-  $('.article-share-qrcode').click(function(){
-    updatehoverqrcode();
-    $('.hoverqrcode').toggle();
-  });
-  $('.article-share-qrcode').hover(function(){}, function(){
-      $('.hoverqrcode').hide();
-  });
-});   
-</script>
-
-
-
-
-
-
-
-
-
-
-
-<!-- Analytics Begin -->
-
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-99238066-1', 'swwind.github.io');  
-ga('send', 'pageview');
-</script>
-
-
-
-
-
-<!-- Analytics End -->
-
-<!-- Totop Begin -->
-
-	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-	</div>
-	<script src="/js/totop.js"></script>
-
-<!-- Totop End -->
-
-<!-- MathJax Begin -->
-<!-- mathjax config similar to math.stackexchange -->
-
-
-<!-- MathJax End -->
-
-<!-- Tiny_search Begin -->
-
-<!-- Tiny_search End -->
-
-<div id="nobaidu_dlg" style="border: solid;border-color: #888;background-color:#ccc;color:#000;display:none;padding:20px;min-width:450px;min-height180px;position: fixed;">
-    <img src="/img/nobaidu.png" align="left">
-     <p style="margin-left:200px;margin-top: 20px; line-height: 30px;word-break: normal;">
-     检测到你还在使用百度这个搜索引擎，<br/>
-     做为一个程序员，这是一种自暴自弃！<br/>
-     <br/>
-     </p>
-     <p align="center" style="margin-top:20px;">
-     <b><a href="http://coolshell.cn/articles/9308.html" target="view_window">作环保的程序员，从不用百度开始！</a></b>
-     </p>
-    <a href="javascript:$('#nobaidu_dlg').fadeOut('slow');" style="position: absolute;right: 5px;top: 5px;">Close</a>
-</div>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('#nobaidu_dlg').css('top', (window.innerHeight-$('#nobaidu_dlg').height()-100)/2+'px');
-    $('#nobaidu_dlg').css('left', (window.innerWidth-$('#nobaidu_dlg').width()-50)/2+'px');
-    if(document.referrer.indexOf('baidu.com') > -1)
-      $('#nobaidu_dlg').fadeIn('slow');
-  })
-</script>
-
+    <footer>
+      <p>Powered by <a href="https://hexo.io/" target="_view">Hexo</a> and theme by <a href="https://github.com/swwind/hacker" target="_view">Hacker</a></p>
+    </footer>
+    <!-- It must be a script element -->
   </body>
 </html>
+
