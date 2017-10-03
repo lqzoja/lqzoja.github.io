@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,7 +58,7 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>某人有一套玩具，并想法给玩具命名。首先他选择WING四个字母中的任意一个字母作为玩具的基本名字。然后<br>他会根据自己的喜好，将名字中任意一个字母用“WING”中任意两个字母代替，使得自己的名字能够扩充得很长。<br>现在，他想请你猜猜某一个很长的名字，最初可能是由哪几个字母变形过来的。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行四个整数W、I、N、G。表示每一个字母能由几种两个字母所替代。接下来W行，每行两个字母,表示W可<br>以用这两个字母替代。接下来I行，每行两个字母,表示I可以用这两个字母替代。接下来N行，每行两个字母,表示N<br>可以用这两个字母替代。接下来G行，每行两个字母,表示G可以用这两个字母替代。最后一行一个长度不超过Len的<br>字符串。表示这个玩具的名字。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行四个整数W、I、N、G。表示每一个字母能由几种两个字母所替代。接下来W行，每行两个字母,表示W可<br>以用这两个字母替代。接下来I行，每行两个字母,表示I可以用这两个字母替代。接下来N行，每行两个字母,表示N<br>可以用这两个字母替代。接下来G行，每行两个字母,表示G可以用这两个字母替代。最后一行一个长度不超过Len的<br>字符串。表示这个玩具的名字。<br><a id="more"></a></p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一行字符串，该名字可能由哪些字母变形而得到。（按照WING的顺序输出）如果给的名字不能由任何一个字母<br>变形而得到则输出“The name is wrong!”</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>1 1 1 1<br>II<br>WW<br>WW<br>IG<br>IIII</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>IN</p>
@@ -79,16 +81,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -61,7 +63,7 @@
 <li>第二行至末尾: 用空格分隔的N个正整数（大小为1-200）。</li>
 </ul>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>只有一行，用空格分隔的两个整数: 依次为玩家一和玩家二最终的得分。</p>
-<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>6<br>4 7 2 9 5 2</p>
+<h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>6<br>4 7 2 9 5 2<br><a id="more"></a></p>
 <h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>18 11</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><del>博弈论</del>（废话）<br>用f[i][j]表示区间[i,j]中的数全部取完时先手的得分，s[i][j]表示区间[i,j]内所有数的和。</p>
 <p align="center"><strong>f[i][j]=max(s[i][j]-f[i+1][j],s[i][j]-f[i][j-1])</strong></p>
@@ -83,16 +85,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

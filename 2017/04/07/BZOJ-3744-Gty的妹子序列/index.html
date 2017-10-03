@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -55,8 +57,8 @@
           
         </div>
       
-      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>我早已习惯你不在身边，<br>人间四月天 寂寞断了弦。<br>回望身后蓝天，<br>跟再见说再见……<br>某天,蒟蒻Autumn发现了从 Gty的妹子树(bzoj3720) 上掉落下来了许多妹子,他发现<br>她们排成了一个序列,每个妹子有一个美丽度。<br>Bakser神犇与他打算研究一下这个妹子序列,于是Bakser神犇问道:”你知道区间<br>[l,r]中妹子们美丽度的逆序对数吗?”<br>蒟蒻Autumn只会离线乱搞啊……但是Bakser神犇说道:”强制在线。”<br>请你帮助一下Autumn吧。<br>给定一个正整数序列a,对于每次询问,输出al…ar中的逆序对数,强制在线。、</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包括一个整数n(1&lt;=n&lt;=50000),表示数列a中的元素数。<br>第二行包括n个整数a1…an(ai&gt;0,保证ai在int内)。<br>接下来一行包括一个整数m(1&lt;=m&lt;=50000),表示询问的个数。<br>接下来m行,每行包括2个整数l、r(1&lt;=l&lt;=r&lt;=n),表示询问al…ar中的逆序<br>对数(若ai&gt;aj且i&lt;j,则为一个逆序对)。<br>l,r要分别异或上一次询问的答案(lastans),最开始时lastans=0。<br>保证涉及的所有数在int内。</p>
+      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>我早已习惯你不在身边，<br>人间四月天 寂寞断了弦。<br>回望身后蓝天，<br>跟再见说再见……<br>某天,蒟蒻Autumn发现了从 Gty的妹子树(bzoj3720) 上掉落下来了许多妹子,他发现<br>她们排成了一个序列,每个妹子有一个美丽度。<br>Bakser神犇与他打算研究一下这个妹子序列,于是Bakser神犇问道:”你知道区间<br>[l,r]中妹子们美丽度的逆序对数吗?”<br>蒟蒻Autumn只会离线乱搞啊……但是Bakser神犇说道:”强制在线。”<br>请你帮助一下Autumn吧。<br>给定一个正整数序列a,对于每次询问,输出$a_l,…,a_r$中的逆序对数,强制在线。、<br><a id="more"></a></p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包括一个整数$n$($1\leq n\leq 50000$),表示数列a中的元素数。<br>第二行包括$n$个整数$a_1,…,a_n$($a_i\gt 0$,保证$a_i$在int内)。<br>接下来一行包括一个整数$m$($1\leq m\leq 50000$),表示询问的个数。<br>接下来m行,每行包括$2$个整数$l$、$r$($1\leq l\leq r\leq n$),表示询问al…ar中的逆序<br>对数(若$a_i\gt a_j$且$i\lt j$,则为一个逆序对)。<br>$l$,$r$要分别异或上一次询问的答案(<code>lastans</code>),最开始时<code>lastans=0</code>。<br>保证涉及的所有数在int内。</p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对每个询问,单独输出一行,表示al…ar中的逆序对数。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>1 4 2 3<br>1<br>2 4</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -58,7 +60,7 @@
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个长度为$N$的序列$a$，序列中的每个数都可以是$1\sim10$中的某一个，总共有$10^N$种序列，现在给出$N,X,Y,Z$，问有多少个长度为$N$的序列满足其有四个下标$x,y,z,w$使得$a[x]+a[x+1]+…+a[y-1]=X$，$a[y]+a[y+1]+…+a[z-1]=Y$，$a[z]+a[z+1]+…+a[w]=Z$。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>3 5 7 5</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1</p>
-<h1 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h1><p>在这组样例中，只存在一组合法的序列，即$a[] = [5,7,5]$。</p>
+<h1 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h1><p>在这组样例中，只存在一组合法的序列，即$a[] = [5,7,5]$。<br><a id="more"></a></p>
 <h1 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h1><p>$3 \le N \le 40$。<br>$1 \le X \le 5$，$1 \le Y \le 7$，$1 \le Z \le 5$。</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>神题。。首先膜拜<a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" rel="external">zyy大佬</a>用AC自动机水了此题。<br><img src="/img/orz1.jpg" alt="orz1"><img src="/img/orz2.jpg" alt="orz2"><br><del>P.S.王强路应该不会说什么的对吧</del><br>直接说正解吧。。<br>很容易想到的方法枚举所有成立的序列$a[x],a[x+1],a[x+2],…,a[z-1],a[z]$，然后计算其余位数随便取的方案数就行了。<br>但这样会有重复的出现。<br>注意到$n$、$x$、$y$、$z$都很小，于是我们可以从第一位开始dfs枚举每一位取什么。<br>如果以当前位为$z$，前面有符合条件的$x$和$y$的话，就可以直接加上后面几位随便取的方案数并返回。<br>这样就不会有重复计算的了。<br>那么问题就在于如何快速地算出有没有符合条件的$x$、$y$、$z$了。<br>标算提供了一种状压的思路。<br>我们可以用<code>&quot;1&quot;</code>来代替1，<code>&quot;10&quot;</code>来代替2，<code>&quot;100&quot;</code>来代替3，以此类推。<br>拿样例$x=5,y=7,z=5$来说，<br>这样替换一个符合条件的数组<code>[2, 3, 2, 5, 1, 4]</code>即为<code>&quot;10100101000011000&quot;</code>。<br>而$xyz$组成的数组替换后即为<code>&quot;10000100000010000&quot;</code>。<br>可以注意到，两个$01$串的<code>&amp;</code>值即为$xyz$组成的$01$串。<br>$$<br>\begin{array}<br>{}&amp;{10100101000011000}\\<br>{\&amp;}&amp;{10000100000010000}\\<br>\hline<br>{}&amp;{10000100000010000}<br>\end{array}<br>$$<br>这样就可以愉快地在$O(1)$的时间里判断是否满足条件啦。<br>具体可以看我程序。<br><img src="/img/huaji.png" alt="huaji"><br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"bits/stdc++.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> mod 1000000007</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">0</span>)||(ch=getchar());</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> f?x:-x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> f[<span class="number">41</span>][<span class="number">1</span>&lt;&lt;<span class="number">17</span>], p[<span class="number">41</span>];</div><div class="line"><span class="keyword">int</span> n, z, y, x, end_state;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</div><div class="line">	<span class="keyword">if</span> (i == n) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span> (~f[i][j]) <span class="keyword">return</span> f[i][j];</div><div class="line">	<span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= <span class="number">10</span>; k++) &#123;</div><div class="line">		<span class="keyword">int</span> next_state = (j &lt;&lt; k) | (<span class="number">1</span> &lt;&lt; k<span class="number">-1</span>);</div><div class="line">		res += ((next_state &amp; end_state) == end_state)</div><div class="line">			? p[n-i<span class="number">-1</span>] : dfs(i+<span class="number">1</span>, next_state &amp; ((<span class="number">1</span> &lt;&lt; x+y+z) - <span class="number">1</span>));</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> f[i][j] = res%mod;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span>&#123;</div><div class="line">	freopen(<span class="string">"haiku.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</div><div class="line">	freopen(<span class="string">"haiku.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</div><div class="line">	<span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>)*<span class="number">5373952</span>);</div><div class="line">	n = read(); x = read(); y = read(); z = read(); p[<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">40</span>; i++) p[i] = p[i<span class="number">-1</span>]*<span class="number">10l</span>l%mod;</div><div class="line">	end_state = (<span class="number">1</span> &lt;&lt; x+y+z<span class="number">-1</span>) | (<span class="number">1</span> &lt;&lt; y+z<span class="number">-1</span>) | (<span class="number">1</span> &lt;&lt; z<span class="number">-1</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, dfs(<span class="number">0</span>, <span class="number">0</span>));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

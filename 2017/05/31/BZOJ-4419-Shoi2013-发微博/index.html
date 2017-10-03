@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -57,11 +59,11 @@
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>刚开通的SH微博共有n个用户（1..n标号），在短短一个月的时间内，用户们活动频繁，共有m条按时间顺序的记录：</p>
 <ul>
-<li>! x表示用户x发了一条微博；</li>
-<li>+ x y 表示用户x和用户y成为了好友</li>
-<li>- x y 表示用户x和用户y解除了好友关系</li>
+<li><code>! x</code> 表示用户x发了一条微博；</li>
+<li><code>+ x y</code> 表示用户x和用户y成为了好友</li>
+<li><code>- x y</code> 表示用户x和用户y解除了好友关系</li>
 </ul>
-<p>当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。<br>假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而- x y时x和y一定是好友）。<br>问这m条记录发生之后，每个用户分别看到了多少条消息。</p>
+<p>当一个用户发微博的时候，所有他的好友（直接关系）都会看到他的消息。<br>假设最开始所有人之间都不是好友关系，记录也都是合法的（即+ x y时x和y一定不是好友，而- x y时x和y一定是好友）。<br>问这m条记录发生之后，每个用户分别看到了多少条消息。<br><a id="more"></a></p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第1行2个整数n,m。<br>接下来m行，按时间顺序读入m条记录，每条记录的格式如题目所述，用空格隔开。</p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行n个用空格隔开的数（行末无空格），第i个数表示用户i最后看到了几条消息。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 8<br>! 1<br>! 2<br>+ 1 2<br>! 1<br>! 2<br>- 1 2<br>! 1<br>! 2</p>
@@ -85,16 +87,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

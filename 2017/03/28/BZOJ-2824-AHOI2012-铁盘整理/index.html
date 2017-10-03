@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -57,7 +59,7 @@
       
       <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在训练中，一些臂力训练器材是少不了的，小龙在练习的时候发现举重器械上的铁盘放置的非常混乱，并没有按照从轻到重的顺序摆放，这样非常不利于循序渐进的锻炼。他打算利用一个非常省力气的办法来整理这些铁盘，即每次都拿起最上面的若干个圆盘并利用器械的力量上下翻转，这样翻转若干次以后，铁盘将会按照从小到大的顺序排列好。那么你能不能帮小龙确定，最少翻转几次就可以使铁盘按从小到大排序呢？例如：下面的铁盘经过如图2.1所示的以下几个步骤的翻转后变为从小到大排列。<br><img src="http://www.lydsy.com/JudgeOnline/upload/201305/1(7).jpg"></p>
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>共两行，第一行为铁盘个数N（1≤N≤50）。第二行为N个不同的正整数（中间用空格分开），分别为从上到下的铁盘的半径   R（1≤R≤100）</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>一个正整数，表示使铁盘按从小到大有序需要的最少翻转次数。</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>一个正整数，表示使铁盘按从小到大有序需要的最少翻转次数。<br><a id="more"></a></p>
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>5<br>2 4 3 5 1</p>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>5</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>就是启发式搜索啦，每次判断一下当前状态能到目标状态的预计操作次数（代码中是get()），如果预计操作次数大于当前的最优解，那就return。<br>然后就可以过啦qwq</p>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -60,7 +62,7 @@
 <li>随机选两个堆v,u，询问若在v到u间的路径上的石子堆中玩Nim游戏，是否有必胜策略，如果有，vfleaking将会考虑将这些石子堆作为初始局面之一，用来坑玩家。</li>
 <li>把堆v中的石子数变为k。</li>
 </ol>
-<p>由于vfleaking太懒了，他懒得自己动手了。请写个程序帮帮他吧。</p>
+<p>由于vfleaking太懒了，他懒得自己动手了。请写个程序帮帮他吧。<br><a id="more"></a></p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个数n，表示有多少堆石子。<br>接下来的一行，第i个数表示第i堆里有多少石子。<br>接下来n-1行，每行两个数v,u，代表v,u间有一条边直接相连。<br>接下来一个数q，代表操作的个数。<br>接下来q行，每行开始有一个字符：<br>如果是Q，那么后面有两个数v,u，询问若在v到u间的路径上的石子堆中玩Nim游戏，是否有必胜策略。<br>如果是C，那么后面有两个数v,k，代表把堆v中的石子数变为k。</p>
 <p>对于100%的数据：<br>$1\leq N\leq 500000, 1\leq Q\leq 500000, 0\leq 任何时候每堆石子的个数\leq 32767$<br>其中有30%的数据：<br>石子堆组成了一条链，这3个点会导致你DFS时爆栈（也许你不用DFS？）。其它的数据DFS目测不会爆。</p>
 <p>注意：石子数的范围是0到INT_MAX</p>
@@ -85,16 +87,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

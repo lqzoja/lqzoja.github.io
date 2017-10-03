@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -62,7 +64,7 @@
 <li>给定y,z,p，计算满足$y^x\equiv z\pmod p$的最小非负整数。</li>
 </ol>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入包含多组数据。<br>第一行包含两个正整数T,K分别表示数据组数和询问类型（对于一个测试点内的所有数据，询问类型相同）。<br>以下行每行包含三个正整数y,z,p，描述一个询问。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，输出一行答案。对于询问类型2和3，如果不存在满足条件的，则输出“Orz, I cannot find x!”，注意逗号与“I”之间有一个空格。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，输出一行答案。对于询问类型2和3，如果不存在满足条件的，则输出“Orz, I cannot find x!”，注意逗号与“I”之间有一个空格。<br><a id="more"></a></p>
 <h1 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input #1"></a>Sample Input #1</h1><p>3 1<br>2 1 3<br>2 2 3<br>2 3 3</p>
 <h1 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output #1"></a>Sample Output #1</h1><p>2<br>1<br>2</p>
 <h1 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input #2"></a>Sample Input #2</h1><p>3 2<br>2 1 3<br>2 2 3<br>2 3 3</p>
@@ -95,16 +97,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

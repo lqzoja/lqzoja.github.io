@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -61,7 +63,7 @@
 <p>以下内容都是17w13a的版本</p>
 </blockquote>
 <h1 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h1><p>博客里放不下，所以自己去oierbbs上看去。</p>
-<h1 id="玩法说明"><a href="#玩法说明" class="headerlink" title="玩法说明"></a>玩法说明</h1><p>PVP/跑酷<br>碰到刺就会死，掉到最下面也会死<br>每条命三格血，被子弹打到一次掉1血<br>血没了就死了（<del>废话</del><br>材质像普通石头方块，但最上面是绿色的是重生点方块，当玩家踩在上面时就会重设重生点</p>
+<h1 id="玩法说明"><a href="#玩法说明" class="headerlink" title="玩法说明"></a>玩法说明</h1><p>PVP/跑酷<br>碰到刺就会死，掉到最下面也会死<br>每条命三格血，被子弹打到一次掉1血<br>血没了就死了（<del>废话</del><br>材质像普通石头方块，但最上面是绿色的是重生点方块，当玩家踩在上面时就会重设重生点<br><a id="more"></a></p>
 <h1 id="操作说明"><a href="#操作说明" class="headerlink" title="操作说明"></a>操作说明</h1><p>P1: WASD移动，SPACE攻击<br>P2: 方向键移动，数字键 1 攻击</p>
 <h1 id="文件结构说明"><a href="#文件结构说明" class="headerlink" title="文件结构说明"></a>文件结构说明</h1><p>/img - 保存贴图和地图文件（.map）<br>　　stone0-13.png - 各个方块对应的贴图<br>　　sky.png - 背景图片（可自行修改，585*585像素）</p>
 <h1 id="地图编辑器"><a href="#地图编辑器" class="headerlink" title="地图编辑器"></a>地图编辑器</h1><p>按o打开，左键能使方块ID+1，右键使方块ID-1。<br>非空气方块和刺方块都是可以站人的</p>
@@ -84,16 +86,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

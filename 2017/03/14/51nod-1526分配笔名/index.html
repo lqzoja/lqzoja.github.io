@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,7 +58,7 @@
         </div>
       
       <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>班里有n个同学。老师为他们选了n个笔名。现在要把这些笔名分配给每一个同学，每一个同学分配到一个笔名，每一个笔名必须分配给某个同学。现在定义笔名和真名之间的相关度是他们之间的最长公共前缀。设笔名为a，真名为b，则他们之间的相关度为lcp(a,b)。那么我们就可以得到匹配的质量是每一个同学笔名和真名之间相关度的和。现在要求分配笔名，使得匹配质量最大。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>单组测试数据。<br>第一行有一个整数n (1≤n≤100000)，表示班级中同学的数目。<br>接下来n行，表示每一个同学的真名，每一个名字是非空串，且由小写字母组成。<br>名字可能重复。<br>最后n行是老师已经安排好的笔名。每一个笔名是一个非空串，且由小写字母组成。<br>笔名可能重复。<br>输入的字符总数目不超过 800000。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>单组测试数据。<br>第一行有一个整数n (1≤n≤100000)，表示班级中同学的数目。<br>接下来n行，表示每一个同学的真名，每一个名字是非空串，且由小写字母组成。<br>名字可能重复。<br>最后n行是老师已经安排好的笔名。每一个笔名是一个非空串，且由小写字母组成。<br>笔名可能重复。<br>输入的字符总数目不超过 800000。<br><a id="more"></a></p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出最大的匹配质量。</p>
 <h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>5<br>gennady<br>galya<br>boris<br>bill<br>toshik<br>bilbo<br>torin<br>gendalf<br>smaug<br>galadriel</p>
 <h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>11</p>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

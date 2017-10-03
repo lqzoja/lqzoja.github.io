@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,7 +58,7 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>萧芸斓是Z国的公主，平时的一大爱好是采花。<br>今天天气晴朗，阳光明媚，公主清晨便去了皇宫中新建的花园采花。花园足够大，容纳了n朵花，花有c种颜色（用整数1-c表示），且花是排成一排的，以便于公主采花。公主每次采花后会统计采到的花的颜色数，颜色数越多她会越高兴！同时，她有一癖好，她不允许最后自己采到的花中，某一颜色的花只有一朵。为此，公主每采一朵花，要么此前已采到此颜色的花，要么有相当正确的直觉告诉她，她必能再次采到此颜色的花。由于时间关系，公主只能走过花园连续的一段进行采花，便让女仆福涵洁安排行程。福涵洁综合各种因素拟定了m个行程，然后一一向你询问公主能采到多少朵花（她知道你是编程高手，定能快速给出答案！），最后会选择令公主最高兴的行程（为了拿到更多奖金！）。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行四个空格隔开的整数n、c以及m。接下来一行n个空格隔开的整数，每个数在[1, c]间，第i个数表示第i朵花的颜色。接下来m行每行两个空格隔开的整数l和r（l ≤ r），表示女仆安排的行程为公主经过第l到第r朵花进行采花。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行四个空格隔开的整数n、c以及m。接下来一行n个空格隔开的整数，每个数在[1, c]间，第i个数表示第i朵花的颜色。接下来m行每行两个空格隔开的整数l和r（l ≤ r），表示女仆安排的行程为公主经过第l到第r朵花进行采花。<br><a id="more"></a></p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>共m行，每行一个整数，第i个数表示公主在女仆的第i个行程中能采到的花的颜色数。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 3 5<br>1 2 2 3 1<br>1 5<br>1 2<br>2 2<br>2 3<br>3 5</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2<br>0 0 1 0</p>
@@ -87,16 +89,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

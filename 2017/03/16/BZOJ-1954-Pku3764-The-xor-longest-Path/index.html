@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -57,7 +59,7 @@
       
       <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给定一棵n个点的带权树，求树上最长的异或和路径。</p>
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>4<br>1 2 3<br>2 3 4<br>2 4 6</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>7</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>7<br><a id="more"></a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>可以注意到 a -&gt; b 的异或和 = a -&gt; root 的异或和 ^ b -&gt; root 的异或和。所以用 Trie 保存所有点到根节点的异或和，再枚举每一个异或和，在Trie上尽量找与他每一位都相反的就行了（如果存在）。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> node&#123;</div><div class="line">	<span class="keyword">int</span> to, next, v;</div><div class="line">&#125;e[N&lt;&lt;<span class="number">1</span>];</div><div class="line"><span class="keyword">int</span> head[N], cnt, val[N], bin[<span class="number">31</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> z)</span></span>&#123;</div><div class="line">	e[++cnt].to = y; e[cnt].next = head[x]; head[x] = cnt; e[cnt].v = z;</div><div class="line">	e[++cnt].to = x; e[cnt].next = head[y]; head[y] = cnt; e[cnt].v = z;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> fa)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = head[x]; i; i = e[i].next)&#123;</div><div class="line">		<span class="keyword">if</span>(e[i].to == fa) <span class="keyword">continue</span>;</div><div class="line">		val[e[i].to] = e[i].v ^ val[x];</div><div class="line">		dfs(e[i].to, x);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> ch[N*<span class="number">30</span>][<span class="number">2</span>], sz;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">ins</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> rt = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">30</span>, k = (x&amp;bin[<span class="number">30</span>])&gt;<span class="number">0</span>; i &gt;= <span class="number">0</span>; k = (x&amp;bin[--i])&gt;<span class="number">0</span>)</div><div class="line">		<span class="keyword">if</span>(!ch[rt][k]) rt = ch[rt][k] = ++sz;</div><div class="line">		<span class="keyword">else</span> rt = ch[rt][k];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> rt = <span class="number">0</span>, sum = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">30</span>, k = (x&amp;bin[<span class="number">30</span>])&gt;<span class="number">0</span>; i &gt;= <span class="number">0</span>; k = (x&amp;bin[--i])&gt;<span class="number">0</span>)</div><div class="line">		<span class="keyword">if</span>(ch[rt][!k]) rt = ch[rt][!k], sum += bin[i];</div><div class="line">		<span class="keyword">else</span> rt = ch[rt][k];</div><div class="line">	<span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n, x, y, z;</div><div class="line">	bin[<span class="number">0</span>] = <span class="number">1</span>; <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">30</span>; i++) bin[i] = bin[i<span class="number">-1</span>]&lt;&lt;<span class="number">1</span>;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;x, &amp;y, &amp;z);</div><div class="line">		add(x, y, z);</div><div class="line">	&#125;</div><div class="line">	dfs(<span class="number">1</span>, <span class="number">0</span>); <span class="keyword">int</span> ans = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) ins(val[i]);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) ans = max(ans, ask(val[i]));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
     </div>
@@ -76,16 +78,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

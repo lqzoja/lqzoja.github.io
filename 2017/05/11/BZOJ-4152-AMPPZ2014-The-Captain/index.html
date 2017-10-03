@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -57,7 +59,7 @@
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定平面上的$n$个点，定义$(x1,y1)$到$(x2,y2)$的费用为$min(|x1-x2|,|y1-y2|)$，求从$1$号点走到$n$号点的最小费用。</p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含一个正整数$n(2\leq n\leq 200000)$，表示点数。<br>接下来$n$行，每行包含两个整数$x[i],y[i](0\leq x[i],y[i]\leq 10^9)$，依次表示每个点的坐标。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一个整数，即最小费用。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一个整数，即最小费用。<br><a id="more"></a></p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5<br>2 2<br>1 1<br>4 5<br>7 1<br>6 7</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>2</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这题有毒，<del>我Dijkstra写炸了调了一个钟头。</del><br>先按x轴坐标排序，然后把相邻的点连边（如果x轴的绝对值小于等于y轴的绝对值）。y轴同理。<br>然后跑dijkstra就好了</p>
@@ -79,16 +81,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

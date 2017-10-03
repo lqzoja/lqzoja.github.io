@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,12 +58,12 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个序列A[i]，每次询问l,r，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行n，表示A数组有多少元素<br>接下来一行为n个整数A[i]<br>接下来一个整数Q，表示询问数量<br>接下来Q行，每行2个整数l，r</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行$n$，表示$A$数组有多少元素<br>接下来一行为$n$个整数$A_i$<br>接下来一个整数$Q$，表示询问数量<br>接下来$Q$行，每行2个整数$l$，$r$</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，求[l,r]内最长子串，使得该子串为不上升子串或不下降子串<br><a id="more"></a></p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>9<br>1 2 3 4 5 6 5 4 3<br>5<br>1 6<br>1 7<br>2 7<br>1 9<br>5 9</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>6<br>6<br>5<br>6<br>4</p>
 <h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例解释】<br>五个询问分别对应<br>[1,6][1,6][2,6][1,6][6,9]</p>
-<p>N,Q&lt;=50000</p>
+<p>$N,Q\leq 50000$</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>线段树。。<br>一颗维护上升序列，一颗维护下降序列。。</p>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 50020</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)&#123;<span class="keyword">if</span>(ch==<span class="string">'-'</span>)f=<span class="number">-1</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)&#123;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>;ch=getchar();&#125;</div><div class="line">	<span class="keyword">return</span> x*f;</div><div class="line">&#125;</div><div class="line"><span class="keyword">struct</span> tree&#123;</div><div class="line">	<span class="keyword">int</span> val[<span class="number">50020</span>];</div><div class="line">	<span class="keyword">struct</span> node&#123;</div><div class="line">		<span class="keyword">int</span> lx, rx, l, r, mx;</div><div class="line">	&#125;tr[N&lt;&lt;<span class="number">2</span>];</div><div class="line">	<span class="function">node <span class="title">merge</span><span class="params">(<span class="keyword">const</span> node &amp;a, <span class="keyword">const</span> node &amp;b)</span></span>&#123;</div><div class="line">		node c; c.l = a.l, c.r = b.r;</div><div class="line">		c.lx = a.lx, c.rx = b.rx; c.mx = max(a.mx, b.mx);</div><div class="line">		<span class="keyword">if</span>(c.lx == a.r-a.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.lx += b.lx;</div><div class="line">		<span class="keyword">if</span>(c.rx == b.r-b.l+<span class="number">1</span> &amp;&amp; val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.rx += a.rx;</div><div class="line">		<span class="keyword">if</span>(val[a.r] &lt;= val[a.r+<span class="number">1</span>]) c.mx = max(c.mx, a.rx+b.lx);</div><div class="line">		<span class="keyword">return</span> c;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(l == r)&#123;</div><div class="line">			tr[x].l = l, tr[x].r = r;</div><div class="line">			tr[x].mx = tr[x].lx = tr[x].rx = <span class="number">1</span>;</div><div class="line">			<span class="keyword">return</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</div><div class="line">		build(x&lt;&lt;<span class="number">1</span>, l, mid); build(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r);</div><div class="line">		tr[x] = merge(tr[x&lt;&lt;<span class="number">1</span>], tr[x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>]);</div><div class="line">	&#125;</div><div class="line">	<span class="function">node <span class="title">ask</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span>(tr[x].l == l &amp;&amp; tr[x].r == r) <span class="keyword">return</span> tr[x];</div><div class="line">		<span class="keyword">int</span> mid = tr[x].l + tr[x].r &gt;&gt; <span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span>(r &lt;= mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid) <span class="keyword">return</span> ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, l, r);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">return</span> merge(ask(x&lt;&lt;<span class="number">1</span>, l, mid), ask(x&lt;&lt;<span class="number">1</span>|<span class="number">1</span>, mid+<span class="number">1</span>, r));</div><div class="line">	&#125;</div><div class="line">&#125;up,down;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) down.val[i]=-(up.val[i]=read());</div><div class="line">	down.build(<span class="number">1</span>, <span class="number">1</span>, n), up.build(<span class="number">1</span>, <span class="number">1</span>, n);</div><div class="line">	<span class="keyword">int</span> m = read();</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>, l, r; i &lt;= m; i++)&#123;</div><div class="line">		l = read(); r = read();</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, max(down.ask(<span class="number">1</span>, l, r).mx, up.ask(<span class="number">1</span>, l, r).mx));</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
     </div>
@@ -80,16 +82,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

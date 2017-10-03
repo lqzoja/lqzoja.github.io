@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,8 +58,8 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对于正整数$n$，定义$f(n)$为$n$所含质因子的最大幂指数。例如$f(1960)=f(2^3*5^1*7^2)=3$，$f(10007)=1$，$f(1)=0$。<br>给定正整数a、b，求$\sum_{i=1}^{a}{\sum_{j=1}^{b}{f(gcd(i,j))}}$</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个数T，表示询问数。<br>接下来T行，每行两个数a,b，表示一个询问。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每一个询问，输出一行一个非负整数作为回答。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个数$T$，表示询问数。<br>接下来$T$行，每行两个数$a,b$，表示一个询问。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每一个询问，输出一行一个非负整数作为回答。<br><a id="more"></a></p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>4<br>7558588 9653114<br>6514903 4451211<br>7425644 1189442<br>6335198 4957</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>35793453939901<br>14225956593420<br>4332838845846<br>15400094813</p>
 <h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【数据规模】<br>T&lt;=10000<br>1&lt;=a,b&lt;=10^7</p>
@@ -79,16 +81,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

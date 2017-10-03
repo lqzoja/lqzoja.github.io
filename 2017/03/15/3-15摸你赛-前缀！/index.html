@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -55,9 +57,13 @@
           
         </div>
       
-      <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>定义$f_0(x)=A_x,f_n(x)=\sum_{i=1}^{x-1}{f_{n-1}(i)}$，给出长度为 N 的数组 A（从 1~N 编号）和 Q 个<br>操作。操作有两种：Add i j 表示将 Ai的值加上 j（j ≤ P）；Query i j 表示询问 f<sub>i</sub>(j)<br>的值（i ≤ M），由于答案可能会很大，给我 mod P 后的答案即可，P = 1,000,000,007。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行为三个正整数 N、M、Q。<br>第二行为 N 个非负整数，表示 A 数组。<br>接下来 Q 行，每行表示一个操作，Add i j 或 Query i j。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出有多行，每行表示 f<sub>i</sub>(j) mod P。</p>
+      <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>定义$f_0(x)=A_x,f_n(x)=\sum_{i=1}^{x-1}{f_{n-1}(i)}$，给出长度为 $N$ 的数组 $A$（从 $1~N$ 编号）和 $Q$ 个操作。<br>操作有两种：</p>
+<ul>
+<li><code>Add i j</code> 表示将 $A_i$的值加上 $j$（$j \leq P$）；</li>
+<li><code>Query i j</code> 表示询问 $f_i(j)$的值（$i \leq M$），由于答案可能会很大，给我 <code>mod P</code> 后的答案即可，$P = 1,000,000,007$。</li>
+</ul>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行为三个正整数 $N$、$M$、$Q$。<br>第二行为 $N$ 个非负整数，表示 $A$ 数组。<br>接下来 $Q$ 行，每行表示一个操作，<code>Add i j</code> 或 <code>Query i j</code>。<br><a id="more"></a></p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出有多行，每行表示 $f_i(j)$ mod $p$。</p>
 <h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>4 4 4<br>1 1 1 1<br>Query 0 4<br>Query 4 3<br>Add 1 1<br>Query 3 2</p>
 <h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>1<br>15<br>7</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>其实是杨辉三角、、、不知你看不看得出来<br>其实就可以输入一个1 0 0 0 0…的数列，跑暴力看看就看出来了<br>看出来了就简单了哈（然而我还是爆蛋了，各种int溢出= =）</p>
@@ -73,16 +79,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

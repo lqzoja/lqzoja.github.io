@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,7 +58,7 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>自从zkysb出了可持久化并查集后……<br>hzwer:乱写能AC，暴力踩标程<br>KuribohG：我不路径压缩就过了！<br>ndsf：暴力就可以轻松虐！<br>zky:……</p>
-<p>n个集合 m个操作<br>操作：<br>1 a b 合并a,b所在集合<br>2 k 回到第k次操作之后的状态(查询算作操作)<br>3 a b 询问a,b是否属于同一集合，是则输出1否则输出0<br>请注意本题采用强制在线,所给的a,b,k均经过加密,加密方法为x = x xor lastans,lastans的初始值为0<br>0&lt;n,m&lt;=2*10^5</p>
+<p>n个集合 m个操作<br>操作：<br><code>1 a b</code> 合并$a,b$所在集合<br><code>2 k</code> 回到第$k$次操作之后的状态(查询算作操作)<br><code>3 a b</code> 询问$a,b$是否属于同一集合，是则输出$1$否则输出$0$<br>请注意本题采用强制在线,所给的$a$，$b$，$k$均经过加密,加密方法为<code>x = x xor lastans</code>，<code>lastans</code>的初始值为0<br>$0\lt n,m\leq 2*10^5$<br><a id="more"></a></p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5 6<br>1 1 2<br>3 1 2<br>2 1<br>3 0 3<br>2 1<br>3 1 2</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1<br>0<br>1</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><del>C++的rope真好用</del></p>
@@ -77,16 +79,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

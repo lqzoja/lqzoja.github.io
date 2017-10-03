@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -51,11 +53,14 @@
         <div class="toc-father">
           <strong class="toc-title">文章目录</strong>
           
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#题面"><span class="toc-number">1.</span> <span class="toc-text">题面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题解"><span class="toc-number">2.</span> <span class="toc-text">题解</span></a></li></ol>
           
         </div>
       
-      <p><del>这题太难了，想了一个下午都想不出来我为什么要做这题</del><br>所以我是看题解才做出来的QAQ<br>C++版<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a, b; <span class="comment">//定义两个变量</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b); <span class="comment">//读入</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, a+b); <span class="comment">//输出</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>输入$A$和$B$，输出$A+B$的值。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p><del>这题太难了，想了一个下午都想不出来我为什么要做这题</del><br>所以我是看题解才做出来的QAQ</p>
+<p>C++版<br><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a, b; <span class="comment">//定义两个变量</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b); <span class="comment">//读入</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, a+b); <span class="comment">//输出</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>pascal版<br><figure class="highlight pascal"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> a, b:longint;</div><div class="line"><span class="keyword">begin</span></div><div class="line">	<span class="keyword">read</span>(a, b);</div><div class="line">	writeln(a+b);</div><div class="line"><span class="keyword">end</span>.</div></pre></td></tr></table></figure></p>
 <p>java版<br><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.Scanner;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> a = scan.nextInt();</div><div class="line">		<span class="keyword">int</span> b = scan.nextInt();</div><div class="line">		System.out.println(a+b);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>python版<br><figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">print</span> (int)(input())+(int)(input())</div></pre></td></tr></table></figure></p>
@@ -77,16 +82,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

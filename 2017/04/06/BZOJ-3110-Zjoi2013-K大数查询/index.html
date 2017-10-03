@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -55,9 +57,9 @@
           
         </div>
       
-      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有N个位置，M个操作。操作有两种，每次操作如果是1 a b c的形式表示在第a个位置到第b个位置，每个位置加入一个数c<br>如果是2 a b c形式，表示询问从第a个位置到第b个位置，第C大的数是多少。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行N，M<br>接下来M行，每行形如1 a b c或2 a b c</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出每个询问的结果</p>
+      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>有$N$个位置，$M$个操作。操作有两种，每次操作如果是<code>1 a b c</code>的形式表示在第$a$个位置到第$b$个位置，每个位置加入一个数$c$<br>如果是<code>2 a b c</code>形式，表示询问从第$a$个位置到第$b$个位置，第$c$大的数是多少。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行$N$，$M$<br>接下来$M$行，每行形如<code>1 a b c</code>或<code>2 a b c</code></p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出每个询问的结果<br><a id="more"></a></p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>2 5<br>1 1 2 1<br>1 1 2 2<br>2 1 1 2<br>2 1 1 1<br>2 1 2 3</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1<br>2<br>1</p>
 <h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>【样例说明】</p>
@@ -87,16 +89,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

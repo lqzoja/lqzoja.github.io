@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -55,7 +57,7 @@
           
         </div>
       
-      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>松鼠的新家是一棵树，前几天刚刚装修了新家，新家有n个房间，并且有n-1根树枝连接，每个房间都可以相互到达，且俩个房间之间的路线都是唯一的。天哪，他居然真的住在“树”上。松鼠想邀请小熊维尼前来参观，并且还指定一份参观指南，他希望维尼能够按照他的指南顺序，先去a1，再去a2，……，最后到an，去参观新家。<br>可是这样会导致维尼重复走很多房间，懒惰的维尼不听地推辞。可是松鼠告诉他，每走到一个房间，他就可以从房间拿一块糖果吃。维尼是个馋家伙，立马就答应了。<br>现在松鼠希望知道为了保证维尼有糖果吃，他需要在每一个房间各放至少多少个糖果。因为松鼠参观指南上的最后一个房间an是餐厅，餐厅里他准备了丰盛的大餐，所以当维尼在参观的最后到达餐厅时就不需要再拿糖果吃了。</p>
+      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>松鼠的新家是一棵树，前几天刚刚装修了新家，新家有n个房间，并且有n-1根树枝连接，每个房间都可以相互到达，且俩个房间之间的路线都是唯一的。天哪，他居然真的住在“树”上。松鼠想邀请小熊维尼前来参观，并且还指定一份参观指南，他希望维尼能够按照他的指南顺序，先去a1，再去a2，……，最后到an，去参观新家。<br>可是这样会导致维尼重复走很多房间，懒惰的维尼不听地推辞。可是松鼠告诉他，每走到一个房间，他就可以从房间拿一块糖果吃。维尼是个馋家伙，立马就答应了。<br>现在松鼠希望知道为了保证维尼有糖果吃，他需要在每一个房间各放至少多少个糖果。因为松鼠参观指南上的最后一个房间an是餐厅，餐厅里他准备了丰盛的大餐，所以当维尼在参观的最后到达餐厅时就不需要再拿糖果吃了。<br><a id="more"></a></p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个整数n，表示房间个数<br>第二行n个整数，依次描述a1-an<br>接下来n-1行，每行两个整数x，y，表示标号x和y的两个房间之间有树枝相连。</p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一共n行，第i行输出标号为i的房间至少需要放多少个糖果，才能让维尼有糖果吃。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>5<br>1 4 5 3 2<br>1 2<br>2 4<br>2 3<br>4 5</p>
@@ -79,16 +81,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

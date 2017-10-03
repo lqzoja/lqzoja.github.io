@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -58,7 +60,7 @@
       <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>给你一个字符串，它是由某个字符串不断自我连接形成的。 但是这个字符串是不确定的，现在只想知道它的最短长度是多少。</p>
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行给出字符串的长度,1 &lt; L ≤ 1,000,000. 第二行给出一个字符串，全由小写字母组成。</p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出最短的长度</p>
-<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>8<br>cabcabca</p>
+<h2 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h2><p>8<br>cabcabca<br><a id="more"></a></p>
 <h2 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h2><p>3</p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>KMP。。。ans = n - next[n]。。。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="comment">/**************************************************************</span></div><div class="line">	Problem: 1355</div><div class="line">	User: SHENZHEBEI // 没权限哎╮(╯▽╰)╭</div><div class="line">	Language: C++</div><div class="line">	Result: Accepted</div><div class="line">	Time:24 ms</div><div class="line">	Memory:6172 kb</div><div class="line">****************************************************************/</div><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> B[<span class="number">1000050</span>];</div><div class="line"><span class="keyword">int</span> n, nxt[<span class="number">1000050</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%s"</span>, &amp;n, B+<span class="number">1</span>);</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i++)&#123;</div><div class="line">		<span class="keyword">while</span>(j &amp;&amp; B[j+<span class="number">1</span>] != B[i]) j = nxt[j];</div><div class="line">		<span class="keyword">if</span>(B[j+<span class="number">1</span>] == B[i]) j++; nxt[i] = j;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, n-nxt[n]);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

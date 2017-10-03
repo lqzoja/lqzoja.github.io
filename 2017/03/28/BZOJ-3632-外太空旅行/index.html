@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,7 +58,7 @@
         </div>
       
       <h2 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h2><p>在人类的触角伸向银河系的边缘之际，普通人上太空旅行已经变得稀松平常了。某理科试验班有n个人，现在班主任要从中选出尽量多的人去参加一次太空旅行活动。<br>可是n名同学并不是和平相处的。有的人，比如小A和小B整天狼狈为奸，是好朋友；但还有的人，比如杜鲁门和赫鲁晓夫就水火不相容。这n名同学，由于是理科生，都非常的理性，所以“朋友的朋友就是朋友”和“敌人的朋友就是敌人”这两句话对这些同学无效。换句话说，有可能小A和小B是朋友，小B和小C是朋友，但是小A和小C两人势如水火。<br>任意两个人之间要不就是敌人，要不就是朋友。<br>因为在太空船上发生人员斗殴事件是很恶劣也很危险的，因此选出来参加旅行活动的同学必须互相之间都是朋友。你的任务就是确定最多可以选多少人参加旅行。</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n(1&lt;=n&lt;=50)。所有的同学按照1~n编号。<br>接下来若干行，每行两个用空格隔开的整数a, b(1&lt;=a,b&lt;=n)，表示a和b是朋友。<br>注意：如果一个数对(x,y)（或者(y,x)）没有在文件中出现，那么编号为x和y的两个同学就是敌人。</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>第一行一个整数n(1&lt;=n&lt;=50)。所有的同学按照1~n编号。<br>接下来若干行，每行两个用空格隔开的整数a, b(1&lt;=a,b&lt;=n)，表示a和b是朋友。<br>注意：如果一个数对(x,y)（或者(y,x)）没有在文件中出现，那么编号为x和y的两个同学就是敌人。<br><a id="more"></a></p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>仅仅一个数，即最多可以选多少人参加活动。</p>
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>4<br>1 2<br>2 3<br>3 1<br>1 4</p>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>3</p>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

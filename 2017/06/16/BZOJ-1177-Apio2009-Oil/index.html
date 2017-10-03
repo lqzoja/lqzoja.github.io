@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,8 +58,8 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>采油区域 Siruseri政府决定将石油资源丰富的Navalur省的土地拍卖给私人承包商以建立油井。被拍卖的整块土地为一个矩形区域，被划分为M×N个小块。 Siruseri地质调查局有关于Navalur土地石油储量的估测数据。这些数据表示为M×N个非负整数，即对每一小块土地石油储量的估计值。 为了避免出现垄断，政府规定每一个承包商只能承包一个由K×K块相连的土地构成的正方形区域。 AoE石油联合公司由三个承包商组成，他们想选择三块互不相交的K×K的区域使得总的收益最大。 例如，假设石油储量的估计值如下：</p>
-<p>1 1 1 1 1 1 1 1 1<br>1 1 1 1 1 1 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 1 1 1 8 8 8 1 1<br>1 1 1 1 1 1 8 8 8<br>1 1 1 1 1 1 9 9 9<br>1 1 1 1 1 1 9 9 9</p>
-<p>如果K = 2, AoE公司可以承包的区域的石油储量总和为100, 如果K = 3, AoE公司可以承包的区域的石油储量总和为208。 AoE公司雇佣你来写一个程序，帮助计算出他们可以承包的区域的石油储量之和的最大值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1 1 1 1 1 1 1 1 1</div><div class="line">1 1 1 1 1 1 1 1 1</div><div class="line">1 8 8 8 8 8 1 1 1</div><div class="line">1 8 8 8 8 8 1 1 1</div><div class="line">1 8 8 8 8 8 1 1 1</div><div class="line">1 1 1 1 8 8 8 1 1</div><div class="line">1 1 1 1 1 1 8 8 8</div><div class="line">1 1 1 1 1 1 9 9 9</div><div class="line">1 1 1 1 1 1 9 9 9</div></pre></td></tr></table></figure>
+<p>如果K = 2, AoE公司可以承包的区域的石油储量总和为100, 如果K = 3, AoE公司可以承包的区域的石油储量总和为208。 AoE公司雇佣你来写一个程序，帮助计算出他们可以承包的区域的石油储量之和的最大值。<br><a id="more"></a></p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入第一行包含三个整数M, N, K，其中M和N是矩形区域的行数和列数，K是每一个承包商承包的正方形的大小（边长的块数）。接下来M行，每行有N个非负整数表示这一行每一小块土地的石油储量的估计值</p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出只包含一个整数，表示AoE公司可以承包的区域的石油储量之和的最大值。</p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>9 9 3<br>1 1 1 1 1 1 1 1 1<br>1 1 1 1 1 1 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 8 8 8 8 8 1 1 1<br>1 1 1 1 8 8 8 1 1<br>1 1 1 1 1 1 8 8 8<br>1 1 1 1 1 1 9 9 9<br>1 1 1 1 1 1 9 9 9</p>
@@ -81,16 +83,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

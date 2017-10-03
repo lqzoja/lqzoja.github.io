@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -57,7 +59,7 @@
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给定一个边带正权的连通无向图G=(V,E)，其中N=|V|，M=|E|，N个点从1到N依次编号，给定三个正整数u，v，和L (u≠v)，假设现在加入一条边权为L的边(u,v)，那么需要删掉最少多少条边，才能够使得这条边既可能出现在最小生成树上，也可能出现在最大生成树上？</p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含用空格隔开的两个整数，分别为N和M；<br>接下来M行，每行包含三个正整数u，v和w表示图G存在一条边权为w的边(u,v)。<br>最后一行包含用空格隔开的三个整数，分别为u，v，和 L；<br>数据保证图中没有自环。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数表示最少需要删掉的边的数量。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>输出一行一个整数表示最少需要删掉的边的数量。<br><a id="more"></a></p>
 <h1 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h1><p>3 2<br>3 2 1<br>1 2 3<br>1 2 2</p>
 <h1 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h1><p>1</p>
 <h1 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h1><p>对于20%的数据满足$N\leq 10，M\leq 20，L\leq 20$；<br>对于50%的数据满足$N\leq 300，M\leq 3000，L\leq 200$；<br>对于100%的数据满足$N\leq 20000，M\leq 200000，L\leq 20000$。</p>
@@ -79,16 +81,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

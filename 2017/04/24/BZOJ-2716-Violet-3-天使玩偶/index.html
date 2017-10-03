@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -56,7 +58,7 @@
         </div>
       
       <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>Ayu在七年前曾经收到过一个天使玩偶，当时她把它当做时间囊埋在了地下。儿七年后的今天，Ayu却忘了她把天使玩偶埋在了哪里，所以她决定仅凭借一点模糊的记忆来寻找它。<br>我们把Ayu生活的小镇看做一个二维平面，而Ayu会不定时的记起可能在某个点$(x,y)$埋下了天使玩偶：或者Ayu会询问你，假如他在$(x,y)$，那么她离最近的天使玩偶可能埋下的地方有多远。<br>因为Ayu只会沿着平行坐标轴的方向来行动，所以在这个问题里我们定义两个点之间的距离为$dist(A,B)=|A_x-B_x|+|A_y-B_y|$。其中$A_x$表示点$A$的横坐标，其余类似。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含两个整数$n$和$m$，在刚开始时，Ayu已经知道有$n$个点可能埋着天使玩偶，接下来Ayu要进行$m$次操作<br>接下来$n$行，每行两个非负整数$x_i,y_i$，表示初始$n$个点的坐标。<br>再接下来$m$行，每行三个非负整数$t,x_i,y_i$。<br>如果$t=1$，则表示Ayu又回忆起了一个可能埋着玩偶的点$(x_i,y_i)$。<br>如果$t=2$，则表示Ayu询问如果她在点$(x_i,y_i)$，那么在已经回忆出来的点里，离她最近的那个点有多远</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行包含两个整数$n$和$m$，在刚开始时，Ayu已经知道有$n$个点可能埋着天使玩偶，接下来Ayu要进行$m$次操作<br>接下来$n$行，每行两个非负整数$x_i,y_i$，表示初始$n$个点的坐标。<br>再接下来$m$行，每行三个非负整数$t,x_i,y_i$。<br>如果$t=1$，则表示Ayu又回忆起了一个可能埋着玩偶的点$(x_i,y_i)$。<br>如果$t=2$，则表示Ayu询问如果她在点$(x_i,y_i)$，那么在已经回忆出来的点里，离她最近的那个点有多远<br><a id="more"></a></p>
 <h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个$t=2$的询问，在单独的一行内输出该询问的结果。</p>
 <h1 id="Sample-Input-amp-Output"><a href="#Sample-Input-amp-Output" class="headerlink" title="Sample Input &amp; Output"></a>Sample Input &amp; Output</h1><p>样例太长<br><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=2716" target="_blank" rel="external">题目链接</a></p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>可以用k-d树做<br>好像k-d树就是用来做这个的吧。。</p>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 

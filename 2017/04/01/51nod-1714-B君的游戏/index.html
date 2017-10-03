@@ -2,7 +2,7 @@
 
 <!-- post | photo -->
 <!DOCTYPE html>
-<html>
+<html lang="zh">
   <head>
     <meta charset="UTF-8">
 
@@ -36,6 +36,8 @@
 
   <li><a href="/archives">档案</a></li>
 
+  <li><a href="/tags">标签云</a></li>
+
 </ul>
     </header>
     <div class="container">
@@ -55,9 +57,9 @@
           
         </div>
       
-      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>B君和L君要玩一个游戏。刚开始有n个正整数ai。双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字x1,x2…x7。要求对于xi，满足0&lt;=xi&lt;x且x&amp;xi=xi。注意0不能被选取，所以这个游戏一定会结束，而谁无法操作谁就失败。B君根据自己的经验，认为先手胜率高一点，所以B君是先手。B君想知道自己是否必胜。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个整数n (1 &lt;= n &lt;= 100000)<br>以下n行n个数ai (0 &lt;= ai &lt; 2^64)</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>如果先手必胜，输出”B”，否则输出”L”。</p>
+      <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>B君和L君要玩一个游戏。刚开始有n个正整数ai。双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字$x_1,x_2,…,x_7$。要求对于$x_i$，满足$0\leq x_i\lt x$且$x&amp;x_i=x_i$。注意$0$不能被选取，所以这个游戏一定会结束，而谁无法操作谁就失败。B君根据自己的经验，认为先手胜率高一点，所以B君是先手。B君想知道自己是否必胜。</p>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个整数n ($1 \leq n \leq 100000$)<br>以下n行n个数ai ($0 \leq ai \lt 2^64$)</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>如果先手必胜，输出”B”，否则输出”L”。<br><a id="more"></a></p>
 <h1 id="Simple-Input"><a href="#Simple-Input" class="headerlink" title="Simple Input"></a>Simple Input</h1><p>4<br>1<br>2<br>3<br>4</p>
 <h1 id="Simple-Output"><a href="#Simple-Output" class="headerlink" title="Simple Output"></a>Simple Output</h1><p>B</p>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>考虑到二进制上1的个数相同的数在这个游戏中本质上其实是相同的。统计数组b[k]表示二进制上有k个1的数字个数。当所有的b[k]均为偶数的时候，就是先手必败的局面。先手一次最多可以把八个奇数改为八个偶数，如果先手面对的局面有九个或者九的倍数个奇数，那么先手必败，否则后手必败。</p>
@@ -78,16 +80,16 @@
 
         
           
-	<div class="comment"></div>
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
 	<script type="text/javascript">
 		new Valine({
             av: AV, 
-            el: '.comment',
+            el: '.this-is-a-very-long-class-name',
             app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
             app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
             placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-            notify: false,
-  			verify: false
+            notify: true,
+  			verify: true
         });
 	</script>
 
