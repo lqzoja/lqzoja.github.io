@@ -341,49 +341,49 @@ header .blog-title .subtitle {
   border-bottom: 2px solid #666;
   transition: all 0.3s;
 }
-.container section {
+.container .index-section {
   margin-bottom: 150px;
 }
-.container section .link {
+.container .index-section .link {
   text-decoration: none;
 }
-.container section .link .desc-name {
+.container .index-section .link .desc-name {
   padding: 5px 20px;
   margin: 33.5px 0;
   border-bottom: 2px solid #ccc;
 }
-.container section .link .desc-name .title {
+.container .index-section .link .desc-name .title {
   color: #808080;
   font-size: 40px;
   font-weight: lighter;
   float: left;
 }
-.container section .link .desc-name .time {
+.container .index-section .link .desc-name .time {
   color: #808080;
   font-size: 20px;
   font-weight: lighter;
   float: right;
 }
-.container section .link .desc-name:after {
+.container .index-section .link .desc-name:after {
   content: "";
   display: block;
   height: 0;
   clear: both;
 }
-.container section .artc {
+.container .index-section .artc {
   padding: 0 50px;
   max-height: 500px;
   overflow-y: hidden;
 }
-.container section .artc h1:first-child {
+.container .index-section .artc h1:first-child {
   margin-top: 0;
   font-size: 35px;
 }
-.container section .readmore {
+.container .index-section .readmore {
   margin: 50px 20px;
   text-align: center;
 }
-.container section .readmore a {
+.container .index-section .readmore a {
   font-size: 20px;
   padding: 5px 10px;
   text-decoration: none;
@@ -391,7 +391,7 @@ header .blog-title .subtitle {
   background-color: #ccc;
   transition: all 0.3s;
 }
-.container section .readmore a:hover {
+.container .index-section .readmore a:hover {
   background-color: #666;
   color: #ccc;
   transition: all 0.3s;
