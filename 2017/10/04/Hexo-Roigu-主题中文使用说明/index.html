@@ -1,0 +1,140 @@
+
+
+<!-- post | photo -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+
+<title>Hexo Roigu 主题中文使用说明 | SW_Wind&#39;s blog</title>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<!-- Mathjax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Valine -->
+<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/Valine.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div style="background-image: url(/img/author.jpg)" class="author_img"></div>
+<div class="blog-title">
+	<p class="title">SW_Wind&#39;s blog</p>
+	<p class="subtitle">病名は愛だった</p>
+</div>
+<ul class="headerlinks">
+
+  <li><a href="/">首页</a></li>
+
+  <li><a href="/about">关于</a></li>
+
+  <li><a href="/archives">归档</a></li>
+
+  <li><a href="/tags">标签</a></li>
+
+  <li><a href="/categories">分类</a></li>
+
+</ul>
+    </header>
+    <div class="container">
+      <div class="main">
+        <div class="post">
+  <article>
+    <div class="artc-title">
+      <h1>Hexo Roigu 主题中文使用说明</h1>
+      <p><span class="time-icon">2017-10-04</span><span class="author-icon">SW_Wind</span></p>
+    </div>
+    <div class="artc">
+      
+        <div class="toc-father">
+          <strong class="toc-title">文章目录</strong>
+          
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#预览图"><span class="toc-number">1.</span> <span class="toc-text">预览图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件说明"><span class="toc-number">2.</span> <span class="toc-text">文件说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见问题"><span class="toc-number">3.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#我为什么要写这个主题"><span class="toc-number">3.1.</span> <span class="toc-text">我为什么要写这个主题</span></a></li></ol></li></ol>
+          
+        </div>
+      
+      <h1 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h1><p><img src="/img/roigu-theme-yulan.png" alt="预览图"></p>
+<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">roigu</div><div class="line">├─languages</div><div class="line">├─layout</div><div class="line">│  ├─_partial</div><div class="line">│  │  └─post</div><div class="line">│  └─_widget</div><div class="line">└─source</div><div class="line">    ├─css</div><div class="line">    │  └─_partial</div><div class="line">    ├─font</div><div class="line">    ├─img</div><div class="line">    └─js</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><del>以上文件夹目录树由 Windows 的 tree 指令生成。</del></p>
+<p>然后我先挖个坑，以后再填好了。</p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="我为什么要写这个主题"><a href="#我为什么要写这个主题" class="headerlink" title="我为什么要写这个主题"></a>我为什么要写这个主题</h2><p><strong>答：</strong>真的只是因为我吃着空。</p>
+
+    </div>
+    <div class="article-catetags">
+
+<div class="categories-icon">
+  <a class="article-category-link" href="/categories/教程/">教程</a>
+</div>
+
+
+  <div class="tags-icon">
+  
+    <a href="/tags/hexo/">hexo</a>
+  </div>
+
+</div>
+
+  </article>
+</div>  
+
+        
+          
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
+	<script type="text/javascript">
+		new Valine({
+            av: AV, 
+            el: '.this-is-a-very-long-class-name',
+            app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
+            app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+            notify: true,
+  			verify: true
+        });
+	</script>
+
+        
+      </div>
+      <aside class="sidebar">
+
+  <div class="hitokoto sidebar-item">
+  <p class="sidebar-title">一言</p>
+  <div class="hitokoto-text" id="yiyan-text">Loading...</div>
+  <div class="hitokoto-author" id="yiyan-author"></div>
+  <script type="text/javascript">;(function(){var s="ac";$.get("https://sslapi.hitokoto.cn/?c="+s[Math.floor(Math.random()*s.length)],function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})})();</script>
+</div>
+
+  <div class="linkslist sidebar-item">
+  <p class="sidebar-title">友情链接</p>
+  <div class="sidebar-main">
+    <ul>
+      <li><a href="https://shenzhebei.github.io/" target="_blank">SHENZHEBEI</a></li>
+      <li><a href="http://blog.csdn.net/largecub233/" target="_blank">largecub233</a></li>
+      <li><a href="http://blog.csdn.net/Fop_zz/" target="_blank">Fop_zz</a></li>
+      <li><a href="http://blog.csdn.net/jzq233jzq/" target="_blank">jzq233jzq</a></li>
+      <li><a href="https://zhzh2001.github.io/" target="_blank">zhzh2001</a></li>
+      <li><a href="http://blog.csdn.net/mdnd1234/" target="_blank">mdnd</a></li>
+      <li><a href="http://www.bilibili.com/" target="_blank">bilibili(乱入)</a></li>
+      <li><a href="http://blog.csdn.net/zhouyuyang233/" target="_blank">zhouyuyang233</a></li>
+      <li><a href="https://littleredstar.github.io/" target="_blank">black_moon</a></li>
+      <li><a href="https://problem233.github.io/" target="_blank">problem233</a></li>
+      <li><a href="http://blog.csdn.net/nn020701/" target="_blank">nn020701</a></li>
+    </ul>
+  </div>
+</div>
+
+</aside>
+    </div>
+    <footer>
+      <p>Powered by <a href="https://hexo.io/" target="view_window">Hexo</a> and theme by <a href="https://github.com/swwind/hacker" target="view_window">Hacker</a></p>
+    </footer>
+    <!-- It must be a script element -->
+  </body>
+</html>
+

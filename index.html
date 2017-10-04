@@ -34,9 +34,11 @@
 
   <li><a href="/about">关于</a></li>
 
-  <li><a href="/archives">档案</a></li>
+  <li><a href="/archives">归档</a></li>
 
-  <li><a href="/tags">标签云</a></li>
+  <li><a href="/tags">标签</a></li>
+
+  <li><a href="/categories">分类</a></li>
 
 </ul>
     </header>
@@ -46,8 +48,23 @@
 
   
 <section class="index-section">
-  <a href="/2017/09/22/速学-Javascript/" title="速学 Javascript (连载中)" class="link">
-    <p class="desc-name"><span class="title">速学 Javascript (连载中)</span><time class="time">2017-09-22</time></p>
+  <a href="/2017/10/04/Hexo-Roigu-主题中文使用说明/" title="Hexo Roigu 主题中文使用说明" class="link">
+    <p class="desc-name"><span class="title">Hexo Roigu 主题中文使用说明</span><time class="time">2017-10-04</time></p>
+  </a>
+  
+	  
+	    <div class="artc" ><h1 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h1><p><img src="/img/roigu-theme-yulan.png" alt="预览图"></p>
+<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">roigu</div><div class="line">├─languages</div><div class="line">├─layout</div><div class="line">│  ├─_partial</div><div class="line">│  │  └─post</div><div class="line">│  └─_widget</div><div class="line">└─source</div><div class="line">    ├─css</div><div class="line">    │  └─_partial</div><div class="line">    ├─font</div><div class="line">    ├─img</div><div class="line">    └─js</div></pre></td></tr></table></figure><p>...</p></div>
+	  	<div class="readmore"><a href="/2017/10/04/Hexo-Roigu-主题中文使用说明/">Read More</a></div>
+	  
+  
+</section>
+
+
+  
+<section class="index-section">
+  <a href="/2017/09/22/速学-Javascript/" title="速学 Javascript" class="link">
+    <p class="desc-name"><span class="title">速学 Javascript</span><time class="time">2017-09-22</time></p>
   </a>
   
 	  
@@ -185,22 +202,6 @@
 </section>
 
 
-  
-<section class="index-section">
-  <a href="/2017/06/02/BZOJ-2654-tree/" title="BZOJ 2654: tree" class="link">
-    <p class="desc-name"><span class="title">BZOJ 2654: tree</span><time class="time">2017-06-02</time></p>
-  </a>
-  
-	  
-	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>给你一个无向带权连通图，每条边是黑色或白色。让你求一棵最小权的恰好有need条白色边的生成树。<br>题目保证有解。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行V,E,need分别表示点数，边数和需要的白色边数。<br>接下来E行,每行s,t,c,col表示这边的端点(点从0开始标号)，边权，颜色(0白色1黑色)。</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>一行表示所求生成树的边权和。<br>$V\leq 50000,E\leq 100000$,所有数据边权为[1,100]中的正整数。<br><p>...</p></div>
-	  	<div class="readmore"><a href="/2017/06/02/BZOJ-2654-tree/">Read More</a></div>
-	  
-  
-</section>
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
@@ -210,14 +211,14 @@
       </div>
       <aside class="sidebar">
 
-  <div class="hitokoto">
+  <div class="hitokoto sidebar-item">
   <p class="sidebar-title">一言</p>
   <div class="hitokoto-text" id="yiyan-text">Loading...</div>
   <div class="hitokoto-author" id="yiyan-author"></div>
-  <script type="text/javascript">$.get("https://sslapi.hitokoto.cn/?c=ac",function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})</script>
+  <script type="text/javascript">;(function(){var s="ac";$.get("https://sslapi.hitokoto.cn/?c="+s[Math.floor(Math.random()*s.length)],function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})})();</script>
 </div>
 
-  <div class="linkslist">
+  <div class="linkslist sidebar-item">
   <p class="sidebar-title">友情链接</p>
   <div class="sidebar-main">
     <ul>

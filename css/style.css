@@ -150,21 +150,40 @@ header .blog-title .subtitle {
   color: #666;
   font-size: 30px;
 }
-.container *[class$="-cloud"] .items {
+.container .tag-cloud>.items {
   margin: 0 auto;
   width: 61.8%;
 }
-.container *[class$="-cloud"] .items .cloud-item {
+.container .tag-cloud>.items .cloud-item {
   color: #666;
   padding: 5px 10px;
   margin: 2px 5px;
   display: inline-block;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
   transition: all 1s;
   background-color: #fff;
 }
-.container *[class$="-cloud"] .items .cloud-item:hover {
+.container .tag-cloud>.items .cloud-item:hover {
+  background-color: #ccc;
+  transition: all 0.1s;
+}
+.container .category-cloud>.items {
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+}
+.container .category-cloud>.items .cloud-item {
+  color: #666;
+  padding: 5px 50px;
+  margin: 2px 5px;
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 1s;
+  background-color: #fff;
+}
+.container .category-cloud>.items .cloud-item:hover {
   background-color: #ccc;
   transition: all 0.1s;
 }
@@ -207,12 +226,16 @@ header .blog-title .subtitle {
     display: none;
   }
 }
+.container .sidebar .sidebar-item:first-child .sidebar-title {
+  margin-top: 0;
+}
 .container .sidebar .sidebar-title {
   color: #666;
   font-size: 25px;
   padding: 10px 0;
-  border-bottom: 4px solid #ccc;
+  border-bottom: 2px solid #666;
   margin: 0;
+  margin-top: 20px;
 }
 .container .sidebar .sidebar-main {
   padding: 0.7rem;
@@ -459,6 +482,9 @@ header .blog-title .subtitle {
 .container .category-icon:before {
   content: "\f067";
 }
+.artc img {
+  max-width: 100%;
+}
 .artc h1,
 .artc h2,
 .artc h3,
@@ -657,7 +683,7 @@ footer a:hover {
   border-bottom-color: #666;
   transition: border-bottom-color 0.3s;
 }
-.hide {
+.hide * {
   color: #fff;
 }
 .truth {
@@ -914,9 +940,4 @@ footer a:hover {
   font-family: fontello;
   src: url("/font/fontello.ttf");
   font-width: normal;
-}
-@font-face {
-  font-family: Microsoft Yahei;
-  src: url("/font/Microsoft Yahei.ttc");
-  font-width: lighter;
 }
