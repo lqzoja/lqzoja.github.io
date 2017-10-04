@@ -913,4 +913,10 @@ footer a:hover {
 @font-face {
   font-family: fontello;
   src: url("/font/fontello.ttf");
+  font-width: normal;
+}
+@font-face {
+  font-family: Microsoft Yahei;
+  src: url("/font/Microsoft Yahei.ttc");
+  font-width: lighter;
 }
