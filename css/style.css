@@ -649,6 +649,10 @@ header .blog-title .subtitle {
 .artc table td {
   padding: 2px 10px;
 }
+.artc #more {
+  padding: 0;
+  margin: 0;
+}
 body {
   display: flex;
   display: -webkit-flex;

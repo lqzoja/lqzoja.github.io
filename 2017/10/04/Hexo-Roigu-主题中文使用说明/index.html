@@ -55,16 +55,16 @@
         <div class="toc-father">
           <strong class="toc-title">文章目录</strong>
           
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#预览图"><span class="toc-number">1.</span> <span class="toc-text">预览图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件说明"><span class="toc-number">2.</span> <span class="toc-text">文件说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见问题"><span class="toc-number">3.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#我为什么要写这个主题"><span class="toc-number">3.1.</span> <span class="toc-text">我为什么要写这个主题</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#预览图"><span class="toc-number">1.</span> <span class="toc-text">预览图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文件说明"><span class="toc-number">2.</span> <span class="toc-text">文件说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常见问题"><span class="toc-number">3.</span> <span class="toc-text">常见问题</span></a></li></ol>
           
         </div>
       
       <h1 id="预览图"><a href="#预览图" class="headerlink" title="预览图"></a>预览图</h1><p><img src="/img/roigu-theme-yulan.png" alt="预览图"></p>
-<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">roigu</div><div class="line">├─languages</div><div class="line">├─layout</div><div class="line">│  ├─_partial</div><div class="line">│  │  └─post</div><div class="line">│  └─_widget</div><div class="line">└─source</div><div class="line">    ├─css</div><div class="line">    │  └─_partial</div><div class="line">    ├─font</div><div class="line">    ├─img</div><div class="line">    └─js</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><del>以上文件夹目录树由 Windows 的 tree 指令生成。</del></p>
-<p>然后我先挖个坑，以后再填好了。</p>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><h2 id="我为什么要写这个主题"><a href="#我为什么要写这个主题" class="headerlink" title="我为什么要写这个主题"></a>我为什么要写这个主题</h2><p><strong>答：</strong>真的只是因为我吃着空。</p>
+<h1 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h1><p>完整的主题应该是这样子的：<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">roigu</div><div class="line">│  .gitignore</div><div class="line">│  LICENSE</div><div class="line">│  README.md</div><div class="line">│  _config.yml</div><div class="line">│</div><div class="line">├─languages</div><div class="line">│      default.yml</div><div class="line">│      ja.yml</div><div class="line">│      zh-CN.yml</div><div class="line">│</div><div class="line">├─layout</div><div class="line">│  │  archive.ejs</div><div class="line">│  │  category.ejs</div><div class="line">│  │  index.ejs</div><div class="line">│  │  layout.ejs</div><div class="line">│  │  page.ejs</div><div class="line">│  │  post.ejs</div><div class="line">│  │  tag.ejs</div><div class="line">│  │</div><div class="line">│  ├─_partial</div><div class="line">│  │  │  after_footer.ejs</div><div class="line">│  │  │  archive.ejs</div><div class="line">│  │  │  article.ejs</div><div class="line">│  │  │  footer.ejs</div><div class="line">│  │  │  head.ejs</div><div class="line">│  │  │  header.ejs</div><div class="line">│  │  │  sidebar.ejs</div><div class="line">│  │  │  tags.ejs</div><div class="line">│  │  │  categories.ejs</div><div class="line">│  │  │</div><div class="line">│  │  └─post</div><div class="line">│  │          article.ejs</div><div class="line">│  │          catetags.ejs</div><div class="line">│  │          comment.ejs</div><div class="line">│  │</div><div class="line">│  └─_widget</div><div class="line">│          hitokoto.ejs</div><div class="line">│          links.ejs</div><div class="line">│</div><div class="line">└─source</div><div class="line">    ├─css</div><div class="line">    │  │  style.styl</div><div class="line">    │  │  vars.styl</div><div class="line">    │  │</div><div class="line">    │  └─_partial</div><div class="line">    │          fonts.styl</div><div class="line">    │          header.styl</div><div class="line">    │</div><div class="line">    ├─font</div><div class="line">    │      fontello.ttf</div><div class="line">    │</div><div class="line">    ├─img</div><div class="line">    │      author.jpg</div><div class="line">    │</div><div class="line">    └─js</div><div class="line">            jquery-2.0.3.min.js</div><div class="line">            Valine.min.js</div></pre></td></tr></table></figure>
+<p>以上文件夹目录树由 Windows 自带的 tree 指令生成。（<code>tree /f</code>）</p>
+<p>配置文件<code>_config.yml</code>注释都写在里边，自己看去。</p>
+<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>你们倒是来问啊。<br>没人问我写个毛线啊。<br>自问自答啊。</p>
 
     </div>
     <div class="article-catetags">
@@ -135,7 +135,17 @@
     <footer>
       <p>Powered by <a href="https://hexo.io/" target="view_window">Hexo</a> and theme by <a href="https://github.com/swwind/roigu" target="view_window">Roigu</a></p>
     </footer>
-    <!-- It must be a script element -->
+    
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-99238066-1', 'swwind.github.io');  
+ga('send', 'pageview');
+</script>
+
+
   </body>
 </html>
 
