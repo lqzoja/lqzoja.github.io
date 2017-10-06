@@ -111,6 +111,16 @@
 </div>
 
   <div class="linkslist sidebar-item">
+  <p class="sidebar-title">站内搜索</p>
+  <div class="sidebar-main">
+    <form method="get" action="/search/">
+      <input type="text" name="s" placeholder="找啥呢(｡･ω･｡)" oninput="this.nextElementSibling.innerHTML=this.value?'按回车发起检索':''" class="sidebar-input">
+      <p style="margin: 0;color: #666;"></p>
+    </form>
+  </div>
+</div>
+
+  <div class="linkslist sidebar-item">
   <p class="sidebar-title">友情链接</p>
   <div class="sidebar-main">
     <ul>

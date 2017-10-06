@@ -77,7 +77,7 @@
 
   <div class="tags-icon">
   
-    <a href="/tags/并查集/">并查集</a><a href="/tags/离散化/">离散化</a>
+    <a href="/tags/离散化/">离散化</a><a href="/tags/并查集/">并查集</a>
   </div>
 
 </div>
@@ -109,6 +109,16 @@
   <div class="hitokoto-text" id="yiyan-text">Loading...</div>
   <div class="hitokoto-author" id="yiyan-author"></div>
   <script type="text/javascript">;(function(){var s="ac";$.get("https://sslapi.hitokoto.cn/?c="+s[Math.floor(Math.random()*s.length)],function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})})();</script>
+</div>
+
+  <div class="linkslist sidebar-item">
+  <p class="sidebar-title">站内搜索</p>
+  <div class="sidebar-main">
+    <form method="get" action="/search/">
+      <input type="text" name="s" placeholder="找啥呢(｡･ω･｡)" oninput="this.nextElementSibling.innerHTML=this.value?'按回车发起检索':''" class="sidebar-input">
+      <p style="margin: 0;color: #666;"></p>
+    </form>
+  </div>
 </div>
 
   <div class="linkslist sidebar-item">
