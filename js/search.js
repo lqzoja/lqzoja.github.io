@@ -115,7 +115,7 @@ var searchFunc = function(path, search_id, content_id) {
 					}
 				});
 				str += "</ul>";
-				$resultContent.innerHTML = flag ? str : "<div class='search-failed'><p>Nothing Matched</p></div>";
+				$resultContent.innerHTML = flag ? str : "<p class='search-failed'>Nothing Matched</p>";
 			}
 			$input.addEventListener('input', $fun);
 			if ($input.value)
