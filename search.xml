@@ -10,7 +10,24 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">roigu</div><div class="line">│  .gitignore</div><div class="line">│  LICENSE</div><div class="line">│  README.md</div><div class="line">│  _config.yml</div><div class="line">│</div><div class="line">├─languages</div><div class="line">│      default.yml</div><div class="line">│      ja.yml</div><div class="line">│      zh-CN.yml</div><div class="line">│</div><div class="line">├─layout</div><div class="line">│  │  archive.ejs</div><div class="line">│  │  category.ejs</div><div class="line">│  │  index.ejs</div><div class="line">│  │  layout.ejs</div><div class="line">│  │  page.ejs</div><div class="line">│  │  post.ejs</div><div class="line">│  │  tag.ejs</div><div class="line">│  │</div><div class="line">│  ├─_partial</div><div class="line">│  │  │  after_footer.ejs</div><div class="line">│  │  │  archive.ejs</div><div class="line">│  │  │  article.ejs</div><div class="line">│  │  │  footer.ejs</div><div class="line">│  │  │  head.ejs</div><div class="line">│  │  │  header.ejs</div><div class="line">│  │  │  sidebar.ejs</div><div class="line">│  │  │  tags.ejs</div><div class="line">│  │  │  categories.ejs</div><div class="line">│  │  │</div><div class="line">│  │  └─post</div><div class="line">│  │          article.ejs</div><div class="line">│  │          catetags.ejs</div><div class="line">│  │          comment.ejs</div><div class="line">│  │</div><div class="line">│  └─_widget</div><div class="line">│          hitokoto.ejs</div><div class="line">│          links.ejs</div><div class="line">│</div><div class="line">└─source</div><div class="line">    ├─css</div><div class="line">    │  │  style.styl</div><div class="line">    │  │  vars.styl</div><div class="line">    │  │</div><div class="line">    │  └─_partial</div><div class="line">    │          fonts.styl</div><div class="line">    │          header.styl</div><div class="line">    │</div><div class="line">    ├─font</div><div class="line">    │      fontello.ttf</div><div class="line">    │</div><div class="line">    ├─img</div><div class="line">    │      author.jpg</div><div class="line">    │</div><div class="line">    └─js</div><div class="line">            jquery-2.0.3.min.js</div><div class="line">            Valine.min.js</div></pre></td></tr></table></figure>
 <p>以上文件夹目录树由 Windows 自带的 tree 指令生成。（<code>tree /f</code>）</p>
 <p>配置文件<code>_config.yml</code>注释都写在里边，自己看去。</p>
-<h1 id="页面的开关"><a href="#页面的开关" class="headerlink" title="页面的开关"></a>页面的开关</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">---</div><div class="line">layout: post|page // 必须，页面类型</div><div class="line">title: The title of the article // 必须，页面标题</div><div class="line">date: 2017-10-04 20:39:36 // 必须，发表时间</div><div class="line">tags: tag | [tag1, tag2, ..., tagx] // 可选，标签，默认为空</div><div class="line">categories: category | [category1, category2, ..., categoryx] // 可选，分类，默认为空</div><div class="line">comments: true // 可选，评论，默认为 true</div><div class="line">toc: true // 可选，文章目录，默认为 true</div><div class="line">---</div></pre></td></tr></table></figure>
+<h1 id="页面的开关"><a href="#页面的开关" class="headerlink" title="页面的开关"></a>页面的开关</h1><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">---</div><div class="line">layout: post|page // 必须，页面类型</div><div class="line">title: The title of the article // 必须，页面标题</div><div class="line">date: 2017-10-04 20:39:36 // 必须，发表时间</div><div class="line">tags: tag | [tag1, tag2, ..., tagx] // 可选，标签，默认为空</div><div class="line">categories: category | [category1, category2, ..., categoryx] // 可选，分类，默认为空</div><div class="line">comments: true // 可选，评论，默认为 true</div><div class="line">toc: true // 可选，文章目录，默认为 true</div><div class="line">mathjax: true // 可选，是否开启数学公式，默认为 true</div><div class="line">---</div></pre></td></tr></table></figure>
+<h2 id="关于-MathJax-与-Markdown-冲突的解决办法"><a href="#关于-MathJax-与-Markdown-冲突的解决办法" class="headerlink" title="关于 MathJax 与 Markdown 冲突的解决办法"></a>关于 MathJax 与 Markdown 冲突的解决办法</h2><p>我们可以通过修改 Markdown 来实现对 MathJax 的支持。<br>具体方法如下：</p>
+<ol>
+<li><p>找到并打开<code>./node_modules/marked/lib/marked.js</code>。</p>
+</li>
+<li><p>找到</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([\\`*&#123;&#125;\[\]()# +\-.!_&gt;])/</span>,</div></pre></td></tr></table></figure>
+<p>将其替换为</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()# +\-.!_&gt;])/</span>,</div></pre></td></tr></table></figure>
+<p>这一步是取消了 Markdown 对<code>\\</code>、<code>\{</code>、<code>\}</code>的转义。</p>
+</li>
+<li><p>找到</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">em: <span class="regexp">/^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</div></pre></td></tr></table></figure>
+<p>将其替换为</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">em: <span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</div></pre></td></tr></table></figure>
+<p>这一步取消了对<code>_Italic_</code>的转义，若要继续使用斜体请使用<code>*Italic*</code>。</p>
+</li>
+</ol>
 <h1 id="特殊页面"><a href="#特殊页面" class="headerlink" title="特殊页面"></a>特殊页面</h1><h2 id="tags-标签云"><a href="#tags-标签云" class="headerlink" title="tags 标签云"></a>tags 标签云</h2><p>输入以下代码</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">$ hexo n page &quot;tags&quot;</div></pre></td></tr></table></figure>
 <p>之后打开<code>/source/tags/index.md</code>，将其改为如下内容</p>
@@ -34,7 +51,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ hexo n page <span class="string">"search"</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>打开 /source/search.md，将其改为如下</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">---</div><div class="line"><span class="section">layout: search</span></div><div class="line">---</div></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><div class="line">---</div><div class="line">layout: search</div><div class="line"><span class="section">mathjax: false</span></div><div class="line">---</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>然后你就可以在<code>/search</code>页面搜索了。（<a href="/search">预览</a>）<br>具体可以参见 <a href="https://github.com/PaicHyperionDev/hexo-generator-search" target="_blank" rel="external">https://github.com/PaicHyperionDev/hexo-generator-search</a></p>

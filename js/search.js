@@ -18,8 +18,9 @@
 // 02110-1301 USA
 // 
 
-var searchFunc = function(path, search_id, content_id) {
+var searchFunc = function(path, search_id, content_id, regex_id) {
 	'use strict';
+	document.getElementById(content_id).innerHTML = '<p class="search-failed">Preloading ...</p>'
 	$.ajax({
 		url: path,
 		dataType: "xml",
@@ -34,11 +35,19 @@ var searchFunc = function(path, search_id, content_id) {
 			}).get();
 
 			var $input = document.getElementById(search_id);
-			if (!$input) return;
+			var $regex = document.getElementById(regex_id);
+			if (!$input || !$regex) return;
 			var $resultContent = document.getElementById(content_id);
 			var $fun = function(){
 				var str = '<ul class=\"search-result-list\">';                
-				var keywords = $input.value.trim().toLowerCase().split(/[\s\-]+/);
+				var keywords = $regex.checked ? [$input.value] : $input.value.trim().toLowerCase().split(/[\s\-]+/);
+				if ($regex.checked) {
+					try {
+						var k = new RegExp(keywords[0]);
+					} catch (e) {
+						return $resultContent.innerHTML = '<p class="search-failed">Regex Was Wrong</p>';
+					}
+				}
 				$resultContent.innerHTML = "";
 				if ($input.value.trim().length <= 0) {
 					return;
@@ -60,8 +69,14 @@ var searchFunc = function(path, search_id, content_id) {
 					// only match artiles with not empty contents
 					if (data_content !== '') {
 						keywords.forEach(function(keyword, i) {
-							index_title = data_title.indexOf(keyword);
-							index_content = data_content.indexOf(keyword);
+							if ($regex.checked) {
+								var reg = new RegExp(keyword, 'i');
+								index_title = (data_title.match(reg) || {index:-1}).index;
+								index_content = (data_content.match(reg) || {index:-1}).index;
+							} else {
+								index_title = data_title.indexOf(keyword);
+								index_content = data_content.indexOf(keyword);
+							}
 
 							if( index_title < 0 && index_content < 0 ){
 								isMatch = false;
@@ -105,8 +120,8 @@ var searchFunc = function(path, search_id, content_id) {
 							// highlight all keywords
 							keywords.forEach(function(keyword){
 								var regS = new RegExp(keyword, "gi");
-								match_content = match_content.replace(regS, "<span class=\"search-keyword\">"+keyword+"</span>");
-								data_title = data_title.replace(regS, "<span class=\"search-keyword\">"+keyword+"</span>");
+								match_content = match_content.replace($regex.checked ? regS : keyword, (s) => s ? "<span class=\"search-keyword\">"+s+"</span>" : "");
+								data_title = data_title.replace($regex.checked ? regS : keyword, (s) => s ? "<span class=\"search-keyword\">"+s+"</span>" : "");
 							});
 							str += "<p class='search-result-title'>"+ data_title +"</p>"
 							str += "<p class=\"search-result\">" + match_content +"...</p>"
@@ -118,6 +133,8 @@ var searchFunc = function(path, search_id, content_id) {
 				$resultContent.innerHTML = flag ? str : "<p class='search-failed'>Nothing Matched</p>";
 			}
 			$input.addEventListener('input', $fun);
+			$regex.addEventListener('click', $fun);
+			$resultContent.innerHTML = '';
 			if ($input.value)
 				$fun();
 		}

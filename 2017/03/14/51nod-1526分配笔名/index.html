@@ -10,6 +10,7 @@
 
 <script src="/js/jquery-2.0.3.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
+
 <!-- Mathjax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -17,6 +18,7 @@
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
+
 <!-- Valine -->
 <script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="/js/Valine.min.js"></script>
@@ -107,14 +109,14 @@
   <p class="sidebar-title">一言</p>
   <div class="hitokoto-text" id="yiyan-text">Loading...</div>
   <div class="hitokoto-author" id="yiyan-author"></div>
-  <script type="text/javascript">;(function(){var s="ac";$.get("https://sslapi.hitokoto.cn/?c="+s[Math.floor(Math.random()*s.length)],function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})})();</script>
+  <script type="text/javascript">;(function(){var s="a";$.get("https://sslapi.hitokoto.cn/?c="+s[Math.floor(Math.random()*s.length)],function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html('《'+yy.from+'》');})})();</script>
 </div>
 
   <div class="linkslist sidebar-item">
   <p class="sidebar-title">站内搜索</p>
   <div class="sidebar-main">
     <form method="get" action="/search/">
-      <input type="text" name="s" placeholder="找啥呢(｡･ω･｡)" oninput="this.nextElementSibling.innerHTML=this.value?'按回车发起检索':''" class="sidebar-input">
+      <input type="text" name="s" placeholder="找啥呢(｡･ω･｡)" oninput="this.nextElementSibling.innerHTML=this.value?'按回车发起检索':''" class="sidebar-input input-text">
       <p style="margin: 0;color: #666;"></p>
     </form>
   </div>
