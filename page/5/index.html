@@ -50,6 +50,25 @@
 
   
 <section class="index-section">
+  <a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/" title="BZOJ 4240: 有趣的家庭菜园" class="link">
+    <p class="desc-name"><span class="title">BZOJ 4240: 有趣的家庭菜园</span><time class="time">2017-04-12</time></p>
+  </a>
+  
+	  
+	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有$N$株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。<br>为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有比它高的IOI草存在，那么这株IOI草就会在夏天之前枯萎。换句话说，为了不让任何一株IOI草枯萎，需要满足以下条件：<br>对于任意$2\leq i\leq N-1$，以下两个条件至少满足一个：</p>
+<ol>
+<li>对于任意$1\leq j\leq i-1$，$h_j\leq h_i$</li>
+<li>对于任意$i+1\leq j\leq N$，$h_k\leq h_i$</li>
+</ol>
+<p>IOI草是非常昂贵的，为了不让IOI草枯萎，JOI君需要调换IOI草的顺序。IOI草非常非常的高大且纤细的植物，因此JOI君每次只能交换相邻两株IOI草。也就是说，JOI君每次需要选择一个整数$i$($1\leq i\leq N-1$)，然后交换第$i$株IOI草和第$i+1$株IOI草。随着夏天临近，IOI草枯萎的可能性越来越大，因此JOI君想知道让所有IOI草都不会枯萎的最少操作次数。<br>现在给出田地的区域数，以及每株IOI草的高度，请你求出让所有IOI草的不会枯萎的最少操作次数。<br><p>...</p></div>
+	  	<div class="readmore"><a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/">Read More</a></div>
+	  
+  
+</section>
+
+
+  
+<section class="index-section">
   <a href="/2017/04/12/BZOJ-4236-JOIOJI/" title="BZOJ 4236: JOIOJI" class="link">
     <p class="desc-name"><span class="title">BZOJ 4236: JOIOJI</span><time class="time">2017-04-12</time></p>
   </a>
@@ -183,22 +202,6 @@
 	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>传说很久以前，大地上居住着一种神秘的生物：地精。 地精喜欢住在连绵不绝的山脉中。具体地说，一座长度为 N 的山脉 H可分 为从左到右的 N 段，每段有一个独一无二的高度 Hi，其中Hi是1到N 之间的正 整数。 如果一段山脉比所有与它相邻的山脉都高，则这段山脉是一个山峰。位于边 缘的山脉只有一段相邻的山脉，其他都有两段（即左边和右边）。 类似地，如果一段山脉比所有它相邻的山脉都低，则这段山脉是一个山谷。 地精们有一个共同的爱好——饮酒，酒馆可以设立在山谷之中。地精的酒馆 不论白天黑夜总是人声鼎沸，地精美酒的香味可以飘到方圆数里的地方。 地精还是一种非常警觉的生物，他们在每座山峰上都可以设立瞭望台，并轮 流担当瞭望工作，以确保在第一时间得知外敌的入侵。 地精们希望这N 段山脉每段都可以修建瞭望台或酒馆的其中之一，只有满足 这个条件的整座山脉才可能有地精居住。 现在你希望知道，长度为N 的可能有地精居住的山脉有多少种。两座山脉A 和B不同当且仅当存在一个 i，使得 Ai≠Bi。由于这个数目可能很大，你只对它 除以P的余数感兴趣。</p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>仅含一行，两个正整数 N, P。<br><p>...</p></div>
 	  	<div class="readmore"><a href="/2017/04/05/BZOJ-1925-Sdoi2010-地精部落/">Read More</a></div>
-	  
-  
-</section>
-
-
-  
-<section class="index-section">
-  <a href="/2017/04/01/51nod-1714-B君的游戏/" title="51nod 1714 B君的游戏" class="link">
-    <p class="desc-name"><span class="title">51nod 1714 B君的游戏</span><time class="time">2017-04-01</time></p>
-  </a>
-  
-	  
-	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>B君和L君要玩一个游戏。刚开始有n个正整数ai。双方轮流操作。每次操作，选一个正整数x，将其移除，再添加7个数字$x_1,x_2,…,x_7$。要求对于$x_i$，满足$0\leq x_i\lt x$且$x&amp;x_i=x_i$。注意$0$不能被选取，所以这个游戏一定会结束，而谁无法操作谁就失败。B君根据自己的经验，认为先手胜率高一点，所以B君是先手。B君想知道自己是否必胜。</p>
-<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行一个整数n ($1 \leq n \leq 100000$)<br>以下n行n个数ai ($0 \leq ai \lt 2^64$)</p>
-<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>如果先手必胜，输出”B”，否则输出”L”。<br><p>...</p></div>
-	  	<div class="readmore"><a href="/2017/04/01/51nod-1714-B君的游戏/">Read More</a></div>
 	  
   
 </section>

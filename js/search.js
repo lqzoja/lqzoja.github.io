@@ -1,26 +1,25 @@
-// A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
-// Copyright (C) 2015 
-// Joseph Pan <http://github.com/wzpan>
-// Shuhao Mao <http://github.com/maoshuhao>
-// This library is free software; you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as
-// published by the Free Software Foundation; either version 2.1 of the
-// License, or (at your option) any later version.
+// Copy form https://github.com/PaicHyperionDev/hexo-generator-search
+// I fixed lots of bugs ......
+// Who can tell me who wrote this f**king code???
+// Now there will not be any bugs... If you find out one, please tell me.
 // 
-// This library is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public
-// License along with this library; if not, write to the Free Software
-// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-// 02110-1301 USA
-// 
-
-var searchFunc = function(path, search_id, content_id, regex_id) {
+var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 	'use strict';
 	document.getElementById(content_id).innerHTML = '<p class="search-failed">Preloading ...</p>'
+	var randomString = function () {
+		return String.fromCharCode(Math.floor(Math.random()*10000)+545155) 
+	}
+	function htmlEncode(str) {
+		var div = document.createElement("div");
+		div.appendChild(document.createTextNode(str));
+		return div.innerHTML;
+	}
+	function htmlDecode(str) {
+		var div = document.createElement("div");
+		div.innerHTML = str;
+		return div.innerHTML;
+	}
+	var fuck = randomString();
 	$.ajax({
 		url: path,
 		dataType: "xml",
@@ -36,22 +35,30 @@ var searchFunc = function(path, search_id, content_id, regex_id) {
 
 			var $input = document.getElementById(search_id);
 			var $regex = document.getElementById(regex_id);
+			var $case = document.getElementById(case_id)
 			if (!$input || !$regex) return;
 			var $resultContent = document.getElementById(content_id);
 			var $fun = function(){
 				var str = '<ul class=\"search-result-list\">';                
-				var keywords = $regex.checked ? [$input.value] : $input.value.trim().toLowerCase().split(/[\s\-]+/);
-				if ($regex.checked) {
+				var keywords = $regex.checked
+					? [$input.value]
+					: ($case.checked
+						? $input.value.trim().toLowerCase()
+						: $input.value.trim()).split(/[\s\-]+/);
+				if ($regex.checked)
 					try {
 						var k = new RegExp(keywords[0]);
+						if (k.test(''))
+							return $resultContent.innerHTML = '<p class="search-failed">Everything is matched</p>';
 					} catch (e) {
 						return $resultContent.innerHTML = '<p class="search-failed">Regex Was Wrong</p>';
 					}
-				}
+				keywords.forEach((s, i) => keywords[i] = htmlEncode(s))
+				if ($regex.checked)
+					keywords.forEach((s, i) => keywords[i] = s.replace(/&[^;]*;/gi, (r) => '('+r+')'))
 				$resultContent.innerHTML = "";
-				if ($input.value.trim().length <= 0) {
-					return;
-				}
+				if ($input.value.trim().length <= 0)
+					return $resultContent.innerHTML = '';
 				var flag = 0;
 				// perform local searching
 				datas.forEach(function(data) {
@@ -60,8 +67,12 @@ var searchFunc = function(path, search_id, content_id, regex_id) {
 					if (!data.title || data.title.trim() === '') {
 						data.title = "Untitled";
 					}
-					var data_title = data.title.trim().toLowerCase();     
-					var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+					var data_title = $case.checked
+						? data.title.trim().toLowerCase()
+						: data.title.trim();     
+					var data_content = $case.checked
+						? data.content.trim().replace(/<[^>]+>/g,"").toLowerCase()
+						: data.content.trim().replace(/<[^>]+>/g,"");
 					var data_url = data.url;
 					var index_title = -1;
 					var index_content = -1;
@@ -70,7 +81,7 @@ var searchFunc = function(path, search_id, content_id, regex_id) {
 					if (data_content !== '') {
 						keywords.forEach(function(keyword, i) {
 							if ($regex.checked) {
-								var reg = new RegExp(keyword, 'i');
+								var reg = new RegExp(keyword, $case.checked ? 'i' : '');
 								index_title = (data_title.match(reg) || {index:-1}).index;
 								index_content = (data_content.match(reg) || {index:-1}).index;
 							} else {
@@ -97,7 +108,7 @@ var searchFunc = function(path, search_id, content_id, regex_id) {
 					if (isMatch) {
 						flag = 1;
 						str += "<li><a href=" + data_url + ">";
-						var content = data.content.trim().replace(/<[^>]+>/g,"");
+						var content = data_content;
 						if (first_occur >= 0) {
 							// cut out 100 characters
 							var start = first_occur - 20;
@@ -119,9 +130,27 @@ var searchFunc = function(path, search_id, content_id, regex_id) {
 
 							// highlight all keywords
 							keywords.forEach(function(keyword){
-								var regS = new RegExp(keyword, "gi");
-								match_content = match_content.replace($regex.checked ? regS : keyword, (s) => s ? "<span class=\"search-keyword\">"+s+"</span>" : "");
-								data_title = data_title.replace($regex.checked ? regS : keyword, (s) => s ? "<span class=\"search-keyword\">"+s+"</span>" : "");
+								if ($regex.checked) {
+									var regS = new RegExp(keyword, $case.checked ? "gi" : "g");
+									match_content = match_content.replace(regS,
+										(s) => '<span class="search-keyword">'+s+'</span>');
+									data_title = data_title.replace(regS,
+										(s) => '<span class="search-keyword">'+s+'</span>');
+								} else {
+									while (fuck.indexOf(keyword) > 0 || match_content.indexOf(fuck) > 0
+											|| data_title.indexOf(fuck) > 0)
+										fuck = randomString();
+									while (match_content.indexOf(keyword) > -1)
+										match_content = match_content.replace(keyword, fuck);
+									while (data_title.indexOf(keyword) > -1)
+										data_title = data_title.replace(keyword, fuck);
+									while (match_content.indexOf(fuck) > -1)
+										match_content = match_content.replace(fuck,
+											'<span class="search-keyword">'+keyword+'</span>');
+									while (data_title.indexOf(fuck) > -1)
+										data_title = data_title.replace(fuck,
+											'<span class="search-keyword">'+keyword+'</span>');
+								}
 							});
 							str += "<p class='search-result-title'>"+ data_title +"</p>"
 							str += "<p class=\"search-result\">" + match_content +"...</p>"
@@ -134,9 +163,9 @@ var searchFunc = function(path, search_id, content_id, regex_id) {
 			}
 			$input.addEventListener('input', $fun);
 			$regex.addEventListener('click', $fun);
+			$case.addEventListener('click', $fun);
 			$resultContent.innerHTML = '';
-			if ($input.value)
-				$fun();
+			if ($input.value) $fun();
 		}
 	});
 }

@@ -50,6 +50,27 @@
 
   
 <section class="index-section">
+  <a href="/2017/04/20/BZOJ-2242-SDOI2011-计算器/" title="BZOJ 2242: [SDOI2011]计算器" class="link">
+    <p class="desc-name"><span class="title">BZOJ 2242: [SDOI2011]计算器</span><time class="time">2017-04-20</time></p>
+  </a>
+  
+	  
+	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>你被要求设计一个计算器完成以下三项任务：</p>
+<ol>
+<li>给定y,z,p，计算$y^zmod\ p$的值；</li>
+<li>给定y,z,p，计算满足$xy\equiv z\pmod p$的最小非负整数；</li>
+<li>给定y,z,p，计算满足$y^x\equiv z\pmod p$的最小非负整数。</li>
+</ol>
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>输入包含多组数据。<br>第一行包含两个正整数T,K分别表示数据组数和询问类型（对于一个测试点内的所有数据，询问类型相同）。<br>以下行每行包含三个正整数y,z,p，描述一个询问。</p>
+<h1 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h1><p>对于每个询问，输出一行答案。对于询问类型2和3，如果不存在满足条件的，则输出“Orz, I cannot find x!”，注意逗号与“I”之间有一个空格。<br><p>...</p></div>
+	  	<div class="readmore"><a href="/2017/04/20/BZOJ-2242-SDOI2011-计算器/">Read More</a></div>
+	  
+  
+</section>
+
+
+  
+<section class="index-section">
   <a href="/2017/04/20/BZOJ-1085-SCOI2005-骑士精神/" title="BZOJ 1085: [SCOI2005]骑士精神" class="link">
     <p class="desc-name"><span class="title">BZOJ 1085: [SCOI2005]骑士精神</span><time class="time">2017-04-20</time></p>
   </a>
@@ -188,25 +209,6 @@
 	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>大学生的JOI君每天乘坐巴士走读。<br>JOI君的家和学校都在IOI市内。IOI市内共有N个巴士停靠点，编号为$1~N$，离JOI家最近的停靠点为$1$号停靠点，离大学最近的停靠点为$N$号停靠点。<br>IOI市内共有M辆巴士，每辆巴士一天只跑一次，从某一时刻某一停靠点出发，在某一时刻到达另一个站点。运行途中不可以下车。<br>JOI君每天要乘坐一次以上的巴士到达学校。我们可以无视JOI君换车的时间，换言之，为了换乘某个时刻从某个停靠点出发的巴士，只需要在该巴士的出发时间或之前到达停靠点就可以了。此外，多次在某个停靠点换乘也是可以的。<br>在这样的条件下，JOI君想知道自己应该何时从家中出发才能按时赶到学校。然而，学校每天开始上课的时间都不同。在某$Q$天里，每天到达$N$号站点的最晚时间都是已知的，JOI君想知道，他最晚何时到达$1$号站点才能赶上学校的授课。<br>现在给你巴士的运营信息，以及这$Q$天里每天到达$N$号站点的最晚时间，请你求出每天JOI君最晚何时到达1号站点。</p>
 <h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><p>第一行两个空格分隔的正整数$N$和$M$，表示IOI市内有$N$个巴士站点和$M$辆巴士。<br>接下来$M$行，第$i$行($1\leq i\leq M$)有四个空格分隔的整数$A_i$,$B_i$,$X_i$,$Y_i$($1\leq Ai\leq N,1\leq Bi\leq N,Ai≠Bi$)，表示第$i$辆巴士在时刻$X_i$从停靠点$A_i$出发，在时刻$Y_i$到达停靠点$B_i$。时刻从半夜$12$点开始计算，单位为毫秒。<br>接下来一行一个整数$Q$，含义如题目中所示<br>接下来$Q$行，第$i$行($1\leq i\leq Q$)有一个整数$L_i$，表示第$i$天最迟$L_i$时刻到达站点N<br><p>...</p></div>
 	  	<div class="readmore"><a href="/2017/04/13/BZOJ-4239-巴士走读/">Read More</a></div>
-	  
-  
-</section>
-
-
-  
-<section class="index-section">
-  <a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/" title="BZOJ 4240: 有趣的家庭菜园" class="link">
-    <p class="desc-name"><span class="title">BZOJ 4240: 有趣的家庭菜园</span><time class="time">2017-04-12</time></p>
-  </a>
-  
-	  
-	    <div class="artc" ><h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><p>对家庭菜园有兴趣的JOI君每年在自家的田地中种植一种叫做IOI草的植物。JOI君的田地沿东西方向被划分为N个区域，由西到东标号为1~N。IOI草一共有$N$株，每个区域种植着一株。在第i个区域种植的IOI草，在春天的时候高度会生长至hi，此后便不再生长。<br>为了观察春天的样子而出行的JOI君注意到了IOI草的配置与预定的不太一样。IOI草是一种非常依靠阳光的植物，如果某个区域的IOI草的东侧和西侧都有比它高的IOI草存在，那么这株IOI草就会在夏天之前枯萎。换句话说，为了不让任何一株IOI草枯萎，需要满足以下条件：<br>对于任意$2\leq i\leq N-1$，以下两个条件至少满足一个：</p>
-<ol>
-<li>对于任意$1\leq j\leq i-1$，$h_j\leq h_i$</li>
-<li>对于任意$i+1\leq j\leq N$，$h_k\leq h_i$</li>
-</ol>
-<p>IOI草是非常昂贵的，为了不让IOI草枯萎，JOI君需要调换IOI草的顺序。IOI草非常非常的高大且纤细的植物，因此JOI君每次只能交换相邻两株IOI草。也就是说，JOI君每次需要选择一个整数$i$($1\leq i\leq N-1$)，然后交换第$i$株IOI草和第$i+1$株IOI草。随着夏天临近，IOI草枯萎的可能性越来越大，因此JOI君想知道让所有IOI草都不会枯萎的最少操作次数。<br>现在给出田地的区域数，以及每株IOI草的高度，请你求出让所有IOI草的不会枯萎的最少操作次数。<br><p>...</p></div>
-	  	<div class="readmore"><a href="/2017/04/12/BZOJ-4240-有趣的家庭菜园/">Read More</a></div>
 	  
   
 </section>

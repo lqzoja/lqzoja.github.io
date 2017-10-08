@@ -41,11 +41,11 @@
 	<input type="text" id="local-search-input" class="input-text">
 	<div class="search-checkboxes">
 		<label class="search-regex"><input type="checkbox" id="local-search-regex">使用正则表达式</label>
-		<!-- <label class="search-case"><input type="checkbox" id="local-search-case" checked>忽略大小写</label> -->
+		<label class="search-case"><input type="checkbox" id="local-search-case" checked>忽略大小写</label>
 	</div>
 	<div id="local-search-result"></div>
 	<script src="/js/search.js"></script>
-	<script type="text/javascript">;(function(){searchFunc("/search.xml", 'local-search-input', 'local-search-result', 'local-search-regex');var k=$('#local-search-input'),s=decodeURI(document.URL).match(/\?s=[\s\S]+$/g);if(s)k.val(s[0].substr(3));k.focus()})();</script>
+	<script type="text/javascript">;(function(){searchFunc("/search.xml", 'local-search-input', 'local-search-result', 'local-search-regex', 'local-search-case');var k=$('#local-search-input'),s=decodeURIComponent(document.URL).match(/\?s=[\s\S]+$/g);if(s)k.val(s[0].substr(3));k.focus()})();</script>
 </div>
     </div>
     <footer>
