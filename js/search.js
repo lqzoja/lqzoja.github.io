@@ -50,7 +50,7 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 				if ($regex.checked)
 					try {
 						var k = new RegExp(keywords[0]);
-						if (k.test(''))
+						if (k.test('') || k.test(' '))
 							return $resultContent.innerHTML = '<p class="search-failed">Everything is Matched</p>';
 					} catch (e) {
 						return $resultContent.innerHTML = '<p class="search-failed">Regular Was Wrong</p>';
@@ -87,7 +87,7 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 								index_title = data_title.indexOf(keyword);
 								index_content = data_content.indexOf(keyword);
 							}
-							if(index_title > -1 || index_content > -1) {
+							if (index_title > -1 || index_content > -1) {
 								isMatch = true;
 								if (index_content < 0) {
 									index_content = 0;
@@ -154,8 +154,8 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 									data_title = data_title.replace(faq, (s) =>
 										'<span class="search-keyword">'+htmlEncode(keywords[parseInt(s.substr(1, s.length-2))])+'</span>');
 							}
-							str += '<p class="search-result-title">'+ data_title +'</p>'
-							str += '<p class="search-result">' + match_content +'...</p>'
+							str += '<p class="search-result-title">' + data_title + '</p>'
+							str += '<p class="search-result">' + match_content + '...</p>'
 						}
 						str += "</a></li>";
 					}

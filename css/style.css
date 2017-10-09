@@ -577,6 +577,9 @@ header .blog-title .subtitle {
 .container .category-icon:before {
   content: "\f067";
 }
+.artc {
+  color: #666;
+}
 .artc img {
   max-width: 100%;
 }
@@ -699,9 +702,6 @@ header .blog-title .subtitle {
 }
 .artc figure * {
   font-family: "Courier New", Monaco, Menlo, Consolas, monospace;
-}
-.artc * {
-  color: #666;
 }
 .artc .headerlink {
   margin: 0;
