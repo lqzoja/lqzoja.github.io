@@ -45,7 +45,7 @@
 	</div>
 	<div id="local-search-result"></div>
 	<script src="/js/search.js"></script>
-	<script type="text/javascript">;(function(){searchFunc("/search.xml", 'local-search-input', 'local-search-result', 'local-search-regex', 'local-search-case');var k=$('#local-search-input'),s=decodeURIComponent(document.URL).match(/\?s=[\s\S]+$/g);if(s)k.val(s[0].substr(3));k.focus()})();</script>
+	<script type="text/javascript">;(function(){searchFunc("/search.xml", 'local-search-input', 'local-search-result', 'local-search-regex', 'local-search-case');var k=$('#local-search-input'),s=decodeURIComponent(document.URL).match(/\?s=[\s\S]+$/g);if(s)k.val(s[0].substr(3).replace(/\+/g, ' '));k.focus()})();</script>
 </div>
     </div>
     <footer>

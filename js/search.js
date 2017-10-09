@@ -8,7 +8,6 @@
 // content_id -> 搜索输出的 div 的 id
 // regex_id   -> 是否正则表达式的 checkbox 的 id
 // search_id  -> 是否忽略大小写的 checkbox 的 id
-// 这个再出问题我就去吃 htr 了！
 var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 	'use strict';
 	document.getElementById(content_id).innerHTML = '<p class="search-failed">Preloading ...</p>'
@@ -34,7 +33,6 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 					url: $("url", this).text()
 				};
 			}).get();
-
 			var $input = document.getElementById(search_id);
 			var $regex = document.getElementById(regex_id);
 			var $case = document.getElementById(case_id)
@@ -46,7 +44,7 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 					? [$input.value.trim()]
 					: ($case.checked
 						? $input.value.trim().toLowerCase()
-						: $input.value.trim()).split(/[\s\-]+/);
+						: $input.value.trim()).split(/\s+/);
 				if ($input.value.trim().length <= 0)
 					return $resultContent.innerHTML = '';
 				if ($regex.checked)
@@ -61,7 +59,7 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 				var flag = 0;
 				// perform local searching
 				datas.forEach(function(data) {
-					var isMatch = true;
+					var isMatch = false;
 					var content_index = [];                                                       
 					if (!data.title || data.title.trim() === '') {
 						data.title = "Untitled";
@@ -89,14 +87,12 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 								index_title = data_title.indexOf(keyword);
 								index_content = data_content.indexOf(keyword);
 							}
-
-							if( index_title < 0 && index_content < 0 ){
-								isMatch = false;
-							} else {
+							if(index_title > -1 || index_content > -1) {
+								isMatch = true;
 								if (index_content < 0) {
 									index_content = 0;
 								}
-								if (i == 0) {
+								if (first_occur == -1) {
 									first_occur = index_content;
 								}
 								// content_index.push({index_content:index_content, keyword_len:keyword_len});
@@ -114,23 +110,23 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 							// cut out 100 characters
 							var start = first_occur - 20;
 							var end = first_occur + 80;
-
 							if(start < 0){
 								start = 0;
 							}
-
 							if(start == 0){
 								end = 100;
 							}
-
 							if(end > content.length){
 								end = content.length;
 							}
-
 							var match_content = content.substr(start, end); 
-
 							// highlight all keywords
-							keywords.forEach(function(keyword){
+							keywords.forEach(function (keyword) {
+								while (fuck.indexOf(keyword) > 0 || match_content.indexOf(fuck) > 0
+										|| data_title.indexOf(fuck) > 0)
+									fuck = randomString();
+							})
+							keywords.forEach(function(keyword, i){
 								if ($regex.checked) {
 									match_content = htmlEncode(match_content);
 									data_title = htmlEncode(data_title)
@@ -141,23 +137,23 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 									data_title = data_title.replace(regS,
 										(s) => '<span class="search-keyword">'+s+'</span>');
 								} else {
-									while (fuck.indexOf(keyword) > 0 || match_content.indexOf(fuck) > 0
-											|| data_title.indexOf(fuck) > 0)
-										fuck = randomString();
 									while (match_content.indexOf(keyword) > -1)
-										match_content = match_content.replace(keyword, fuck);
+										match_content = match_content.replace(keyword, fuck + i + fuck);
 									while (data_title.indexOf(keyword) > -1)
-										data_title = data_title.replace(keyword, fuck);
-									data_title = htmlEncode(data_title);
-									match_content = htmlEncode(match_content);
-									while (match_content.indexOf(fuck) > -1)
-										match_content = match_content.replace(fuck,
-											'<span class="search-keyword">'+htmlEncode(keyword)+'</span>');
-									while (data_title.indexOf(fuck) > -1)
-										data_title = data_title.replace(fuck,
-											'<span class="search-keyword">'+htmlEncode(keyword)+'</span>');
+										data_title = data_title.replace(keyword, fuck + i + fuck);
 								}
 							});
+							if (!$regex.checked) {
+								var faq = new RegExp(fuck + '\\d+' + fuck, 'gi');
+								data_title = htmlEncode(data_title);
+								match_content = htmlEncode(match_content);
+								while (match_content.indexOf(fuck) > -1)
+									match_content = match_content.replace(faq, (s) =>
+										'<span class="search-keyword">'+htmlEncode(keywords[parseInt(s.substr(1, s.length-2))])+'</span>');
+								while (data_title.indexOf(fuck) > -1)
+									data_title = data_title.replace(faq, (s) =>
+										'<span class="search-keyword">'+htmlEncode(keywords[parseInt(s.substr(1, s.length-2))])+'</span>');
+							}
 							str += '<p class="search-result-title">'+ data_title +'</p>'
 							str += '<p class="search-result">' + match_content +'...</p>'
 						}
