@@ -1087,3 +1087,6 @@ input[type="checkbox"]:after {
   src: url("/font/fontello.ttf");
   font-width: normal;
 }
+.meiryo {
+  font-family: Meiryo;
+}

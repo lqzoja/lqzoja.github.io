@@ -2,22 +2,24 @@
 // I fixed lots of bugs ......
 // Who can tell me who wrote this f**king code???
 // Now there will not be any bugs... If you find out one, please tell me.
-// 
+// it need jquery
+// path       -> search.xml 的位置
+// search_id  -> 搜索输入的 文本框 的 id
+// content_id -> 搜索输出的 div 的 id
+// regex_id   -> 是否正则表达式的 checkbox 的 id
+// search_id  -> 是否忽略大小写的 checkbox 的 id
+// 这个再出问题我就去吃 htr 了！
 var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 	'use strict';
 	document.getElementById(content_id).innerHTML = '<p class="search-failed">Preloading ...</p>'
 	var randomString = function () {
 		return String.fromCharCode(Math.floor(Math.random()*10000)+545155) 
 	}
-	function htmlEncode(str) {
-		var div = document.createElement("div");
-		div.appendChild(document.createTextNode(str));
-		return div.innerHTML;
+	function htmlEncode (value) {
+		return $('<div/>').text(value).html();
 	}
-	function htmlDecode(str) {
-		var div = document.createElement("div");
-		div.innerHTML = str;
-		return div.innerHTML;
+	function htmlDecode (value) {
+		return $('<div/>').html(value).text();
 	}
 	var fuck = randomString();
 	$.ajax({
@@ -27,38 +29,35 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 			// get the contents from search data
 			var datas = $( "entry", xmlResponse ).map(function() {
 				return {
-					title: $( "title", this ).text(),
-					content: $("content",this).text(),
-					url: $( "url" , this).text()
+					title: $("title", this).text(),
+					content: $("content", this).text(),
+					url: $("url", this).text()
 				};
 			}).get();
 
 			var $input = document.getElementById(search_id);
 			var $regex = document.getElementById(regex_id);
 			var $case = document.getElementById(case_id)
-			if (!$input || !$regex) return;
+			if (!$input || !$regex || !$case) return;
 			var $resultContent = document.getElementById(content_id);
 			var $fun = function(){
-				var str = '<ul class=\"search-result-list\">';                
+				var str = '<ul class="search-result-list">';                
 				var keywords = $regex.checked
-					? [$input.value]
+					? [$input.value.trim()]
 					: ($case.checked
 						? $input.value.trim().toLowerCase()
 						: $input.value.trim()).split(/[\s\-]+/);
+				if ($input.value.trim().length <= 0)
+					return $resultContent.innerHTML = '';
 				if ($regex.checked)
 					try {
 						var k = new RegExp(keywords[0]);
 						if (k.test(''))
-							return $resultContent.innerHTML = '<p class="search-failed">Everything is matched</p>';
+							return $resultContent.innerHTML = '<p class="search-failed">Everything is Matched</p>';
 					} catch (e) {
-						return $resultContent.innerHTML = '<p class="search-failed">Regex Was Wrong</p>';
+						return $resultContent.innerHTML = '<p class="search-failed">Regular Was Wrong</p>';
 					}
-				keywords.forEach((s, i) => keywords[i] = htmlEncode(s))
-				if ($regex.checked)
-					keywords.forEach((s, i) => keywords[i] = s.replace(/&[^;]*;/gi, (r) => '('+r+')'))
 				$resultContent.innerHTML = "";
-				if ($input.value.trim().length <= 0)
-					return $resultContent.innerHTML = '';
 				var flag = 0;
 				// perform local searching
 				datas.forEach(function(data) {
@@ -73,6 +72,8 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 					var data_content = $case.checked
 						? data.content.trim().replace(/<[^>]+>/g,"").toLowerCase()
 						: data.content.trim().replace(/<[^>]+>/g,"");
+					data_title = htmlDecode(data_title);
+					data_content = htmlDecode(data_content);
 					var data_url = data.url;
 					var index_title = -1;
 					var index_content = -1;
@@ -107,7 +108,7 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 					// show search results
 					if (isMatch) {
 						flag = 1;
-						str += "<li><a href=" + data_url + ">";
+						str += '<li><a href="' + data_url + '">';
 						var content = data_content;
 						if (first_occur >= 0) {
 							// cut out 100 characters
@@ -131,6 +132,9 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 							// highlight all keywords
 							keywords.forEach(function(keyword){
 								if ($regex.checked) {
+									match_content = htmlEncode(match_content);
+									data_title = htmlEncode(data_title)
+									keyword = htmlEncode(keyword).replace(/&[^;]*;/g, (s) => '('+s+')');
 									var regS = new RegExp(keyword, $case.checked ? "gi" : "g");
 									match_content = match_content.replace(regS,
 										(s) => '<span class="search-keyword">'+s+'</span>');
@@ -144,22 +148,24 @@ var searchFunc = function(path, search_id, content_id, regex_id, case_id) {
 										match_content = match_content.replace(keyword, fuck);
 									while (data_title.indexOf(keyword) > -1)
 										data_title = data_title.replace(keyword, fuck);
+									data_title = htmlEncode(data_title);
+									match_content = htmlEncode(match_content);
 									while (match_content.indexOf(fuck) > -1)
 										match_content = match_content.replace(fuck,
-											'<span class="search-keyword">'+keyword+'</span>');
+											'<span class="search-keyword">'+htmlEncode(keyword)+'</span>');
 									while (data_title.indexOf(fuck) > -1)
 										data_title = data_title.replace(fuck,
-											'<span class="search-keyword">'+keyword+'</span>');
+											'<span class="search-keyword">'+htmlEncode(keyword)+'</span>');
 								}
 							});
-							str += "<p class='search-result-title'>"+ data_title +"</p>"
-							str += "<p class=\"search-result\">" + match_content +"...</p>"
+							str += '<p class="search-result-title">'+ data_title +'</p>'
+							str += '<p class="search-result">' + match_content +'...</p>'
 						}
 						str += "</a></li>";
 					}
 				});
 				str += "</ul>";
-				$resultContent.innerHTML = flag ? str : "<p class='search-failed'>Nothing Matched</p>";
+				$resultContent.innerHTML = flag ? str : '<p class="search-failed">Nothing Matched</p>';
 			}
 			$input.addEventListener('input', $fun);
 			$regex.addEventListener('click', $fun);
