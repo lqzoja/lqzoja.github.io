@@ -1,0 +1,278 @@
+
+
+<!-- post | photo -->
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+
+<title>Codeforces Round #357 (Div. 2) 题解 | SW_Wind&#39;s blog</title>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+
+<link rel="shortcut icon" href="/img/favicon.ico">
+
+
+<!-- Mathjax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- Valine -->
+<script src="https://cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/Valine.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div style="background-image: url(/img/author.jpg)" class="author_img"></div>
+<div class="blog-title">
+	<p class="title">SW_Wind&#39;s blog</p>
+	<p class="subtitle">病名は愛だった</p>
+</div>
+<ul class="headerlinks">
+
+  <li><a href="/">首页</a></li>
+
+  <li><a href="/about">关于</a></li>
+
+  <li><a href="/archives">归档</a></li>
+
+  <li><a href="/tags">标签</a></li>
+
+  <li><a href="/categories">分类</a></li>
+
+</ul>
+    </header>
+    <div class="container">
+      <div class="main">
+        <div class="post">
+  <article>
+    <div class="artc-title">
+      <h1>Codeforces Round #357 (Div. 2) 题解</h1>
+      <p><span class="time-icon">2017-10-10</span><span class="author-icon">SW_Wind</span></p>
+    </div>
+    <div class="artc">
+      
+        <div class="toc-father">
+          <strong class="toc-title">文章目录</strong>
+          
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#A-A-Good-Contest"><span class="toc-number">2.</span> <span class="toc-text">A. A Good Contest</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意概述"><span class="toc-number">2.1.</span> <span class="toc-text">题意概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">2.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">2.3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C"><span class="toc-number">2.3.1.</span> <span class="toc-text">C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java"><span class="toc-number">2.3.2.</span> <span class="toc-text">Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript"><span class="toc-number">2.3.3.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-number">2.3.4.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#速度比较"><span class="toc-number">2.3.5.</span> <span class="toc-text">速度比较</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-Economy-Game"><span class="toc-number">3.</span> <span class="toc-text">B. Economy Game</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意概述-1"><span class="toc-number">3.1.</span> <span class="toc-text">题意概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-1"><span class="toc-number">3.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-1"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-1"><span class="toc-number">3.3.1.</span> <span class="toc-text">C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-1"><span class="toc-number">3.3.2.</span> <span class="toc-text">Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-1"><span class="toc-number">3.3.3.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-3"><span class="toc-number">3.3.4.</span> <span class="toc-text">Python 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较"><span class="toc-number">3.3.5.</span> <span class="toc-text">比较</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-Heap-Operations"><span class="toc-number">4.</span> <span class="toc-text">C. Heap Operations</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意概述-2"><span class="toc-number">4.1.</span> <span class="toc-text">题意概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-2"><span class="toc-number">4.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-2"><span class="toc-number">4.3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-2"><span class="toc-number">4.3.1.</span> <span class="toc-text">C++</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-2"><span class="toc-number">4.3.2.</span> <span class="toc-text">Java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-2"><span class="toc-number">4.3.3.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-3-1"><span class="toc-number">4.3.4.</span> <span class="toc-text">Python 3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#比较-1"><span class="toc-number">4.3.5.</span> <span class="toc-text">比较</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#D-Gifts-by-the-List"><span class="toc-number">5.</span> <span class="toc-text">D. Gifts by the List</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意概述-3"><span class="toc-number">5.1.</span> <span class="toc-text">题意概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路-3"><span class="toc-number">5.2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码-3"><span class="toc-number">5.3.</span> <span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#E-Runaway-to-a-Shadow"><span class="toc-number">6.</span> <span class="toc-text">E. Runaway to a Shadow</span></a></li></ol>
+          
+        </div>
+      
+      <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天吃着空，和同学打了一场 Codeforces。<br>然后我吃着更空，还想写一写题解。<br><del>毕竟好久没更题解了</del></p>
+<h1 id="A-A-Good-Contest"><a href="#A-A-Good-Contest" class="headerlink" title="A. A Good Contest"></a>A. A Good Contest</h1><h2 id="题意概述"><a href="#题意概述" class="headerlink" title="题意概述"></a>题意概述</h2><p>给你$n$个人打某场 Codeforces 前后 Rating 的变化，问你是否有原来就是红名的 dalao 涨分了。<br>红名的 Rating 大于等于 2400 。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>小学题</p>
+<a id="more"></a>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">0</span>)||(ch=getchar());</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> f?x:-x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; str;</div><div class="line">		<span class="keyword">int</span> x = read(), y = read();</div><div class="line">		<span class="keyword">if</span> (x &gt;= <span class="number">2400</span> &amp;&amp; y &gt; x)</div><div class="line">			<span class="keyword">return</span> <span class="built_in">puts</span>(<span class="string">"YES"</span>)&amp;<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">puts</span>(<span class="string">"NO"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n = scan.nextInt();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">			String str = scan.next();</div><div class="line">			<span class="keyword">int</span> x = scan.nextInt();</div><div class="line">			<span class="keyword">int</span> y = scan.nextInt();</div><div class="line">			<span class="keyword">if</span> (x &gt;= <span class="number">2400</span> &amp;&amp; y &gt; x) &#123;</div><div class="line">				System.out.println(<span class="string">"YES"</span>);</div><div class="line">				scan.close();</div><div class="line">				<span class="keyword">return</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.println(<span class="string">"NO"</span>);</div><div class="line">		scan.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> n = <span class="built_in">parseInt</span>(readline())</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">		<span class="keyword">var</span> s = readline().split(<span class="string">' '</span>),</div><div class="line">			x = <span class="built_in">parseInt</span>(s[<span class="number">1</span>]),</div><div class="line">			y = <span class="built_in">parseInt</span>(s[<span class="number">2</span>]);</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (x &gt;= <span class="number">2400</span> &amp;&amp; y &gt; x)</div><div class="line">			<span class="keyword">return</span> print(<span class="string">"YES"</span>);</div><div class="line">	&#125;</div><div class="line">	print(<span class="string">"NO"</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><figure class="highlight python"><table><tr><td class="code"><pre><div class="line">n = int(input())</div><div class="line">i = <span class="number">1</span></div><div class="line"><span class="keyword">while</span> i &lt;= n:</div><div class="line">	s, x, y = input().split(<span class="string">' '</span>)</div><div class="line">	x = int(x)</div><div class="line">	y = int(y)</div><div class="line">	<span class="keyword">if</span> (x &gt;= <span class="number">2400</span>) <span class="keyword">and</span> (y &gt; x):</div><div class="line">		print(<span class="string">'YES'</span>)</div><div class="line">		exit(<span class="number">0</span>)</div><div class="line">	i = i+<span class="number">1</span></div><div class="line">print(<span class="string">'NO'</span>)</div></pre></td></tr></table></figure>
+<h3 id="速度比较"><a href="#速度比较" class="headerlink" title="速度比较"></a>速度比较</h3><p><strong>由于本人没有多次试验取平均值，所以试验结果并不可靠，不过可以凑活着比一下</strong></p>
+<table>
+<thead>
+<tr>
+<th>language</th>
+<th style="text-align:right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++</td>
+<td style="text-align:right">31 ms</td>
+</tr>
+<tr>
+<td>Java</td>
+<td style="text-align:right">140 ms</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td style="text-align:right">31 ms</td>
+</tr>
+<tr>
+<td>Python 3</td>
+<td style="text-align:right">62 ms</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出， Java 目前是跑的最慢的。<br>JavaScript 与 C++ 平分秋色。<br>Python 3 则介于两者中间。</p>
+<p>总结完毕，我们来看下一题。</p>
+<h1 id="B-Economy-Game"><a href="#B-Economy-Game" class="headerlink" title="B. Economy Game"></a>B. Economy Game</h1><h2 id="题意概述-1"><a href="#题意概述-1" class="headerlink" title="题意概述"></a>题意概述</h2><p>给你一个数$n$，询问是否有一个三元组$(a, b, c)$满足$1234567*a + 123456*b + 1234*c = n$。</p>
+<h2 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h2><p>暴力枚举即可。</p>
+<h2 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h2><h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">0</span>)||(ch=getchar());</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> f?x:-x;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</div><div class="line">	ll n = read();</div><div class="line">	<span class="keyword">for</span> (ll a = <span class="number">0</span>; a &lt;= n; a += <span class="number">1234567</span>)</div><div class="line">		<span class="keyword">for</span> (ll b = <span class="number">0</span>; b+a &lt;= n; b += <span class="number">123456</span>) &#123;</div><div class="line">			<span class="keyword">if</span> ((n-a-b) % <span class="number">1234</span> == <span class="number">0</span>)</div><div class="line">				<span class="keyword">return</span> <span class="built_in">puts</span>(<span class="string">"YES"</span>)&amp;<span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">puts</span>(<span class="string">"NO"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Java-1"><a href="#Java-1" class="headerlink" title="Java"></a>Java</h3><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner scan = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n = scan.nextInt();</div><div class="line">		scan.close();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> a = <span class="number">0</span>; a &lt;= n; a += <span class="number">1234567</span>)</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> b = <span class="number">0</span>; a + b &lt;= n; b += <span class="number">123456</span>)</div><div class="line">				<span class="keyword">if</span> ((n - a - b) % <span class="number">1234</span> == <span class="number">0</span>) &#123;</div><div class="line">					System.out.println(<span class="string">"YES"</span>);</div><div class="line">					<span class="keyword">return</span>;</div><div class="line">				&#125;</div><div class="line">		System.out.println(<span class="string">"NO"</span>); </div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="JavaScript-1"><a href="#JavaScript-1" class="headerlink" title="JavaScript"></a>JavaScript</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> n = <span class="number">1</span> * readline()</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> a = <span class="number">0</span>; a &lt;= n; a += <span class="number">1234567</span>)</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> b = <span class="number">0</span>; a + b &lt;= n; b += <span class="number">123456</span>)</div><div class="line">			<span class="keyword">if</span> ((n - a - b) % <span class="number">1234</span> === <span class="number">0</span>)</div><div class="line">				<span class="keyword">return</span> print(<span class="string">'YES'</span>);</div><div class="line">	print(<span class="string">'NO'</span>);</div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
+<h3 id="Python-3"><a href="#Python-3" class="headerlink" title="Python 3"></a>Python 3</h3><figure class="highlight python"><table><tr><td class="code"><pre><div class="line">n = int(input())</div><div class="line">a = <span class="number">0</span></div><div class="line"><span class="keyword">while</span> a &lt;= n:</div><div class="line">	b = <span class="number">0</span></div><div class="line">	<span class="keyword">while</span> a + b &lt;= n:</div><div class="line">		<span class="keyword">if</span> (n - a - b) % <span class="number">1234</span> == <span class="number">0</span>:</div><div class="line">			print(<span class="string">'YES'</span>)</div><div class="line">			exit(<span class="number">0</span>)</div><div class="line">		b += <span class="number">123456</span></div><div class="line">	a += <span class="number">1234567</span></div><div class="line">print(<span class="string">'NO'</span>)</div></pre></td></tr></table></figure>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>速度</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th style="text-align:right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++</td>
+<td style="text-align:right">15 ms</td>
+</tr>
+<tr>
+<td>Java</td>
+<td style="text-align:right">139 ms</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td style="text-align:right">31 ms</td>
+</tr>
+<tr>
+<td>Python 3</td>
+<td style="text-align:right">77 ms</td>
+</tr>
+</tbody>
+</table>
+<p>C++ 的优势逐渐显现了出来。<br><del>我估计 Java 快要萎掉了</del></p>
+<p>这题就这样解决了，再来看下一题。</p>
+<h1 id="C-Heap-Operations"><a href="#C-Heap-Operations" class="headerlink" title="C. Heap Operations"></a>C. Heap Operations</h1><h2 id="题意概述-2"><a href="#题意概述-2" class="headerlink" title="题意概述"></a>题意概述</h2><p>有一个小根堆，给你$n$个操作，要你在中间插入几个操作，使得所有的 <code>getMin</code> 操作都正确并且所有的 <code>removeMin</code> 操作都不会出错（比如给一个空集执行 <code>removeMin</code> ）。</p>
+<h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>贪心。</p>
+<p><code>insert x</code> 操作不需要处理。<br><code>getMin x</code> 操作需要把堆中所有小于$x$的元素弹出，如果堆是空或者最小值不是$x$需要<code>insert x</code>。<br><code>removeMin</code> 操作只需要单独判断一下堆是否为空即可。</p>
+<p>手写一个堆是不存在的。</p>
+<h2 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h2><h3 id="C-2"><a href="#C-2" class="headerlink" title="C++"></a>C++</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 100020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">0</span>)||(ch=getchar());</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> f?x:-x;</div><div class="line">&#125;</div><div class="line"><span class="built_in">vector</span>&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; ans;</div><div class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; q;</div><div class="line"><span class="built_in">string</span> str;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">		<span class="built_in">cin</span> &gt;&gt; str;</div><div class="line">		<span class="keyword">if</span> (str == <span class="string">"removeMin"</span>) &#123;</div><div class="line">			<span class="keyword">if</span> (!q.size()) &#123;</div><div class="line">				ans.push_back(make_pair(<span class="number">1</span>, <span class="number">1</span>));</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				q.pop();</div><div class="line">			&#125;</div><div class="line">			ans.push_back(make_pair(<span class="number">3</span>, <span class="number">0</span>));</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (str == <span class="string">"insert"</span>) &#123;</div><div class="line">			<span class="keyword">int</span> x = read();</div><div class="line">			q.push(x);</div><div class="line">			ans.push_back(make_pair(<span class="number">1</span>, x));</div><div class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> (str == <span class="string">"getMin"</span>) &#123;</div><div class="line">			<span class="keyword">int</span> x = read();</div><div class="line">			<span class="keyword">while</span> (q.size() &amp;&amp; q.top() &lt; x) &#123;</div><div class="line">				q.pop();</div><div class="line">				ans.push_back(make_pair(<span class="number">3</span>, <span class="number">0</span>));</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">if</span> (!q.size() || q.top() != x) &#123;</div><div class="line">				q.push(x);</div><div class="line">				ans.push_back(make_pair(<span class="number">1</span>, x));</div><div class="line">			&#125;</div><div class="line">			ans.push_back(make_pair(<span class="number">2</span>, x));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">cout</span> &lt;&lt; ans.size() &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> x : ans) &#123;</div><div class="line">		<span class="keyword">if</span> (x.first == <span class="number">1</span>)</div><div class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"insert "</span> &lt;&lt; x.second &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (x.first == <span class="number">2</span>)</div><div class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"getMin "</span> &lt;&lt; x.second &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"removeMin"</span> &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Java-2"><a href="#Java-2" class="headerlink" title="Java"></a>Java</h3><p>Java 光荣的 TLE 了。<br>我实在卡不了常数了。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="keyword">public</span> PriorityQueue &lt;Integer&gt; que = <span class="keyword">new</span> PriorityQueue &lt;&gt; ();</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> op[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1000020</span>];</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> vl[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1000020</span>];</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">	<span class="keyword">public</span> Scanner scan;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Main</span> <span class="params">(Scanner scan)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.scan = scan;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> n = scan.nextInt();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">			String str = scan.next();</div><div class="line">			<span class="keyword">if</span> (str.equals(<span class="string">"removeMin"</span>)) &#123;</div><div class="line">				<span class="keyword">if</span> (que.size() == <span class="number">0</span>) &#123;</div><div class="line">					op[++cnt] = <span class="number">1</span>;</div><div class="line">					vl[cnt] = <span class="number">233</span>;</div><div class="line">				&#125; <span class="keyword">else</span> &#123;</div><div class="line">					que.poll();</div><div class="line">				&#125;</div><div class="line">				op[++cnt] = <span class="number">3</span>;</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.equals(<span class="string">"getMin"</span>)) &#123;</div><div class="line">				<span class="keyword">int</span> x = scan.nextInt();</div><div class="line">				<span class="keyword">while</span> (que.size() &gt; <span class="number">0</span> &amp;&amp; que.peek() &lt; x) &#123;</div><div class="line">					que.poll();</div><div class="line">					op[++cnt] = <span class="number">3</span>;</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">if</span> (que.size() == <span class="number">0</span> || que.peek() != x) &#123;</div><div class="line">					que.add(x);</div><div class="line">					op[++cnt] = <span class="number">1</span>;</div><div class="line">					vl[cnt] = x;</div><div class="line">				&#125;</div><div class="line">				op[++cnt] = <span class="number">2</span>;</div><div class="line">				vl[cnt] = x;</div><div class="line">			&#125; <span class="keyword">else</span> <span class="keyword">if</span> (str.equals(<span class="string">"insert"</span>)) &#123;</div><div class="line">				<span class="keyword">int</span> x = scan.nextInt();</div><div class="line">				que.add(x);</div><div class="line">				op[++cnt] = <span class="number">1</span>;</div><div class="line">				vl[cnt] = x;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		scan.close();</div><div class="line">		System.out.println(cnt);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++) &#123;</div><div class="line">			<span class="keyword">if</span> (op[i] == <span class="number">1</span>)</div><div class="line">				System.out.println(<span class="string">"insert "</span> + vl[i]);</div><div class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (op[i] == <span class="number">2</span>)</div><div class="line">				System.out.println(<span class="string">"getMin "</span> + vl[i]);</div><div class="line">			<span class="keyword">else</span></div><div class="line">				System.out.println(<span class="string">"removeMin"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Main main = <span class="keyword">new</span> Main(<span class="keyword">new</span> Scanner(System.in));</div><div class="line">		main.work();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="JavaScript-2"><a href="#JavaScript-2" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>JavaScript 不存在 PriorityQueue。<br>所以代码也是不存在的。</p>
+<h3 id="Python-3-1"><a href="#Python-3-1" class="headerlink" title="Python 3"></a>Python 3</h3><p>我不会用 heapq 和 PriorityQueue。<br>所以就放过我吧 (っTwT)っ</p>
+<h3 id="比较-1"><a href="#比较-1" class="headerlink" title="比较"></a>比较</h3><table>
+<thead>
+<tr>
+<th>Language</th>
+<th style="text-align:right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++</td>
+<td style="text-align:right">904 ms</td>
+</tr>
+<tr>
+<td>Java</td>
+<td style="text-align:right">1000+ ms</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td style="text-align:right">—</td>
+</tr>
+<tr>
+<td>Python 3</td>
+<td style="text-align:right">—</td>
+</tr>
+</tbody>
+</table>
+<p>至此我们说明 C++ 是跑的最快的一门语言。</p>
+<p><del>Java 开和 C++ 一样的时限是要闹怎样啊。。。</del></p>
+<h1 id="D-Gifts-by-the-List"><a href="#D-Gifts-by-the-List" class="headerlink" title="D. Gifts by the List"></a>D. Gifts by the List</h1><h2 id="题意概述-3"><a href="#题意概述-3" class="headerlink" title="题意概述"></a>题意概述</h2><p>有$n$个人和$m$个父子关系，每个人都有想把礼物送给$a_i$的欲望，但是他必须把礼物送给你给出的一张名单中自上而下第一个是他的祖先的人。如果这个人不是他想送出礼物的人，他就会变得很不开心。问你有没有一个能让所有人开心的名单。没有输出 <code>-1</code> 。</p>
+<h2 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h2><p>先 %%% lbc dalao 给我提供了思路。</p>
+<p><img src="/img/momomo.gif" alt="momomo"></p>
+<p>每个人只有把礼物送给他自己或者他爸爸或者他爸爸送给的人才能保证不冲突。<br>这样连边然后拓扑排序一波就搞定了。</p>
+<h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> N 400020</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="keyword">char</span> ch=getchar();</div><div class="line">	<span class="keyword">while</span>(ch&gt;<span class="string">'9'</span>||ch&lt;<span class="string">'0'</span>)ch==<span class="string">'-'</span>&amp;&amp;(f=<span class="number">0</span>)||(ch=getchar());</div><div class="line">	<span class="keyword">while</span>(ch&lt;=<span class="string">'9'</span>&amp;&amp;ch&gt;=<span class="string">'0'</span>)x=(x&lt;&lt;<span class="number">3</span>)+(x&lt;&lt;<span class="number">1</span>)+ch-<span class="string">'0'</span>,ch=getchar();</div><div class="line">	<span class="keyword">return</span> f?x:-x;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> to[N], head[N], nxt[N], init[N], cnt, q[N];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</div><div class="line">	to[++cnt] = y;</div><div class="line">	nxt[cnt] = head[x];</div><div class="line">	head[x] = cnt;</div><div class="line">	init[y]++;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> fa[N], wt[N], used[N], ans;</div><div class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; son[N];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> y = fa[x], z = wt[y];</div><div class="line">	<span class="keyword">if</span> (y) &#123;</div><div class="line">		<span class="keyword">if</span> (wt[x] != z &amp;&amp; wt[x] != y &amp;&amp; wt[x] != x)</div><div class="line">			<span class="built_in">exit</span>(<span class="built_in">puts</span>(<span class="string">"-1"</span>) &amp; <span class="number">0</span>);</div><div class="line">		<span class="keyword">if</span> (wt[x] == y)</div><div class="line">			insert(y, x);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (wt[x] == z)</div><div class="line">			insert(z, x);</div><div class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (wt[x] == x)</div><div class="line">			insert(x, z);</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		<span class="keyword">if</span> (wt[x] != x)</div><div class="line">			<span class="built_in">exit</span>(<span class="built_in">puts</span>(<span class="string">"-1"</span>) &amp; <span class="number">0</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> s : son[x])</div><div class="line">		dfs(s);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> n = read(), m = read();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</div><div class="line">		<span class="keyword">int</span> x = read(), y = read();</div><div class="line">		son[x].push_back(y);</div><div class="line">		fa[y] = x;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</div><div class="line">		wt[i] = read();</div><div class="line">		<span class="keyword">if</span> (!used[wt[i]]) &#123;</div><div class="line">			ans ++;</div><div class="line">			used[wt[i]] = <span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">if</span> (!fa[i]) dfs(i);</div><div class="line">	<span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</div><div class="line">		<span class="keyword">if</span> (!init[i]) q[++r] = i;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</div><div class="line">	<span class="keyword">while</span> (l &lt; r) &#123;</div><div class="line">		<span class="keyword">int</span> x = q[++l];</div><div class="line">		<span class="keyword">if</span> (used[x])</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>, x);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = head[x]; i; i = nxt[i])</div><div class="line">			<span class="keyword">if</span> (!--init[to[i]]) q[++r] = to[i];</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为代码太长了，所以 Java 、 JavaScript 和 Python 3 是不存在的。</p>
+<p>所以代码速度的比较也是不存在的。</p>
+<h1 id="E-Runaway-to-a-Shadow"><a href="#E-Runaway-to-a-Shadow" class="headerlink" title="E. Runaway to a Shadow"></a>E. Runaway to a Shadow</h1><p>计算几何？<span class="meiryo">さようなら。</span></p>
+
+    </div>
+    <div class="article-catetags">
+
+<div class="categories-icon">
+  <a class="article-category-link" href="/categories/题解/">题解</a>
+</div>
+
+
+  <div class="tags-icon">
+  
+    <a href="/tags/javascript/">javascript</a><a href="/tags/python/">python</a><a href="/tags/java/">java</a><a href="/tags/codeforces/">codeforces</a>
+  </div>
+
+</div>
+
+  </article>
+</div>  
+
+        
+          
+	<div class="this-is-a-very-long-class-name" id="comments"></div>
+	<script type="text/javascript">
+		new Valine({
+            av: AV, 
+            el: '.this-is-a-very-long-class-name',
+            app_id: 'h3fpaex2rIrXIA4BXkhAT9H0-gzGzoHsz',
+            app_key: 'Ar7Yt5v6dLnd0v7G3reEnXkL',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+            notify: true,
+  			verify: true,
+            path: window.location.pathname.replace(/[^\/]*$/, '')
+        });
+	</script>
+
+        
+      </div>
+      <aside class="sidebar">
+
+  <div class="hitokoto sidebar-item">
+  <p class="sidebar-title">一言</p>
+  <div class="hitokoto-text" id="yiyan-text">Loading...</div>
+  <div class="speaker" id="yiyan-author"></div>
+  <script type="text/javascript">;(function(){var s="a";$.get("https://sslapi.hitokoto.cn/?c="+s[Math.floor(Math.random()*s.length)],function(data){var yy=JSON.parse(data);$('#yiyan-text').html(yy.hitokoto);$('#yiyan-author').html(yy.from);})})();</script>
+</div>
+
+  <div class="linkslist sidebar-item">
+  <p class="sidebar-title">站内搜索</p>
+  <div class="sidebar-main">
+    <form method="get" action="/search/">
+      <input type="text" name="s" placeholder="找啥呢(｡･ω･｡)" oninput="this.nextElementSibling.innerHTML=this.value?'按回车发起检索':''" class="sidebar-input input-text">
+      <p style="margin: 0;color: #666;"></p>
+    </form>
+  </div>
+</div>
+
+  <div class="linkslist sidebar-item">
+  <p class="sidebar-title">友情链接</p>
+  <div class="sidebar-main">
+    <ul>
+      <li><a href="https://q234rty.top/" target="_blank" title="%%%">q234rty</a></li>
+      <li><a href="https://shenzhebei.github.io/" target="_blank" title="%%%">SHENZHEBEI</a></li>
+      <li><a href="http://blog.csdn.net/largecub233/" target="_blank" title="%%%">largecub233</a></li>
+      <li><a href="http://blog.csdn.net/Fop_zz/" target="_blank" title="%%%">Fop_zz</a></li>
+      <li><a href="http://blog.csdn.net/jzq233jzq/" target="_blank" title="%%%">jzq233jzq</a></li>
+      <li><a href="https://zhzh2001.github.io/" target="_blank" title="%%%">zhzh2001</a></li>
+      <li><a href="http://blog.csdn.net/mdnd1234/" target="_blank" title="%%%">mdnd</a></li>
+      <li><a href="http://www.bilibili.com/" target="_blank" title="%%%">bilibili(乱入)</a></li>
+      <li><a href="http://blog.csdn.net/zhouyuyang233/" target="_blank" title="%%%">zhouyuyang233</a></li>
+      <li><a href="https://littleredstar.github.io/" target="_blank" title="%%%">black_moon</a></li>
+      <li><a href="https://problem233.github.io/" target="_blank" title="%%%">problem233</a></li>
+      <li><a href="http://blog.csdn.net/nn020701/" target="_blank" title="%%%">nn020701</a></li>
+    </ul>
+  </div>
+</div>
+
+</aside>
+    </div>
+    <footer>
+      <p>Powered by <a href="https://hexo.io/" target="view_window">Hexo</a> and theme by <a href="https://github.com/swwind/roigu" target="view_window">Roigu</a></p>
+    </footer>
+    
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-99238066-1', 'swwind.github.io');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
