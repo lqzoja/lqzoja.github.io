@@ -914,11 +914,12 @@
 <p>这时候就是本程序大展身手的好时机了。</p>
 <h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><figure class="highlight cmd"><table><tr><td class="code"><pre><div class="line">LOOK [-L] [-N num] <span class="built_in">path</span> 或者 LOOK -?</div></pre></td></tr></table></figure>
 <ul>
-<li>[-L] - 是否显示行号（可选）</li>
-<li>[-N num] - 要显示的行数（默认999999）（可选）</li>
-<li>path - 文件路径（必须）</li>
+<li><code>[-L]</code> 是否显示行号（可选）</li>
+<li><code>[-N num]</code> 要显示的行数（默认999999）（可选）</li>
+<li><code>path</code> 文件路径（必须）</li>
 </ul>
-<p>把编译过的代码放到某个path路径里就可以用cmd玩了。<br><a id="more"></a></p>
+<p>把编译过的代码放到某个path路径里就可以用cmd玩了。</p>
+<a id="more"></a>
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> lin = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span>&#123;</div><div class="line">	<span class="keyword">if</span>(argc &gt; <span class="number">1</span>)</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'?'</span>)</div><div class="line">			argc = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(argc == <span class="number">1</span>)&#123;</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"Check a file."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"LOOK [-L] [-N num] [path]"</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">""</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -L         Show line-numbers or not."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  -N [num]   Lines that you want to see."</span>);</div><div class="line">		<span class="built_in">puts</span>(<span class="string">"  path       The path of the file that you want to see."</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'l'</span> || argv[<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'L'</span>)</div><div class="line">			lin = <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> maxline = <span class="number">999999</span>, fl = <span class="number">0</span>;</div><div class="line">	<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'-'</span> || argv[lin+<span class="number">1</span>][<span class="number">0</span>] == <span class="string">'/'</span>)</div><div class="line">		<span class="keyword">if</span>(argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'n'</span> || argv[lin+<span class="number">1</span>][<span class="number">1</span>] == <span class="string">'N'</span>)&#123;</div><div class="line">			fl = <span class="number">2</span>;</div><div class="line">			<span class="keyword">int</span> len = <span class="built_in">strlen</span>(argv[lin+<span class="number">2</span>]), x = <span class="number">0</span>;</div><div class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</div><div class="line">				x = x*<span class="number">10</span>+argv[lin+<span class="number">2</span>][i]-<span class="string">'0'</span>;</div><div class="line">			maxline = x;</div><div class="line">		&#125;</div><div class="line">	<span class="built_in">string</span> str;</div><div class="line">	ifstream is;</div><div class="line">	is.open(argv[lin+fl+<span class="number">1</span>]);</div><div class="line">	<span class="keyword">int</span> a = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(getline(is, str) &amp;&amp; ++a &lt;= maxline)&#123;</div><div class="line">		<span class="keyword">if</span>(lin) <span class="built_in">printf</span>(<span class="string">"%6d: "</span>, a);</div><div class="line">		<span class="built_in">puts</span>(str.c_str());</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(a &gt; maxline) <span class="built_in">puts</span>(<span class="string">"..."</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
       
         <categories>
@@ -927,12 +928,6 @@
             
         </categories>
         
-        
-        <tags>
-            
-            <tag> 作品发布 </tag>
-            
-        </tags>
         
     </entry>
     
@@ -1595,9 +1590,9 @@
         
         <tags>
             
-            <tag> LCT </tag>
-            
             <tag> 分块 </tag>
+            
+            <tag> LCT </tag>
             
         </tags>
         
@@ -1827,7 +1822,7 @@
         
         <tags>
             
-            <tag> 作品发布 </tag>
+            <tag> java </tag>
             
         </tags>
         
@@ -1914,7 +1909,8 @@
     <entry>
       <title><![CDATA[MI作品鉴赏]]></title>
       <url>/2017/03/28/MI%E4%BD%9C%E5%93%81%E9%89%B4%E8%B5%8F/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mine-Imator其实是个好东西<img src="/img/huaji.png"><br>我会把我大部分的作品发布到这个帖子里<img src="/img/huaji.png"><br>其实都是些搞事情的图片，没有什么可以欣赏的<img src="/img/huaji.png"><br>不多说了自己看吧<img src="/img/haipa.png"><br><a id="more"></a></p>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mine-Imator其实是个好东西<img src="/img/huaji.png"><br>我会把我大部分的作品发布到这个帖子里<img src="/img/huaji.png"><br>其实都是些搞事情的图片，没有什么可以欣赏的<img src="/img/huaji.png"><br>不多说了自己看吧<img src="/img/haipa.png"></p>
+<a id="more"></a>
 <h2 id="2017-3-27"><a href="#2017-3-27" class="headerlink" title="2017.3.27"></a>2017.3.27</h2><p>这图是来调戏同学的2333<br><img src="/img/MI1.png"></p>
 <h2 id="2017-3-28"><a href="#2017-3-28" class="headerlink" title="2017.3.28"></a>2017.3.28</h2><p>这图是用来调戏同学和oierbbs的管理的2333<br><img src="/img/OhNO3.png"></p>
 ]]></content>
@@ -1928,7 +1924,7 @@
         
         <tags>
             
-            <tag> 作品发布 </tag>
+            <tag> minecraft </tag>
             
         </tags>
         
